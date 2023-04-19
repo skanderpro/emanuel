@@ -10,7 +10,8 @@ class MainMenuWalker extends \Walker_Nav_Menu
         $hasChildren = !empty($classes['menu-item-has-children']);
         $title = apply_filters( 'the_title', $data_object->title, $data_object->ID );
 
-        $output .= '<li class="nav-list-item '.($hasChildren ? 'drop-down' : '').'">';
+        $className = $depth < 1 ? 'nav-list-item' : '';
+        $output .= '<li class="'.$className.' '.($hasChildren ? 'drop-down' : '').'">';
 
         if ($hasChildren) {
             $output .= '<span class="nav-list-item-btn">';

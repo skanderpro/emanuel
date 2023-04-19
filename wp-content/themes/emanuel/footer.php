@@ -1,3 +1,12 @@
+<?php
+global $opt_name;
+
+$logo = Redux::get_option($opt_name, 'footer_logo');
+$description = Redux::get_option($opt_name, 'footer_description');
+$phone = Redux::get_option($opt_name, 'footer_phone');
+$email = Redux::get_option($opt_name, 'footer_email');
+$linkedin = Redux::get_option($opt_name, 'footer_linkedin');
+?>
 </div>
 <footer class="footer">
     <div class="footer-wrapper">
@@ -5,27 +14,27 @@
             <div class="footer__inner">
                 <div class="footer__inner-info">
                     <div class="footer__inner-info-logo">
-                        <img src="<?php echo EMANUEL_ASSETS_URL; ?>img/logo-white.svg" alt="" />
+                        <img src="<?php echo !empty($logo) ? $logo['url'] : ''; ?>" alt="" />
                     </div>
                     <div class="footer__inner-info-box">
                         <div class="footer__inner-info-namecompany">
                             EMANUEL Immobilien AG
                         </div>
                         <div class="footer__inner-info-addres">
-                            Luzernerstrasse 8 CH-6045 Meggen
+                            <?php echo $description; ?>
                         </div>
                         <div class="footer__inner-info-link">
                             <div class="footer__inner-info-link-item">
                                 <img src="<?php echo EMANUEL_ASSETS_URL; ?>img/icon/phone-icon.svg" alt="" />
-                                <a href="tel:41412485050">+41 41 248 50 50</a>
+                                <a href="tel:<?php echo $phone; ?>"><?php echo $phone; ?></a>
                             </div>
                             <div class="footer__inner-info-link-item">
                                 <img src="<?php echo EMANUEL_ASSETS_URL; ?>img/icon/email-icon.svg" alt="" />
-                                <a href="mailto:kontakt@emanuel.ch">kontakt@emanuel.ch</a>
+                                <a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a>
                             </div>
                             <div class="footer__inner-info-link-item">
                                 <img src="<?php echo EMANUEL_ASSETS_URL; ?>img/icon/in-icon.svg" alt="" />
-                                <a href="#">Follow us</a>
+                                <a href="<?php echo $linkedin; ?>">Follow us</a>
                             </div>
                         </div>
                     </div>

@@ -1,3 +1,9 @@
+<?php
+global $opt_name;
+$logo = Redux::get_option($opt_name, 'header_logo');
+$ctaText = Redux::get_option($opt_name, 'header_cta_text');
+$ctaUrl = Redux::get_option($opt_name, 'header_cta_url');
+?>
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -16,7 +22,7 @@
     <div class="container">
         <div class="header__inner">
             <div class="header__inner-logo">
-                <a href="<?php echo home_url('/'); ?>"><img src="<?php echo EMANUEL_ASSETS_URL; ?>img/logo.svg" alt="" /></a>
+                <a href="<?php echo home_url('/'); ?>"><img src="<?php echo !empty($logo) ? $logo['url'] : '' ; ?>" alt="" /></a>
             </div>
             <?php
             if (has_nav_menu('primary_menu')) {
@@ -29,70 +35,8 @@
                 ]);
             }
             ?>
-            <nav class="header__inner-nav">
-                <ul class="nav-list">
-                    <li class="nav-list-item drop-down">
-            <span class="nav-list-item-btn">
-              Angebot
-              <img src="<?php echo EMANUEL_ASSETS_URL; ?>img/arrow-header.svg" alt="" />
-            </span>
-                        <div class="nav-list-item-drop-down">
-                            <ul>
-                                <li>
-                                    <a href="Portfoliomanagement.html">Portfoliomanagement</a>
-                                </li>
-                                <li>
-                                    <a href="kaufVerkauf.html">Kauf & Verkauf von Immobilien</a>
-                                </li>
-                                <li>
-                                    <a href="Hypothekenmanagement.html"
-                                    >Hypothekenmanagement & Finanzierungsoptimierung</a
-                                    >
-                                </li>
-                                <li>
-                                    <a href="Projektentwicklung.html">Projektentwicklung</a>
-                                </li>
-                                <li>
-                                    <a href="Immobilienbewirtschaftung.html"
-                                    >Immobilienbewirtschaftung</a
-                                    >
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-list-item">
-                        <a href="mietobjekte.html">Mietobjekte</a>
-                    </li>
-                    <li class="nav-list-item">
-                        <a href="kaufobjekte.html">Kaufobjekte</a>
-                    </li>
-                    <li class="nav-list-item drop-down">
-            <span class="nav-list-item-btn">
-              Über uns
-              <img src="<?php echo EMANUEL_ASSETS_URL; ?>img/arrow-header.svg" alt="" />
-            </span>
-                        <div class="nav-list-item-drop-down">
-                            <ul>
-                                <li>
-                                    <a href="unternehmen.html">Unternehmen</a>
-                                </li>
-                                <li>
-                                    <a href="team.html">Team</a>
-                                </li>
-                                <li>
-                                    <a href="karriere.html">Karriere</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-list-item">
-                        <a href="news.html">News</a>
-                    </li>
-                    <a href="Kontakt.html" class="global-btn">Kontakt</a>
-                </ul>
-            </nav>
             <div class="header__inner-btn">
-                <a href="Kontakt.html" class="global-btn">Kontakt</a>
+                <a href="<?php echo $ctaUrl; ?>" class="global-btn"><?php echo $ctaText; ?></a>
             </div>
             <div class="header__menu-btn">
                 <span></span>

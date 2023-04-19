@@ -2,6 +2,7 @@
 define('EMANUEL_ASSETS_URL', get_template_directory_uri() . '/assets/dist/');
 
 require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/config/redux/index.php';
 
 add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('emanuel-normalize', get_template_directory_uri() . '/assets/dist/files/css/normalize.css');
