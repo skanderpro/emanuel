@@ -1,13 +1,14 @@
 <?php
 define('EMANUEL_ASSETS_URL', get_template_directory_uri() . '/assets/dist/');
+define('EMANUEL_PATH', get_template_directory());
 
 require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/config/redux/index.php';
 
 add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_style('emanuel-normalize', get_template_directory_uri() . '/assets/dist/files/css/normalize.css');
-    wp_enqueue_style('emanuel-main', get_template_directory_uri() . '/assets/dist/css/style.css');
-    wp_enqueue_script('emanuel-main-js', get_template_directory_uri() . '/assets/dist/js/app.min.js', [], false, true);
+    wp_enqueue_style('emanuel-normalize', EMANUEL_ASSETS_URL . '/files/css/normalize.css');
+    wp_enqueue_style('emanuel-main', EMANUEL_ASSETS_URL . '/css/style.css');
+    wp_enqueue_script('emanuel-main-js', EMANUEL_ASSETS_URL . '/js/app.min.js', [], false, true);
 });
 
 

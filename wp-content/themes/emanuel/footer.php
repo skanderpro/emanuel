@@ -2,6 +2,7 @@
 global $opt_name;
 
 $logo = Redux::get_option($opt_name, 'footer_logo');
+$title = Redux::get_option($opt_name, 'footer_title');
 $description = Redux::get_option($opt_name, 'footer_description');
 $phone = Redux::get_option($opt_name, 'footer_phone');
 $email = Redux::get_option($opt_name, 'footer_email');
@@ -18,7 +19,7 @@ $linkedin = Redux::get_option($opt_name, 'footer_linkedin');
                     </div>
                     <div class="footer__inner-info-box">
                         <div class="footer__inner-info-namecompany">
-                            EMANUEL Immobilien AG
+                            <?php echo $title; ?>
                         </div>
                         <div class="footer__inner-info-addres">
                             <?php echo $description; ?>
