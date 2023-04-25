@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="files/css/normalize.css?_v=20230414025305" />
+  <link rel="stylesheet" href="css/style.min.css?_v=20230414025305" />
+  <title>Formular</title>
+</head>
+
+
+  <body>
+    <div class="wrapper">
+      <header class="header">
+  <div class="container">
+    <div class="header__inner">
+      <div class="header__inner-logo">
+        <a href="index.html"><img src="img/logo.svg" alt="" /></a>
+      </div>
+      <nav class="header__inner-nav">
+        <ul class="nav-list">
+          <li class="nav-list-item drop-down">
+            <span class="nav-list-item-btn">
+              Angebot
+              <img src="img/arrow-header.svg" alt="" />
+            </span>
+            <div class="nav-list-item-drop-down">
+              <ul>
+                <li>
+                  <a href="Portfoliomanagement.html">Portfoliomanagement</a>
+                </li>
+                <li>
+                  <a href="kaufVerkauf.html">Kauf & Verkauf von Immobilien</a>
+                </li>
+                <li>
+                  <a href="Hypothekenmanagement.html"
+                    >Hypothekenmanagement & Finanzierungsoptimierung</a
+                  >
+                </li>
+                <li>
+                  <a href="Projektentwicklung.html">Projektentwicklung</a>
+                </li>
+                <li>
+                  <a href="Immobilienbewirtschaftung.html"
+                    >Immobilienbewirtschaftung</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-list-item">
+            <a href="mietobjekte.html">Mietobjekte</a>
+          </li>
+          <li class="nav-list-item">
+            <a href="kaufobjekte.html">Kaufobjekte</a>
+          </li>
+          <li class="nav-list-item drop-down">
+            <span class="nav-list-item-btn">
+              Über uns
+              <img src="img/arrow-header.svg" alt="" />
+            </span>
+            <div class="nav-list-item-drop-down">
+              <ul>
+                <li>
+                  <a href="unternehmen.html">Unternehmen</a>
+                </li>
+                <li>
+                  <a href="team.html">Team</a>
+                </li>
+                <li>
+                  <a href="karriere.html">Karriere</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-list-item">
+            <a href="news.html">News</a>
+          </li>
+          <a href="Kontakt.html" class="global-btn">Kontakt</a>
+        </ul>
+      </nav>
+      <div class="header__inner-btn">
+        <a href="Kontakt.html" class="global-btn">Kontakt</a>
+      </div>
+      <div class="header__menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <main>
+        <section class="form">
+          <div class="container">
+            <div class="form__inner">
+              <div class="form-title">
+                <h1>Real estate agent</h1>
+              </div>
+              <div class="form-subtitle">Persönliche Angaben</div>
+              <form action="">
+                <div class="form-gender">
+                  <div class="global-label">Geschlecht</div>
+                  <div class="form-gender-checkbox">
+                    <div class="global-checkbox">
+                      <input
+                        type="checkbox"
+                        class="checkoption"
+                        id="Masculine"
+                        checked
+                      />
+                      <label for="Masculine">Männlich</label>
+                    </div>
+                    <div class="global-checkbox">
+                      <input
+                        type="checkbox"
+                        class="checkoption"
+                        id="Feminine"
+                      />
+                      <label for="Feminine">Weiblich</label>
+                    </div>
+                    <div class="global-checkbox">
+                      <input type="checkbox" class="checkoption" id="Divers" />
+                      <label for="Divers">Divers</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-inputs">
+                  <div class="form-inputs-col">
+                    <div class="form-inputs-col-item">
+                      <label class="global-label" for="">Vorname</label>
+                      <input
+                        class="global-input"
+                        type="text"
+                        placeholder="Vorname "
+                      />
+                    </div>
+                    <div class="form-inputs-col-item">
+                      <label class="global-label" for="">Geburtsdatum</label>
+                      <div class="form-inputs-col-item-inner">
+                        <input
+                          class="global-input"
+                          type="text"
+                          placeholder="DD"
+                          oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                          maxlength="2"
+                        />
+                        <input
+                          class="global-input"
+                          type="text"
+                          placeholder="MM"
+                          oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                          maxlength="2"
+                        />
+                        <input
+                          class="global-input"
+                          type="text"
+                          placeholder="YYYY"
+                          oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                          maxlength="4"
+                        />
+                      </div>
+                    </div>
+                    <div class="form-inputs-col-item">
+                      <label class="global-label" for=""
+                        >Strasse und Hausnummer</label
+                      >
+                      <input
+                        class="global-input"
+                        type="text"
+                        placeholder="Strasse und Hausnummer"
+                      />
+                    </div>
+                    <div class="form-inputs-col-item">
+                      <label class="global-label" for="">Telefonnummer</label>
+                      <input
+                        class="global-input"
+                        type="tel"
+                        placeholder="Telefonnummer"
+                      />
+                    </div>
+                  </div>
+                  <div class="form-inputs-col">
+                    <div class="form-inputs-col-item">
+                      <label class="global-label" for="">Nachname</label>
+                      <input
+                        class="global-input"
+                        type="text"
+                        placeholder="Nachname"
+                      />
+                    </div>
+                    <div class="form-inputs-col-item">
+                      <label class="global-label" for="">Nationalität</label>
+                      <input
+                        class="global-input"
+                        type="text"
+                        placeholder="Nationalität"
+                      />
+                    </div>
+                    <div class="form-inputs-col-item">
+                      <label class="global-label" for="">Postleitzahl und Ort</label>
+                      <input
+                        class="global-input"
+                        type="text"
+                        placeholder="Postleitzahl und Ort"
+                      />
+                    </div>
+                    <div class="form-inputs-col-item">
+                      <label class="global-label" for="">E-mail</label>
+                      <input
+                        class="global-input"
+                        type="email"
+                        placeholder="E-mail"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-textarea">
+                  <label class="global-label" for="">Ihre Mitteilung</label>
+                  <textarea
+                    class="global-textarea"
+                    placeholder="Ihre Mitteilung"
+                  ></textarea>
+                </div>
+
+                <div class="form-upload">
+                  <div class="form-upload-title">Dokumente</div>
+                  <div class="form-upload-subtitle">
+                    Dokumente als PDF oder JPG. Die maximale Grösse beträgt 20
+                    MB.
+                  </div>
+                  <div class="form-upload-box">
+                    <div class="form-upload-item">
+                      <label for="cv">
+                        <div class="form-upload-item-title">Lebenslauf</div>
+                        <div class="form-upload-item-subtitle">
+                          <img src="img/icon/document.svg" alt="" />
+                          Datei auswählen
+                        </div>
+                        <input id="cv" type="file" />
+                      </label>
+                    </div>
+                    <div class="form-upload-item">
+                      <label for="job-references">
+                        <div class="form-upload-item-title">
+                          Arbeitszeugnisse/Schulzeugnisse
+                        </div>
+                        <div class="form-upload-item-subtitle">
+                          <img src="img/icon/attachments.svg" alt="" />
+                          Datei auswählen
+                        </div>
+                        <input id="job-references" type="file" />
+                      </label>
+                    </div>
+                    <div class="form-upload-item">
+                      <label for="motivation-letter">
+                        <div class="form-upload-item-title">
+                          Motivationsschreiben
+                        </div>
+                        <div class="form-upload-item-subtitle">
+                          <img src="img/icon/attachments.svg" alt="" />
+                          Datei auswählen
+                        </div>
+                        <input id="motivation-letter" type="file" />
+                      </label>
+                    </div>
+                    <div class="form-upload-item">
+                      <label for="diplomas">
+                        <div class="form-upload-item-title">Diplome</div>
+                        <div class="form-upload-item-subtitle">
+                          <img src="img/icon/attachments.svg" alt="" />
+                          Datei auswählen
+                        </div>
+                        <input id="diplomas" type="file" />
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-send">
+                  <button class="global-btn" type="submit">Senden</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="footer"><div class="footer-wrapper">
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__inner-info">
+        <div class="footer__inner-info-logo">
+          <img src="img/logo-white.svg" alt="" />
+        </div>
+        <div class="footer__inner-info-box">
+          <div class="footer__inner-info-namecompany">
+            EMANUEL Immobilien AG
+          </div>
+          <div class="footer__inner-info-addres">
+            Luzernerstrasse 8 CH-6045 Meggen
+          </div>
+          <div class="footer__inner-info-link">
+            <div class="footer__inner-info-link-item">
+              <img src="img/icon/phone-icon.svg" alt="" />
+              <a href="tel:41412485050">+41 41 248 50 50</a>
+            </div>
+            <div class="footer__inner-info-link-item">
+              <img src="img/icon/email-icon.svg" alt="" />
+              <a href="mailto:kontakt@emanuel.ch">kontakt@emanuel.ch</a>
+            </div>
+            <div class="footer__inner-info-link-item">
+              <img src="img/icon/in-icon.svg" alt="" />
+              <a href="#">Follow us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__inner-link">
+        <div class="footer__inner-link-item">
+          <div class="footer__inner-link-item-title">Angebot</div>
+          <ul>
+            <li>
+              <a href="#">Portfoliomanagement</a>
+            </li>
+            <li>
+              <a href="#">Kauf & Verkauf von Immobilien</a>
+            </li>
+            <li>
+              <a href="#">Hypothekenmanagement & Finanzierungsoptimierung</a>
+            </li>
+            <li>
+              <a href="#">Projektentwicklung</a>
+            </li>
+            <li>
+              <a href="#">Immobilienbewirtschaftung</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__inner-link-item">
+          <div class="footer__inner-link-item-title">Über Uns</div>
+          <ul>
+            <li>
+              <a href="#">Unternehmen</a>
+            </li>
+            <li>
+              <a href="#">Team</a>
+            </li>
+            <li>
+              <a href="#">Karriere</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__inner-link-item">
+          <div class="footer__inner-link-item-title">Mietobjekte</div>
+          <ul>
+            <li>
+              <a href="#">Kaufobjekte</a>
+            </li>
+            <li>
+              <a href="#">News</a>
+            </li>
+            <li>
+              <a href="impressumDatenschutz.html">Impressum & Datenschutz</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</footer>
+    <script src="js/app.min.js?_v=20230414025305"></script>
+    <script type="text/javascript">
+      let group_ = (el, callback) => {
+        el.forEach((checkbox) => {
+          callback(checkbox)
+        })
+      }
+      let group_el = document.querySelectorAll('.checkoption')
+      group_(group_el, (item) => {
+        item.onclick = (e) => {
+          group_(group_el, (item) => {
+            item.checked = false
+          })
+
+          e.target.checked = true
+        }
+      })
+    </script>
+  </body>
+</html>

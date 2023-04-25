@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="de">
+  @@include('html/head.html',{ "title":"Portfoliomanagement" })
+  <body>
+    <div class="wrapper">
+      @@include('html/header.html',{})
+      <main>
+        <section class="header-content">
+          <div class="container-right">
+            <div class="header-content__inner">
+              <div class="header-content__inner-text">
+                <div class="header-content__inner-text-con" >
+                  <div class="header-content-title">
+                    <h1>Portfoliomanagement – wir schaffen reale Werte</h1>
+                  </div>
+                  <div class="header-content-text">
+                    <p>
+                      Die Betreuung von Immobilienportfolios setzt eine
+                      ganzheitliche Betrachtungsweise voraus. Dabei stehen nicht
+                      nur die einzelnen Immobilien im Vordergrund, sondern au ch
+                      das Zusammenwirken von Kapital, Investitionsziel, Risiko
+                      und Zeit.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="header-content__inner-img">
+                <img src="img/header-banner/banner-3.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="box-info reverse">
+          <div class="container">
+            <div class="box-info__inner">
+              <div class="box-info-title">
+                <p>
+                  Wir bieten Ihnen hierzu ein Dienstleistungspaket, das
+                  insbesondere auf die Bedürfnisse von Privatinvestoren,
+                  Family-Offices und Immobiliengesellschaften ausgerichtet ist.
+                </p>
+              </div>
+              <div class="box-info-list">
+                <ul>
+                  <li>
+                    <div class="box-info-list-info">
+                      Ganzheitliche Analyse des Immobilienportfolios,
+                      Positionierung
+                    </div>
+                  </li>
+                  <li>
+                    <div class="box-info-list-info">
+                      Überprüfung der vorhandenen Nutzungsmöglichkeiten
+                    </div>
+                  </li>
+                  <li>
+                    <div class="box-info-list-info">
+                      Erstellung von Wirtschaftlichkeitsberechnungen
+                    </div>
+                  </li>
+                  <li>
+                    <div class="box-info-list-info">
+                      Zweitmeinung im Bereich der aktiven Portfoliogestaltung
+                    </div>
+                  </li>
+                  <li>
+                    <div class="box-info-list-info">
+                      Objektbezogene Instandhaltungs- und Investitionsplanung
+                    </div>
+                  </li>
+                  <li>
+                    <div class="box-info-list-info">
+                      Optimierung im Bereich der Rentabilität und der
+                      Risikostruktur
+                    </div>
+                  </li>
+                  <li>
+                    <div class="box-info-list-info">
+                      Portfoliomanagement mit Investitions- und
+                      Deinvestitionsplanung
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <div class="popup">
+      <div class="popup__body">
+        <div class="popup__conten">
+          <button class="popup__close btn-close-popup">
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0_438_1543)">
+                <path
+                  d="M16 14.1146L22.6 7.51465L24.4853 9.39998L17.8853 16L24.4853 22.6L22.6 24.4853L16 17.8853L9.39998 24.4853L7.51465 22.6L14.1146 16L7.51465 9.39998L9.39998 7.51465L16 14.1146Z"
+                  fill="#ABACB5"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_438_1543">
+                  <rect width="32" height="32" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+          </button>
+          <div class="popup__title">Kontaktieren Sie uns</div>
+          <div class="popup__form">
+            <form action="">
+              <div class="popup__form-item">
+                <label class="global-label">Vorname</label>
+                <input
+                  class="global-input"
+                  type="text"
+                  placeholder="Enter your name"
+                  required
+                />
+              </div>
+              <div class="popup__form-item">
+                <label class="global-label">E-mail</label>
+                <input
+                  class="global-input"
+                  type="email"
+                  placeholder="emailexample@gmail.com"
+                  required
+                />
+              </div>
+              <div class="popup__title-btn">
+                <button class="global-btn" type="submit">Kontaktieren</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-content-left">
+            <div class="footer-content-text">
+              Dank breitem Netzwerk und starken Partnern stehen wir Ihnen mit
+              einem erfahrenen und eng zusammenarbeitenden Team zur Verfügung.
+            </div>
+            <div class="footer-content-label">Wann lernen wir uns kennen?</div>
+          </div>
+          <div class="footer-content-right">
+            <button class="global-btn popup-open">Kontaktieren Sie uns</button>
+          </div>
+        </div>
+      </div>
+      @@include('html/footer.html',{})
+    </footer>
+    <script src="js/app.min.js"></script>
+    <script src="files/js/openPopup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="de">
+  @@include('html/head.html',{ "title":"Formular" })
+  <body>
+    <div class="wrapper">
+      @@include('html/header.html',{})
+      <main>
+        <section class="form">
+          <div class="container">
+            <div class="form__inner">
+              <div class="form-title">
+                <h1>Real estate agent</h1>
+              </div>
+              <div class="form-subtitle">Persönliche Angaben</div>
+              <form action="">
+                <div class="form-gender">
+                  <div class="global-label">Geschlecht</div>
+                  <div class="form-gender-checkbox">
+                    <div class="global-checkbox">
+                      <input
+                        type="checkbox"
+                        class="checkoption"
+                        id="Masculine"
+                        checked
+                      />
+                      <label for="Masculine">Männlich</label>
+                    </div>
+                    <div class="global-checkbox">
+                      <input
+                        type="checkbox"
+                        class="checkoption"
+                        id="Feminine"
+                      />
+                      <label for="Feminine">Weiblich</label>
+                    </div>
+                    <div class="global-checkbox">
+                      <input type="checkbox" class="checkoption" id="Divers" />
+                      <label for="Divers">Divers</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-inputs">
+                  <div class="form-inputs-col">
+                    <div class="form-inputs-col-item">
+                      <label class="global-label" for="">Vorname</label>
+                      <input
+                        class="global-input"
+                        type="text"
+                        placeholder="Vorname "
+                      />
+                    </div>
+                    <div class="form-inputs-col-item">
+                      <label class="global-label" for="">Geburtsdatum</label>
+                      <div class="form-inputs-col-item-inner">
+                        <input
+                          class="global-input"
+                          type="text"
+                          placeholder="DD"
+                          oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                          maxlength="2"
+                        />
+                        <input
+                          class="global-input"
+                          type="text"
+                          placeholder="MM"
+                          oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                          maxlength="2"
+                        />
+                        <input
+                          class="global-input"
+                          type="text"
+                          placeholder="YYYY"
+                          oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                          maxlength="4"
+                        />
+                      </div>
+                    </div>
+                    <div class="form-inputs-col-item">
+                      <label class="global-label" for=""
+                        >Strasse und Hausnummer</label
+                      >
+                      <input
+                        class="global-input"
+                        type="text"
+                        placeholder="Strasse und Hausnummer"
+                      />
+                    </div>
+                    <div class="form-inputs-col-item">
+                      <label class="global-label" for="">Telefonnummer</label>
+                      <input
+                        class="global-input"
+                        type="tel"
+                        placeholder="Telefonnummer"
+                      />
+                    </div>
+                  </div>
+                  <div class="form-inputs-col">
+                    <div class="form-inputs-col-item">
+                      <label class="global-label" for="">Nachname</label>
+                      <input
+                        class="global-input"
+                        type="text"
+                        placeholder="Nachname"
+                      />
+                    </div>
+                    <div class="form-inputs-col-item">
+                      <label class="global-label" for="">Nationalität</label>
+                      <input
+                        class="global-input"
+                        type="text"
+                        placeholder="Nationalität"
+                      />
+                    </div>
+                    <div class="form-inputs-col-item">
+                      <label class="global-label" for="">Postleitzahl und Ort</label>
+                      <input
+                        class="global-input"
+                        type="text"
+                        placeholder="Postleitzahl und Ort"
+                      />
+                    </div>
+                    <div class="form-inputs-col-item">
+                      <label class="global-label" for="">E-mail</label>
+                      <input
+                        class="global-input"
+                        type="email"
+                        placeholder="E-mail"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-textarea">
+                  <label class="global-label" for="">Ihre Mitteilung</label>
+                  <textarea
+                    class="global-textarea"
+                    placeholder="Ihre Mitteilung"
+                  ></textarea>
+                </div>
+
+                <div class="form-upload">
+                  <div class="form-upload-title">Dokumente</div>
+                  <div class="form-upload-subtitle">
+                    Dokumente als PDF oder JPG. Die maximale Grösse beträgt 20
+                    MB.
+                  </div>
+                  <div class="form-upload-box">
+                    <div class="form-upload-item">
+                      <label for="cv">
+                        <div class="form-upload-item-title">Lebenslauf</div>
+                        <div class="form-upload-item-subtitle">
+                          <img src="img/icon/document.svg" alt="" />
+                          Datei auswählen
+                        </div>
+                        <input id="cv" type="file" />
+                      </label>
+                    </div>
+                    <div class="form-upload-item">
+                      <label for="job-references">
+                        <div class="form-upload-item-title">
+                          Arbeitszeugnisse/Schulzeugnisse
+                        </div>
+                        <div class="form-upload-item-subtitle">
+                          <img src="img/icon/attachments.svg" alt="" />
+                          Datei auswählen
+                        </div>
+                        <input id="job-references" type="file" />
+                      </label>
+                    </div>
+                    <div class="form-upload-item">
+                      <label for="motivation-letter">
+                        <div class="form-upload-item-title">
+                          Motivationsschreiben
+                        </div>
+                        <div class="form-upload-item-subtitle">
+                          <img src="img/icon/attachments.svg" alt="" />
+                          Datei auswählen
+                        </div>
+                        <input id="motivation-letter" type="file" />
+                      </label>
+                    </div>
+                    <div class="form-upload-item">
+                      <label for="diplomas">
+                        <div class="form-upload-item-title">Diplome</div>
+                        <div class="form-upload-item-subtitle">
+                          <img src="img/icon/attachments.svg" alt="" />
+                          Datei auswählen
+                        </div>
+                        <input id="diplomas" type="file" />
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-send">
+                  <button class="global-btn" type="submit">Senden</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="footer">@@include('html/footer.html',{})</footer>
+    <script src="js/app.min.js"></script>
+    <script type="text/javascript">
+      let group_ = (el, callback) => {
+        el.forEach((checkbox) => {
+          callback(checkbox)
+        })
+      }
+      let group_el = document.querySelectorAll('.checkoption')
+      group_(group_el, (item) => {
+        item.onclick = (e) => {
+          group_(group_el, (item) => {
+            item.checked = false
+          })
+
+          e.target.checked = true
+        }
+      })
+    </script>
+  </body>
+</html>

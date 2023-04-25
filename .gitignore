@@ -1,0 +1,5 @@
+wp-content/themes/emanuel/vendor/
+wp-content/themes/emanuel/assets/node_modules/
+wp-content/uploads/
+.idea/
+wp-config.php
