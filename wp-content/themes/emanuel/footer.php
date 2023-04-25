@@ -2,11 +2,11 @@
 global $opt_name;
 
 $logo = Redux::get_option($opt_name, 'footer_logo');
-$title = Redux::get_option($opt_name, 'footer_title');
-$description = Redux::get_option($opt_name, 'footer_description');
-$phone = Redux::get_option($opt_name, 'footer_phone');
-$email = Redux::get_option($opt_name, 'footer_email');
-$linkedin = Redux::get_option($opt_name, 'footer_linkedin');
+$title = Redux::get_option($opt_name, 'contact_company');
+$description = Redux::get_option($opt_name, 'contact_address');
+$phone = Redux::get_option($opt_name, 'contact_phone');
+$email = Redux::get_option($opt_name, 'contact_email');
+$linkedin = Redux::get_option($opt_name, 'contact_linkedin');
 ?>
 </div>
 <footer class="footer">
