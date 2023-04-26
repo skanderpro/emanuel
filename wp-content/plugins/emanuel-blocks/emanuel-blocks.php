@@ -30,6 +30,7 @@ function register_hello_world_widget( $widgets_manager ) {
 	$widgets_manager->register( new \Contact() );
 	$widgets_manager->register( new \AddressList() );
 	$widgets_manager->register( new \BoxInfo() );
+	$widgets_manager->register( new \BoxInfoStage() );
 	$widgets_manager->register( new \ContactUs() );
 	$widgets_manager->register( new \EstateInfo() );
 	$widgets_manager->register( new \EstateInfoSecond() );

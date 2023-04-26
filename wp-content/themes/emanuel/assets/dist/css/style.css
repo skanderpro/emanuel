@@ -2476,6 +2476,14 @@ body.hiden {
   line-height: 21px;
 }
 
+main .elementor-column-gap-default > .elementor-column > .elementor-element-populated {
+  padding: 0;
+}
+
+main .elementor-section.elementor-section-boxed > .elementor-container {
+  max-width: 100%;
+}
+
 @media (max-width: 1100px) {
   .services__inner {
     -ms-grid-columns: (1fr)[2];
