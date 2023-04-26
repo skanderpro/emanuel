@@ -9,6 +9,7 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('emanuel-normalize', EMANUEL_ASSETS_URL . '/files/css/normalize.css');
     wp_enqueue_style('emanuel-main', EMANUEL_ASSETS_URL . '/css/style.css');
     wp_enqueue_script('emanuel-main-js', EMANUEL_ASSETS_URL . '/js/app.min.js', [], false, true);
+    wp_enqueue_script('emanuel-popup-js', EMANUEL_ASSETS_URL . '/files/js/openPopup.js', [], false, true);
 });
 
 
