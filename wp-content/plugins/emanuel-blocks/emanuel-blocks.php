@@ -23,6 +23,7 @@ function register_hello_world_widget( $widgets_manager ) {
 	require_once( __DIR__ . '/elementor/EstateInfoSecond.php' );
 	require_once( __DIR__ . '/elementor/BoxInfoStage.php' );
 	require_once( __DIR__ . '/elementor/Team.php' );
+	require_once( __DIR__ . '/elementor/Career.php' );
 
 	$widgets_manager->register( new \HeroHome() );
 	$widgets_manager->register( new \LinksBlock() );
@@ -33,5 +34,6 @@ function register_hello_world_widget( $widgets_manager ) {
 	$widgets_manager->register( new \EstateInfo() );
 	$widgets_manager->register( new \EstateInfoSecond() );
 	$widgets_manager->register( new \Team() );
+	$widgets_manager->register( new \Career() );
 }
 add_action( 'elementor/widgets/register', 'register_hello_world_widget' );
