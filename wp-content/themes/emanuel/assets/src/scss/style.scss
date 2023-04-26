@@ -1273,4 +1273,12 @@
   }
 }
 
+main .elementor-column-gap-default>.elementor-column>.elementor-element-populated {
+  padding: 0;
+}
+
+main .elementor-section.elementor-section-boxed>.elementor-container {
+  max-width: 100%;
+}
+
 @import 'media';
