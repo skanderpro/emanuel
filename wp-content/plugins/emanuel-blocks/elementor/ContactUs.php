@@ -53,6 +53,15 @@ class ContactUs extends \Elementor\Widget_Base {
 		);
 
 		$this->add_control(
+			'form_shortcode',
+			[
+				'label' => esc_html__( 'Form Shortcode', 'elementor-addon' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'default' => '',
+			]
+		);
+
+		$this->add_control(
 			'cta_btn_text',
 			[
 				'label' => esc_html__( 'CTA button text', 'elementor-addon' ),

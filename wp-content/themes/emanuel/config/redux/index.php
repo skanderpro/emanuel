@@ -20,3 +20,4 @@ Redux::set_args( $opt_name, $args );
 require_once EMANUEL_PATH . '/config/redux/header.php';
 require_once EMANUEL_PATH . '/config/redux/contacts.php';
 require_once EMANUEL_PATH . '/config/redux/footer.php';
+require_once EMANUEL_PATH . '/config/redux/blog.php';
