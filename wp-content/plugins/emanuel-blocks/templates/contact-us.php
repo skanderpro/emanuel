@@ -24,29 +24,11 @@
             </button>
             <div class="popup__title"><?php echo $settings['title_popup'] ?></div>
             <div class="popup__form">
-                <form action="">
-                    <div class="popup__form-item">
-                        <label class="global-label">Vorname</label>
-                        <input
-                                class="global-input"
-                                type="text"
-                                placeholder="Enter your name"
-                                required
-                        />
-                    </div>
-                    <div class="popup__form-item">
-                        <label class="global-label">E-mail</label>
-                        <input
-                                class="global-input"
-                                type="email"
-                                placeholder="emailexample@gmail.com"
-                                required
-                        />
-                    </div>
-                    <div class="popup__title-btn">
-                        <button class="global-btn" type="submit">Kontaktieren</button>
-                    </div>
-                </form>
+                <?php
+                if (!empty($settings['form_shortcode'])) {
+                    echo do_shortcode($settings['form_shortcode']);
+                }
+                ?>
             </div>
         </div>
     </div>

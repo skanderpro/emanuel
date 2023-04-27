@@ -37,7 +37,7 @@ class BoxInfoStage extends \Elementor\Widget_Base {
 			'description',
 			[
 				'label' => esc_html__( 'Description', 'elementor-addon' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\Controls_Manager::TEXTAREA,
 				'default' => esc_html__( 'Hello world', 'elementor-addon' ),
 			]
 		);
