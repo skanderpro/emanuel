@@ -1,0 +1,152 @@
+[28-Apr-2023 23:20:20 UTC] PHP Warning:  require_once(C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks//templates/companies-block.php): Failed to open stream: No such file or directory in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php on line 53
+[28-Apr-2023 23:20:20 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks//templates/companies-block.php' (include_path='.') in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php:53
+Stack trace:
+#0 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\controls-stack.php(2268): ServicesBlock->render()
+#1 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\widget-base.php(609): Elementor\Controls_Stack->render_by_mode()
+#2 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\base\document.php(292): Elementor\Widget_Base->render_content()
+#3 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\widgets.php(443): Elementor\Core\Base\Document->render_element()
+#4 [internal function]: Elementor\Widgets_Manager->ajax_render_widget()
+#5 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\common\modules\ajax\module.php(175): call_user_func()
+#6 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(308): Elementor\Core\Common\Modules\Ajax\Module->handle_ajax_request()
+#7 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#8 C:\OpenServer\domains\emanuel\wp-includes\plugin.php(517): WP_Hook->do_action()
+#9 C:\OpenServer\domains\emanuel\wp-admin\admin-ajax.php(188): do_action()
+#10 {main}
+  thrown in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php on line 53
+[28-Apr-2023 23:20:27 UTC] PHP Warning:  require_once(C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks//templates/companies-block.php): Failed to open stream: No such file or directory in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php on line 53
+[28-Apr-2023 23:20:27 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks//templates/companies-block.php' (include_path='.') in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php:53
+Stack trace:
+#0 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\controls-stack.php(2268): ServicesBlock->render()
+#1 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\widget-base.php(609): Elementor\Controls_Stack->render_by_mode()
+#2 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\base\document.php(292): Elementor\Widget_Base->render_content()
+#3 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\widgets.php(443): Elementor\Core\Base\Document->render_element()
+#4 [internal function]: Elementor\Widgets_Manager->ajax_render_widget()
+#5 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\common\modules\ajax\module.php(175): call_user_func()
+#6 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(308): Elementor\Core\Common\Modules\Ajax\Module->handle_ajax_request()
+#7 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#8 C:\OpenServer\domains\emanuel\wp-includes\plugin.php(517): WP_Hook->do_action()
+#9 C:\OpenServer\domains\emanuel\wp-admin\admin-ajax.php(188): do_action()
+#10 {main}
+  thrown in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php on line 53
+[28-Apr-2023 23:20:28 UTC] PHP Warning:  require_once(C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks//templates/companies-block.php): Failed to open stream: No such file or directory in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php on line 53
+[28-Apr-2023 23:20:28 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks//templates/companies-block.php' (include_path='.') in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php:53
+Stack trace:
+#0 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\controls-stack.php(2268): ServicesBlock->render()
+#1 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\widget-base.php(609): Elementor\Controls_Stack->render_by_mode()
+#2 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\base\document.php(292): Elementor\Widget_Base->render_content()
+#3 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\widgets.php(443): Elementor\Core\Base\Document->render_element()
+#4 [internal function]: Elementor\Widgets_Manager->ajax_render_widget()
+#5 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\common\modules\ajax\module.php(175): call_user_func()
+#6 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(308): Elementor\Core\Common\Modules\Ajax\Module->handle_ajax_request()
+#7 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#8 C:\OpenServer\domains\emanuel\wp-includes\plugin.php(517): WP_Hook->do_action()
+#9 C:\OpenServer\domains\emanuel\wp-admin\admin-ajax.php(188): do_action()
+#10 {main}
+  thrown in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php on line 53
+[28-Apr-2023 23:20:29 UTC] PHP Warning:  require_once(C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks//templates/companies-block.php): Failed to open stream: No such file or directory in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php on line 53
+[28-Apr-2023 23:20:29 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks//templates/companies-block.php' (include_path='.') in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php:53
+Stack trace:
+#0 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\controls-stack.php(2268): ServicesBlock->render()
+#1 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\widget-base.php(609): Elementor\Controls_Stack->render_by_mode()
+#2 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\base\document.php(292): Elementor\Widget_Base->render_content()
+#3 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\widgets.php(443): Elementor\Core\Base\Document->render_element()
+#4 [internal function]: Elementor\Widgets_Manager->ajax_render_widget()
+#5 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\common\modules\ajax\module.php(175): call_user_func()
+#6 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(308): Elementor\Core\Common\Modules\Ajax\Module->handle_ajax_request()
+#7 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#8 C:\OpenServer\domains\emanuel\wp-includes\plugin.php(517): WP_Hook->do_action()
+#9 C:\OpenServer\domains\emanuel\wp-admin\admin-ajax.php(188): do_action()
+#10 {main}
+  thrown in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php on line 53
+[28-Apr-2023 23:20:33 UTC] PHP Warning:  require_once(C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks//templates/companies-block.php): Failed to open stream: No such file or directory in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php on line 53
+[28-Apr-2023 23:20:33 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks//templates/companies-block.php' (include_path='.') in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php:53
+Stack trace:
+#0 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\controls-stack.php(2268): ServicesBlock->render()
+#1 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\widget-base.php(609): Elementor\Controls_Stack->render_by_mode()
+#2 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\widget-base.php(673): Elementor\Widget_Base->render_content()
+#3 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(202): Elementor\Widget_Base->render_plain_content()
+#4 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(208): Elementor\DB->render_element_plain_content()
+#5 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(208): Elementor\DB->render_element_plain_content()
+#6 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(558): Elementor\DB->render_element_plain_content()
+#7 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(539): Elementor\DB->get_plain_text_from_data()
+#8 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(230): Elementor\DB->get_plain_text()
+#9 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\base\document.php(1241): Elementor\DB->save_plain_text()
+#10 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\base\document.php(753): Elementor\Core\Base\Document->save_elements()
+#11 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\documents-manager.php(510): Elementor\Core\Base\Document->save()
+#12 [internal function]: Elementor\Core\Documents_Manager->ajax_save()
+#13 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\common\modules\ajax\module.php(175): call_user_func()
+#14 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(308): Elementor\Core\Common\Modules\Ajax\Module->handle_ajax_request()
+#15 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#16 C:\OpenServer\domains\emanuel\wp-includes\plugin.php(517): WP_Hook->do_action()
+#17 C:\OpenServer\domains\emanuel\wp-admin\admin-ajax.php(188): do_action()
+#18 {main}
+  thrown in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php on line 53
+[28-Apr-2023 23:20:50 UTC] PHP Warning:  require_once(C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks//templates/companies-block.php): Failed to open stream: No such file or directory in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php on line 53
+[28-Apr-2023 23:20:50 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks//templates/companies-block.php' (include_path='.') in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php:53
+Stack trace:
+#0 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\controls-stack.php(2268): ServicesBlock->render()
+#1 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\widget-base.php(609): Elementor\Controls_Stack->render_by_mode()
+#2 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\widget-base.php(673): Elementor\Widget_Base->render_content()
+#3 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(202): Elementor\Widget_Base->render_plain_content()
+#4 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(208): Elementor\DB->render_element_plain_content()
+#5 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(208): Elementor\DB->render_element_plain_content()
+#6 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(558): Elementor\DB->render_element_plain_content()
+#7 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(539): Elementor\DB->get_plain_text_from_data()
+#8 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(230): Elementor\DB->get_plain_text()
+#9 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\base\document.php(1241): Elementor\DB->save_plain_text()
+#10 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\base\document.php(753): Elementor\Core\Base\Document->save_elements()
+#11 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\documents-manager.php(510): Elementor\Core\Base\Document->save()
+#12 [internal function]: Elementor\Core\Documents_Manager->ajax_save()
+#13 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\common\modules\ajax\module.php(175): call_user_func()
+#14 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(308): Elementor\Core\Common\Modules\Ajax\Module->handle_ajax_request()
+#15 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#16 C:\OpenServer\domains\emanuel\wp-includes\plugin.php(517): WP_Hook->do_action()
+#17 C:\OpenServer\domains\emanuel\wp-admin\admin-ajax.php(188): do_action()
+#18 {main}
+  thrown in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php on line 53
+[28-Apr-2023 23:20:59 UTC] PHP Warning:  require_once(C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks//templates/companies-block.php): Failed to open stream: No such file or directory in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php on line 53
+[28-Apr-2023 23:20:59 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks//templates/companies-block.php' (include_path='.') in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php:53
+Stack trace:
+#0 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\controls-stack.php(2268): ServicesBlock->render()
+#1 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\widget-base.php(609): Elementor\Controls_Stack->render_by_mode()
+#2 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\widget-base.php(673): Elementor\Widget_Base->render_content()
+#3 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(202): Elementor\Widget_Base->render_plain_content()
+#4 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(208): Elementor\DB->render_element_plain_content()
+#5 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(208): Elementor\DB->render_element_plain_content()
+#6 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(558): Elementor\DB->render_element_plain_content()
+#7 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(539): Elementor\DB->get_plain_text_from_data()
+#8 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(230): Elementor\DB->get_plain_text()
+#9 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\base\document.php(1241): Elementor\DB->save_plain_text()
+#10 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\base\document.php(753): Elementor\Core\Base\Document->save_elements()
+#11 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\documents-manager.php(510): Elementor\Core\Base\Document->save()
+#12 [internal function]: Elementor\Core\Documents_Manager->ajax_save()
+#13 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\common\modules\ajax\module.php(175): call_user_func()
+#14 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(308): Elementor\Core\Common\Modules\Ajax\Module->handle_ajax_request()
+#15 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#16 C:\OpenServer\domains\emanuel\wp-includes\plugin.php(517): WP_Hook->do_action()
+#17 C:\OpenServer\domains\emanuel\wp-admin\admin-ajax.php(188): do_action()
+#18 {main}
+  thrown in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php on line 53
+[28-Apr-2023 23:21:30 UTC] PHP Warning:  require_once(C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks//templates/companies-block.php): Failed to open stream: No such file or directory in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php on line 53
+[28-Apr-2023 23:21:30 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks//templates/companies-block.php' (include_path='.') in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php:53
+Stack trace:
+#0 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\controls-stack.php(2268): ServicesBlock->render()
+#1 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\widget-base.php(609): Elementor\Controls_Stack->render_by_mode()
+#2 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\widget-base.php(673): Elementor\Widget_Base->render_content()
+#3 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(202): Elementor\Widget_Base->render_plain_content()
+#4 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(208): Elementor\DB->render_element_plain_content()
+#5 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(208): Elementor\DB->render_element_plain_content()
+#6 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(558): Elementor\DB->render_element_plain_content()
+#7 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(539): Elementor\DB->get_plain_text_from_data()
+#8 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(230): Elementor\DB->get_plain_text()
+#9 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\base\document.php(1241): Elementor\DB->save_plain_text()
+#10 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\base\document.php(753): Elementor\Core\Base\Document->save_elements()
+#11 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\documents-manager.php(510): Elementor\Core\Base\Document->save()
+#12 [internal function]: Elementor\Core\Documents_Manager->ajax_save()
+#13 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\common\modules\ajax\module.php(175): call_user_func()
+#14 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(308): Elementor\Core\Common\Modules\Ajax\Module->handle_ajax_request()
+#15 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#16 C:\OpenServer\domains\emanuel\wp-includes\plugin.php(517): WP_Hook->do_action()
+#17 C:\OpenServer\domains\emanuel\wp-admin\admin-ajax.php(188): do_action()
+#18 {main}
+  thrown in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php on line 53
