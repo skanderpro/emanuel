@@ -20,7 +20,7 @@ get_header();
 			                        the_post();
 
 			                        ?>
-                                    <div class="news-post-item">
+                                    <a href="<?php the_permalink(); ?>" class="news-post-item">
                                         <div class="news-post-item-img">
                                             <picture>
                                                 <img src="<?php the_post_thumbnail_url(); ?>" alt="" />
@@ -32,7 +32,7 @@ get_header();
                                         <div class="news-post-item-text">
                                             <?php the_excerpt(); ?>
                                         </div>
-                                    </div>
+                                    </a>
                                     <?php
 
 		                        } // end while
