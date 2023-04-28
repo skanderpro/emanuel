@@ -16,7 +16,7 @@ require_once EMANUEL_BLOCKS_PATH . '/widgets/index.php';
 function register_hello_world_widget( $widgets_manager ) {
 
 	require_once( __DIR__ . '/elementor/HeroHome.php' );
-	require_once( __DIR__ . '/elementor/LinksBlock.php' );
+	require_once( __DIR__ . '/elementor/SourceData.php' );
 	require_once( __DIR__ . '/elementor/Contact.php' );
 	require_once( __DIR__ . '/elementor/AddressList.php' );
 	require_once( __DIR__ . '/elementor/BoxInfo.php' );
@@ -26,6 +26,7 @@ function register_hello_world_widget( $widgets_manager ) {
 	require_once( __DIR__ . '/elementor/BoxInfoStage.php' );
 	require_once( __DIR__ . '/elementor/Team.php' );
 	require_once( __DIR__ . '/elementor/Career.php' );
+	require_once( __DIR__ . '/elementor/LinksBlock.php' );
 
 	$widgets_manager->register( new \HeroHome() );
 	$widgets_manager->register( new \LinksBlock() );
@@ -38,6 +39,7 @@ function register_hello_world_widget( $widgets_manager ) {
 	$widgets_manager->register( new \EstateInfoSecond() );
 	$widgets_manager->register( new \Team() );
 	$widgets_manager->register( new \Career() );
+	$widgets_manager->register( new \SourceData() );
 }
 
 add_action( 'elementor/widgets/register', 'register_hello_world_widget' );
