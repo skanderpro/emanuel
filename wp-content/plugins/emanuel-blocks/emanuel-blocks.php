@@ -122,7 +122,7 @@ add_action( 'init', function () {
 	$args = array(
 		'labels'             => $labels,
 		'public'             => false,
-		'publicly_queryable' => false,
+		'publicly_queryable' => true,
 		'show_ui'            => true,
 		'show_in_menu'       => true,
 		'query_var'          => false,
