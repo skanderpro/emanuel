@@ -24,10 +24,16 @@ get_header();
 							?>
 							<a href="<?php the_permalink(); ?>" class="rental-item">
 								<div class="rental-item-gallery">
-									<picture><source srcset="/wp-content/themes/emanuel/assets/dist/img/rental-properties/high-end-1.webp" type="image/webp"><img src="/wp-content/themes/emanuel/assets/dist/img/rental-properties/high-end-1.jpg" alt="" /></picture>
-									<picture><source srcset="/wp-content/themes/emanuel/assets/dist/img/rental-properties/high-end-2.webp" type="image/webp"><img src="/wp-content/themes/emanuel/assets/dist/img/rental-properties/high-end-2.jpg" alt="" /></picture>
-									<picture><source srcset="/wp-content/themes/emanuel/assets/dist/img/rental-properties/high-end-3.webp" type="image/webp"><img src="/wp-content/themes/emanuel/assets/dist/img/rental-properties/high-end-3.jpg" alt="" /></picture>
-									<picture><source srcset="/wp-content/themes/emanuel/assets/dist/img/rental-properties/high-end-4.webp" type="image/webp"><img src="/wp-content/themes/emanuel/assets/dist/img/rental-properties/high-end-4.jpg" alt="" /></picture>
+									<?php 
+									$images = rwmb_get_value( 'images' );
+									foreach ( $images as $image ) {
+										?>
+										<picture>
+											<img src="<?php echo $image; ?>" alt="" />
+										</picture>
+										<?php
+									}
+									?>
 								</div>
 								<div class="rental-item-info">
 									<div class="rental-item-info-title">
