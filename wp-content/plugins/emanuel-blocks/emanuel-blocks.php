@@ -49,48 +49,48 @@ add_action( 'elementor/widgets/register', 'register_hello_world_widget' );
 
 add_action( 'init', function () {
 	$labels = array(
-		'name'                  => _x( 'News', 'Post type general name', 'textdomain' ),
-		'singular_name'         => _x( 'New', 'Post type singular name', 'textdomain' ),
-		'menu_name'             => _x( 'News', 'Admin Menu text', 'textdomain' ),
-		'name_admin_bar'        => _x( 'News', 'Add New on Toolbar', 'textdomain' ),
-		'add_new'               => __( 'Add New', 'textdomain' ),
-		'add_new_item'          => __( 'Add New', 'textdomain' ),
-		'new_item'              => __( 'New', 'textdomain' ),
-		'edit_item'             => __( 'Edit New', 'textdomain' ),
-		'view_item'             => __( 'View New', 'textdomain' ),
-		'all_items'             => __( 'All News', 'textdomain' ),
-		'search_items'          => __( 'Search News', 'textdomain' ),
-		'parent_item_colon'     => __( 'Parent News:', 'textdomain' ),
-		'not_found'             => __( 'No news found.', 'textdomain' ),
-		'not_found_in_trash'    => __( 'No news found in Trash.', 'textdomain' ),
-		'featured_image'        => _x( 'News Cover Image', 'Overrides the “Featured Image” phrase for this post type. Added in 4.3', 'textdomain' ),
+		'name'                  => _x( 'Apartments', 'Post type general name', 'textdomain' ),
+		'singular_name'         => _x( 'Apartment', 'Post type singular name', 'textdomain' ),
+		'menu_name'             => _x( 'Apartments', 'Admin Menu text', 'textdomain' ),
+		'name_admin_bar'        => _x( 'Apartments', 'Add Apartment on Toolbar', 'textdomain' ),
+		'add_apartment'               => __( 'Add Apartment', 'textdomain' ),
+		'add_apartment_item'          => __( 'Add Apartment', 'textdomain' ),
+		'apartment_item'              => __( 'Apartment', 'textdomain' ),
+		'edit_item'             => __( 'Edit Apartment', 'textdomain' ),
+		'view_item'             => __( 'View Apartment', 'textdomain' ),
+		'all_items'             => __( 'All Apartments', 'textdomain' ),
+		'search_items'          => __( 'Search Apartments', 'textdomain' ),
+		'parent_item_colon'     => __( 'Parent Apartments:', 'textdomain' ),
+		'not_found'             => __( 'No apartments found.', 'textdomain' ),
+		'not_found_in_trash'    => __( 'No apartments found in Trash.', 'textdomain' ),
+		'featured_image'        => _x( 'Apartments Cover Image', 'Overrides the “Featured Image” phrase for this post type. Added in 4.3', 'textdomain' ),
 		'set_featured_image'    => _x( 'Set cover image', 'Overrides the “Set featured image” phrase for this post type. Added in 4.3', 'textdomain' ),
 		'remove_featured_image' => _x( 'Remove cover image', 'Overrides the “Remove featured image” phrase for this post type. Added in 4.3', 'textdomain' ),
 		'use_featured_image'    => _x( 'Use as cover image', 'Overrides the “Use as featured image” phrase for this post type. Added in 4.3', 'textdomain' ),
-		'archives'              => _x( 'News archives', 'The post type archive label used in nav menus. Default “Post Archives”. Added in 4.4', 'textdomain' ),
+		'archives'              => _x( 'Apartments archives', 'The post type archive label used in nav menus. Default “Post Archives”. Added in 4.4', 'textdomain' ),
 		'insert_into_item'      => _x( 'Insert into book', 'Overrides the “Insert into post”/”Insert into page” phrase (used when inserting media into a post). Added in 4.4', 'textdomain' ),
 		'uploaded_to_this_item' => _x( 'Uploaded to this book', 'Overrides the “Uploaded to this post”/”Uploaded to this page” phrase (used when viewing media attached to a post). Added in 4.4', 'textdomain' ),
 		'filter_items_list'     => _x( 'Filter books list', 'Screen reader text for the filter links heading on the post type listing screen. Default “Filter posts list”/”Filter pages list”. Added in 4.4', 'textdomain' ),
-		'items_list_navigation' => _x( 'News list navigation', 'Screen reader text for the pagination heading on the post type listing screen. Default “Posts list navigation”/”Pages list navigation”. Added in 4.4', 'textdomain' ),
-		'items_list'            => _x( 'News list', 'Screen reader text for the items list heading on the post type listing screen. Default “Posts list”/”Pages list”. Added in 4.4', 'textdomain' ),
+		'items_list_navigation' => _x( 'Apartments list navigation', 'Screen reader text for the pagination heading on the post type listing screen. Default “Posts list navigation”/”Pages list navigation”. Added in 4.4', 'textdomain' ),
+		'items_list'            => _x( 'Apartments list', 'Screen reader text for the items list heading on the post type listing screen. Default “Posts list”/”Pages list”. Added in 4.4', 'textdomain' ),
 	);
 
 	$args = array(
 		'labels'             => $labels,
-		'public'             => false,
-		'publicly_queryable' => false,
+		'public'             => true,
+		'publicly_queryable' => true,
 		'show_ui'            => true,
 		'show_in_menu'       => true,
 		'query_var'          => false,
-		'rewrite'            => array( 'slug' => 'news' ),
+		'rewrite'            => array( 'slug' => 'apartments' ),
 		'capability_type'    => 'post',
-		'has_archive'        => false,
-		'hierarchical'       => false,
+		'has_archive'        => true,
+		'hierarchical'       => true,
 		'menu_position'      => null,
-		'supports'           => array( 'title', 'editor' ),
+		'supports'           => array( 'title', 'editor', 'excerpt' ),
 	);
 
-	register_post_type( 'news', $args );
+	register_post_type( 'apartments', $args );
 
 	$labels = array(
 		'name'                  => _x( 'Services', 'Post type general name', 'textdomain' ),
@@ -136,3 +136,44 @@ add_action( 'init', function () {
 
 	register_post_type( 'services', $args );
 } );
+
+add_filter( 'rwmb_meta_boxes', function ( $meta_boxes ) {
+	$prefix = '';
+
+	$meta_boxes[] = [
+		'title'      => esc_html__( 'Apartment fields', 'online-generator' ),
+		'id'         => 'apartment_fields',
+		'post_types' => ['apartments'],
+		'context'    => 'normal',
+		'fields'     => [
+			[
+				'type' => 'text',
+				'name' => esc_html__( 'Address', 'online-generator' ),
+				'id'   => $prefix . 'address',
+			],
+			[
+				'type' => 'number',
+				'name' => esc_html__( 'Rooms', 'online-generator' ),
+				'id'   => $prefix . 'rooms',
+				'min'  => 1,
+				'max'  => 20,
+				'step' => 1,
+			],
+			[
+				'type' => 'text',
+				'name' => esc_html__( 'Living space', 'online-generator' ),
+				'id'   => $prefix . 'living_space',
+			],
+			[
+				'type' => 'number',
+				'name' => esc_html__( 'Floor', 'online-generator' ),
+				'id'   => $prefix . 'floor',
+				'min'  => 1,
+				'max'  => 200,
+				'step' => 1,
+			],
+		],
+	];
+
+	return $meta_boxes;
+});

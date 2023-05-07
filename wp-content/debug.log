@@ -150,3 +150,12 @@ Stack trace:
 #17 C:\OpenServer\domains\emanuel\wp-admin\admin-ajax.php(188): do_action()
 #18 {main}
   thrown in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php on line 53
+[06-May-2023 21:02:57 UTC] PHP Parse error:  syntax error, unexpected token "}" in C:\OpenServer\domains\emanuel\wp-content\themes\emanuel\config\redux\blog.php on line 10
+[06-May-2023 21:02:57 UTC] PHP Warning:  Trying to access array offset on value of type bool in C:\OpenServer\domains\emanuel\wp-includes\class-wp-recovery-mode-email-service.php on line 367
+[06-May-2023 21:02:57 UTC] PHP Warning:  Trying to access array offset on value of type bool in C:\OpenServer\domains\emanuel\wp-includes\class-wp-recovery-mode-email-service.php on line 368
+[06-May-2023 23:00:25 UTC] PHP Deprecated:  preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in C:\OpenServer\domains\emanuel\wp-admin\includes\plugin.php on line 2088
+[06-May-2023 23:02:08 UTC] PHP Deprecated:  preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in C:\OpenServer\domains\emanuel\wp-admin\includes\plugin.php on line 2088
+[06-May-2023 23:02:57 UTC] PHP Deprecated:  preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in C:\OpenServer\domains\emanuel\wp-admin\includes\plugin.php on line 2088
+[06-May-2023 23:03:47 UTC] PHP Deprecated:  preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in C:\OpenServer\domains\emanuel\wp-admin\includes\plugin.php on line 2088
+[06-May-2023 23:04:52 UTC] PHP Deprecated:  preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in C:\OpenServer\domains\emanuel\wp-admin\includes\plugin.php on line 2088
+[06-May-2023 23:08:24 UTC] PHP Deprecated:  preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in C:\OpenServer\domains\emanuel\wp-admin\includes\plugin.php on line 2088

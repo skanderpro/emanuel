@@ -36,3 +36,14 @@ add_action( 'widgets_init', function () {
 		'after_title'   => '</h2>',
 	) );
 } );
+
+add_action('parse_query', function (\WP_Query $query) {
+	if (!$query->is_main_query()) {
+		return;
+	}
+	global $opt_name;
+
+	$cat = Redux::get_option($opt_name, 'blog_sidebar_category');
+
+	$query->set('category__not_in', [$cat]);
+});
