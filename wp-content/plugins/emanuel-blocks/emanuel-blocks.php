@@ -135,10 +135,43 @@ add_action( 'init', function () {
 	);
 
 	register_post_type( 'services', $args );
+
+	$labels = array(
+		'name'              => _x( 'Properties', 'taxonomy general name', 'textdomain' ),
+		'singular_name'     => _x( 'Property', 'taxonomy singular name', 'textdomain' ),
+		'search_items'      => __( 'Search Properties', 'textdomain' ),
+		'all_items'         => __( 'All Properties', 'textdomain' ),
+		'parent_item'       => __( 'Parent Property', 'textdomain' ),
+		'parent_item_colon' => __( 'Parent Property:', 'textdomain' ),
+		'edit_item'         => __( 'Edit Property', 'textdomain' ),
+		'update_item'       => __( 'Update Property', 'textdomain' ),
+		'add_new_item'      => __( 'Add New Property', 'textdomain' ),
+		'new_item_name'     => __( 'New Property Name', 'textdomain' ),
+		'menu_name'         => __( 'Property', 'textdomain' ),
+	);
+
+	$args = array(
+		'hierarchical'      => true,
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'rewrite'           => array( 'slug' => 'apartments_props' ),
+	);
+
+	register_taxonomy( 'apartments_props', array( 'apartments' ), $args );
 } );
 
 add_filter( 'rwmb_meta_boxes', function ( $meta_boxes ) {
 	$prefix = '';
+
+	$images = get_posts([
+		'post_type' => 'attachment',
+	]);
+	$imagesOpts = [];
+	foreach ( $images as $image ) {
+		$imagesOpts[$image->guid] = get_the_title($image);
+	}
 
 	$meta_boxes[] = [
 		'title'      => esc_html__( 'Apartment fields', 'online-generator' ),
@@ -171,6 +204,18 @@ add_filter( 'rwmb_meta_boxes', function ( $meta_boxes ) {
 				'min'  => 1,
 				'max'  => 200,
 				'step' => 1,
+			],
+			[
+				'type'     => 'select_advanced',
+				'name'     => esc_html__( 'Images', 'online-generator' ),
+				'id'       => $prefix . 'images',
+				'options'  => $imagesOpts,
+				'multiple' => true,
+			],
+			[
+				'type' => 'text',
+				'name' => esc_html__( 'Contact for viewing', 'online-generator' ),
+				'id'   => $prefix . 'contact',
 			],
 		],
 	];
