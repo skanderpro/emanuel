@@ -1,32 +1,32 @@
 @font-face {
-  font-family: NeutrafaceText;
-  font-display: swap;
-  src: url("../fonts/NeutrafaceTextBold.woff2") format("woff2"), url("../fonts/NeutrafaceTextBold.woff") format("woff");
-  font-weight: 700;
+  font-family: "Neutraface Text";
+  src: url(../files/fonts/NeutraDisplay-LightAlt.eot);
+  src: url(../files/fonts/NeutraDisplay-LightAlt.eot?#iefix) format("embedded-opentype"), url(../files/fonts/NeutraDisplay-LightAlt.otf) format("otf"), url(../files/fonts/NeutraDisplay-LightAlt.svg#NeutraDisplay-LightAlt) format("svg"), url(../files/fonts/NeutraDisplay-LightAlt.ttf) format("truetype"), url(../files/fonts/NeutraDisplay-LightAlt.woff) format("woff"), url(../files/fonts/NeutraDisplay-LightAlt.woff2) format("woff2");
+  font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
-  font-family: NeutrafaceText;
-  font-display: swap;
-  src: url("../fonts/NeutrafaceTextDemi.woff2") format("woff2"), url("../fonts/NeutrafaceTextDemi.woff") format("woff");
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: NeutrafaceText;
-  font-display: swap;
-  src: url("../fonts/NeutrafaceTextBook.woff2") format("woff2"), url("../fonts/NeutrafaceTextBook.woff") format("woff");
+  font-family: "Neutraface Text";
+  src: url(../files/fonts/NeutraText-BookAlt.eot);
+  src: url(../files/fonts/NeutraText-BookAlt.eot?#iefix) format("embedded-opentype"), url(../files/fonts/NeutraText-BookAlt.otf) format("otf"), url(../files/fonts/NeutraText-BookAlt.svg#NeutraText-BookAlt) format("svg"), url(../files/fonts/NeutraText-BookAlt.ttf) format("truetype"), url(../files/fonts/NeutraText-BookAlt.woff) format("woff"), url(../files/fonts/NeutraText-BookAlt.woff2) format("woff2");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: NeutrafaceText;
-  font-display: swap;
-  src: url("../fonts/NeutrafaceTextLight.woff2") format("woff2"), url("../fonts/NeutrafaceTextLight.woff") format("woff");
-  font-weight: 300;
+  font-family: "Neutraface Text";
+  src: url(../files/fonts/NeutraText-DemiAlt.eot);
+  src: url(../files/fonts/NeutraText-DemiAlt.eot?#iefix) format("embedded-opentype"), url(../files/fonts/NeutraText-DemiAlt.otf) format("otf"), url(../files/fonts/NeutraText-DemiAlt.svg#NeutraText-DemiAlt) format("svg"), url(../files/fonts/NeutraText-DemiAlt.ttf) format("truetype"), url(../files/fonts/NeutraText-DemiAlt.woff) format("woff"), url(../files/fonts/NeutraText-DemiAlt.woff2) format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Neutraface Text";
+  src: url(../files/fonts/NeutraText-BoldAlt.eot);
+  src: url(../files/fonts/NeutraText-BoldAlt.eot?#iefix) format("embedded-opentype"), url(../files/fonts/NeutraText-BoldAlt.woff) format("woff"), url(../files/fonts/NeutraText-BoldAlt.woff2) format("woff2"), url(../files/fonts/NeutraText-BoldAlt.ttf) format("truetype"), url(../files/fonts/NeutraText-BoldAlt.svg#NeutraText-BoldAlt) format("svg"), url(../files/fonts/NeutraText-BoldAlt.otf) format("otf");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -500,6 +500,10 @@ body.hiden {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.popup__form form .popup__form-item br {
+  display: none;
 }
 
 .popup__form form .popup__form-item + .popup__form-item {
