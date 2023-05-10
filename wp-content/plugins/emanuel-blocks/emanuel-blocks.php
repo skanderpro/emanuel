@@ -160,6 +160,31 @@ add_action( 'init', function () {
 	);
 
 	register_taxonomy( 'apartments_props', array( 'apartments' ), $args );
+
+	$labels = array(
+		'name'              => _x( 'Categories', 'taxonomy general name', 'textdomain' ),
+		'singular_name'     => _x( 'Category', 'taxonomy singular name', 'textdomain' ),
+		'search_items'      => __( 'Search Categories', 'textdomain' ),
+		'all_items'         => __( 'All Categories', 'textdomain' ),
+		'parent_item'       => __( 'Parent Category', 'textdomain' ),
+		'parent_item_colon' => __( 'Parent Category:', 'textdomain' ),
+		'edit_item'         => __( 'Edit Category', 'textdomain' ),
+		'update_item'       => __( 'Update Category', 'textdomain' ),
+		'add_new_item'      => __( 'Add New Category', 'textdomain' ),
+		'new_item_name'     => __( 'New Category Name', 'textdomain' ),
+		'menu_name'         => __( 'Category', 'textdomain' ),
+	);
+
+	$args = array(
+		'hierarchical'      => true,
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'rewrite'           => array( 'slug' => 'apartments_cats' ),
+	);
+
+	register_taxonomy( 'apartments_cats', array( 'apartments' ), $args );
 } );
 
 add_filter( 'rwmb_meta_boxes', function ( $meta_boxes ) {
@@ -167,6 +192,7 @@ add_filter( 'rwmb_meta_boxes', function ( $meta_boxes ) {
 
 	$images = get_posts([
 		'post_type' => 'attachment',
+		'posts_per_page' => -1,
 	]);
 	$imagesOpts = [];
 	foreach ( $images as $image ) {
