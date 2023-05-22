@@ -162,3 +162,8 @@ Stack trace:
 [07-May-2023 19:17:08 UTC] PHP Warning:  foreach() argument must be of type array|object, string given in C:\OpenServer\domains\emanuel\wp-content\themes\emanuel\archive-apartments.php on line 30
 [10-May-2023 23:19:55 UTC] PHP Deprecated:  preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in C:\OpenServer\domains\emanuel\wp-admin\includes\plugin.php on line 2088
 [10-May-2023 23:20:21 UTC] PHP Deprecated:  preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in C:\OpenServer\domains\emanuel\wp-admin\includes\plugin.php on line 2088
+[22-May-2023 20:34:18 UTC] PHP Notice:  Array to string conversion in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\services-block.php on line 17
+[22-May-2023 20:34:28 UTC] PHP Notice:  Array to string conversion in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\services-block.php on line 17
+[22-May-2023 20:34:43 UTC] PHP Notice:  Array to string conversion in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\services-block.php on line 17
+[22-May-2023 20:34:47 UTC] PHP Notice:  Array to string conversion in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\services-block.php on line 17
+[22-May-2023 20:34:57 UTC] PHP Notice:  Array to string conversion in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\services-block.php on line 17
