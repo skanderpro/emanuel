@@ -16,5 +16,10 @@ Redux::set_section( $opt_name, [
 			'type'     => 'text',
 			'title'    => esc_html__( 'Description', 'your-textdomain-here' ),
 		],
+		[
+			'id'       => 'apartments_empty_text',
+			'type'     => 'text',
+			'title'    => esc_html__( 'Empty Text', 'your-textdomain-here' ),
+		],
 	]
 ]);

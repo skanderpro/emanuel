@@ -22,6 +22,39 @@ class ServicesBlock extends \Elementor\Widget_Base {
 	}
 
 	protected function register_controls() {
+		$repeater = new \Elementor\Repeater();
+		$repeater->add_control(
+			'title',
+			[
+				'label' => esc_html__( 'Title', 'elementor-addon' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'default' => esc_html__( 'Hello world', 'elementor-addon' ),
+			]
+		);
+		$repeater->add_control(
+			'link',
+			[
+				'label' => esc_html__( 'Link', 'elementor-addon' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'default' => esc_html__( 'Hello world', 'elementor-addon' ),
+			]
+		);
+		$repeater->add_control(
+			'btn_text',
+			[
+				'label' => esc_html__( 'Button text', 'elementor-addon' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'default' => esc_html__( 'Learn more', 'elementor-addon' ),
+			]
+		);
+		$repeater->add_control(
+			'image',
+			[
+				'label' => esc_html__( 'Image', 'elementor-addon' ),
+				'type' => \Elementor\Controls_Manager::MEDIA,
+			]
+		);
+
 
 		// Content Tab Start
 
@@ -39,6 +72,14 @@ class ServicesBlock extends \Elementor\Widget_Base {
 				'label' => esc_html__( 'Description', 'elementor-addon' ),
 				'type' => \Elementor\Controls_Manager::TEXTAREA,
 				'default' => esc_html__( 'Hello world', 'elementor-addon' ),
+			]
+		);
+		$this->add_control(
+			'items',
+			[
+				'label' => esc_html__( 'Items', 'elementor-addon' ),
+				'type' => \Elementor\Controls_Manager::REPEATER,
+				'fields' => $repeater->get_controls(),
 			]
 		);
 

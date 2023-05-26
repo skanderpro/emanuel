@@ -3,6 +3,7 @@ global $opt_name;
 
 $title = Redux::get_option($opt_name, 'apartments_title');
 $description = Redux::get_option($opt_name, 'apartments_description');
+$emptyText = Redux::get_option($opt_name, 'apartments_empty_text', 'No items found');
 
 get_header();
 ?>
@@ -73,6 +74,12 @@ get_header();
 							<?php
 
 						} // end while
+					} else {
+						?>
+						<div class="rental-text">
+							<?php echo $emptyText; ?>
+						</div>
+						<?php
 					}
 					?>
 				</div>
