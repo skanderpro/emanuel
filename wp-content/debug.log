@@ -167,3 +167,7 @@ Stack trace:
 [22-May-2023 20:34:43 UTC] PHP Notice:  Array to string conversion in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\services-block.php on line 17
 [22-May-2023 20:34:47 UTC] PHP Notice:  Array to string conversion in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\services-block.php on line 17
 [22-May-2023 20:34:57 UTC] PHP Notice:  Array to string conversion in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\services-block.php on line 17
+[26-May-2023 14:58:36 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+ in D:\Work\OSPanel\domains\emanuel\wp-includes\class-wpdb.php on line 2019
+[26-May-2023 15:02:22 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+ in D:\Work\OSPanel\domains\emanuel\wp-includes\class-wpdb.php on line 2019
