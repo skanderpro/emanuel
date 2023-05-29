@@ -54,7 +54,7 @@ get_header();
 									<?php rwmb_the_value( 'address' ) ?>
 								</div>
 								<div class="rental-detal-description">
-									<div class="rental-detal-subtitle">Description</div>
+									<div class="rental-detal-subtitle">Beschreibung</div>
 									<div class="rental-detal-text">
 										<?php the_content(); ?>
 									</div>
@@ -65,7 +65,7 @@ get_header();
 								if ( $terms ) {
 									?>
 									<div class="rental-detal-property">
-										<div class="rental-detal-subtitle">Property Details</div>
+										<div class="rental-detal-subtitle">Details der Immobilie</div>
 										<ul>
 											<?php
 											foreach ( $terms as $term ) {
@@ -87,7 +87,7 @@ get_header();
 								if ( ! empty( $contact ) ) {
 									?>
 									<div class="rental-detal-contact">
-										<div class="rental-detal-subtitle">Contact for viewing</div>
+										<div class="rental-detal-subtitle">Kontakt zur Besichtigung</div>
 										<div class="rental-detal-contact-phone">
 											<img src="/wp-content/themes/emanuel/assets/dist/img/icon/phone.svg"
 											     alt=""/>
@@ -101,23 +101,41 @@ get_header();
 							</div>
 							<div class="rental-detal-right">
 								<div class="rental-detal-params">
-									<div class="rental-detal-params-item">
-										<div class="rental-detal-params-item-title">Rooms</div>
-										<div
-											class="rental-detal-params-item-label"><?php rwmb_the_value( 'rooms' ) ?></div>
-									</div>
-									<div class="rental-detal-params-item">
-										<div class="rental-detal-params-item-title">Floor</div>
-										<div
-											class="rental-detal-params-item-label"><?php rwmb_the_value( 'floor' ) ?></div>
-									</div>
-									<div class="rental-detal-params-item">
-										<div class="rental-detal-params-item-title">
-											Living space
+									<?php
+									$rooms = rwmb_the_value( 'rooms', [], null, false );
+									$floor = rwmb_the_value( 'floor', [], null, false );
+									$livingSpace = rwmb_the_value( 'living_space', [], null, false );
+
+									if (!empty($rooms)) {
+										?>
+										<div class="rental-detal-params-item">
+											<div class="rental-detal-params-item-title">Räume</div>
+											<div
+												class="rental-detal-params-item-label"><?php echo $rooms; ?></div>
 										</div>
-										<div
-											class="rental-detal-params-item-label"><?php rwmb_the_value( 'living_space' ) ?></div>
-									</div>
+										<?php
+									}
+									if (!empty($floor)) {
+										?>
+										<div class="rental-detal-params-item">
+											<div class="rental-detal-params-item-title">Boden</div>
+											<div
+												class="rental-detal-params-item-label"><?php echo $floor; ?></div>
+										</div>
+										<?php
+									}
+									if (!empty($livingSpace)) {
+										?>
+										<div class="rental-detal-params-item">
+											<div class="rental-detal-params-item-title">
+												Wohnraum
+											</div>
+											<div
+												class="rental-detal-params-item-label"><?php echo $livingSpace; ?></div>
+										</div>
+										<?php
+									}
+									?>
 								</div>
 							</div>
 						</div>
