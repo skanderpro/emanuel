@@ -172,15 +172,11 @@ body {
 }
 h1 {
   font-weight: 300;
-  font-size: 48px;
-  line-height: 65px;
+  font-size: 45px;
+  line-height: 60px;
   letter-spacing: 0.0015em;
   text-transform: uppercase;
   color: $black;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto;
 }
 h2 {
   font-weight: 300;
@@ -188,10 +184,6 @@ h2 {
   line-height: 54px;
   text-transform: uppercase;
   color: $black;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto;
 }
 h3 {
   font-weight: 300;
@@ -199,10 +191,6 @@ h3 {
   line-height: 39px;
   text-transform: uppercase;
   color: $black;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto;
 }
 .wrapper {
   flex: 1 0 auto;
@@ -232,7 +220,6 @@ h3 {
   line-height: 21px;
   border: 1px solid transparent;
   transition: all 0.3s ease;
-  
 }
 .global-btn:hover {
   border: 1px solid $brand-green;
@@ -514,5 +501,4 @@ body.hiden {
 
 .global-checkbox input:checked + label::before {
   transform: scale(1) rotateZ(0deg) translateY(-50%);
-  
 }
