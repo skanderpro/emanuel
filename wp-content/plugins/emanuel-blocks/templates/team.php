@@ -22,6 +22,7 @@
 						<div class="team-box-item-text">
 							<?php echo $item['description']; ?>
 						</div>
+						<a href="#" class="global-btn">Kontaktieren Sie mich</a>
 					</div>
 					<?php
 				}

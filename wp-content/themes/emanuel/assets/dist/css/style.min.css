@@ -1352,7 +1352,7 @@ body.hiden {
 
 .team-box {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   flex-wrap: wrap;
   row-gap: 96px;
@@ -1362,6 +1362,9 @@ body.hiden {
   display: flex;
   flex-direction: column;
   flex: 1 1 33.333%;
+}
+.team-box-item a {
+  margin-top: 15px;
 }
 
 .team-box-item-ava {
