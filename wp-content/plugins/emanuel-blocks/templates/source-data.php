@@ -7,6 +7,9 @@
 			<div class="source-data-text">
 				<?php echo $settings['description']; ?>
 			</div>
+			<div class="source-data-img">
+                <img src="" alt="">
+            </div>
 			<div class="source-data-contact">
 				<div class="source-data-contact-title">
 					<?php echo $settings['subtitle']; ?>
