@@ -202,8 +202,8 @@ body {
 
 h1 {
   font-weight: 300;
-  font-size: 45px;
-  line-height: 60px;
+  font-size: 35px;
+  line-height: 45px;
   letter-spacing: 0.0015em;
   text-transform: uppercase;
   color: #17181C;
@@ -2715,8 +2715,8 @@ main .elementor-section.elementor-section-boxed > .elementor-container {
 }
 @media (max-width: 500px) {
   h1 {
-    font-size: 24px;
-    line-height: 35px;
+    font-size: 20px;
+    line-height: 30px;
   }
   .swiper-button-next,
   .swiper-button-prev {
