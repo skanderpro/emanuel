@@ -1855,7 +1855,6 @@ body.hiden {
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-column: 1/4;
-  height: 100%;
 }
 
 .rental-item-gallery picture img {
