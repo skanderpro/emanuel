@@ -853,6 +853,20 @@
     grid-column: 1 / 4;
     height: 100%;
   }
+
+  picture img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+  }
+  picture:first-child img {
+    grid-row: 1 / 3;
+    grid-column: 1 / 4;
+    height: 100%;
+  }
+
+
+
 }
 .rental-item-info {
   max-width: 606px;
@@ -884,7 +898,7 @@
 }
 .rental-item-info-params {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 .rental-item-info-params-item {
   display: flex;
