@@ -1858,6 +1858,23 @@ body.hiden {
   height: 100%;
 }
 
+.rental-item-gallery picture img {
+  width: 100%;
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.rental-item-gallery picture:first-child img {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  grid-row: 1/3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1/4;
+  height: 100%;
+}
+
 .rental-item-info {
   max-width: 606px;
   width: 100%;
@@ -1899,9 +1916,9 @@ body.hiden {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .rental-item-info-params-item {
