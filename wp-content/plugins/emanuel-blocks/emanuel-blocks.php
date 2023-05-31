@@ -28,6 +28,7 @@ function register_hello_world_widget( $widgets_manager ) {
 	require_once( __DIR__ . '/elementor/Career.php' );
 	require_once( __DIR__ . '/elementor/LinksBlock.php' );
 	require_once( __DIR__ . '/elementor/ServicesBlock.php' );
+	require_once( __DIR__ . '/elementor/TitleText.php' );
 
 	$widgets_manager->register( new \HeroHome() );
 	$widgets_manager->register( new \LinksBlock() );
@@ -42,6 +43,7 @@ function register_hello_world_widget( $widgets_manager ) {
 	$widgets_manager->register( new \Career() );
 	$widgets_manager->register( new \SourceData() );
 	$widgets_manager->register( new \ServicesBlock() );
+	$widgets_manager->register( new \TitleText() );
 }
 
 add_action( 'elementor/widgets/register', 'register_hello_world_widget' );
@@ -180,7 +182,7 @@ add_filter( 'rwmb_meta_boxes', function ( $meta_boxes ) {
 				'id'   => $prefix . 'living_space',
 			],
 			[
-				'type' => 'number',
+				'type' => 'text',
 				'name' => esc_html__( 'Floor', 'online-generator' ),
 				'id'   => $prefix . 'floor',
 				'min'  => 1,
