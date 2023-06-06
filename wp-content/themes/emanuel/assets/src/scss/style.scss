@@ -737,6 +737,9 @@
   font-size: 20px;
   line-height: 26px;
   color: $black;
+  svg {
+    margin-right: 15px;
+  }
 }
 .source-data-info {
   display: flex;
@@ -777,7 +780,7 @@
   display: flex;
   flex-direction: column;
   flex: 1 1 33.333%;
-  a{
+  a {
     margin-top: 15px;
   }
 }
@@ -863,9 +866,6 @@
     grid-column: 1 / 4;
     height: 100%;
   }
-
-
-
 }
 .rental-item-info {
   max-width: 606px;

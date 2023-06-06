@@ -1319,6 +1319,9 @@ body.hiden {
   line-height: 26px;
   color: #17181C;
 }
+.source-data-contact-code svg {
+  margin-right: 15px;
+}
 
 .source-data-info {
   display: flex;

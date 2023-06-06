@@ -56,7 +56,7 @@ get_header();
 									</div>
 									<div class="rental-item-info-params-item">
 										<div class="rental-item-info-params-item-title">
-											Grösse
+											Stockwerk
 										</div>
 										<div class="rental-item-info-params-item-label">
 											<?php rwmb_the_value('living_space') ?>
@@ -64,7 +64,7 @@ get_header();
 									</div>
 									<div class="rental-item-info-params-item">
 										<div class="rental-item-info-params-item-title">
-											Stockwerk
+											Grösse
 										</div>
 										<div class="rental-item-info-params-item-label"><?php rwmb_the_value('floor') ?></div>
 									</div>
