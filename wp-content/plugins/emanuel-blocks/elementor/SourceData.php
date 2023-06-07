@@ -129,6 +129,13 @@ class SourceData extends \Elementor\Widget_Base {
 				'default' => esc_html__( 'Hello world', 'elementor-addon' ),
 			]
 		);
+		$this->add_control(
+			'image',
+			[
+				'label' => esc_html__( 'Image', 'elementor-addon' ),
+				'type' => \Elementor\Controls_Manager::MEDIA,
+			]
+		);
 
 		$this->add_control(
 			'items',

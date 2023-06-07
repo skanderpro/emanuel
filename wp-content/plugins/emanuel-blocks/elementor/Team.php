@@ -43,6 +43,14 @@ class Team extends \Elementor\Widget_Base {
 		);
 
 		$repeater->add_control(
+			'email',
+			[
+				'label' => esc_html__( 'Email', 'elementor-addon' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+			]
+		);
+
+		$repeater->add_control(
 			'image',
 			[
 				'label' => esc_html__( 'Image', 'elementor-addon' ),
@@ -66,6 +74,14 @@ class Team extends \Elementor\Widget_Base {
 				'label' => esc_html__( 'Title', 'elementor-addon' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'default' => esc_html__( 'Hello world', 'elementor-addon' ),
+			]
+		);
+
+		$this->add_control(
+			'title_popup',
+			[
+				'label' => esc_html__( 'Popup title', 'elementor-addon' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
 			]
 		);
 

@@ -8,7 +8,7 @@
 				<?php echo $settings['description']; ?>
 			</div>
 			<div class="source-data-img">
-                <img src="" alt="">
+                <img src="<?php echo $settings['image']['url'] ?? ''; ?>" alt="<?php echo $settings['title']; ?>">
             </div>
 			<div class="source-data-contact">
 				<div class="source-data-contact-title">

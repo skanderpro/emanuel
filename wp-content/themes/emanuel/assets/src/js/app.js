@@ -19,6 +19,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const team = document.querySelector('[data-component="team"]');
+    const popup = document.querySelector('[data-role="contact-popup"]')
+    team.querySelectorAll('[data-role="btn-contact"]').forEach((btn) => {
+        btn.addEventListener('click', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+
+            popup.classList.add('open')
+        })
+    })
+});
+
 
 /*
 import Swiper, { Navigation, Pagination } from 'swiper';
