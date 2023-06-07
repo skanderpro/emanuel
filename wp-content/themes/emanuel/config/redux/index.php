@@ -22,3 +22,4 @@ require_once EMANUEL_PATH . '/config/redux/contacts.php';
 require_once EMANUEL_PATH . '/config/redux/footer.php';
 require_once EMANUEL_PATH . '/config/redux/blog.php';
 require_once EMANUEL_PATH . '/config/redux/apartments.php';
+require_once EMANUEL_PATH . '/config/redux/email.php';

@@ -8,7 +8,7 @@
                 <div class="career-card-text">
                     <?php echo $settings['description']; ?>
                 </div>
-                <a href=""<?php echo $settings['cta_url']; ?> class="global-btn reverse"><?php echo $settings['cta_text']; ?></a>
+                <a href="<?php echo $settings['cta_url']; ?>" class="global-btn reverse"><?php echo $settings['cta_text']; ?></a>
 		</div>
 		    <div class="career-contact">
 			<div class="career-contact-title">

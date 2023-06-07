@@ -48,27 +48,44 @@ get_header();
 									<?php the_excerpt(); ?>
 								</div>
 								<div class="rental-item-info-params">
-									<div class="rental-item-info-params-item">
-										<div class="rental-item-info-params-item-title">
-											Räume
-										</div>
-										<div class="rental-item-info-params-item-label"><?php rwmb_the_value('rooms') ?></div>
-									</div>
-									<div class="rental-item-info-params-item">
-										<div class="rental-item-info-params-item-title">
-											Stockwerk
-										</div>
-										<div class="rental-item-info-params-item-label">
-											<?php rwmb_the_value('living_space') ?>
-										</div>
-									</div>
-									<div class="rental-item-info-params-item">
-										<div class="rental-item-info-params-item-title">
-											Grösse
+									<?php
+									$rooms = rwmb_the_value( 'rooms', [], null, false );
+									$floor = rwmb_the_value( 'floor', [], null, false );
+									$livingSpace = rwmb_the_value( 'living_space', [], null, false );
 
-										</div>
-										<div class="rental-item-info-params-item-label"><?php rwmb_the_value('floor') ?></div>
-									</div>
+									if (!empty($rooms)) {
+										?>
+                                        <div class="rental-item-info-params-item">
+                                            <div class="rental-item-info-params-item-title">
+                                                Räume
+                                            </div>
+                                            <div class="rental-item-info-params-item-label"><?php echo $rooms; ?></div>
+                                        </div>
+										<?php
+									}
+									if (!empty($floor)) {
+										?>
+                                        <div class="rental-item-info-params-item">
+                                            <div class="rental-item-info-params-item-title">
+                                                Grösse
+                                            </div>
+                                            <div class="rental-item-info-params-item-label">
+												<?php echo $floor; ?>
+                                            </div>
+                                        </div>
+										<?php
+									}
+									if (!empty($livingSpace)) {
+										?>
+                                        <div class="rental-item-info-params-item">
+                                            <div class="rental-item-info-params-item-title">
+                                                Stockwerk
+                                            </div>
+                                            <div class="rental-item-info-params-item-label"><?php echo $livingSpace; ?></div>
+                                        </div>
+										<?php
+									}
+									?>
 								</div>
 							</div>
 						</a>
