@@ -1318,6 +1318,8 @@ body.hiden {
   font-size: 20px;
   line-height: 26px;
   color: #17181C;
+  display: flex;
+  align-items: center;
 }
 .source-data-contact-code svg {
   margin-right: 15px;
