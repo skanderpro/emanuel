@@ -127,11 +127,11 @@
                             />
                         </div>
                         <div class="form-inputs-col-item">
-                            <label class="global-label" for="">E-mail</label>
+                            <label class="global-label" for="">E-Mail</label>
                             <input
                                     class="global-input"
                                     type="email"
-                                    placeholder="E-mail"
+                                    placeholder="E-Mail"
                                     name="email"
                             />
                         </div>

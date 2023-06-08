@@ -217,8 +217,8 @@ body {
 
 h1 {
   font-weight: 300;
-  font-size: 45px;
-  line-height: 60px;
+  font-size: 35px;
+  line-height: 45px;
   letter-spacing: 0.0015em;
   text-transform: uppercase;
   color: #17181C;
@@ -1677,6 +1677,9 @@ body.hiden {
   line-height: 26px;
   color: #17181C;
 }
+.source-data-contact-code svg {
+  margin-right: 15px;
+}
 
 .source-data-info {
   display: -webkit-box;
@@ -2350,8 +2353,8 @@ body.hiden {
 
 .footer-content-label {
   font-weight: 700;
-  font-size: 20px;
-  line-height: 25px;
+  font-size: 18px;
+  line-height: 23px;
 }
 
 .footer-content-right {
@@ -3558,8 +3561,8 @@ main .elementor-section.elementor-section-boxed > .elementor-container {
 
 @media (max-width: 500px) {
   h1 {
-    font-size: 24px;
-    line-height: 35px;
+    font-size: 20px;
+    line-height: 30px;
   }
 
   .swiper-button-next,
