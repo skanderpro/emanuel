@@ -67,7 +67,7 @@ get_header();
                                         ?>
                                         <div class="rental-item-info-params-item">
                                             <div class="rental-item-info-params-item-title">
-                                                Grösse
+                                                Stockwerk
                                             </div>
                                             <div class="rental-item-info-params-item-label">
 			                                    <?php echo $floor; ?>
@@ -79,7 +79,7 @@ get_header();
                                         ?>
                                         <div class="rental-item-info-params-item">
                                             <div class="rental-item-info-params-item-title">
-                                                Stockwerk
+											Grösse
                                             </div>
                                             <div class="rental-item-info-params-item-label"><?php echo $livingSpace; ?></div>
                                         </div>
