@@ -71,6 +71,11 @@
                                                         <input class="global-input" type="email" placeholder="E-Mail" required="" name="email">
                                                     </p>
                                                 </div>
+                                                <div class="popup__form-item">
+                                                    <p><label class="global-label">Kommentarfeld</label><br>
+                                                        <textarea class="global-input" placeholder="Kommentarfeld" required="" name="text"></textarea>
+                                                    </p>
+                                                </div>
                                                 <div class="popup__title-btn">
                                                     <p><button class="global-btn" type="submit">Kontaktieren</button>
                                                     </p>
