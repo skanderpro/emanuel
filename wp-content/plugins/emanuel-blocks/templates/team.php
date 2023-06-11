@@ -27,15 +27,8 @@
                             ?>
                             <a href="#" class="global-btn " data-role="btn-contact">Kontaktieren Sie mich</a>
                             <?php
-
                         }
                         ?>
-
-
-
-
-
-
                         <div class="popup" data-role="contact-popup">
                             <div class="popup__body">
                                 <div class="popup__conten">
