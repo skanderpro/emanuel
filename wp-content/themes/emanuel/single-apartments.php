@@ -103,6 +103,14 @@ get_header();
 								$rooms = rwmb_the_value('rooms', [], null, false);
 								$floor = rwmb_the_value('floor', [], null, false);
 								$livingSpace = rwmb_the_value('living_space', [], null, false);
+								$plan = rwmb_the_value('plan', [], null, false);
+                                $planUrl = '';
+                                if (!empty($plan)) {
+                                    $planPost = get_post($plan);
+                                    if (!empty($planPost)) {
+                                        $planUrl = $planPost->guid;
+                                    }
+                                }
 
 								if (!empty($rooms)) {
 								?>
@@ -129,6 +137,16 @@ get_header();
 										<div class="rental-detal-params-item-label"><?php echo $livingSpace; ?></div>
 									</div>
 								<?php
+								}
+								if (!empty($planUrl)) {
+									?>
+                                    <div class="rental-detal-params-item">
+                                        <div class="rental-detal-params-item-title">
+                                            Planen
+                                        </div>
+                                        <a target="_blank" href="<?php echo $planUrl; ?>" class="rental-detal-params-item-label">Herunterladen</a>
+                                    </div>
+									<?php
 								}
 								?>
 							</div>

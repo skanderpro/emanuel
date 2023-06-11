@@ -10,6 +10,7 @@
  */
 
 define( 'EMANUEL_BLOCKS_PATH', plugin_dir_path( __FILE__ ) );
+define( 'EMANUEL_BLOCKS_URL', plugin_dir_url( __FILE__ ) );
 
 require_once EMANUEL_BLOCKS_PATH . '/widgets/index.php';
 require_once EMANUEL_BLOCKS_PATH . '/vendor/autoload.php';
@@ -17,6 +18,11 @@ require_once EMANUEL_BLOCKS_PATH . '/vendor/autoload.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
+
+add_action( 'admin_enqueue_scripts', function() {
+	wp_enqueue_media();
+	wp_enqueue_script('manuel-blocks-main', EMANUEL_BLOCKS_URL . '/assets/js/main.js');
+});
 
 function register_hello_world_widget( $widgets_manager ) {
 
@@ -59,6 +65,9 @@ function register_hello_world_widget( $widgets_manager ) {
 
 add_action( 'elementor/widgets/register', 'register_hello_world_widget' );
 
+add_action('init', function () {
+	require_once __DIR__ . '/Metabox/Fields/RWMB_Media_Field.php';
+});
 
 add_action( 'init', function () {
 	$labels = array(
@@ -255,6 +264,11 @@ add_filter( 'rwmb_meta_boxes', function ( $meta_boxes ) {
 				'type' => 'text',
 				'name' => esc_html__( 'Contact for viewing', 'online-generator' ),
 				'id'   => $prefix . 'contact',
+			],
+			[
+				'type' => 'media',
+				'name' => esc_html__( 'Plan', 'online-generator' ),
+				'id'   => $prefix . 'plan',
 			],
 		],
 	];
