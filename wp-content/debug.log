@@ -430,3 +430,58 @@ Stack trace:
 [11-Jun-2023 01:14:48 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
 [11-Jun-2023 01:14:48 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
 [11-Jun-2023 01:14:48 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
+[11-Jun-2023 22:21:30 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-formular</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
+[11-Jun-2023 22:21:30 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-contact</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
+[11-Jun-2023 22:21:30 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/contact-us</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
+[11-Jun-2023 22:21:44 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-formular</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
+[11-Jun-2023 22:21:44 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-contact</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
+[11-Jun-2023 22:21:44 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/contact-us</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
+[11-Jun-2023 22:22:03 UTC] PHP Warning:  array_merge(): Expected parameter 2 to be an array, string given in C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\controls.php on line 797
+[11-Jun-2023 22:22:57 UTC] PHP Notice:  Trying to get property 'post_type' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\wordpress-seo\src\integrations\third-party\elementor.php on line 151
+[11-Jun-2023 22:26:18 UTC] PHP Fatal error:  Uncaught Error: Class 'EB_s\Service\CRMClient' not found in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\emanuel-blocks.php:487
+Stack trace:
+#0 C:\OpenServer\domains\emanuel\wp-includes\rest-api\class-wp-rest-server.php(1181): {closure}()
+#1 C:\OpenServer\domains\emanuel\wp-includes\rest-api\class-wp-rest-server.php(1028): WP_REST_Server->respond_to_request()
+#2 C:\OpenServer\domains\emanuel\wp-includes\rest-api\class-wp-rest-server.php(442): WP_REST_Server->dispatch()
+#3 C:\OpenServer\domains\emanuel\wp-includes\rest-api.php(410): WP_REST_Server->serve_request()
+#4 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(308): rest_api_loaded()
+#5 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#6 C:\OpenServer\domains\emanuel\wp-includes\plugin.php(565): WP_Hook->do_action()
+#7 C:\OpenServer\domains\emanuel\wp-includes\class-wp.php(399): do_action_ref_array()
+#8 C:\OpenServer\domains\emanuel\wp-includes\class-wp.php(780): WP->parse_request()
+# in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\emanuel-blocks.php on line 487
+[11-Jun-2023 22:27:53 UTC] PHP Fatal error:  Uncaught GuzzleHttp\Exception\ClientException: Client error: `POST https://www.glandon-apartments.com/tickets.json` resulted in a `404 Not Found` response:
+{"name":"Not Found","message":"Not Found","url":"\/tickets.json"}
+ in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\guzzle\src\Exception\RequestException.php:113
+Stack trace:
+#0 C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\guzzle\src\Middleware.php(72): GuzzleHttp\Exception\RequestException::create()
+#1 C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\promises\src\Promise.php(209): GuzzleHttp\Middleware::GuzzleHttp\{closure}()
+#2 C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\promises\src\Promise.php(158): GuzzleHttp\Promise\Promise::callHandler()
+#3 C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\promises\src\TaskQueue.php(52): GuzzleHttp\Promise\Promise::GuzzleHttp\Promise\{closure} in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\guzzle\src\Exception\RequestException.php on line 113
+[11-Jun-2023 22:28:45 UTC] PHP Fatal error:  Uncaught GuzzleHttp\Exception\ClientException: Client error: `POST https://www.glandon-apartments.com/api/tickets.json` resulted in a `403 Forbidden` response:
+{"status":403,"message":"unauthorized access attempt"}
+ in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\guzzle\src\Exception\RequestException.php:113
+Stack trace:
+#0 C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\guzzle\src\Middleware.php(72): GuzzleHttp\Exception\RequestException::create()
+#1 C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\promises\src\Promise.php(209): GuzzleHttp\Middleware::GuzzleHttp\{closure}()
+#2 C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\promises\src\Promise.php(158): GuzzleHttp\Promise\Promise::callHandler()
+#3 C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\promises\src\TaskQueue.php(52): GuzzleHttp\Promise\Promise::GuzzleHttp\Promise\{closure}()
+#4 C in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\guzzle\src\Exception\RequestException.php on line 113
+[11-Jun-2023 22:29:13 UTC] PHP Fatal error:  Uncaught GuzzleHttp\Exception\ClientException: Client error: `POST https://www.glandon-apartments.com/api/tickets.json` resulted in a `403 Forbidden` response:
+{"status":403,"message":"unauthorized access attempt"}
+ in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\guzzle\src\Exception\RequestException.php:113
+Stack trace:
+#0 C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\guzzle\src\Middleware.php(72): GuzzleHttp\Exception\RequestException::create()
+#1 C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\promises\src\Promise.php(209): GuzzleHttp\Middleware::GuzzleHttp\{closure}()
+#2 C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\promises\src\Promise.php(158): GuzzleHttp\Promise\Promise::callHandler()
+#3 C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\promises\src\TaskQueue.php(52): GuzzleHttp\Promise\Promise::GuzzleHttp\Promise\{closure}()
+#4 C in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\guzzle\src\Exception\RequestException.php on line 113
+[11-Jun-2023 22:29:29 UTC] PHP Fatal error:  Uncaught GuzzleHttp\Exception\ClientException: Client error: `POST https://www.glandon-apartments.com/api/tickets.json` resulted in a `403 Forbidden` response:
+{"status":403,"message":"unauthorized access attempt"}
+ in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\guzzle\src\Exception\RequestException.php:113
+Stack trace:
+#0 C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\guzzle\src\Middleware.php(72): GuzzleHttp\Exception\RequestException::create()
+#1 C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\promises\src\Promise.php(209): GuzzleHttp\Middleware::GuzzleHttp\{closure}()
+#2 C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\promises\src\Promise.php(158): GuzzleHttp\Promise\Promise::callHandler()
+#3 C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\promises\src\TaskQueue.php(52): GuzzleHttp\Promise\Promise::GuzzleHttp\Promise\{closure}()
+#4 C in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\guzzle\src\Exception\RequestException.php on line 113
