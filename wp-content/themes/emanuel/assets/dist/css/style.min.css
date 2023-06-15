@@ -427,6 +427,11 @@ body.hiden {
   text-transform: uppercase;
   margin-bottom: 30px;
 }
+.popup__title-text a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  color: #17181C;
+}
 .popup__title-btn {
   margin-top: 48px;
   display: flex;
