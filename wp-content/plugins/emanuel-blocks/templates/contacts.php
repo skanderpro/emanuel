@@ -1,11 +1,10 @@
 <?php
 global $opt_name;
 
-$title = Redux::get_option($opt_name, 'contact_company');
-$description = Redux::get_option($opt_name, 'contact_address');
-$phone = Redux::get_option($opt_name, 'contact_phone');
-$email = Redux::get_option($opt_name, 'contact_email');
-$linkedin = Redux::get_option($opt_name, 'contact_linkedin');
+$title = $settings['company'];
+$description = $settings['address'];
+$phone = $settings['phone'];
+$email = $settings['email'];
 ?>
 <section class="header-content">
     <div class="container">
