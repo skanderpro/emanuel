@@ -1825,8 +1825,8 @@ body.hiden {
 
 .footer-content-label {
   font-weight: 700;
-  font-size: 18px;
-  line-height: 23px;
+  font-size: 16px;
+  line-height: 20px;
 }
 
 .footer-content-right {
@@ -1940,15 +1940,14 @@ body.hiden {
 }
 
 .footer__inner-link-item:last-child ul {
-  margin-top: 28px;
+  margin-top: 15px;
 }
 .footer__inner-link-item:last-child ul li + li {
-  margin-top: 28px;
+  margin-top: 15px;
 }
 .footer__inner-link-item:last-child ul li a {
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 21px;
+  font-size: 15px;
+  line-height: 19px;
 }
 
 main .elementor-column-gap-default > .elementor-column > .elementor-element-populated {
