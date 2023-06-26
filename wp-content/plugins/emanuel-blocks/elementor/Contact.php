@@ -59,6 +59,43 @@ class Contact extends \Elementor\Widget_Base {
 			]
 		);
 
+		$this->add_control(
+			'company',
+			[
+				'label' => esc_html__( 'Company', 'elementor-addon' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'default' => esc_html__( 'EMANUEL Immobilien AG', 'elementor-addon' ),
+			]
+		);
+
+		$this->add_control(
+			'address',
+			[
+				'label' => esc_html__( 'Address', 'elementor-addon' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'default' => esc_html__( 'Luzernerstrasse 8 | CH-6045 Meggen', 'elementor-addon' ),
+			]
+		);
+
+		$this->add_control(
+			'phone',
+			[
+				'label' => esc_html__( 'Phone', 'elementor-addon' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'default' => esc_html__( '41 41 248 50 50', 'elementor-addon' ),
+			]
+		);
+
+		$this->add_control(
+			'email',
+			[
+				'label' => esc_html__( 'Email', 'elementor-addon' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'default' => esc_html__( 'kontakt@emanuel.ch', 'elementor-addon' ),
+			]
+		);
+
+
 		$this->end_controls_section();
 
 		// Content Tab End
