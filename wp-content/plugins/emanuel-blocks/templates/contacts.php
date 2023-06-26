@@ -6,7 +6,13 @@ $description = Redux::get_option($opt_name, 'contact_address');
 $phone = Redux::get_option($opt_name, 'contact_phone');
 $email = Redux::get_option($opt_name, 'contact_email');
 $linkedin = Redux::get_option($opt_name, 'contact_linkedin');
+
+
 ?>
+
+
+dd($description);
+
 <section class="header-content">
     <div class="container">
         <div class="header-content__inner">
