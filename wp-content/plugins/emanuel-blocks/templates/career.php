@@ -56,7 +56,7 @@
 						</clipPath>
 					</defs>
 				</svg>
-				<a href="mailto:kontakt@emanuel.ch"><?php echo $settings['email']; ?></a>
+				<a href="mailto:careers@emanuel.ch"><?php echo $settings['email']; ?></a>
 			</div>
 		</div>
 	</div>

@@ -395,6 +395,11 @@ body.hiden {
   // .popup__title-text
 
   &__title-text {
+    a{
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      color: $black;
+    }
   }
 
   // .popup__title-btn

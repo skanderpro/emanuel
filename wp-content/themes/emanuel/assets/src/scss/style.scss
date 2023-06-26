@@ -734,8 +734,8 @@
   }
 }
 .source-data-contact-code {
-  font-size: 20px;
-  line-height: 26px;
+  font-size: 18px;
+  line-height: 27px;
   color: $black;
   display: flex;
   align-items: center;
@@ -1193,8 +1193,8 @@
 }
 .footer-content-label {
   font-weight: 700;
-  font-size: 18px;
-  line-height: 23px;
+  font-size: 16px;
+  line-height: 20px;
 }
 .footer-content-right {
   max-width: 350px;
@@ -1297,15 +1297,15 @@
 }
 .footer__inner-link-item:last-child {
   ul {
-    margin-top: 28px;
+    margin-top: 15px;
     li {
       & + li {
-        margin-top: 28px;
+        margin-top: 15px;
       }
       a {
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 21px;
+        
+        font-size: 15px;
+        line-height: 19px;
       }
     }
   }

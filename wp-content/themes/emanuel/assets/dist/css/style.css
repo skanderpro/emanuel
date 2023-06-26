@@ -427,6 +427,11 @@ body.hiden {
   text-transform: uppercase;
   margin-bottom: 30px;
 }
+.popup__title-text a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  color: #17181C;
+}
 .popup__title-btn {
   margin-top: 48px;
   display: flex;
@@ -1315,8 +1320,8 @@ body.hiden {
 }
 
 .source-data-contact-code {
-  font-size: 20px;
-  line-height: 26px;
+  font-size: 18px;
+  line-height: 27px;
   color: #17181C;
   display: flex;
   align-items: center;
