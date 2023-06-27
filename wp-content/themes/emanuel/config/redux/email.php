@@ -55,5 +55,16 @@ Redux::set_section( $opt_name, [
 			'title'    => esc_html__( 'Subject', 'your-textdomain-here' ),
 		],
 
+		[
+			'id'       => 'email_contact_us_content',
+			'type'     => 'editor',
+			'title'    => esc_html__( 'Email "Contact Us"', 'your-textdomain-here' ),
+		],
+		[
+			'id'       => 'email_team_content',
+			'type'     => 'editor',
+			'title'    => esc_html__( 'Email "Team"', 'your-textdomain-here' ),
+		],
+
 	]
 ]);
