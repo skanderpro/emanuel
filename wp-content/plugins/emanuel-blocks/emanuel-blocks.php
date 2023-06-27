@@ -365,54 +365,53 @@ add_action('rest_api_init', function () {
 		'methods' => 'POST',
 		/** @var WP_REST_Request $request */
 		'callback' => function ($request) {
-//			$mail = new PHPMailer(true);
-//
-//			try {
-//				global $opt_name;
-//
-//				$host = Redux::get_option($opt_name, 'email_host');
-//				$user = Redux::get_option($opt_name, 'email_user');
-//				$pass = Redux::get_option($opt_name, 'email_pass');
-//				$port = Redux::get_option($opt_name, 'email_port');
-//				$secure = Redux::get_option($opt_name, 'email_secure');
-//				$from = Redux::get_option($opt_name, 'email_from');
-//				$to = Redux::get_option($opt_name, 'email_from');
-//				$subject = Redux::get_option($opt_name, 'email_subject');
-//
-//
-//				//Server settings
-//				ob_start();
-//				$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-//				$mail->isSMTP();                                            //Send using SMTP
-//				$mail->Host       = $host;                     //Set the SMTP server to send through
-//				$mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-//				$mail->Username   = $user;                     //SMTP username
-//				$mail->Password   = $pass;                               //SMTP password
-//				$mail->SMTPSecure = $secure ?? null;            //Enable implicit TLS encryption
-//				$mail->Port       = $port;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-//
-//				$params = $request->get_params();
-//
-//				//Recipients
-//				$mail->setFrom($from);
-//				$mail->addAddress($params['rec_email']);     //Add a recipient
-//
-//
-//				//Content
-//				$mail->isHTML(true);                                  //Set email format to HTML
-//				$mail->Subject = $subject;
-//
-//				ob_clean();
-//				ob_start();
-//				require_once EMANUEL_BLOCKS_PATH . '/templates/email/contact.php';
-//				$mail->Body    = ob_get_clean();
-//
-//				ob_start();
-//				$mail->send();
-//			} catch (Exception $e) {
-//			} finally {
-//				ob_clean();
-//			}
+			$mail = new PHPMailer(true);
+
+			try {
+				global $opt_name;
+
+				$host = Redux::get_option($opt_name, 'email_host');
+				$user = Redux::get_option($opt_name, 'email_user');
+				$pass = Redux::get_option($opt_name, 'email_pass');
+				$port = Redux::get_option($opt_name, 'email_port');
+				$secure = Redux::get_option($opt_name, 'email_secure');
+				$from = Redux::get_option($opt_name, 'email_from');
+				$to = Redux::get_option($opt_name, 'email_from');
+				$subject = Redux::get_option($opt_name, 'email_subject');
+				$content = Redux::get_option($opt_name, 'email_team_content');
+
+
+				//Server settings
+				ob_start();
+				$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+				$mail->isSMTP();                                            //Send using SMTP
+				$mail->Host       = $host;                     //Set the SMTP server to send through
+				$mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+				$mail->Username   = $user;                     //SMTP username
+				$mail->Password   = $pass;                               //SMTP password
+				$mail->SMTPSecure = $secure ?? null;            //Enable implicit TLS encryption
+				$mail->Port       = $port;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+				$params = $request->get_params();
+
+				//Recipients
+				$mail->setFrom($from);
+				$mail->addAddress($params['email']);     //Add a recipient
+
+
+				//Content
+				$mail->isHTML(true);                                  //Set email format to HTML
+				$mail->Subject = $subject;
+
+				ob_clean();
+				$mail->Body    = $content;
+
+				ob_start();
+				$mail->send();
+			} catch (Exception $e) {
+			} finally {
+				ob_clean();
+			}
 
 			ob_start();
 			$params = $request->get_params();
@@ -430,54 +429,54 @@ add_action('rest_api_init', function () {
 		'methods' => 'POST',
 		/** @var WP_REST_Request $request */
 		'callback' => function ($request) {
-//			$mail = new PHPMailer(true);
-//
-//			try {
-//				global $opt_name;
-//
-//				$host = Redux::get_option($opt_name, 'email_host');
-//				$user = Redux::get_option($opt_name, 'email_user');
-//				$pass = Redux::get_option($opt_name, 'email_pass');
-//				$port = Redux::get_option($opt_name, 'email_port');
-//				$secure = Redux::get_option($opt_name, 'email_secure');
-//				$from = Redux::get_option($opt_name, 'email_from');
-//				$to = Redux::get_option($opt_name, 'email_from');
-//				$subject = Redux::get_option($opt_name, 'email_subject');
-//
-//
-//				//Server settings
-//				ob_start();
-//				$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-//				$mail->isSMTP();                                            //Send using SMTP
-//				$mail->Host       = $host;                     //Set the SMTP server to send through
-//				$mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-//				$mail->Username   = $user;                     //SMTP username
-//				$mail->Password   = $pass;                               //SMTP password
-//				$mail->SMTPSecure = $secure ?? null;            //Enable implicit TLS encryption
-//				$mail->Port       = $port;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-//
-//				$params = $request->get_params();
-//
-//				//Recipients
-//				$mail->setFrom($from);
-//				$mail->addAddress($params['rec_email']);     //Add a recipient
-//
-//
-//				//Content
-//				$mail->isHTML(true);                                  //Set email format to HTML
-//				$mail->Subject = $subject;
-//
-//				ob_clean();
-//				ob_start();
-//				require_once EMANUEL_BLOCKS_PATH . '/templates/email/contact.php';
-//				$mail->Body    = ob_get_clean();
-//
-//				ob_start();
-//				$mail->send();
-//			} catch (Exception $e) {
-//			} finally {
-//				ob_clean();
-//			}
+			$mail = new PHPMailer(true);
+
+			try {
+				global $opt_name;
+
+
+				$host = Redux::get_option($opt_name, 'email_host');
+				$user = Redux::get_option($opt_name, 'email_user');
+				$pass = Redux::get_option($opt_name, 'email_pass');
+				$port = Redux::get_option($opt_name, 'email_port');
+				$secure = Redux::get_option($opt_name, 'email_secure');
+				$from = Redux::get_option($opt_name, 'email_from');
+				$to = Redux::get_option($opt_name, 'email_from');
+				$subject = Redux::get_option($opt_name, 'email_subject');
+				$content = Redux::get_option($opt_name, 'email_contact_us_content');
+
+
+				//Server settings
+				ob_start();
+				$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+				$mail->isSMTP();                                            //Send using SMTP
+				$mail->Host       = $host;                     //Set the SMTP server to send through
+				$mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+				$mail->Username   = $user;                     //SMTP username
+				$mail->Password   = $pass;                               //SMTP password
+				$mail->SMTPSecure = $secure ?? null;            //Enable implicit TLS encryption
+				$mail->Port       = $port;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+				$params = $request->get_params();
+
+				//Recipients
+				$mail->setFrom($from);
+				$mail->addAddress($params['email']);     //Add a recipient
+
+
+				//Content
+				$mail->isHTML(true);                                  //Set email format to HTML
+				$mail->Subject = $subject;
+
+				ob_clean();
+				$mail->Body    = $content ?? 'Email was sent';
+
+				ob_start();
+				$mail->send();
+			} catch (Exception $e) {
+			} finally {
+				ob_get_clean();
+			}
 
 			ob_start();
 			$params = $request->get_params();
