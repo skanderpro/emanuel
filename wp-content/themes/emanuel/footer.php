@@ -112,9 +112,7 @@ $linkedin = Redux::get_option($opt_name, 'contact_linkedin');
             </div>
             <div class="popup__title-btn">
                 <button class="global-btn" data-role="accept">Alle akzeptieren</button>
-                <button class="global-btn global-grey-btn btn-close-popup" data-role="block">
-                    Nur essentielle Cookies akzeptieren
-                </button>
+
                 <span class="popup-open"></span>
             </div>
         </div>
