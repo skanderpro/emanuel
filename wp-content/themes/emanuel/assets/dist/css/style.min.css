@@ -1997,6 +1997,9 @@ main .elementor-section.elementor-section-boxed > .elementor-container {
   }
 }
 @media (max-width: 1024px) {
+  .nav-list .nav-list-item + .nav-list-item {
+    margin-left: 30px;
+  }
   .rental-detal-title {
     margin-bottom: 25px;
   }
@@ -2563,7 +2566,7 @@ main .elementor-section.elementor-section-boxed > .elementor-container {
     align-items: center;
   }
   .header__inner-logo img {
-    width: 41px;
+    width: 45px;
   }
   .header__inner-nav {
     display: flex;
@@ -2697,7 +2700,10 @@ main .elementor-section.elementor-section-boxed > .elementor-container {
     line-height: 25px;
   }
   .footer__inner-link {
-    display: none;
+    margin-top: 30px;
+  }
+  .footer__inner {
+    flex-direction: column;
   }
   .footer__inner-info-namecompany {
     font-size: 15px;
@@ -2719,7 +2725,8 @@ main .elementor-section.elementor-section-boxed > .elementor-container {
     margin-right: 45px;
   }
   .footer__inner-info-logo img {
-    width: 44px;
+    min-width: 45px;
+    max-width: 45px;
   }
   .link__inner-title h1 {
     font-size: 20px;
@@ -2727,6 +2734,13 @@ main .elementor-section.elementor-section-boxed > .elementor-container {
   }
 }
 @media (max-width: 500px) {
+  .footer__inner-link-item + .footer__inner-link-item {
+    margin-left: 0px;
+    margin-top: 30px;
+  }
+  .footer__inner-link {
+    flex-direction: column;
+  }
   h1 {
     font-size: 20px;
     line-height: 30px;
@@ -2750,6 +2764,7 @@ main .elementor-section.elementor-section-boxed > .elementor-container {
   }
   .team-box-item {
     flex: 1 1 100%;
+    align-items: center;
   }
   .team-box-item-ava {
     margin-bottom: 15px;
