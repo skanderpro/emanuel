@@ -538,6 +538,10 @@ body.hiden {
   padding: 16px 0px;
 }
 
+.header__inner-logo a {
+  display: block;
+}
+
 .header__inner-nav .global-btn {
   display: none;
 }
@@ -2565,8 +2569,8 @@ main .elementor-section.elementor-section-boxed > .elementor-container {
   .header__inner {
     align-items: center;
   }
-  .header__inner-logo img {
-    width: 45px;
+  .header__inner-logo a {
+    width: 50px;
   }
   .header__inner-nav {
     display: flex;
