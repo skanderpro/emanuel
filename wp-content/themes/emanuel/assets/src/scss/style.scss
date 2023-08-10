@@ -1366,4 +1366,20 @@ ol {
   }
 }
 
+.list{
+  padding-left: 35px;
+  margin: 20px 0px;
+  li + li {
+    margin-top: 5px;
+  }
+  li {
+    a {
+      color: #17181c;
+    }
+  }
+  li{
+    list-style: disc;
+  }
+}
+
 @import 'media';
