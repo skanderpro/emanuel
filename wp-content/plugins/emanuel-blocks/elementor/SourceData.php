@@ -35,7 +35,7 @@ class SourceData extends \Elementor\Widget_Base {
 			'description',
 			[
 				'label' => esc_html__( 'Description', 'elementor-addon' ),
-				'type' => \Elementor\Controls_Manager::TEXTAREA,
+				'type' => \Elementor\Controls_Manager::WYSIWYG,
 			]
 		);
 
