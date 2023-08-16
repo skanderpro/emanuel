@@ -1365,20 +1365,21 @@ ol {
     }
   }
 }
-
-.list{
-  padding-left: 35px;
-  margin: 20px 0px;
-  li + li {
-    margin-top: 5px;
-  }
-  li {
-    a {
-      color: #17181c;
+.elementor-widget-container {
+  ul {
+    padding-left: 35px;
+    margin: 20px 0px;
+    li + li {
+      margin-top: 5px;
     }
-  }
-  li{
-    list-style: disc;
+    li {
+      a {
+        color: #17181c;
+      }
+    }
+    li {
+      list-style: disc;
+    }
   }
 }
 
