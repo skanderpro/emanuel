@@ -2002,17 +2002,17 @@ ol li a {
   color: #17181c;
 }
 
-.list {
+.elementor-widget-container ul {
   padding-left: 35px;
   margin: 20px 0px;
 }
-.list li + li {
+.elementor-widget-container ul li + li {
   margin-top: 5px;
 }
-.list li a {
+.elementor-widget-container ul li a {
   color: #17181c;
 }
-.list li {
+.elementor-widget-container ul li {
   list-style: disc;
 }
 
