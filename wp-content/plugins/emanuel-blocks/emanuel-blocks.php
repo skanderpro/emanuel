@@ -354,7 +354,7 @@ add_action('rest_api_init', function () {
 			require_once EMANUEL_BLOCKS_PATH . '/templates/email/formular.php';
 			$description = ob_get_clean();
 
-			\EB_s\CRMClient::inst()->contactUs('Formular', $description);
+			\EB_s\CRMClient::inst()->contactUs('Application job from ' . ($params['vorname'] ?? '') . ' ' . ($params['nachname'] ?? ''), $description);
 
 			header('Location: ' . $request->get_header('referer'));
 			exit;
