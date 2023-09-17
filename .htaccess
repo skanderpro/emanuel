@@ -14,3 +14,15 @@ RewriteRule . /index.php [L]
 </IfModule>
 
 # END WordPress
+
+
+RewriteEngine on
+
+#RewriteCond %{HTTP_HOST}
+#RewriteRule mietobjekte https://emanuel-immobilien.ch/apartments_cats/mietobjekte [R=301,L]
+#
+#RewriteCond %{HTTP_HOST} ^emanuel.ch [NC,OR]
+#
+#RewriteCond %{HTTP_HOST} ^www.emanuel.ch [NC]
+#
+#RewriteRule ^(.*)$ https://emanuel-immobilien.ch/$1 [L,R=301,NC]

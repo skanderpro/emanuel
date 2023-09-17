@@ -37,7 +37,7 @@ class EstateInfo extends \Elementor\Widget_Base {
 			'description',
 			[
 				'label' => esc_html__( 'Description', 'elementor-addon' ),
-				'type' => \Elementor\Controls_Manager::TEXTAREA,
+				'type' => \Elementor\Controls_Manager::WYSIWYG,
 				'default' => esc_html__( 'Hello world', 'elementor-addon' ),
 			]
 		);

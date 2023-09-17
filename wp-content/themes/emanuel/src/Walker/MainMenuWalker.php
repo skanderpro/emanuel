@@ -14,7 +14,7 @@ class MainMenuWalker extends \Walker_Nav_Menu
         $output .= '<li class="'.$className.' '.($hasChildren ? 'drop-down' : '').'">';
 
         if ($hasChildren) {
-            $output .= '<span class="nav-list-item-btn">';
+            $output .= '<a href="'.$data_object->url.'" class="nav-list-item-btn">';
         } else {
             $output .= '<a href="'.$data_object->url.'">';
         }
@@ -22,7 +22,7 @@ class MainMenuWalker extends \Walker_Nav_Menu
 
         if ($hasChildren) {
             $output .= '<img src="'.EMANUEL_ASSETS_URL.'img/arrow-header.svg" alt="" />';
-            $output .= '</span>';
+            $output .= '</a>';
         } else {
             $output .= '</a>';
         }
