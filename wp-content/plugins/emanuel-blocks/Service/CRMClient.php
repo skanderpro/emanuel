@@ -94,7 +94,7 @@ class CRMClient {
 			'form_params' => [
 				'title' => $title,
 				'description' => $desc,
-				'category_id' => 5, // Recruitment
+				'category_id' => 5, // HR
 			]
 		]);
 		$json = json_decode($resp->getBody()->getContents(), true);

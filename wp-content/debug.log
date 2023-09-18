@@ -667,3 +667,57 @@ Stack trace:
 [10-Aug-2023 01:42:57 UTC] PHP Notice:  Undefined index: pagename in C:\OpenServer\domains\emanuel\wp-content\themes\emanuel\functions.php on line 63
 [10-Aug-2023 13:33:12 UTC] PHP Warning:  An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in C:\OpenServer\domains\emanuel\wp-includes\update.php on line 209
 [10-Aug-2023 19:23:33 UTC] Cron reschedule event error for hook: wp_privacy_delete_old_export_files, Error code: could_not_set, Error message: The cron event list could not be saved., Data: {"schedule":"hourly","args":[],"interval":3600}
+[18-Sep-2023 19:11:35 UTC] PHP Deprecated:  strpos(): Passing null to parameter #1 ($haystack) of type string is deprecated in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 7053
+[18-Sep-2023 19:11:35 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 2165
+[18-Sep-2023 19:12:44 UTC] PHP Deprecated:  strpos(): Passing null to parameter #1 ($haystack) of type string is deprecated in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 7053
+[18-Sep-2023 19:12:44 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 2165
+[18-Sep-2023 19:12:56 UTC] PHP Deprecated:  strpos(): Passing null to parameter #1 ($haystack) of type string is deprecated in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 7053
+[18-Sep-2023 19:12:56 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 2165
+[18-Sep-2023 19:12:56 UTC] PHP Fatal error:  Uncaught TypeError: array_merge(): Argument #2 must be of type array, string given in C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\controls.php:810
+Stack trace:
+#0 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\controls.php(810): array_merge()
+#1 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\controls-stack.php(421): Elementor\Controls_Manager->add_control_to_stack()
+#2 C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\CareerDescription.php(57): Elementor\Controls_Stack->add_control()
+#3 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\controls-stack.php(2329): CareerDescription->register_controls()
+#4 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\widget-base.php(1039): Elementor\Controls_Stack->init_controls()
+#5 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\controls-stack.php(496): Elementor\Widget_Base->init_controls()
+#6 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\widget-base.php(177): Elementor\Controls_Stack->get_stack()
+#7 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\controls-stack.php(300): Elementor\Widget_Base->get_stack()
+#8 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\controls-stack.php(2416): Elementor\Controls_Stack->get_controls()
+#9 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\controls-stack.php(1109): Elementor\Controls_Stack->sanitize_settings()
+#10 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\element-base.php(531): Elementor\Controls_Stack->get_data()
+#11 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\widget-base.php(724): Elementor\Element_Base->get_raw_data()
+#12 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\element-base.php(536): Elementor\Widget_Base->get_raw_data()
+#13 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\element-base.php(536): Elementor\Element_Base->get_raw_data()
+#14 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\base\document.php(977): Elementor\Element_Base->get_raw_data()
+#15 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\base\document.php(643): Elementor\Core\Base\Document->get_elements_raw_data()
+#16 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\controls-stack.php(1021): Elementor\Core\Base\Document->get_initial_config()
+#17 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\editor\config-providers\editor-common-client-env.php(34): Elementor\Controls_Stack->get_config()
+#18 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\editor\config-providers\editor-common-configs.php(169): Elementor\Core\Editor\Config_Providers\Editor_Common_Client_Env::get_client_env()
+#19 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\editor\config-providers\editor-v1-config-provider.php(46): Elementor\Core\Editor\Config_Providers\Editor_Common_Configs::get_client_env()
+#20 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\editor\editor-loader.php(57): Elementor\Core\Editor\Config_Providers\Editor_V1_Config_Provider->get_client_env()
+#21 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\editor\editor.php(357): Elementor\Core\Editor\Editor_Loader->print_client_env()
+#22 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(308): Elementor\Core\Editor\Editor->enqueue_scripts()
+#23 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#24 C:\OpenServer\domains\emanuel\wp-includes\plugin.php(517): WP_Hook->do_action()
+#25 C:\OpenServer\domains\emanuel\wp-includes\script-loader.php(2194): do_action()
+#26 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(308): wp_enqueue_scripts()
+#27 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#28 C:\OpenServer\domains\emanuel\wp-includes\plugin.php(517): WP_Hook->do_action()
+#29 C:\OpenServer\domains\emanuel\wp-includes\general-template.php(3049): do_action()
+#30 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\editor-templates\editor-wrapper.php(31): wp_head()
+#31 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\editor\editor-loader.php(135): include('C:\\OpenServer\\d...')
+#32 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\editor\editor.php(162): Elementor\Core\Editor\Editor_Loader->print_root_template()
+#33 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(308): Elementor\Core\Editor\Editor->init()
+#34 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#35 C:\OpenServer\domains\emanuel\wp-includes\plugin.php(517): WP_Hook->do_action()
+#36 C:\OpenServer\domains\emanuel\wp-admin\admin.php(419): do_action()
+#37 C:\OpenServer\domains\emanuel\wp-admin\post.php(12): require_once('C:\\OpenServer\\d...')
+#38 {main}
+  thrown in C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\controls.php on line 810
+[18-Sep-2023 19:14:04 UTC] PHP Warning:  array_merge(): Expected parameter 2 to be an array, string given in C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\controls.php on line 810
+[18-Sep-2023 19:14:04 UTC] PHP Notice:  Array to string conversion in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\career-description.php on line 11
+[18-Sep-2023 19:14:09 UTC] PHP Warning:  array_merge(): Expected parameter 2 to be an array, string given in C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\controls.php on line 810
+[18-Sep-2023 19:14:58 UTC] PHP Warning:  array_merge(): Expected parameter 2 to be an array, string given in C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\controls.php on line 810
+[18-Sep-2023 19:14:58 UTC] PHP Notice:  Array to string conversion in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\career-description.php on line 11
+[18-Sep-2023 19:15:01 UTC] PHP Notice:  Trying to get property 'post_type' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\wordpress-seo\src\integrations\third-party\elementor.php on line 151

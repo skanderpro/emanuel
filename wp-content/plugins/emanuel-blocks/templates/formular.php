@@ -160,7 +160,7 @@
                                     <img src="<?php echo EMANUEL_ASSETS_URL; ?>img/icon/document.svg" alt="" />
                                     Datei auswählen
                                 </div>
-                                <input id="cv" type="file" name="file_1" />
+                                <input id="cv" type="file" name="cv" />
                             </label>
                         </div>
                         <div class="form-upload-item">
@@ -172,7 +172,7 @@
                                     <img src="<?php echo EMANUEL_ASSETS_URL; ?>img/icon/attachments.svg" alt="" />
                                     Datei auswählen
                                 </div>
-                                <input id="job-references" type="file" name="file_2" />
+                                <input id="job-references" type="file" name="job-references" />
                             </label>
                         </div>
                         <div class="form-upload-item">
@@ -184,7 +184,7 @@
                                     <img src="<?php echo EMANUEL_ASSETS_URL; ?>img/icon/attachments.svg" alt="" />
                                     Datei auswählen
                                 </div>
-                                <input id="motivation-letter" type="file" name="file_3" />
+                                <input id="motivation-letter" type="file" name="motivation-letter" />
                             </label>
                         </div>
                         <div class="form-upload-item">
@@ -194,7 +194,7 @@
                                     <img src="<?php echo EMANUEL_ASSETS_URL; ?>img/icon/attachments.svg" alt="" />
                                     Datei auswählen
                                 </div>
-                                <input id="diplomas" type="file" name="file_4" />
+                                <input id="diplomas" type="file" name="diplomas" />
                             </label>
                         </div>
                     </div>

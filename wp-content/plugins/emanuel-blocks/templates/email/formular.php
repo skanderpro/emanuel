@@ -8,4 +8,24 @@
 	<tr><td>Nationalität</td><td><?php echo $params['national'] ?? '-'; ?></td></tr>
 	<tr><td>Postleitzahl und Ort</td><td><?php echo  $params['post']; ?></td></tr>
     <tr><td>E-mail</td><td><?php echo $params['email'] ?? '-'; ?></td></tr>
+    <?php 
+    if (!empty($files)) {
+        ?>
+        <tr>
+            <td>Files</td>
+            <td>
+                <ul>
+                    <?php
+                    foreach ( $files as $name => $url ) {
+                        ?>
+                        <li><a href="<?php echo $url; ?>"><?php echo $name; ?></a></li>
+                        <?php
+                    }
+                    ?>
+                </ul>
+            </td>
+        </tr>
+        <?php
+    }
+    ?>
 </table>
