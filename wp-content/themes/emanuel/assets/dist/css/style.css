@@ -834,6 +834,7 @@ body.hiden {
   margin-top: 35px;
 }
 .box-info-list ul li {
+  list-style: none !important;
   padding-bottom: 22px;
   border-bottom: 1px solid #e2e2e2;
   font-size: 20px;
