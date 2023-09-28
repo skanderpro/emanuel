@@ -28,14 +28,28 @@
                     <div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
                     <form action="/wp-json/emanuel/v1/contact-us" method="post"  novalidate="novalidate" >
                         <div class="popup__form-item">
+                            <p><label class="global-label">Vorname</label><br>
+                                <input class="global-input" type="text" placeholder="Vorname" required="" name="vorname">
+                            </p>
+                        </div>
+                        <div class="popup__form-item">
                             <p><label class="global-label">Name</label><br>
                                 <input class="global-input" type="text" placeholder="Name" required="" name="name">
+                            </p>
+                        </div>
+                        <div class="popup__form-item">
+                            <p><label class="global-label">Firma</label><br>
+                                <input class="global-input" type="text" placeholder="Firma" required="" name="firma">
                             </p>
                         </div>
                         <div class="popup__form-item">
                             <p><label class="global-label">E-Mail</label><br>
                                 <input class="global-input" type="email" placeholder="E-Mail" required="" name="email">
                             </p>
+                        </div>
+                        <div class="popup__form-item">
+                            <p><label class="global-label">Telefon</label><br>
+                                <input class="global-input" type="text" placeholder="Telefon" required="" name="telefon">
                         </div>
                         <div class="popup__form-item">
                             <p><label class="global-label">Kommentarfeld</label><br>
