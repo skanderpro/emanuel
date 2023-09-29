@@ -55,7 +55,7 @@ get_header();
 							</div>
 							<div class="rental-detal-description">
 								<div class="rental-detal-subtitle">Beschreibung</div>
-								<div class="rental-detal-text">
+								<div class="rental-detal-text elementor-widget-container">
 									<?php the_content(); ?>
 								</div>
 							</div>

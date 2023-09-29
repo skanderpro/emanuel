@@ -36,7 +36,7 @@ get_header();
 								}
 								?>
 							</div>
-							<div class="rental-item-info">
+							<div class="rental-item-info elementor-widget-container">
 								<div class="rental-item-info-title">
 									<?php the_title(); ?>
 								</div>
