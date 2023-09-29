@@ -2017,6 +2017,24 @@ ol li a {
   list-style: disc;
 }
 
+.rental-item-info-text ul,
+.rental-detal-text ul {
+  padding-left: 35px;
+  margin: 20px 0px;
+}
+.rental-item-info-text ul li + li,
+.rental-detal-text ul li + li {
+  margin-top: 5px;
+}
+.rental-item-info-text ul li a,
+.rental-detal-text ul li a {
+  color: #17181c;
+}
+.rental-item-info-text ul li,
+.rental-detal-text ul li {
+  list-style: disc;
+}
+
 @media (max-width: 1100px) {
   h1 {
     font-size: 30px;
