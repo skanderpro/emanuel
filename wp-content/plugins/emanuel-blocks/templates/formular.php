@@ -157,7 +157,7 @@
                             <label for="cv">
                                 <div class="form-upload-item-title">Lebenslauf</div>
                                 <div class="form-upload-item-subtitle">
-                                    <img src="<?php echo EMANUEL_ASSETS_URL; ?>img/icon/document.svg" alt="" />
+                                    <img src="<?php echo EMANUEL_ASSETS_URL; ?>img/icon/attachments.svg" alt="" />
                                     Datei auswählen
                                 </div>
                                 <input id="cv" type="file" name="cv" />
@@ -169,7 +169,7 @@
                                     Arbeitszeugnisse/Schulzeugnisse
                                 </div>
                                 <div class="form-upload-item-subtitle">
-                                    <img src="<?php echo EMANUEL_ASSETS_URL; ?>img/icon/document.svg" alt="" />
+                                    <img src="<?php echo EMANUEL_ASSETS_URL; ?>img/icon/attachments.svg" alt="" />
                                     Datei auswählen
                                 </div>
                                 <input id="job-references" type="file" name="job-references" />
@@ -181,7 +181,7 @@
                                     Motivationsschreiben
                                 </div>
                                 <div class="form-upload-item-subtitle">
-                                    <img src="<?php echo EMANUEL_ASSETS_URL; ?>img/icon/document.svg" alt="" />
+                                    <img src="<?php echo EMANUEL_ASSETS_URL; ?>img/icon/attachments.svg" alt="" />
                                     Datei auswählen
                                 </div>
                                 <input id="motivation-letter" type="file" name="motivation-letter" />
@@ -191,7 +191,7 @@
                             <label for="diplomas">
                                 <div class="form-upload-item-title">Diplome</div>
                                 <div class="form-upload-item-subtitle">
-                                    <img src="<?php echo EMANUEL_ASSETS_URL; ?>img/icon/document.svg" alt="" />
+                                    <img src="<?php echo EMANUEL_ASSETS_URL; ?>img/icon/attachments.svg" alt="" />
                                     Datei auswählen
                                 </div>
                                 <input id="diplomas" type="file" name="diplomas" />
