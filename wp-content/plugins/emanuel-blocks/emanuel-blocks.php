@@ -233,12 +233,22 @@ add_filter( 'rwmb_meta_boxes', function ( $meta_boxes ) {
 				'id'   => $prefix . 'address',
 			],
 			[
+				'type' => 'checkbox',
+				'name' => esc_html__( 'Availability', 'online-generator' ),
+				'id'   => $prefix . 'availability',
+			],
+			[
+				'type' => 'text',
+				'name' => esc_html__( 'Price', 'online-generator' ),
+				'id'   => $prefix . 'price',
+			],
+			[
 				'type' => 'number',
 				'name' => esc_html__( 'Rooms', 'online-generator' ),
 				'id'   => $prefix . 'rooms',
 				'min'  => 1,
 				'max'  => 20,
-				'step' => 1,
+				'step' => 0.5,
 			],
 			[
 				'type' => 'text',

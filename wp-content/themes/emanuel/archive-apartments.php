@@ -36,7 +36,7 @@ get_header();
 								}
 								?>
 							</div>
-							<div class="rental-item-info">
+							<div class="rental-item-info elementor-widget-container">
 								<div class="rental-item-info-title">
 									<?php the_title(); ?>
 								</div>
@@ -52,6 +52,8 @@ get_header();
 									$rooms = rwmb_the_value('rooms', [], null, false);
 									$floor = rwmb_the_value('floor', [], null, false);
 									$livingSpace = rwmb_the_value('living_space', [], null, false);
+									$availability = rwmb_the_value( 'availability', [], null, false );
+									$price = rwmb_the_value( 'price', [], null, false );
 
 									if (!empty($rooms)) {
 									?>
@@ -84,6 +86,26 @@ get_header();
 											<div class="rental-item-info-params-item-label"><?php echo $livingSpace; ?></div>
 										</div>
 									<?php
+									}
+									if (!empty($availability)) {
+										?>
+                                        <div class="rental-item-info-params-item">
+                                            <div class="rental-item-info-params-item-title">
+                                                Verfügbarkeit
+                                            </div>
+                                            <div class="rental-item-info-params-item-label"><?php echo $availability; ?></div>
+                                        </div>
+										<?php
+									}
+									if (!empty($price)) {
+										?>
+                                        <div class="rental-item-info-params-item">
+                                            <div class="rental-item-info-params-item-title">
+                                                Preis
+                                            </div>
+                                            <div class="rental-item-info-params-item-label"><?php echo $price; ?></div>
+                                        </div>
+										<?php
 									}
 									?>
 								</div>
