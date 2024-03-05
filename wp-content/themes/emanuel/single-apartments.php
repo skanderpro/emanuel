@@ -104,6 +104,9 @@ get_header();
 								$floor = rwmb_the_value('floor', [], null, false);
 								$livingSpace = rwmb_the_value('living_space', [], null, false);
 								$plan = rwmb_the_value('plan', [], null, false);
+								$availability = rwmb_the_value( 'availability', [], null, false );
+								$price = rwmb_the_value( 'price', [], null, false );
+
                                 $planUrl = '';
                                 if (!empty($plan)) {
                                     $planPost = get_post($plan);
@@ -145,6 +148,26 @@ get_header();
                                             Planen
                                         </div>
                                         <a target="_blank" href="<?php echo $planUrl; ?>" class="rental-detal-params-item-label">Herunterladen</a>
+                                    </div>
+									<?php
+								}
+								if (!empty($availability)) {
+									?>
+                                    <div class="rental-detal-params-item">
+                                        <div class="rental-detal-params-item-title">
+                                            Verfügbarkeit
+                                        </div>
+                                        <div class="rental-detal-params-item-label"><?php echo $availability; ?></div>
+                                    </div>
+									<?php
+								}
+								if (!empty($price)) {
+									?>
+                                    <div class="rental-detal-params-item">
+                                        <div class="rental-detal-params-item-title">
+                                            Preis
+                                        </div>
+                                        <div class="rental-detal-params-item-label"><?php echo $price; ?></div>
                                     </div>
 									<?php
 								}
