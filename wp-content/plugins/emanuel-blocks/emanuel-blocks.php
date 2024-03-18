@@ -233,7 +233,7 @@ add_filter( 'rwmb_meta_boxes', function ( $meta_boxes ) {
 				'id'   => $prefix . 'address',
 			],
 			[
-				'type' => 'checkbox',
+				'type' => 'text',
 				'name' => esc_html__( 'Availability', 'online-generator' ),
 				'id'   => $prefix . 'availability',
 			],
