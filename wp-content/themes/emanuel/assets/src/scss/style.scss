@@ -1405,4 +1405,14 @@ ol {
   }
 }
 
+.required {
+  position: relative;
+
+  &::after {
+    content: '*';
+    margin-left: 7px;
+    color: red;
+  }
+}
+
 @import 'media';
