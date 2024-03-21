@@ -909,7 +909,7 @@
   display: flex;
   flex-direction: column;
   & + .rental-item-info-params-item {
-    margin-left: 93px;
+    margin-left: 30px;
   }
 }
 .rental-item-info-params-item-title {
@@ -918,8 +918,8 @@
 }
 .rental-item-info-params-item-label {
   font-weight: 700;
-  font-size: 32px;
-  line-height: 48px;
+  font-size: 20px;
+  line-height: 35px;
   color: $brand-green;
 }
 
