@@ -114,6 +114,12 @@ get_header();
 					<?php
 
 					} // end while
+					the_posts_pagination([
+						'prev_text' => '<span class="global-outline-btn"><<</span>',
+						'next_text' => '<span class="global-outline-btn">>></span>',
+                        'before_page_number' => '<span class="global-outline-btn">',
+                        'after_page_number' => '</span>',
+                    ]);
 				} else {
 					?>
 					<div class="rental-text">
