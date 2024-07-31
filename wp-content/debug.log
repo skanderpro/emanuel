@@ -788,3 +788,43 @@ Stack trace:
 [20-Mar-2024 22:03:42 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-formular</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
 [20-Mar-2024 22:03:42 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-contact</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
 [20-Mar-2024 22:03:42 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/contact-us</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
+[31-Jul-2024 22:49:08 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-formular</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
+[31-Jul-2024 22:49:08 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-contact</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
+[31-Jul-2024 22:49:08 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/contact-us</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
+[31-Jul-2024 22:49:21 UTC] PHP Fatal error:  Uncaught TypeError: array_merge(): Argument #2 must be of type array, string given in C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\controls.php:810
+Stack trace:
+#0 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\controls.php(810): array_merge()
+#1 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\controls-stack.php(421): Elementor\Controls_Manager->add_control_to_stack()
+#2 C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\CareerDescription.php(57): Elementor\Controls_Stack->add_control()
+#3 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\controls-stack.php(2329): CareerDescription->register_controls()
+#4 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\widget-base.php(1039): Elementor\Controls_Stack->init_controls()
+#5 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\controls-stack.php(496): Elementor\Widget_Base->init_controls()
+#6 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\widget-base.php(177): Elementor\Controls_Stack->get_stack()
+#7 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\widgets.php(374): Elementor\Widget_Base->get_stack()
+#8 [internal function]: Elementor\Widgets_Manager->ajax_get_widget_types_controls_config()
+#9 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\common\modules\ajax\module.php(175): call_user_func()
+#10 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(308): Elementor\Core\Common\Modules\Ajax\Module->handle_ajax_request()
+#11 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#12 C:\OpenServer\domains\emanuel\wp-includes\plugin.php(517): WP_Hook->do_action()
+#13 C:\OpenServer\domains\emanuel\wp-admin\admin-ajax.php(188): do_action()
+#14 {main}
+  thrown in C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\controls.php on line 810
+[31-Jul-2024 22:50:57 UTC] PHP Fatal error:  Uncaught TypeError: array_merge(): Argument #2 must be of type array, string given in C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\controls.php:810
+Stack trace:
+#0 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\controls.php(810): array_merge()
+#1 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\controls-stack.php(421): Elementor\Controls_Manager->add_control_to_stack()
+#2 C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\CareerDescription.php(57): Elementor\Controls_Stack->add_control()
+#3 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\controls-stack.php(2329): CareerDescription->register_controls()
+#4 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\widget-base.php(1039): Elementor\Controls_Stack->init_controls()
+#5 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\controls-stack.php(496): Elementor\Widget_Base->init_controls()
+#6 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\widget-base.php(177): Elementor\Controls_Stack->get_stack()
+#7 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\widgets.php(374): Elementor\Widget_Base->get_stack()
+#8 [internal function]: Elementor\Widgets_Manager->ajax_get_widget_types_controls_config()
+#9 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\common\modules\ajax\module.php(175): call_user_func()
+#10 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(308): Elementor\Core\Common\Modules\Ajax\Module->handle_ajax_request()
+#11 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#12 C:\OpenServer\domains\emanuel\wp-includes\plugin.php(517): WP_Hook->do_action()
+#13 C:\OpenServer\domains\emanuel\wp-admin\admin-ajax.php(188): do_action()
+#14 {main}
+  thrown in C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\controls.php on line 810
+[31-Jul-2024 22:53:28 UTC] PHP Warning:  Attempt to read property "post_type" on null in C:\OpenServer\domains\emanuel\wp-content\plugins\wordpress-seo\src\integrations\third-party\elementor.php on line 151
