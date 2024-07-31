@@ -48,11 +48,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     team.querySelectorAll('[data-role="btn-contact"]').forEach((btn) => {
-        console.log('test', btn.parentElement);
         const popup = btn.parentElement.querySelector('[data-role="contact-popup"]')
         if (!popup) {
             return;
         }
+
+        const closeBtn = popup.querySelector('[data-role="close-popup"]');
+        closeBtn.addEventListener('click', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+
+            popup.classList.remove('open')
+        });
 
         btn.addEventListener('click', (event) => {
             event.preventDefault();

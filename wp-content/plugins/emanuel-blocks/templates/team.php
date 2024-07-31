@@ -8,7 +8,7 @@
 			</div>
 			<div class="team-box">
 				<?php
-				foreach ( $settings['items'] as $item ) {
+				foreach ( $settings['items'] as $index => $item ) {
 				?>
 					<div class="team-box-item">
 						<div class="team-box-item-ava">
@@ -32,7 +32,7 @@
                         <div class="popup" data-role="contact-popup">
                             <div class="popup__body">
                                 <div class="popup__conten">
-                                    <button class="popup__close btn-close-popup">
+                                    <button class="popup__close btn-close-popup" data-role="close-popup">
                                         <svg
                                                 width="32"
                                                 height="32"
@@ -40,14 +40,14 @@
                                                 fill="none"
                                                 xmlns="http://www.w3.org/2000/svg"
                                         >
-                                            <g clip-path="url(#clip0_438_1543)">
+                                            <g clip-path="url(#clip0_438_1543<?php echo $index;?>)">
                                                 <path
                                                         d="M16 14.1146L22.6 7.51465L24.4853 9.39998L17.8853 16L24.4853 22.6L22.6 24.4853L16 17.8853L9.39998 24.4853L7.51465 22.6L14.1146 16L7.51465 9.39998L9.39998 7.51465L16 14.1146Z"
                                                         fill="#ABACB5"
                                                 />
                                             </g>
                                             <defs>
-                                                <clipPath id="clip0_438_1543">
+                                                <clipPath id="clip0_438_1543<?php echo $index;?>">
                                                     <rect width="32" height="32" fill="white" />
                                                 </clipPath>
                                             </defs>
