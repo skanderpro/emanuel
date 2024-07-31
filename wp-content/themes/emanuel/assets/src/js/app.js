@@ -42,13 +42,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
     const team = document.querySelector('[data-component="team"]');
-    const popup = document.querySelector('[data-role="contact-popup"]')
 
-    if (!team || !popup) {
+    if (!team) {
         return;
     }
 
     team.querySelectorAll('[data-role="btn-contact"]').forEach((btn) => {
+        console.log('test', btn.parentElement);
+        const popup = btn.parentElement.querySelector('[data-role="contact-popup"]')
+        if (!popup) {
+            return;
+        }
+
         btn.addEventListener('click', (event) => {
             event.preventDefault();
             event.stopPropagation();
