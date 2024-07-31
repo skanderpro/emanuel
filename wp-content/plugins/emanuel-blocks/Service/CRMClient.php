@@ -95,7 +95,9 @@ class CRMClient {
 				'title' => $title,
 				'description' => $desc,
 				'category_id' => 5, // HR
-			]
+				'user_responsible_id' => 114,
+				'access' => 2,
+			],
 		]);
 		$json = json_decode($resp->getBody()->getContents(), true);
 

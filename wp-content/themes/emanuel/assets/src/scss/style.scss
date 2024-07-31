@@ -1415,4 +1415,18 @@ ol {
   }
 }
 
+.navigation.pagination .nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 0 1rem;
+  margin-top: 1rem;
+
+  .page-numbers.current .global-outline-btn {
+    color: #fff;
+    background-color: #1E4B5A;
+  }
+}
+
 @import 'media';

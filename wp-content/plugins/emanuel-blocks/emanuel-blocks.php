@@ -365,7 +365,9 @@ add_action('rest_api_init', function () {
 				//Recipients
 				$mail->setFrom($from);
 				$mail->addAddress($params['email']);     //Add a recipient
-
+				if (!empty($params['rec_email'])) {
+					$mail->addAddress($params['rec_email']);     //Add a recipient
+				}
 
 				//Content
 				$mail->isHTML(true);                                  //Set email format to HTML
