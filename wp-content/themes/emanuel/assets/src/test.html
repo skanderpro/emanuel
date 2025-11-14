@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="de">
+  @@include('html/head.html',{ "title":"Emanuel Immobilien" })
+
+  <body>
+    <div class="wrapper">
+      @@include('html/header.html',{})
+      <main>
+        <section class="hero container">
+          <div class="hero-inner">
+            <div class="hero-left">
+              <h1 class="hero-title">Mehrfamilienhaus Emanuel</h1>
+              <p class="hero-sub">Moderne Mietwohnungen an zentraler Lage</p>
+
+              <div class="badges">
+                <span class="badge">Bezug: ab März 2026</span>
+                <span class="badge">Einheiten: 8 Wohnungen</span>
+                <span class="badge">Standard: hochwertiger Innenausbau</span>
+                <span class="badge">Energie: Wärmepumpe, PV-Anlage</span>
+              </div>
+
+              <div class="hero-actions">
+                <a class="global-btn" href="#">Exposé anfordern</a>
+                <a class="global-btn reverse" href="#">Besichtigung vereinbaren</a>
+              </div>
+            </div>
+            <!-- <div class="hero-right">
+         
+              <img src="/wp-content/themes/emanuel/assets/src/img/hero-placeholder.jpg" alt="Objektbild" class="hero-image" onerror="this.style.opacity=0.6;this.src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';"/>
+            </div> -->
+          </div>
+        </section>
+
+        <section class="info-panels container">
+          <div class="grid grid-2">
+            <article class="panel panel-card">
+              <h3 class="panel-title">Lage</h3>
+              <p class="muted">Beispielstrasse 12, 8000 Zürich</p>
+              <p>Die Liegenschaft befindet sich in einem ruhigen, gut erschlossenen Quartier. Einkauf, Schulen und ÖV sind in wenigen Gehminuten erreichbar. Der See sowie diverse Naherholungsgebiete liegen in komfortabler Distanz.</p>
+              
+                <img class="map-placeholder" src="./img/news/news-img-1.jpg" alt="4.5-Zimmer-Attika" onerror="this.src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';"/>
+            
+            </article>
+
+            <article class="panel panel-card">
+              <h3 class="panel-title">Highlights</h3>
+              <ul class="highlights-list">
+                <li>Lichtdurchflutete Grundrisse</li>
+                <li>Balkon oder Loggia</li>
+                <li>Eigene Waschmaschine/Tumbler</li>
+                <li>Veloraum & Kellerabteile</li>
+              </ul>
+              <img class="map-placeholder" src="./img/news/news-img-2.jpg" alt="4.5-Zimmer-Attika" onerror="this.src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';"/>
+            </article>
+          </div>
+        </section>
+
+        <section class="filters container">
+          <form class="filters-form" action="#" method="get">
+            <input type="search" name="q" placeholder="z.B. Attika, Balkon..." class="input input-search" />
+            <select name="min_rooms" class="select">
+              <option>Beliebig</option>
+              <option>1+</option>
+              <option>2+</option>
+            </select>
+            <select name="max_rent" class="select">
+              <option>Beliebig</option>
+            </select>
+            <select name="status" class="select">
+              <option>alle</option>
+            </select>
+            <button class="btn btn-ghost" type="submit">Filtern</button>
+          </form>
+        </section>
+
+        <section class="listings container">
+          <h2 class="section-title">Wohnungen</h2>
+          <div class="grid grid-3 listing-cards">
+            <!-- apartment card 1 -->
+            <article class="apartment-card card">
+              <div class="card-media">
+                <img src="./img/swiper/swiper-img-1.jpg" alt="2.5-Zimmer-Wohnung" onerror="this.src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';"/>
+                <span class="status status-available">verfügbar</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">2.5-Zimmer-Wohnung</h3>
+                <ul class="card-meta">
+                  <li>Zimmer: 2.5</li>
+                  <li>63 m²</li>
+                  <li>2'350 CHF</li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- apartment card 2 -->
+            <article class="apartment-card card">
+              <div class="card-media">
+                <img src="./img/swiper/swiper-img-2.jpg" alt="3.5-Zimmer-Wohnung" onerror="this.src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';"/>
+                <span class="status status-reserved">reserviert</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">3.5-Zimmer-Wohnung</h3>
+                <ul class="card-meta">
+                  <li>Zimmer: 3.5</li>
+                  <li>86 m²</li>
+                  <li>2'980 CHF</li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- apartment card 3 -->
+            <article class="apartment-card card">
+              <div class="card-media">
+                <img src="./img/swiper/swiper-img-3.jpg" alt="4.5-Zimmer-Attika" onerror="this.src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';"/>
+                <span class="status status-available">verfügbar</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">4.5-Zimmer-Attika</h3>
+                <ul class="card-meta">
+                  <li>Zimmer: 4.5</li>
+                  <li>121 m²</li>
+                  <li>3'890 CHF</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </section>
+
+      <footer class="footer">@@include('html/footer.html',{})</footer>
+    <script src="js/app.min.js"></script>
+  </body>
+</html>
