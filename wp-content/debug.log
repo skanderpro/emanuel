@@ -235,3 +235,5 @@ Stack trace:
 [08-Dec-2025 22:33:50 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
 [08-Dec-2025 22:33:51 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
 [08-Dec-2025 22:33:51 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:34:51 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:34:51 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
