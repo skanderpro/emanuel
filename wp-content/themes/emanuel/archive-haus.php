@@ -26,14 +26,11 @@ get_header();
 						<a href="<?php the_permalink(); ?>" class="rental-item">
 							<div class="rental-item-gallery">
 								<?php
-								$images = rwmb_get_value('images');
-								foreach ($images as $image) {
 								?>
-									<picture>
-										<img src="<?php echo $image; ?>" alt="" />
-									</picture>
+                                <picture>
+                                    <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="" />
+                                </picture>
 								<?php
-								}
 								?>
 							</div>
 							<div class="rental-item-info elementor-widget-container">
