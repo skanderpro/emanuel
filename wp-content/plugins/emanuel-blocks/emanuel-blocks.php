@@ -43,6 +43,8 @@ function register_hello_world_widget( $widgets_manager ) {
 	require_once( __DIR__ . '/elementor/Formular.php' );
 	require_once( __DIR__ . '/elementor/Vacancies.php' );
 	require_once( __DIR__ . '/elementor/CareerDescription.php' );
+	require_once( __DIR__ . '/elementor/HeroHaus.php' );
+	require_once( __DIR__ . '/elementor/InfoPanels.php' );
 
 	$widgets_manager->register( new \HeroHome() );
 	$widgets_manager->register( new \LinksBlock() );
@@ -60,7 +62,9 @@ function register_hello_world_widget( $widgets_manager ) {
 	$widgets_manager->register( new \TitleText() );
 	$widgets_manager->register( new \Formular() );
 	$widgets_manager->register( new \Vacancies() );
-	$widgets_manager->register( new \CareerDescription() );
+	$widgets_manager->register( new \HeroHaus() );
+	$widgets_manager->register( new \InfoPanels() );
+//	$widgets_manager->register( new \CareerDescription() );
 }
 
 add_action( 'elementor/widgets/register', 'register_hello_world_widget' );
@@ -207,6 +211,101 @@ add_action( 'init', function () {
 	);
 
 	register_post_type( 'vacancies', $args );
+
+    $labels = array(
+        'name'                  => _x( 'Häuser', 'Post type general name', 'textdomain' ),
+        'singular_name'         => _x( 'Haus', 'Post type singular name', 'textdomain' ),
+        'menu_name'             => _x( 'Häuser', 'Admin Menu text', 'textdomain' ),
+        'name_admin_bar'        => _x( 'Haus', 'Add New on Toolbar', 'textdomain' ),
+        'add_new'               => __( 'Add New Haus', 'textdomain' ),
+        'add_new_item'          => __( 'Add New Haus', 'textdomain' ),
+        'new_item'              => __( 'New Haus', 'textdomain' ),
+        'edit_item'             => __( 'Edit Haus', 'textdomain' ),
+        'view_item'             => __( 'View Haus', 'textdomain' ),
+        'all_items'             => __( 'All Häuser', 'textdomain' ),
+        'search_items'          => __( 'Search Häuser', 'textdomain' ),
+        'parent_item_colon'     => __( 'Parent Häuser:', 'textdomain' ),
+        'not_found'             => __( 'No Häuser found.', 'textdomain' ),
+        'not_found_in_trash'    => __( 'No Häuser found in Trash.', 'textdomain' ),
+        'featured_image'        => _x( 'Haus Cover Image', 'Overrides the “Featured Image” phrase for this post type. Added in 4.3', 'textdomain' ),
+        'set_featured_image'    => _x( 'Set cover image', 'Overrides the “Set featured image” phrase for this post type. Added in 4.3', 'textdomain' ),
+        'remove_featured_image' => _x( 'Remove cover image', 'Overrides the “Remove featured image” phrase for this post type. Added in 4.3', 'textdomain' ),
+        'use_featured_image'    => _x( 'Use as cover image', 'Overrides the “Use as featured image” phrase for this post type. Added in 4.3', 'textdomain' ),
+        'archives'              => _x( 'Häuser archives', 'The post type archive label used in nav menus. Default “Post Archives”. Added in 4.4', 'textdomain' ),
+        'insert_into_item'      => _x( 'Insert into Haus', 'Overrides the “Insert into post”/”Insert into page” phrase (used when inserting media into a post). Added in 4.4', 'textdomain' ),
+        'uploaded_to_this_item' => _x( 'Uploaded to this Haus', 'Overrides the “Uploaded to this post”/”Uploaded to this page” phrase (used when viewing media attached to a post). Added in 4.4', 'textdomain' ),
+        'filter_items_list'     => _x( 'Filter Häuser list', 'Screen reader text for the filter links heading on the post type listing screen. Default “Filter posts list”/”Filter pages list”. Added in 4.4', 'textdomain' ),
+        'items_list_navigation' => _x( 'Häuser list navigation', 'Screen reader text for the pagination heading on the post type listing screen. Default “Posts list navigation”/”Pages list navigation”. Added in 4.4', 'textdomain' ),
+        'items_list'            => _x( 'Häuser list', 'Screen reader text for the items list heading on the post type listing screen. Default “Posts list”/”Pages list”. Added in 4.4', 'textdomain' ),
+    );
+
+    $args = array(
+        'labels'             => $labels,
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'haus' ),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => null,
+        'supports'           => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+    );
+
+    register_post_type( 'haus', $args );
+
+    $labels = array(
+        'name'              => _x( 'Features', 'taxonomy general name', 'textdomain' ),
+        'singular_name'     => _x( 'Feature', 'taxonomy singular name', 'textdomain' ),
+        'search_items'      => __( 'Search Features', 'textdomain' ),
+        'all_items'         => __( 'All Features', 'textdomain' ),
+        'parent_item'       => __( 'Parent Feature', 'textdomain' ),
+        'parent_item_colon' => __( 'Parent Feature:', 'textdomain' ),
+        'edit_item'         => __( 'Edit Feature', 'textdomain' ),
+        'update_item'       => __( 'Update Feature', 'textdomain' ),
+        'add_new_item'      => __( 'Add New Feature', 'textdomain' ),
+        'new_item_name'     => __( 'New Feature Name', 'textdomain' ),
+        'menu_name'         => __( 'Feature', 'textdomain' ),
+    );
+
+    $args = array(
+        'hierarchical'      => false,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'haus_features' ),
+    );
+
+    register_taxonomy( 'haus_features', array( 'haus' ), $args );
+
+    $labels = array(
+        'name'              => _x( 'Highlights', 'taxonomy general name', 'textdomain' ),
+        'singular_name'     => _x( 'Highlight', 'taxonomy singular name', 'textdomain' ),
+        'search_items'      => __( 'Search Highlights', 'textdomain' ),
+        'all_items'         => __( 'All Highlights', 'textdomain' ),
+        'parent_item'       => __( 'Parent Highlight', 'textdomain' ),
+        'parent_item_colon' => __( 'Parent Highlight:', 'textdomain' ),
+        'edit_item'         => __( 'Edit Highlight', 'textdomain' ),
+        'update_item'       => __( 'Update Highlight', 'textdomain' ),
+        'add_new_item'      => __( 'Add New Highlight', 'textdomain' ),
+        'new_item_name'     => __( 'New Highlight Name', 'textdomain' ),
+        'menu_name'         => __( 'Highlight', 'textdomain' ),
+    );
+
+    $args = array(
+        'hierarchical'      => false,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'haus_highlight' ),
+    );
+
+    register_taxonomy( 'haus_highlight', array( 'haus' ), $args );
+
 } );
 
 add_filter( 'rwmb_meta_boxes', function ( $meta_boxes ) {
@@ -296,6 +395,71 @@ add_filter( 'rwmb_meta_boxes', function ( $meta_boxes ) {
 			],
 		],
 	];
+
+    $meta_boxes[] = [
+        'title'      => esc_html__( 'Haus fields', 'online-generator' ),
+        'id'         => 'haus_fields',
+        'post_types' => ['haus'],
+        'context'    => 'normal',
+        'fields'     => [
+
+            [
+                'type' => 'number',
+                'name' => esc_html__( 'Flats Count', 'online-generator' ),
+                'id'   => $prefix . 'flats_count',
+            ],
+            [
+                'type' => 'date',
+                'name' => esc_html__( 'Available From', 'online-generator' ),
+                'id'   => $prefix . 'available_from',
+            ],
+            [
+                'type' => 'select_advanced',
+                'name' => esc_html__( 'Standart', 'online-generator' ),
+                'id'   => $prefix . 'standart',
+                'options' => [
+                    'common' => esc_html__( 'Common', 'online-generator' ),
+                    'lux' => esc_html__( 'hochwertiger Innenausbau', 'online-generator' ),
+                ],
+            ],
+            [
+                'type' => 'text',
+                'name' => esc_html__( 'Address', 'online-generator' ),
+                'id'   => $prefix . 'address',
+            ],
+            [
+                'type' => 'text',
+                'name' => esc_html__( 'Address Description', 'online-generator' ),
+                'id'   => $prefix . 'address_description',
+            ],
+            [
+                'type' => 'single_image',
+                'name' => esc_html__( 'Address Image', 'online-generator' ),
+                'id'   => $prefix . 'address_image',
+            ],
+            [
+                'type' => 'single_image',
+                'name' => esc_html__( 'Highlight Image', 'online-generator' ),
+                'id'   => $prefix . 'highlight_image',
+            ],
+            [
+                'type' => 'text',
+                'name' => esc_html__( 'Subtitle', 'online-generator' ),
+                'id'   => $prefix . 'subtitle',
+            ],
+            [
+                'type' => 'select_advanced',
+                'name' => esc_html__( 'Status', 'online-generator' ),
+                'id'   => $prefix . 'status',
+                'options' => [
+                    'available' => esc_html__( 'Available', 'online-generator' ),
+                    'sold' => esc_html__( 'Sold', 'online-generator' ),
+                    'rented' => esc_html__( 'Rented', 'online-generator' ),
+                    'sold_out' => esc_html__( 'Sold out', 'online-generator' ),
+                ],
+            ],
+        ],
+    ];
 
 	return $meta_boxes;
 });
