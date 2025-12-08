@@ -1,830 +1,239 @@
-[28-Apr-2023 23:20:20 UTC] PHP Warning:  require_once(C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks//templates/companies-block.php): Failed to open stream: No such file or directory in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php on line 53
-[28-Apr-2023 23:20:20 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks//templates/companies-block.php' (include_path='.') in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php:53
+[08-Dec-2025 17:35:31 UTC] PHP Fatal error:  Uncaught TypeError: array_merge(): Argument #2 must be of type array, string given in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/elementor/includes/managers/controls.php:810
 Stack trace:
-#0 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\controls-stack.php(2268): ServicesBlock->render()
-#1 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\widget-base.php(609): Elementor\Controls_Stack->render_by_mode()
-#2 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\base\document.php(292): Elementor\Widget_Base->render_content()
-#3 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\widgets.php(443): Elementor\Core\Base\Document->render_element()
-#4 [internal function]: Elementor\Widgets_Manager->ajax_render_widget()
-#5 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\common\modules\ajax\module.php(175): call_user_func()
-#6 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(308): Elementor\Core\Common\Modules\Ajax\Module->handle_ajax_request()
-#7 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
-#8 C:\OpenServer\domains\emanuel\wp-includes\plugin.php(517): WP_Hook->do_action()
-#9 C:\OpenServer\domains\emanuel\wp-admin\admin-ajax.php(188): do_action()
-#10 {main}
-  thrown in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php on line 53
-[28-Apr-2023 23:20:27 UTC] PHP Warning:  require_once(C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks//templates/companies-block.php): Failed to open stream: No such file or directory in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php on line 53
-[28-Apr-2023 23:20:27 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks//templates/companies-block.php' (include_path='.') in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php:53
-Stack trace:
-#0 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\controls-stack.php(2268): ServicesBlock->render()
-#1 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\widget-base.php(609): Elementor\Controls_Stack->render_by_mode()
-#2 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\base\document.php(292): Elementor\Widget_Base->render_content()
-#3 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\widgets.php(443): Elementor\Core\Base\Document->render_element()
-#4 [internal function]: Elementor\Widgets_Manager->ajax_render_widget()
-#5 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\common\modules\ajax\module.php(175): call_user_func()
-#6 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(308): Elementor\Core\Common\Modules\Ajax\Module->handle_ajax_request()
-#7 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
-#8 C:\OpenServer\domains\emanuel\wp-includes\plugin.php(517): WP_Hook->do_action()
-#9 C:\OpenServer\domains\emanuel\wp-admin\admin-ajax.php(188): do_action()
-#10 {main}
-  thrown in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php on line 53
-[28-Apr-2023 23:20:28 UTC] PHP Warning:  require_once(C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks//templates/companies-block.php): Failed to open stream: No such file or directory in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php on line 53
-[28-Apr-2023 23:20:28 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks//templates/companies-block.php' (include_path='.') in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php:53
-Stack trace:
-#0 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\controls-stack.php(2268): ServicesBlock->render()
-#1 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\widget-base.php(609): Elementor\Controls_Stack->render_by_mode()
-#2 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\base\document.php(292): Elementor\Widget_Base->render_content()
-#3 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\widgets.php(443): Elementor\Core\Base\Document->render_element()
-#4 [internal function]: Elementor\Widgets_Manager->ajax_render_widget()
-#5 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\common\modules\ajax\module.php(175): call_user_func()
-#6 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(308): Elementor\Core\Common\Modules\Ajax\Module->handle_ajax_request()
-#7 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
-#8 C:\OpenServer\domains\emanuel\wp-includes\plugin.php(517): WP_Hook->do_action()
-#9 C:\OpenServer\domains\emanuel\wp-admin\admin-ajax.php(188): do_action()
-#10 {main}
-  thrown in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php on line 53
-[28-Apr-2023 23:20:29 UTC] PHP Warning:  require_once(C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks//templates/companies-block.php): Failed to open stream: No such file or directory in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php on line 53
-[28-Apr-2023 23:20:29 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks//templates/companies-block.php' (include_path='.') in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php:53
-Stack trace:
-#0 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\controls-stack.php(2268): ServicesBlock->render()
-#1 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\widget-base.php(609): Elementor\Controls_Stack->render_by_mode()
-#2 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\base\document.php(292): Elementor\Widget_Base->render_content()
-#3 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\widgets.php(443): Elementor\Core\Base\Document->render_element()
-#4 [internal function]: Elementor\Widgets_Manager->ajax_render_widget()
-#5 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\common\modules\ajax\module.php(175): call_user_func()
-#6 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(308): Elementor\Core\Common\Modules\Ajax\Module->handle_ajax_request()
-#7 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
-#8 C:\OpenServer\domains\emanuel\wp-includes\plugin.php(517): WP_Hook->do_action()
-#9 C:\OpenServer\domains\emanuel\wp-admin\admin-ajax.php(188): do_action()
-#10 {main}
-  thrown in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php on line 53
-[28-Apr-2023 23:20:33 UTC] PHP Warning:  require_once(C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks//templates/companies-block.php): Failed to open stream: No such file or directory in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php on line 53
-[28-Apr-2023 23:20:33 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks//templates/companies-block.php' (include_path='.') in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php:53
-Stack trace:
-#0 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\controls-stack.php(2268): ServicesBlock->render()
-#1 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\widget-base.php(609): Elementor\Controls_Stack->render_by_mode()
-#2 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\widget-base.php(673): Elementor\Widget_Base->render_content()
-#3 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(202): Elementor\Widget_Base->render_plain_content()
-#4 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(208): Elementor\DB->render_element_plain_content()
-#5 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(208): Elementor\DB->render_element_plain_content()
-#6 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(558): Elementor\DB->render_element_plain_content()
-#7 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(539): Elementor\DB->get_plain_text_from_data()
-#8 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(230): Elementor\DB->get_plain_text()
-#9 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\base\document.php(1241): Elementor\DB->save_plain_text()
-#10 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\base\document.php(753): Elementor\Core\Base\Document->save_elements()
-#11 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\documents-manager.php(510): Elementor\Core\Base\Document->save()
-#12 [internal function]: Elementor\Core\Documents_Manager->ajax_save()
-#13 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\common\modules\ajax\module.php(175): call_user_func()
-#14 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(308): Elementor\Core\Common\Modules\Ajax\Module->handle_ajax_request()
-#15 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
-#16 C:\OpenServer\domains\emanuel\wp-includes\plugin.php(517): WP_Hook->do_action()
-#17 C:\OpenServer\domains\emanuel\wp-admin\admin-ajax.php(188): do_action()
-#18 {main}
-  thrown in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php on line 53
-[28-Apr-2023 23:20:50 UTC] PHP Warning:  require_once(C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks//templates/companies-block.php): Failed to open stream: No such file or directory in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php on line 53
-[28-Apr-2023 23:20:50 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks//templates/companies-block.php' (include_path='.') in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php:53
-Stack trace:
-#0 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\controls-stack.php(2268): ServicesBlock->render()
-#1 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\widget-base.php(609): Elementor\Controls_Stack->render_by_mode()
-#2 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\widget-base.php(673): Elementor\Widget_Base->render_content()
-#3 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(202): Elementor\Widget_Base->render_plain_content()
-#4 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(208): Elementor\DB->render_element_plain_content()
-#5 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(208): Elementor\DB->render_element_plain_content()
-#6 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(558): Elementor\DB->render_element_plain_content()
-#7 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(539): Elementor\DB->get_plain_text_from_data()
-#8 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(230): Elementor\DB->get_plain_text()
-#9 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\base\document.php(1241): Elementor\DB->save_plain_text()
-#10 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\base\document.php(753): Elementor\Core\Base\Document->save_elements()
-#11 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\documents-manager.php(510): Elementor\Core\Base\Document->save()
-#12 [internal function]: Elementor\Core\Documents_Manager->ajax_save()
-#13 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\common\modules\ajax\module.php(175): call_user_func()
-#14 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(308): Elementor\Core\Common\Modules\Ajax\Module->handle_ajax_request()
-#15 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
-#16 C:\OpenServer\domains\emanuel\wp-includes\plugin.php(517): WP_Hook->do_action()
-#17 C:\OpenServer\domains\emanuel\wp-admin\admin-ajax.php(188): do_action()
-#18 {main}
-  thrown in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php on line 53
-[28-Apr-2023 23:20:59 UTC] PHP Warning:  require_once(C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks//templates/companies-block.php): Failed to open stream: No such file or directory in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php on line 53
-[28-Apr-2023 23:20:59 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks//templates/companies-block.php' (include_path='.') in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php:53
-Stack trace:
-#0 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\controls-stack.php(2268): ServicesBlock->render()
-#1 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\widget-base.php(609): Elementor\Controls_Stack->render_by_mode()
-#2 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\widget-base.php(673): Elementor\Widget_Base->render_content()
-#3 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(202): Elementor\Widget_Base->render_plain_content()
-#4 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(208): Elementor\DB->render_element_plain_content()
-#5 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(208): Elementor\DB->render_element_plain_content()
-#6 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(558): Elementor\DB->render_element_plain_content()
-#7 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(539): Elementor\DB->get_plain_text_from_data()
-#8 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(230): Elementor\DB->get_plain_text()
-#9 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\base\document.php(1241): Elementor\DB->save_plain_text()
-#10 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\base\document.php(753): Elementor\Core\Base\Document->save_elements()
-#11 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\documents-manager.php(510): Elementor\Core\Base\Document->save()
-#12 [internal function]: Elementor\Core\Documents_Manager->ajax_save()
-#13 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\common\modules\ajax\module.php(175): call_user_func()
-#14 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(308): Elementor\Core\Common\Modules\Ajax\Module->handle_ajax_request()
-#15 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
-#16 C:\OpenServer\domains\emanuel\wp-includes\plugin.php(517): WP_Hook->do_action()
-#17 C:\OpenServer\domains\emanuel\wp-admin\admin-ajax.php(188): do_action()
-#18 {main}
-  thrown in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php on line 53
-[28-Apr-2023 23:21:30 UTC] PHP Warning:  require_once(C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks//templates/companies-block.php): Failed to open stream: No such file or directory in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php on line 53
-[28-Apr-2023 23:21:30 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks//templates/companies-block.php' (include_path='.') in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php:53
-Stack trace:
-#0 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\controls-stack.php(2268): ServicesBlock->render()
-#1 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\widget-base.php(609): Elementor\Controls_Stack->render_by_mode()
-#2 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\widget-base.php(673): Elementor\Widget_Base->render_content()
-#3 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(202): Elementor\Widget_Base->render_plain_content()
-#4 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(208): Elementor\DB->render_element_plain_content()
-#5 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(208): Elementor\DB->render_element_plain_content()
-#6 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(558): Elementor\DB->render_element_plain_content()
-#7 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(539): Elementor\DB->get_plain_text_from_data()
-#8 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\db.php(230): Elementor\DB->get_plain_text()
-#9 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\base\document.php(1241): Elementor\DB->save_plain_text()
-#10 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\base\document.php(753): Elementor\Core\Base\Document->save_elements()
-#11 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\documents-manager.php(510): Elementor\Core\Base\Document->save()
-#12 [internal function]: Elementor\Core\Documents_Manager->ajax_save()
-#13 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\common\modules\ajax\module.php(175): call_user_func()
-#14 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(308): Elementor\Core\Common\Modules\Ajax\Module->handle_ajax_request()
-#15 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
-#16 C:\OpenServer\domains\emanuel\wp-includes\plugin.php(517): WP_Hook->do_action()
-#17 C:\OpenServer\domains\emanuel\wp-admin\admin-ajax.php(188): do_action()
-#18 {main}
-  thrown in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\ServicesBlock.php on line 53
-[06-May-2023 21:02:57 UTC] PHP Parse error:  syntax error, unexpected token "}" in C:\OpenServer\domains\emanuel\wp-content\themes\emanuel\config\redux\blog.php on line 10
-[06-May-2023 21:02:57 UTC] PHP Warning:  Trying to access array offset on value of type bool in C:\OpenServer\domains\emanuel\wp-includes\class-wp-recovery-mode-email-service.php on line 367
-[06-May-2023 21:02:57 UTC] PHP Warning:  Trying to access array offset on value of type bool in C:\OpenServer\domains\emanuel\wp-includes\class-wp-recovery-mode-email-service.php on line 368
-[06-May-2023 23:00:25 UTC] PHP Deprecated:  preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in C:\OpenServer\domains\emanuel\wp-admin\includes\plugin.php on line 2088
-[06-May-2023 23:02:08 UTC] PHP Deprecated:  preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in C:\OpenServer\domains\emanuel\wp-admin\includes\plugin.php on line 2088
-[06-May-2023 23:02:57 UTC] PHP Deprecated:  preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in C:\OpenServer\domains\emanuel\wp-admin\includes\plugin.php on line 2088
-[06-May-2023 23:03:47 UTC] PHP Deprecated:  preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in C:\OpenServer\domains\emanuel\wp-admin\includes\plugin.php on line 2088
-[06-May-2023 23:04:52 UTC] PHP Deprecated:  preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in C:\OpenServer\domains\emanuel\wp-admin\includes\plugin.php on line 2088
-[06-May-2023 23:08:24 UTC] PHP Deprecated:  preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in C:\OpenServer\domains\emanuel\wp-admin\includes\plugin.php on line 2088
-[07-May-2023 19:17:08 UTC] PHP Warning:  foreach() argument must be of type array|object, string given in C:\OpenServer\domains\emanuel\wp-content\themes\emanuel\archive-apartments.php on line 30
-[10-May-2023 23:19:55 UTC] PHP Deprecated:  preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in C:\OpenServer\domains\emanuel\wp-admin\includes\plugin.php on line 2088
-[10-May-2023 23:20:21 UTC] PHP Deprecated:  preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in C:\OpenServer\domains\emanuel\wp-admin\includes\plugin.php on line 2088
-[22-May-2023 20:34:18 UTC] PHP Notice:  Array to string conversion in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\services-block.php on line 17
-[22-May-2023 20:34:28 UTC] PHP Notice:  Array to string conversion in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\services-block.php on line 17
-[22-May-2023 20:34:43 UTC] PHP Notice:  Array to string conversion in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\services-block.php on line 17
-[22-May-2023 20:34:47 UTC] PHP Notice:  Array to string conversion in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\services-block.php on line 17
-[22-May-2023 20:34:57 UTC] PHP Notice:  Array to string conversion in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\services-block.php on line 17
-[26-May-2023 14:58:36 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
- in D:\Work\OSPanel\domains\emanuel\wp-includes\class-wpdb.php on line 2019
-[26-May-2023 15:02:22 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
- in D:\Work\OSPanel\domains\emanuel\wp-includes\class-wpdb.php on line 2019
-[29-May-2023 21:21:20 UTC] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in C:\OpenServer\domains\emanuel\wp-content\themes\emanuel\single-apartments.php on line 109
-[29-May-2023 21:21:44 UTC] PHP Parse error:  syntax error, unexpected '}', expecting end of file in C:\OpenServer\domains\emanuel\wp-content\themes\emanuel\single-apartments.php on line 147
-[31-May-2023 20:38:28 UTC] PHP Notice:  Trying to get property 'post_type' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\wordpress-seo\src\integrations\third-party\elementor.php on line 151
-[31-May-2023 21:13:23 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\emanuel-blocks.php:216) in C:\OpenServer\domains\emanuel\wp-includes\rest-api\class-wp-rest-server.php on line 1762
-[31-May-2023 21:13:23 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\emanuel-blocks.php:216) in C:\OpenServer\domains\emanuel\wp-includes\rest-api.php on line 731
-[31-May-2023 21:13:23 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\emanuel-blocks.php:216) in C:\OpenServer\domains\emanuel\wp-includes\rest-api.php on line 732
-[31-May-2023 21:13:23 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\emanuel-blocks.php:216) in C:\OpenServer\domains\emanuel\wp-includes\rest-api.php on line 733
-[31-May-2023 21:13:23 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\emanuel-blocks.php:216) in C:\OpenServer\domains\emanuel\wp-includes\rest-api.php on line 734
-[31-May-2023 21:27:40 UTC] PHP Parse error:  syntax error, unexpected '=' in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\emanuel-blocks.php on line 223
-[31-May-2023 21:27:40 UTC] PHP Notice:  Function is_embed was called <strong>incorrectly</strong>. Conditional query tags do not work before the query is run. Before then, they always return false. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 3.1.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[31-May-2023 21:27:40 UTC] PHP Notice:  Function is_search was called <strong>incorrectly</strong>. Conditional query tags do not work before the query is run. Before then, they always return false. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 3.1.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[31-May-2023 21:27:54 UTC] PHP Parse error:  syntax error, unexpected '=' in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\emanuel-blocks.php on line 223
-[31-May-2023 21:28:45 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\emanuel-blocks.php:255) in C:\OpenServer\domains\emanuel\wp-includes\rest-api\class-wp-rest-server.php on line 1762
-[31-May-2023 21:28:45 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\emanuel-blocks.php:255) in C:\OpenServer\domains\emanuel\wp-includes\rest-api.php on line 731
-[31-May-2023 21:28:45 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\emanuel-blocks.php:255) in C:\OpenServer\domains\emanuel\wp-includes\rest-api.php on line 732
-[31-May-2023 21:28:45 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\emanuel-blocks.php:255) in C:\OpenServer\domains\emanuel\wp-includes\rest-api.php on line 733
-[31-May-2023 21:28:45 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\emanuel-blocks.php:255) in C:\OpenServer\domains\emanuel\wp-includes\rest-api.php on line 734
-[31-May-2023 21:45:42 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\phpmailer\phpmailer\src\SMTP.php:291) in C:\OpenServer\domains\emanuel\wp-includes\rest-api\class-wp-rest-server.php on line 1762
-[31-May-2023 21:45:42 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\phpmailer\phpmailer\src\SMTP.php:291) in C:\OpenServer\domains\emanuel\wp-includes\rest-api.php on line 731
-[31-May-2023 21:45:42 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\phpmailer\phpmailer\src\SMTP.php:291) in C:\OpenServer\domains\emanuel\wp-includes\rest-api.php on line 732
-[31-May-2023 21:45:42 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\phpmailer\phpmailer\src\SMTP.php:291) in C:\OpenServer\domains\emanuel\wp-includes\rest-api.php on line 733
-[31-May-2023 21:45:42 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\phpmailer\phpmailer\src\SMTP.php:291) in C:\OpenServer\domains\emanuel\wp-includes\rest-api.php on line 734
-[31-May-2023 21:50:23 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\emanuel-blocks.php:258) in C:\OpenServer\domains\emanuel\wp-includes\rest-api\class-wp-rest-server.php on line 1762
-[31-May-2023 21:50:23 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\emanuel-blocks.php:258) in C:\OpenServer\domains\emanuel\wp-includes\rest-api.php on line 731
-[31-May-2023 21:50:23 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\emanuel-blocks.php:258) in C:\OpenServer\domains\emanuel\wp-includes\rest-api.php on line 732
-[31-May-2023 21:50:23 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\emanuel-blocks.php:258) in C:\OpenServer\domains\emanuel\wp-includes\rest-api.php on line 733
-[31-May-2023 21:50:23 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\emanuel-blocks.php:258) in C:\OpenServer\domains\emanuel\wp-includes\rest-api.php on line 734
-[31-May-2023 22:06:35 UTC] PHP Warning:  chmod(): Invalid argument in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\emanuel-blocks.php on line 243
-[31-May-2023 22:07:49 UTC] PHP Warning:  chmod(): Invalid argument in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\emanuel-blocks.php on line 244
-[31-May-2023 22:09:14 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\phpmailer\phpmailer\src\SMTP.php:288) in C:\OpenServer\domains\emanuel\wp-includes\rest-api\class-wp-rest-server.php on line 1762
-[31-May-2023 22:09:14 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\phpmailer\phpmailer\src\SMTP.php:288) in C:\OpenServer\domains\emanuel\wp-includes\rest-api.php on line 731
-[31-May-2023 22:09:14 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\phpmailer\phpmailer\src\SMTP.php:288) in C:\OpenServer\domains\emanuel\wp-includes\rest-api.php on line 732
-[31-May-2023 22:09:14 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\phpmailer\phpmailer\src\SMTP.php:288) in C:\OpenServer\domains\emanuel\wp-includes\rest-api.php on line 733
-[31-May-2023 22:09:14 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\phpmailer\phpmailer\src\SMTP.php:288) in C:\OpenServer\domains\emanuel\wp-includes\rest-api.php on line 734
-[31-May-2023 22:49:51 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\phpmailer\phpmailer\src\SMTP.php:291) in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\emanuel-blocks.php on line 282
-[31-May-2023 22:49:51 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\phpmailer\phpmailer\src\SMTP.php:291) in C:\OpenServer\domains\emanuel\wp-includes\rest-api\class-wp-rest-server.php on line 1762
-[31-May-2023 22:49:51 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\phpmailer\phpmailer\src\SMTP.php:291) in C:\OpenServer\domains\emanuel\wp-includes\rest-api.php on line 731
-[31-May-2023 22:49:51 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\phpmailer\phpmailer\src\SMTP.php:291) in C:\OpenServer\domains\emanuel\wp-includes\rest-api.php on line 732
-[31-May-2023 22:49:51 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\phpmailer\phpmailer\src\SMTP.php:291) in C:\OpenServer\domains\emanuel\wp-includes\rest-api.php on line 733
-[31-May-2023 22:49:51 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\phpmailer\phpmailer\src\SMTP.php:291) in C:\OpenServer\domains\emanuel\wp-includes\rest-api.php on line 734
-[31-May-2023 22:58:54 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\phpmailer\phpmailer\src\SMTP.php:291) in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\emanuel-blocks.php on line 274
-[31-May-2023 22:58:54 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\phpmailer\phpmailer\src\SMTP.php:291) in C:\OpenServer\domains\emanuel\wp-includes\rest-api\class-wp-rest-server.php on line 1762
-[31-May-2023 22:58:54 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\phpmailer\phpmailer\src\SMTP.php:291) in C:\OpenServer\domains\emanuel\wp-includes\rest-api.php on line 731
-[31-May-2023 22:58:54 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\phpmailer\phpmailer\src\SMTP.php:291) in C:\OpenServer\domains\emanuel\wp-includes\rest-api.php on line 732
-[31-May-2023 22:58:54 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\phpmailer\phpmailer\src\SMTP.php:291) in C:\OpenServer\domains\emanuel\wp-includes\rest-api.php on line 733
-[31-May-2023 22:58:54 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\phpmailer\phpmailer\src\SMTP.php:291) in C:\OpenServer\domains\emanuel\wp-includes\rest-api.php on line 734
-[01-Jun-2023 23:13:19 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-formular</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[01-Jun-2023 23:13:35 UTC] PHP Warning:  array_merge(): Expected parameter 2 to be an array, string given in C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\controls.php on line 797
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:13:57 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[01-Jun-2023 23:14:15 UTC] PHP Notice:  Trying to get property 'post_type' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\wordpress-seo\src\integrations\third-party\elementor.php on line 151
-[01-Jun-2023 23:14:26 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-formular</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[02-Jun-2023 00:13:15 UTC] PHP Notice:  Undefined index: title_popup in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\team.php on line 63
-[02-Jun-2023 00:13:15 UTC] PHP Notice:  Undefined index: title_popup in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\team.php on line 63
-[02-Jun-2023 00:13:48 UTC] PHP Notice:  Undefined index: title_popup in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\team.php on line 63
-[02-Jun-2023 00:13:53 UTC] PHP Warning:  array_merge(): Expected parameter 2 to be an array, string given in C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\controls.php on line 797
-[02-Jun-2023 00:14:22 UTC] PHP Notice:  Undefined index: title_popup in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\team.php on line 63
-[02-Jun-2023 00:14:23 UTC] PHP Notice:  Undefined index: title_popup in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\team.php on line 63
-[02-Jun-2023 00:14:25 UTC] PHP Notice:  Undefined index: title_popup in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\team.php on line 63
-[02-Jun-2023 00:14:26 UTC] PHP Notice:  Undefined index: title_popup in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\team.php on line 63
-[02-Jun-2023 00:14:27 UTC] PHP Notice:  Undefined index: title_popup in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\team.php on line 63
-[02-Jun-2023 00:15:16 UTC] PHP Notice:  Undefined index: title_popup in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\team.php on line 63
-[02-Jun-2023 00:15:19 UTC] PHP Notice:  Undefined index: title_popup in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\team.php on line 63
-[02-Jun-2023 00:15:23 UTC] PHP Notice:  Undefined index: title_popup in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\team.php on line 63
-[02-Jun-2023 00:15:26 UTC] PHP Notice:  Trying to get property 'post_type' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\wordpress-seo\src\integrations\third-party\elementor.php on line 151
-[02-Jun-2023 00:16:21 UTC] PHP Notice:  Undefined index: title_popup in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\team.php on line 63
-[02-Jun-2023 00:18:45 UTC] PHP Notice:  Undefined index: title_popup in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\team.php on line 63
-[02-Jun-2023 00:21:20 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-formular</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[02-Jun-2023 00:21:41 UTC] PHP Warning:  array_merge(): Expected parameter 2 to be an array, string given in C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\controls.php on line 797
-[02-Jun-2023 00:22:53 UTC] PHP Notice:  Trying to get property 'post_type' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\wordpress-seo\src\integrations\third-party\elementor.php on line 151
-[02-Jun-2023 00:43:44 UTC] PHP Notice:  Array to string conversion in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\vacancies.php on line 11
-[02-Jun-2023 00:43:51 UTC] PHP Notice:  Array to string conversion in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\vacancies.php on line 11
-[02-Jun-2023 00:43:52 UTC] PHP Notice:  Array to string conversion in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\vacancies.php on line 11
-[02-Jun-2023 00:43:53 UTC] PHP Notice:  Array to string conversion in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\vacancies.php on line 11
-[02-Jun-2023 00:43:54 UTC] PHP Notice:  Array to string conversion in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\vacancies.php on line 11
-[02-Jun-2023 00:43:56 UTC] PHP Notice:  Array to string conversion in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\vacancies.php on line 11
-[02-Jun-2023 00:43:57 UTC] PHP Notice:  Array to string conversion in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\vacancies.php on line 11
-[02-Jun-2023 00:44:06 UTC] PHP Notice:  Array to string conversion in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\vacancies.php on line 11
-[02-Jun-2023 00:44:07 UTC] PHP Notice:  Array to string conversion in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\vacancies.php on line 11
-[02-Jun-2023 00:44:08 UTC] PHP Notice:  Array to string conversion in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\vacancies.php on line 11
-[02-Jun-2023 00:44:09 UTC] PHP Notice:  Array to string conversion in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\vacancies.php on line 11
-[02-Jun-2023 00:44:11 UTC] PHP Notice:  Array to string conversion in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\vacancies.php on line 11
-[02-Jun-2023 00:44:28 UTC] PHP Warning:  array_merge(): Expected parameter 2 to be an array, string given in C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\controls.php on line 797
-[02-Jun-2023 00:44:28 UTC] PHP Notice:  Array to string conversion in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\career-description.php on line 11
-[02-Jun-2023 00:44:34 UTC] PHP Warning:  array_merge(): Expected parameter 2 to be an array, string given in C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\controls.php on line 797
-[02-Jun-2023 00:44:34 UTC] PHP Notice:  Array to string conversion in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\career-description.php on line 11
-[02-Jun-2023 00:44:41 UTC] PHP Warning:  array_merge(): Expected parameter 2 to be an array, string given in C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\controls.php on line 797
-[02-Jun-2023 00:44:41 UTC] PHP Notice:  Array to string conversion in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\career-description.php on line 11
-[02-Jun-2023 00:44:42 UTC] PHP Warning:  array_merge(): Expected parameter 2 to be an array, string given in C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\controls.php on line 797
-[02-Jun-2023 00:44:42 UTC] PHP Notice:  Array to string conversion in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\career-description.php on line 11
-[02-Jun-2023 00:44:43 UTC] PHP Warning:  array_merge(): Expected parameter 2 to be an array, string given in C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\controls.php on line 797
-[02-Jun-2023 00:44:43 UTC] PHP Notice:  Array to string conversion in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\career-description.php on line 11
-[02-Jun-2023 00:44:49 UTC] PHP Warning:  array_merge(): Expected parameter 2 to be an array, string given in C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\controls.php on line 797
-[02-Jun-2023 00:44:49 UTC] PHP Notice:  Array to string conversion in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\vacancies.php on line 11
-[02-Jun-2023 00:44:49 UTC] PHP Notice:  Array to string conversion in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\career-description.php on line 11
-[02-Jun-2023 00:44:52 UTC] PHP Notice:  Trying to get property 'post_type' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\wordpress-seo\src\integrations\third-party\elementor.php on line 151
-[02-Jun-2023 00:44:58 UTC] PHP Warning:  array_merge(): Expected parameter 2 to be an array, string given in C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\controls.php on line 797
-[02-Jun-2023 00:44:58 UTC] PHP Notice:  Array to string conversion in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\vacancies.php on line 11
-[02-Jun-2023 00:44:58 UTC] PHP Notice:  Array to string conversion in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\career-description.php on line 11
-[08-Jun-2023 18:35:14 UTC] PHP Fatal error:  Maximum execution time of 60 seconds exceeded in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 6651
-[08-Jun-2023 18:37:47 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-formular</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[08-Jun-2023 18:37:47 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-contact</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[08-Jun-2023 18:38:04 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-formular</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[08-Jun-2023 18:38:04 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-contact</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[08-Jun-2023 18:38:24 UTC] PHP Warning:  array_merge(): Expected parameter 2 to be an array, string given in C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\controls.php on line 797
-[08-Jun-2023 18:41:38 UTC] PHP Notice:  Trying to get property 'post_type' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\wordpress-seo\src\integrations\third-party\elementor.php on line 151
-[08-Jun-2023 19:01:59 UTC] PHP Notice:  Undefined variable: vacancies in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\vacancies.php on line 15
-[08-Jun-2023 19:01:59 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\vacancies.php on line 15
-[08-Jun-2023 19:02:08 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-formular</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[08-Jun-2023 19:02:08 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-contact</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[08-Jun-2023 19:02:20 UTC] PHP Notice:  Undefined variable: vacancies in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\vacancies.php on line 15
-[08-Jun-2023 19:02:20 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\vacancies.php on line 15
-[08-Jun-2023 19:06:32 UTC] PHP Notice:  Undefined variable: item in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\vacancies.php on line 18
-[08-Jun-2023 19:06:32 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\vacancies.php on line 18
-[08-Jun-2023 19:06:32 UTC] PHP Notice:  Undefined variable: item in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\vacancies.php on line 20
-[08-Jun-2023 19:06:32 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\vacancies.php on line 20
-[08-Jun-2023 19:06:32 UTC] PHP Notice:  Undefined variable: item in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\vacancies.php on line 22
-[08-Jun-2023 19:06:32 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\vacancies.php on line 22
-[08-Jun-2023 19:07:05 UTC] PHP Notice:  Undefined variable: item in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\vacancies.php on line 19
-[08-Jun-2023 19:07:05 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\vacancies.php on line 19
-[08-Jun-2023 19:07:05 UTC] PHP Notice:  Undefined variable: item in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\vacancies.php on line 21
-[08-Jun-2023 19:07:05 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\vacancies.php on line 21
-[08-Jun-2023 19:07:05 UTC] PHP Notice:  Undefined variable: item in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\vacancies.php on line 23
-[08-Jun-2023 19:07:05 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\vacancies.php on line 23
-[11-Jun-2023 00:56:46 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 00:56:46 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 00:56:46 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 00:56:46 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 00:56:46 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 00:56:46 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 00:56:46 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 00:56:46 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 00:56:46 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 00:56:46 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 00:56:46 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 00:56:46 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 00:56:46 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 00:56:46 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 00:56:46 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 00:56:46 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 00:56:46 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 00:56:46 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 00:56:46 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 00:56:46 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 00:56:46 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 00:56:46 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 00:56:46 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 00:56:46 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 00:56:46 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 00:56:46 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 00:56:46 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:07:31 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:07:31 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:07:31 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:07:31 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:07:31 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:07:31 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:07:31 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:07:31 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:07:31 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:07:31 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:07:31 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:07:31 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:07:31 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:07:31 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:07:31 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:07:31 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:07:31 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:07:31 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:07:31 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:07:31 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:07:31 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:07:31 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:07:31 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:07:31 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:07:31 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:07:31 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:07:31 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:10:55 UTC] PHP Notice:  Trying to get property 'post_title' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\Metabox\Fields\RWMB_Media_Field.php on line 8
-[11-Jun-2023 01:11:26 UTC] PHP Notice:  Trying to get property 'post_title' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\Metabox\Fields\RWMB_Media_Field.php on line 9
-[11-Jun-2023 01:14:48 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:14:48 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:14:48 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:14:48 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:14:48 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:14:48 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:14:48 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:14:48 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:14:48 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:14:48 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:14:48 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:14:48 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:14:48 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:14:48 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:14:48 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:14:48 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:14:48 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:14:48 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:14:48 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:14:48 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:14:48 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:14:48 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:14:48 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:14:48 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:14:48 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:14:48 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 01:14:48 UTC] PHP Notice:  Trying to get property 'id' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\meta-box\inc\media-modal.php on line 102
-[11-Jun-2023 22:21:30 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-formular</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[11-Jun-2023 22:21:30 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-contact</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[11-Jun-2023 22:21:30 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/contact-us</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[11-Jun-2023 22:21:44 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-formular</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[11-Jun-2023 22:21:44 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-contact</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[11-Jun-2023 22:21:44 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/contact-us</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[11-Jun-2023 22:22:03 UTC] PHP Warning:  array_merge(): Expected parameter 2 to be an array, string given in C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\controls.php on line 797
-[11-Jun-2023 22:22:57 UTC] PHP Notice:  Trying to get property 'post_type' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\wordpress-seo\src\integrations\third-party\elementor.php on line 151
-[11-Jun-2023 22:26:18 UTC] PHP Fatal error:  Uncaught Error: Class 'EB_s\Service\CRMClient' not found in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\emanuel-blocks.php:487
-Stack trace:
-#0 C:\OpenServer\domains\emanuel\wp-includes\rest-api\class-wp-rest-server.php(1181): {closure}()
-#1 C:\OpenServer\domains\emanuel\wp-includes\rest-api\class-wp-rest-server.php(1028): WP_REST_Server->respond_to_request()
-#2 C:\OpenServer\domains\emanuel\wp-includes\rest-api\class-wp-rest-server.php(442): WP_REST_Server->dispatch()
-#3 C:\OpenServer\domains\emanuel\wp-includes\rest-api.php(410): WP_REST_Server->serve_request()
-#4 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(308): rest_api_loaded()
-#5 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
-#6 C:\OpenServer\domains\emanuel\wp-includes\plugin.php(565): WP_Hook->do_action()
-#7 C:\OpenServer\domains\emanuel\wp-includes\class-wp.php(399): do_action_ref_array()
-#8 C:\OpenServer\domains\emanuel\wp-includes\class-wp.php(780): WP->parse_request()
-# in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\emanuel-blocks.php on line 487
-[11-Jun-2023 22:27:53 UTC] PHP Fatal error:  Uncaught GuzzleHttp\Exception\ClientException: Client error: `POST https://www.glandon-apartments.com/tickets.json` resulted in a `404 Not Found` response:
-{"name":"Not Found","message":"Not Found","url":"\/tickets.json"}
- in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\guzzle\src\Exception\RequestException.php:113
-Stack trace:
-#0 C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\guzzle\src\Middleware.php(72): GuzzleHttp\Exception\RequestException::create()
-#1 C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\promises\src\Promise.php(209): GuzzleHttp\Middleware::GuzzleHttp\{closure}()
-#2 C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\promises\src\Promise.php(158): GuzzleHttp\Promise\Promise::callHandler()
-#3 C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\promises\src\TaskQueue.php(52): GuzzleHttp\Promise\Promise::GuzzleHttp\Promise\{closure} in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\guzzle\src\Exception\RequestException.php on line 113
-[11-Jun-2023 22:28:45 UTC] PHP Fatal error:  Uncaught GuzzleHttp\Exception\ClientException: Client error: `POST https://www.glandon-apartments.com/api/tickets.json` resulted in a `403 Forbidden` response:
-{"status":403,"message":"unauthorized access attempt"}
- in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\guzzle\src\Exception\RequestException.php:113
-Stack trace:
-#0 C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\guzzle\src\Middleware.php(72): GuzzleHttp\Exception\RequestException::create()
-#1 C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\promises\src\Promise.php(209): GuzzleHttp\Middleware::GuzzleHttp\{closure}()
-#2 C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\promises\src\Promise.php(158): GuzzleHttp\Promise\Promise::callHandler()
-#3 C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\promises\src\TaskQueue.php(52): GuzzleHttp\Promise\Promise::GuzzleHttp\Promise\{closure}()
-#4 C in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\guzzle\src\Exception\RequestException.php on line 113
-[11-Jun-2023 22:29:13 UTC] PHP Fatal error:  Uncaught GuzzleHttp\Exception\ClientException: Client error: `POST https://www.glandon-apartments.com/api/tickets.json` resulted in a `403 Forbidden` response:
-{"status":403,"message":"unauthorized access attempt"}
- in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\guzzle\src\Exception\RequestException.php:113
-Stack trace:
-#0 C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\guzzle\src\Middleware.php(72): GuzzleHttp\Exception\RequestException::create()
-#1 C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\promises\src\Promise.php(209): GuzzleHttp\Middleware::GuzzleHttp\{closure}()
-#2 C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\promises\src\Promise.php(158): GuzzleHttp\Promise\Promise::callHandler()
-#3 C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\promises\src\TaskQueue.php(52): GuzzleHttp\Promise\Promise::GuzzleHttp\Promise\{closure}()
-#4 C in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\guzzle\src\Exception\RequestException.php on line 113
-[11-Jun-2023 22:29:29 UTC] PHP Fatal error:  Uncaught GuzzleHttp\Exception\ClientException: Client error: `POST https://www.glandon-apartments.com/api/tickets.json` resulted in a `403 Forbidden` response:
-{"status":403,"message":"unauthorized access attempt"}
- in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\guzzle\src\Exception\RequestException.php:113
-Stack trace:
-#0 C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\guzzle\src\Middleware.php(72): GuzzleHttp\Exception\RequestException::create()
-#1 C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\promises\src\Promise.php(209): GuzzleHttp\Middleware::GuzzleHttp\{closure}()
-#2 C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\promises\src\Promise.php(158): GuzzleHttp\Promise\Promise::callHandler()
-#3 C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\promises\src\TaskQueue.php(52): GuzzleHttp\Promise\Promise::GuzzleHttp\Promise\{closure}()
-#4 C in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\vendor\guzzlehttp\guzzle\src\Exception\RequestException.php on line 113
-[12-Jun-2023 20:08:17 UTC] PHP Fatal error:  Maximum execution time of 60 seconds exceeded in C:\OpenServer\domains\emanuel\wp-includes\Requests\src\Transport\Curl.php on line 205
-[14-Jun-2023 18:00:45 UTC] PHP Fatal error:  Maximum execution time of 60 seconds exceeded in C:\OpenServer\domains\emanuel\wp-includes\Requests\src\Transport\Curl.php on line 205
-[27-Jun-2023 00:57:30 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-formular</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[27-Jun-2023 00:57:30 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-contact</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[27-Jun-2023 00:57:30 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/contact-us</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[27-Jun-2023 00:57:42 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-formular</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[27-Jun-2023 00:57:42 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-contact</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[27-Jun-2023 00:57:42 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/contact-us</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[27-Jun-2023 00:57:51 UTC] PHP Warning:  array_merge(): Argument #2 is not an array in C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\controls.php on line 797
-[27-Jun-2023 00:59:04 UTC] PHP Notice:  Trying to get property 'post_type' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\wordpress-seo\src\integrations\third-party\elementor.php on line 151
-[05-Jul-2023 21:26:06 UTC] PHP Warning:  array_merge(): Argument #2 is not an array in C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\controls.php on line 810
-[05-Jul-2023 21:26:16 UTC] PHP Warning:  An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in C:\OpenServer\domains\emanuel\wp-includes\update.php on line 447
-[05-Jul-2023 21:26:30 UTC] PHP Warning:  An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in C:\OpenServer\domains\emanuel\wp-includes\update.php on line 209
-[05-Jul-2023 21:44:41 UTC] Cron reschedule event error for hook: wpseo_indexable_index_batch, Error code: invalid_schedule, Error message: Event schedule does not exist., Data: {"schedule":"fifteen_minutes","args":[],"interval":900}
-[04-Aug-2023 21:48:08 UTC] PHP Fatal error:  Uncaught Error: Class 'Redux' not found in C:\OpenServer\domains\emanuel\wp-content\themes\emanuel\header.php:3
-Stack trace:
-#0 C:\OpenServer\domains\emanuel\wp-includes\template.php(783): require_once()
-#1 C:\OpenServer\domains\emanuel\wp-includes\template.php(718): load_template('C:\\OpenServer\\d...', true, Array)
-#2 C:\OpenServer\domains\emanuel\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
-#3 C:\OpenServer\domains\emanuel\wp-content\themes\emanuel\page.php(2): get_header()
-#4 C:\OpenServer\domains\emanuel\wp-includes\template-loader.php(106): include('C:\\OpenServer\\d...')
-#5 C:\OpenServer\domains\emanuel\wp-blog-header.php(19): require_once('C:\\OpenServer\\d...')
-#6 C:\OpenServer\domains\emanuel\index.php(17): require('C:\\OpenServer\\d...')
-#7 {main}
-  thrown in C:\OpenServer\domains\emanuel\wp-content\themes\emanuel\header.php on line 3
-[04-Aug-2023 21:48:17 UTC] PHP Fatal error:  Uncaught Error: Class 'Redux' not found in C:\OpenServer\domains\emanuel\wp-content\themes\emanuel\header.php:3
-Stack trace:
-#0 C:\OpenServer\domains\emanuel\wp-includes\template.php(783): require_once()
-#1 C:\OpenServer\domains\emanuel\wp-includes\template.php(718): load_template('C:\\OpenServer\\d...', true, Array)
-#2 C:\OpenServer\domains\emanuel\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
-#3 C:\OpenServer\domains\emanuel\wp-content\themes\emanuel\page.php(2): get_header()
-#4 C:\OpenServer\domains\emanuel\wp-includes\template-loader.php(106): include('C:\\OpenServer\\d...')
-#5 C:\OpenServer\domains\emanuel\wp-blog-header.php(19): require_once('C:\\OpenServer\\d...')
-#6 C:\OpenServer\domains\emanuel\index.php(17): require('C:\\OpenServer\\d...')
-#7 {main}
-  thrown in C:\OpenServer\domains\emanuel\wp-content\themes\emanuel\header.php on line 3
-[04-Aug-2023 21:48:20 UTC] PHP Fatal error:  Uncaught Error: Class 'Redux' not found in C:\OpenServer\domains\emanuel\wp-content\themes\emanuel\header.php:3
-Stack trace:
-#0 C:\OpenServer\domains\emanuel\wp-includes\template.php(783): require_once()
-#1 C:\OpenServer\domains\emanuel\wp-includes\template.php(718): load_template('C:\\OpenServer\\d...', true, Array)
-#2 C:\OpenServer\domains\emanuel\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
-#3 C:\OpenServer\domains\emanuel\wp-content\themes\emanuel\page.php(2): get_header()
-#4 C:\OpenServer\domains\emanuel\wp-includes\template-loader.php(106): include('C:\\OpenServer\\d...')
-#5 C:\OpenServer\domains\emanuel\wp-blog-header.php(19): require_once('C:\\OpenServer\\d...')
-#6 C:\OpenServer\domains\emanuel\index.php(17): require('C:\\OpenServer\\d...')
-#7 {main}
-  thrown in C:\OpenServer\domains\emanuel\wp-content\themes\emanuel\header.php on line 3
-[07-Aug-2023 22:14:17 UTC] PHP Fatal error:  Uncaught Error: Class 'Redux' not found in C:\OpenServer\domains\emanuel\wp-content\themes\emanuel\header.php:3
-Stack trace:
-#0 C:\OpenServer\domains\emanuel\wp-includes\template.php(783): require_once()
-#1 C:\OpenServer\domains\emanuel\wp-includes\template.php(718): load_template('C:\\OpenServer\\d...', true, Array)
-#2 C:\OpenServer\domains\emanuel\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
-#3 C:\OpenServer\domains\emanuel\wp-content\themes\emanuel\page.php(2): get_header()
-#4 C:\OpenServer\domains\emanuel\wp-includes\template-loader.php(106): include('C:\\OpenServer\\d...')
-#5 C:\OpenServer\domains\emanuel\wp-blog-header.php(19): require_once('C:\\OpenServer\\d...')
-#6 C:\OpenServer\domains\emanuel\index.php(17): require('C:\\OpenServer\\d...')
-#7 {main}
-  thrown in C:\OpenServer\domains\emanuel\wp-content\themes\emanuel\header.php on line 3
-[07-Aug-2023 22:29:35 UTC] PHP Fatal error:  Uncaught Error: Class 'Redux' not found in C:\OpenServer\domains\emanuel\wp-content\themes\emanuel\header.php:3
-Stack trace:
-#0 C:\OpenServer\domains\emanuel\wp-includes\template.php(783): require_once()
-#1 C:\OpenServer\domains\emanuel\wp-includes\template.php(718): load_template('C:\\OpenServer\\d...', true, Array)
-#2 C:\OpenServer\domains\emanuel\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
-#3 C:\OpenServer\domains\emanuel\wp-content\themes\emanuel\page.php(2): get_header()
-#4 C:\OpenServer\domains\emanuel\wp-includes\template-loader.php(106): include('C:\\OpenServer\\d...')
-#5 C:\OpenServer\domains\emanuel\wp-blog-header.php(19): require_once('C:\\OpenServer\\d...')
-#6 C:\OpenServer\domains\emanuel\index.php(17): require('C:\\OpenServer\\d...')
-#7 {main}
-  thrown in C:\OpenServer\domains\emanuel\wp-content\themes\emanuel\header.php on line 3
-[07-Aug-2023 22:29:50 UTC] PHP Fatal error:  Uncaught Error: Class 'Redux' not found in C:\OpenServer\domains\emanuel\wp-content\themes\emanuel\header.php:3
-Stack trace:
-#0 C:\OpenServer\domains\emanuel\wp-includes\template.php(783): require_once()
-#1 C:\OpenServer\domains\emanuel\wp-includes\template.php(718): load_template('C:\\OpenServer\\d...', true, Array)
-#2 C:\OpenServer\domains\emanuel\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
-#3 C:\OpenServer\domains\emanuel\wp-content\themes\emanuel\page.php(2): get_header()
-#4 C:\OpenServer\domains\emanuel\wp-includes\template-loader.php(106): include('C:\\OpenServer\\d...')
-#5 C:\OpenServer\domains\emanuel\wp-blog-header.php(19): require_once('C:\\OpenServer\\d...')
-#6 C:\OpenServer\domains\emanuel\index.php(17): require('C:\\OpenServer\\d...')
-#7 {main}
-  thrown in C:\OpenServer\domains\emanuel\wp-content\themes\emanuel\header.php on line 3
-[07-Aug-2023 22:57:53 UTC] PHP Fatal error:  Uncaught Error: Class 'Redux' not found in C:\OpenServer\domains\emanuel\wp-content\themes\emanuel\header.php:3
-Stack trace:
-#0 C:\OpenServer\domains\emanuel\wp-includes\template.php(783): require_once()
-#1 C:\OpenServer\domains\emanuel\wp-includes\template.php(718): load_template('C:\\OpenServer\\d...', true, Array)
-#2 C:\OpenServer\domains\emanuel\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
-#3 C:\OpenServer\domains\emanuel\wp-content\themes\emanuel\page.php(2): get_header()
-#4 C:\OpenServer\domains\emanuel\wp-includes\template-loader.php(106): include('C:\\OpenServer\\d...')
-#5 C:\OpenServer\domains\emanuel\wp-blog-header.php(19): require_once('C:\\OpenServer\\d...')
-#6 C:\OpenServer\domains\emanuel\index.php(17): require('C:\\OpenServer\\d...')
-#7 {main}
-  thrown in C:\OpenServer\domains\emanuel\wp-content\themes\emanuel\header.php on line 3
-[07-Aug-2023 22:58:34 UTC] PHP Fatal error:  Uncaught Error: Class 'Redux' not found in C:\OpenServer\domains\emanuel\wp-content\themes\emanuel\header.php:3
-Stack trace:
-#0 C:\OpenServer\domains\emanuel\wp-includes\template.php(783): require_once()
-#1 C:\OpenServer\domains\emanuel\wp-includes\template.php(718): load_template('C:\\OpenServer\\d...', true, Array)
-#2 C:\OpenServer\domains\emanuel\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
-#3 C:\OpenServer\domains\emanuel\wp-content\themes\emanuel\page.php(2): get_header()
-#4 C:\OpenServer\domains\emanuel\wp-includes\template-loader.php(106): include('C:\\OpenServer\\d...')
-#5 C:\OpenServer\domains\emanuel\wp-blog-header.php(19): require_once('C:\\OpenServer\\d...')
-#6 C:\OpenServer\domains\emanuel\index.php(17): require('C:\\OpenServer\\d...')
-#7 {main}
-  thrown in C:\OpenServer\domains\emanuel\wp-content\themes\emanuel\header.php on line 3
-[07-Aug-2023 22:59:18 UTC] PHP Fatal error:  Uncaught Error: Class 'RWMB_Field' not found in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\Metabox\Fields\RWMB_Media_Field.php:3
-Stack trace:
-#0 C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\emanuel-blocks.php(69): require_once()
-#1 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(308): {closure}('')
-#2 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
-#3 C:\OpenServer\domains\emanuel\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
-#4 C:\OpenServer\domains\emanuel\wp-settings.php(623): do_action('init')
-#5 C:\OpenServer\domains\emanuel\wp-config.php(105): require_once('C:\\OpenServer\\d...')
-#6 C:\OpenServer\domains\emanuel\wp-load.php(50): require_once('C:\\OpenServer\\d...')
-#7 C:\OpenServer\domains\emanuel\wp-admin\admin.php(34): require_once('C:\\OpenServer\\d...')
-#8 C:\OpenServer\domains\emanuel\wp-admin\plugins.php(10): require_once('C:\\OpenServer\\d...')
-#9 {main}
-  thrown in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\Metabox\Fields\RWMB_Media_Field.php on line 3
-[07-Aug-2023 22:59:20 UTC] PHP Fatal error:  Uncaught Error: Class 'RWMB_Field' not found in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\Metabox\Fields\RWMB_Media_Field.php:3
-Stack trace:
-#0 C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\emanuel-blocks.php(69): require_once()
-#1 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(308): {closure}('')
-#2 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
-#3 C:\OpenServer\domains\emanuel\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
-#4 C:\OpenServer\domains\emanuel\wp-settings.php(623): do_action('init')
-#5 C:\OpenServer\domains\emanuel\wp-config.php(105): require_once('C:\\OpenServer\\d...')
-#6 C:\OpenServer\domains\emanuel\wp-load.php(50): require_once('C:\\OpenServer\\d...')
-#7 C:\OpenServer\domains\emanuel\wp-admin\admin.php(34): require_once('C:\\OpenServer\\d...')
-#8 C:\OpenServer\domains\emanuel\wp-admin\plugins.php(10): require_once('C:\\OpenServer\\d...')
-#9 {main}
-  thrown in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\Metabox\Fields\RWMB_Media_Field.php on line 3
-[07-Aug-2023 22:59:31 UTC] PHP Fatal error:  Uncaught Error: Class 'RWMB_Field' not found in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\Metabox\Fields\RWMB_Media_Field.php:3
-Stack trace:
-#0 C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\emanuel-blocks.php(69): require_once()
-#1 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(308): {closure}('')
-#2 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
-#3 C:\OpenServer\domains\emanuel\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
-#4 C:\OpenServer\domains\emanuel\wp-settings.php(623): do_action('init')
-#5 C:\OpenServer\domains\emanuel\wp-config.php(105): require_once('C:\\OpenServer\\d...')
-#6 C:\OpenServer\domains\emanuel\wp-load.php(50): require_once('C:\\OpenServer\\d...')
-#7 C:\OpenServer\domains\emanuel\wp-admin\admin-ajax.php(22): require_once('C:\\OpenServer\\d...')
-#8 {main}
-  thrown in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\Metabox\Fields\RWMB_Media_Field.php on line 3
-[07-Aug-2023 22:59:32 UTC] PHP Fatal error:  Uncaught Error: Class 'RWMB_Field' not found in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\Metabox\Fields\RWMB_Media_Field.php:3
-Stack trace:
-#0 C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\emanuel-blocks.php(69): require_once()
-#1 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(308): {closure}('')
-#2 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
-#3 C:\OpenServer\domains\emanuel\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
-#4 C:\OpenServer\domains\emanuel\wp-settings.php(623): do_action('init')
-#5 C:\OpenServer\domains\emanuel\wp-config.php(105): require_once('C:\\OpenServer\\d...')
-#6 C:\OpenServer\domains\emanuel\wp-load.php(50): require_once('C:\\OpenServer\\d...')
-#7 C:\OpenServer\domains\emanuel\wp-admin\admin.php(34): require_once('C:\\OpenServer\\d...')
-#8 C:\OpenServer\domains\emanuel\wp-admin\index.php(10): require_once('C:\\OpenServer\\d...')
-#9 {main}
-  thrown in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\Metabox\Fields\RWMB_Media_Field.php on line 3
-[07-Aug-2023 22:59:42 UTC] PHP Fatal error:  Uncaught Error: Class 'RWMB_Field' not found in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\Metabox\Fields\RWMB_Media_Field.php:3
-Stack trace:
-#0 C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\emanuel-blocks.php(69): require_once()
-#1 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(308): {closure}('')
-#2 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
-#3 C:\OpenServer\domains\emanuel\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
-#4 C:\OpenServer\domains\emanuel\wp-settings.php(623): do_action('init')
-#5 C:\OpenServer\domains\emanuel\wp-config.php(105): require_once('C:\\OpenServer\\d...')
-#6 C:\OpenServer\domains\emanuel\wp-load.php(50): require_once('C:\\OpenServer\\d...')
-#7 C:\OpenServer\domains\emanuel\wp-admin\admin-ajax.php(22): require_once('C:\\OpenServer\\d...')
-#8 {main}
-  thrown in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\Metabox\Fields\RWMB_Media_Field.php on line 3
-[07-Aug-2023 23:02:06 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-formular</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[07-Aug-2023 23:02:06 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-contact</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[07-Aug-2023 23:02:06 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/contact-us</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[07-Aug-2023 23:02:22 UTC] PHP Warning:  array_merge(): Expected parameter 2 to be an array, string given in C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\controls.php on line 810
-[07-Aug-2023 23:04:45 UTC] PHP Notice:  Trying to get property 'post_type' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\wordpress-seo\src\integrations\third-party\elementor.php on line 151
-[07-Aug-2023 23:06:52 UTC] PHP Notice:  Trying to get property 'post_type' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\wordpress-seo\src\integrations\third-party\elementor.php on line 151
-[07-Aug-2023 23:21:07 UTC] PHP Warning:  array_merge(): Expected parameter 2 to be an array, string given in C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\controls.php on line 810
-[07-Aug-2023 23:22:11 UTC] PHP Notice:  Trying to get property 'post_type' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\wordpress-seo\src\integrations\third-party\elementor.php on line 151
-[07-Aug-2023 23:33:48 UTC] PHP Warning:  array_merge(): Expected parameter 2 to be an array, string given in C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\controls.php on line 810
-[10-Aug-2023 01:04:28 UTC] Google Authenticator plugin: Man-in-the-middle attack detected (Could also be 2 legit login attempts within the same 30 second period)
-[10-Aug-2023 01:09:07 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-formular</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[10-Aug-2023 01:09:07 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-contact</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[10-Aug-2023 01:09:07 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/contact-us</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[10-Aug-2023 01:42:32 UTC] PHP Notice:  Undefined index: pagename in C:\OpenServer\domains\emanuel\wp-content\themes\emanuel\functions.php on line 63
-[10-Aug-2023 01:42:57 UTC] PHP Notice:  Undefined index: pagename in C:\OpenServer\domains\emanuel\wp-content\themes\emanuel\functions.php on line 63
-[10-Aug-2023 13:33:12 UTC] PHP Warning:  An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in C:\OpenServer\domains\emanuel\wp-includes\update.php on line 209
-[10-Aug-2023 19:23:33 UTC] Cron reschedule event error for hook: wp_privacy_delete_old_export_files, Error code: could_not_set, Error message: The cron event list could not be saved., Data: {"schedule":"hourly","args":[],"interval":3600}
-[18-Sep-2023 19:11:35 UTC] PHP Deprecated:  strpos(): Passing null to parameter #1 ($haystack) of type string is deprecated in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 7053
-[18-Sep-2023 19:11:35 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 2165
-[18-Sep-2023 19:12:44 UTC] PHP Deprecated:  strpos(): Passing null to parameter #1 ($haystack) of type string is deprecated in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 7053
-[18-Sep-2023 19:12:44 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 2165
-[18-Sep-2023 19:12:56 UTC] PHP Deprecated:  strpos(): Passing null to parameter #1 ($haystack) of type string is deprecated in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 7053
-[18-Sep-2023 19:12:56 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 2165
-[18-Sep-2023 19:12:56 UTC] PHP Fatal error:  Uncaught TypeError: array_merge(): Argument #2 must be of type array, string given in C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\controls.php:810
-Stack trace:
-#0 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\controls.php(810): array_merge()
-#1 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\controls-stack.php(421): Elementor\Controls_Manager->add_control_to_stack()
-#2 C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\CareerDescription.php(57): Elementor\Controls_Stack->add_control()
-#3 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\controls-stack.php(2329): CareerDescription->register_controls()
-#4 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\widget-base.php(1039): Elementor\Controls_Stack->init_controls()
-#5 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\controls-stack.php(496): Elementor\Widget_Base->init_controls()
-#6 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\widget-base.php(177): Elementor\Controls_Stack->get_stack()
-#7 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\controls-stack.php(300): Elementor\Widget_Base->get_stack()
-#8 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\controls-stack.php(2416): Elementor\Controls_Stack->get_controls()
-#9 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\controls-stack.php(1109): Elementor\Controls_Stack->sanitize_settings()
-#10 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\element-base.php(531): Elementor\Controls_Stack->get_data()
-#11 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\widget-base.php(724): Elementor\Element_Base->get_raw_data()
-#12 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\element-base.php(536): Elementor\Widget_Base->get_raw_data()
-#13 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\element-base.php(536): Elementor\Element_Base->get_raw_data()
-#14 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\base\document.php(977): Elementor\Element_Base->get_raw_data()
-#15 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\base\document.php(643): Elementor\Core\Base\Document->get_elements_raw_data()
-#16 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\controls-stack.php(1021): Elementor\Core\Base\Document->get_initial_config()
-#17 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\editor\config-providers\editor-common-client-env.php(34): Elementor\Controls_Stack->get_config()
-#18 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\editor\config-providers\editor-common-configs.php(169): Elementor\Core\Editor\Config_Providers\Editor_Common_Client_Env::get_client_env()
-#19 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\editor\config-providers\editor-v1-config-provider.php(46): Elementor\Core\Editor\Config_Providers\Editor_Common_Configs::get_client_env()
-#20 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\editor\editor-loader.php(57): Elementor\Core\Editor\Config_Providers\Editor_V1_Config_Provider->get_client_env()
-#21 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\editor\editor.php(357): Elementor\Core\Editor\Editor_Loader->print_client_env()
-#22 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(308): Elementor\Core\Editor\Editor->enqueue_scripts()
-#23 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
-#24 C:\OpenServer\domains\emanuel\wp-includes\plugin.php(517): WP_Hook->do_action()
-#25 C:\OpenServer\domains\emanuel\wp-includes\script-loader.php(2194): do_action()
-#26 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(308): wp_enqueue_scripts()
-#27 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
-#28 C:\OpenServer\domains\emanuel\wp-includes\plugin.php(517): WP_Hook->do_action()
-#29 C:\OpenServer\domains\emanuel\wp-includes\general-template.php(3049): do_action()
-#30 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\editor-templates\editor-wrapper.php(31): wp_head()
-#31 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\editor\editor-loader.php(135): include('C:\\OpenServer\\d...')
-#32 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\editor\editor.php(162): Elementor\Core\Editor\Editor_Loader->print_root_template()
-#33 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(308): Elementor\Core\Editor\Editor->init()
-#34 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
-#35 C:\OpenServer\domains\emanuel\wp-includes\plugin.php(517): WP_Hook->do_action()
-#36 C:\OpenServer\domains\emanuel\wp-admin\admin.php(419): do_action()
-#37 C:\OpenServer\domains\emanuel\wp-admin\post.php(12): require_once('C:\\OpenServer\\d...')
-#38 {main}
-  thrown in C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\controls.php on line 810
-[18-Sep-2023 19:14:04 UTC] PHP Warning:  array_merge(): Expected parameter 2 to be an array, string given in C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\controls.php on line 810
-[18-Sep-2023 19:14:04 UTC] PHP Notice:  Array to string conversion in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\career-description.php on line 11
-[18-Sep-2023 19:14:09 UTC] PHP Warning:  array_merge(): Expected parameter 2 to be an array, string given in C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\controls.php on line 810
-[18-Sep-2023 19:14:58 UTC] PHP Warning:  array_merge(): Expected parameter 2 to be an array, string given in C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\controls.php on line 810
-[18-Sep-2023 19:14:58 UTC] PHP Notice:  Array to string conversion in C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\templates\career-description.php on line 11
-[18-Sep-2023 19:15:01 UTC] PHP Notice:  Trying to get property 'post_type' of non-object in C:\OpenServer\domains\emanuel\wp-content\plugins\wordpress-seo\src\integrations\third-party\elementor.php on line 151
-[29-Sep-2023 13:13:29 UTC] Google Authenticator plugin: Man-in-the-middle attack detected (Could also be 2 legit login attempts within the same 30 second period)
-[29-Sep-2023 13:13:46 UTC] PHP Deprecated:  strpos(): Passing null to parameter #1 ($haystack) of type string is deprecated in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 7053
-[29-Sep-2023 13:13:46 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 2165
-[29-Sep-2023 13:14:03 UTC] PHP Deprecated:  strpos(): Passing null to parameter #1 ($haystack) of type string is deprecated in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 7053
-[29-Sep-2023 13:14:03 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 2165
-[29-Sep-2023 13:14:42 UTC] PHP Deprecated:  strpos(): Passing null to parameter #1 ($haystack) of type string is deprecated in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 7053
-[29-Sep-2023 13:14:42 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 2165
-[29-Sep-2023 13:15:56 UTC] PHP Deprecated:  strpos(): Passing null to parameter #1 ($haystack) of type string is deprecated in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 7053
-[29-Sep-2023 13:15:56 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 2165
-[29-Sep-2023 13:16:29 UTC] PHP Deprecated:  strpos(): Passing null to parameter #1 ($haystack) of type string is deprecated in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 7053
-[29-Sep-2023 13:16:29 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 2165
-[29-Sep-2023 13:16:34 UTC] PHP Deprecated:  strpos(): Passing null to parameter #1 ($haystack) of type string is deprecated in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 7053
-[29-Sep-2023 13:16:34 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 2165
-[29-Sep-2023 13:16:53 UTC] PHP Deprecated:  strpos(): Passing null to parameter #1 ($haystack) of type string is deprecated in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 7053
-[29-Sep-2023 13:16:53 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 2165
-[29-Sep-2023 13:17:08 UTC] PHP Deprecated:  strpos(): Passing null to parameter #1 ($haystack) of type string is deprecated in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 7053
-[29-Sep-2023 13:17:08 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 2165
-[29-Sep-2023 13:17:18 UTC] PHP Deprecated:  strpos(): Passing null to parameter #1 ($haystack) of type string is deprecated in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 7053
-[29-Sep-2023 13:17:18 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 2165
-[02-Oct-2023 12:58:30 UTC] PHP Warning:  An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in C:\OpenServer\domains\emanuel\wp-includes\update.php on line 447
-[02-Oct-2023 12:58:30 UTC] PHP Warning:  An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in C:\OpenServer\domains\emanuel\wp-includes\update.php on line 728
-[02-Oct-2023 12:58:30 UTC] PHP Warning:  An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in C:\OpenServer\domains\emanuel\wp-includes\update.php on line 209
-[04-Oct-2023 19:39:15 UTC] PHP Deprecated:  strpos(): Passing null to parameter #1 ($haystack) of type string is deprecated in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 7053
-[04-Oct-2023 19:39:15 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 2165
-[04-Oct-2023 19:40:30 UTC] PHP Deprecated:  strpos(): Passing null to parameter #1 ($haystack) of type string is deprecated in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 7053
-[04-Oct-2023 19:40:30 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 2165
-[04-Oct-2023 19:40:36 UTC] PHP Deprecated:  strpos(): Passing null to parameter #1 ($haystack) of type string is deprecated in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 7053
-[04-Oct-2023 19:40:36 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 2165
-[04-Oct-2023 19:41:51 UTC] PHP Deprecated:  strpos(): Passing null to parameter #1 ($haystack) of type string is deprecated in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 7053
-[04-Oct-2023 19:41:51 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 2165
-[04-Oct-2023 19:41:54 UTC] PHP Deprecated:  strpos(): Passing null to parameter #1 ($haystack) of type string is deprecated in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 7053
-[04-Oct-2023 19:41:54 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 2165
-[04-Oct-2023 19:42:52 UTC] PHP Deprecated:  strpos(): Passing null to parameter #1 ($haystack) of type string is deprecated in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 7053
-[04-Oct-2023 19:42:52 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 2165
-[04-Oct-2023 19:43:34 UTC] PHP Deprecated:  strpos(): Passing null to parameter #1 ($haystack) of type string is deprecated in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 7053
-[04-Oct-2023 19:43:34 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 2165
-[20-Mar-2024 21:59:28 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-formular</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[20-Mar-2024 21:59:28 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-contact</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[20-Mar-2024 21:59:28 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/contact-us</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[20-Mar-2024 21:59:30 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-formular</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[20-Mar-2024 21:59:30 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-contact</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[20-Mar-2024 21:59:30 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/contact-us</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[20-Mar-2024 21:59:31 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-formular</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[20-Mar-2024 21:59:31 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-contact</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[20-Mar-2024 21:59:31 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/contact-us</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[20-Mar-2024 21:59:33 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-formular</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[20-Mar-2024 21:59:33 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-contact</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[20-Mar-2024 21:59:33 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/contact-us</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[20-Mar-2024 21:59:34 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-formular</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[20-Mar-2024 21:59:34 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-contact</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[20-Mar-2024 21:59:34 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/contact-us</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[20-Mar-2024 21:59:36 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-formular</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[20-Mar-2024 21:59:36 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-contact</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[20-Mar-2024 21:59:36 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/contact-us</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[20-Mar-2024 21:59:38 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-formular</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[20-Mar-2024 21:59:38 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-contact</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[20-Mar-2024 21:59:38 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/contact-us</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[20-Mar-2024 21:59:39 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-formular</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[20-Mar-2024 21:59:39 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-contact</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[20-Mar-2024 21:59:39 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/contact-us</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[20-Mar-2024 22:00:00 UTC] PHP Warning:  array_merge(): Expected parameter 2 to be an array, string given in C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\controls.php on line 810
-[20-Mar-2024 22:00:28 UTC] PHP Warning:  array_merge(): Expected parameter 2 to be an array, string given in C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\controls.php on line 810
-[20-Mar-2024 22:00:48 UTC] PHP Warning:  array_merge(): Expected parameter 2 to be an array, string given in C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\controls.php on line 810
-[20-Mar-2024 22:02:55 UTC] PHP Warning:  array_merge(): Expected parameter 2 to be an array, string given in C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\controls.php on line 810
-[20-Mar-2024 22:03:42 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-formular</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[20-Mar-2024 22:03:42 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-contact</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[20-Mar-2024 22:03:42 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/contact-us</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[31-Jul-2024 22:49:08 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-formular</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[31-Jul-2024 22:49:08 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-contact</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[31-Jul-2024 22:49:08 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/contact-us</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in C:\OpenServer\domains\emanuel\wp-includes\functions.php on line 5865
-[31-Jul-2024 22:49:21 UTC] PHP Fatal error:  Uncaught TypeError: array_merge(): Argument #2 must be of type array, string given in C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\controls.php:810
-Stack trace:
-#0 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\controls.php(810): array_merge()
-#1 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\controls-stack.php(421): Elementor\Controls_Manager->add_control_to_stack()
-#2 C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\CareerDescription.php(57): Elementor\Controls_Stack->add_control()
-#3 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\controls-stack.php(2329): CareerDescription->register_controls()
-#4 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\widget-base.php(1039): Elementor\Controls_Stack->init_controls()
-#5 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\controls-stack.php(496): Elementor\Widget_Base->init_controls()
-#6 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\widget-base.php(177): Elementor\Controls_Stack->get_stack()
-#7 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\widgets.php(374): Elementor\Widget_Base->get_stack()
-#8 [internal function]: Elementor\Widgets_Manager->ajax_get_widget_types_controls_config()
-#9 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\common\modules\ajax\module.php(175): call_user_func()
-#10 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(308): Elementor\Core\Common\Modules\Ajax\Module->handle_ajax_request()
-#11 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
-#12 C:\OpenServer\domains\emanuel\wp-includes\plugin.php(517): WP_Hook->do_action()
-#13 C:\OpenServer\domains\emanuel\wp-admin\admin-ajax.php(188): do_action()
+#0 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/elementor/includes/managers/controls.php(810): array_merge(Array, 'Hello world')
+#1 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/elementor/includes/base/controls-stack.php(421): Elementor\Controls_Manager->add_control_to_stack(Object(CareerDescription), 'url', Array, Array)
+#2 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/elementor/CareerDescription.php(57): Elementor\Controls_Stack->add_control('url', Array)
+#3 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/elementor/includes/base/controls-stack.php(2329): CareerDescription->register_controls()
+#4 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/elementor/includes/base/widget-base.php(1039): Elementor\Controls_Stack->init_controls()
+#5 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/elementor/includes/base/controls-stack.php(496): Elementor\Widget_Base->init_controls()
+#6 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/elementor/includes/base/widget-base.php(177): Elementor\Controls_Stack->get_stack()
+#7 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/elementor/includes/managers/widgets.php(374): Elementor\Widget_Base->get_stack(false)
+#8 [internal function]: Elementor\Widgets_Manager->ajax_get_widget_types_controls_config(Array, Object(Elementor\Core\Common\Modules\Ajax\Module))
+#9 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/elementor/core/common/modules/ajax/module.php(175): call_user_func(Array, Array, Object(Elementor\Core\Common\Modules\Ajax\Module))
+#10 /Users/valiabryniuk/projects/emanuel/wp-includes/class-wp-hook.php(308): Elementor\Core\Common\Modules\Ajax\Module->handle_ajax_request('')
+#11 /Users/valiabryniuk/projects/emanuel/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#12 /Users/valiabryniuk/projects/emanuel/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#13 /Users/valiabryniuk/projects/emanuel/wp-admin/admin-ajax.php(188): do_action('wp_ajax_element...')
 #14 {main}
-  thrown in C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\controls.php on line 810
-[31-Jul-2024 22:50:57 UTC] PHP Fatal error:  Uncaught TypeError: array_merge(): Argument #2 must be of type array, string given in C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\controls.php:810
-Stack trace:
-#0 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\controls.php(810): array_merge()
-#1 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\controls-stack.php(421): Elementor\Controls_Manager->add_control_to_stack()
-#2 C:\OpenServer\domains\emanuel\wp-content\plugins\emanuel-blocks\elementor\CareerDescription.php(57): Elementor\Controls_Stack->add_control()
-#3 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\controls-stack.php(2329): CareerDescription->register_controls()
-#4 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\widget-base.php(1039): Elementor\Controls_Stack->init_controls()
-#5 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\controls-stack.php(496): Elementor\Widget_Base->init_controls()
-#6 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\base\widget-base.php(177): Elementor\Controls_Stack->get_stack()
-#7 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\widgets.php(374): Elementor\Widget_Base->get_stack()
-#8 [internal function]: Elementor\Widgets_Manager->ajax_get_widget_types_controls_config()
-#9 C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\core\common\modules\ajax\module.php(175): call_user_func()
-#10 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(308): Elementor\Core\Common\Modules\Ajax\Module->handle_ajax_request()
-#11 C:\OpenServer\domains\emanuel\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
-#12 C:\OpenServer\domains\emanuel\wp-includes\plugin.php(517): WP_Hook->do_action()
-#13 C:\OpenServer\domains\emanuel\wp-admin\admin-ajax.php(188): do_action()
-#14 {main}
-  thrown in C:\OpenServer\domains\emanuel\wp-content\plugins\elementor\includes\managers\controls.php on line 810
-[31-Jul-2024 22:53:28 UTC] PHP Warning:  Attempt to read property "post_type" on null in C:\OpenServer\domains\emanuel\wp-content\plugins\wordpress-seo\src\integrations\third-party\elementor.php on line 151
+  thrown in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/elementor/includes/managers/controls.php on line 810
+[08-Dec-2025 18:11:18 UTC] PHP Fatal error:  Cannot use empty array elements in arrays in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/elementor/HeroHaus.php on line 59
+[08-Dec-2025 18:16:12 UTC] PHP Fatal error:  Cannot use empty array elements in arrays in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/elementor/HeroHaus.php on line 59
+[08-Dec-2025 18:16:53 UTC] PHP Fatal error:  Cannot use empty array elements in arrays in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/elementor/HeroHaus.php on line 77
+[08-Dec-2025 19:10:33 UTC] PHP Warning:  Attempt to read property "post_type" on null in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/wordpress-seo/src/integrations/third-party/elementor.php on line 151
+[08-Dec-2025 19:34:09 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-formular</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in /Users/valiabryniuk/projects/emanuel/wp-includes/functions.php on line 5865
+[08-Dec-2025 19:34:09 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-contact</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in /Users/valiabryniuk/projects/emanuel/wp-includes/functions.php on line 5865
+[08-Dec-2025 19:34:09 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/contact-us</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in /Users/valiabryniuk/projects/emanuel/wp-includes/functions.php on line 5865
+[08-Dec-2025 19:34:50 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-formular</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in /Users/valiabryniuk/projects/emanuel/wp-includes/functions.php on line 5865
+[08-Dec-2025 19:34:50 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/send-contact</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in /Users/valiabryniuk/projects/emanuel/wp-includes/functions.php on line 5865
+[08-Dec-2025 19:34:50 UTC] PHP Notice:  Function register_rest_route was called <strong>incorrectly</strong>. The REST API route definition for <code>emanuel/v1/contact-us</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 5.5.0.) in /Users/valiabryniuk/projects/emanuel/wp-includes/functions.php on line 5865
+[08-Dec-2025 22:20:44 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:20:45 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:20:45 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:20:46 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:20:49 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:20:49 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:20:49 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:20:49 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:20:49 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:20:49 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:20:49 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:20:49 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:20:49 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:20:49 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:20:49 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:20:49 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:20:49 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:20:49 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:20:49 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:20:49 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:20:49 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:20:49 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:20:49 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:20:49 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:20:49 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:20:50 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:20:50 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:20:50 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:20:50 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:20:50 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:20:50 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:20:50 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:21:02 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:21:03 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:21:03 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:22:03 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:24:03 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:26:03 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:26:03 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:26:03 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:26:03 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:28:03 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:28:03 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:29:14 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:29:14 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:29:17 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:29:17 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:29:17 UTC] PHP Warning:  Array to string conversion in /Users/valiabryniuk/projects/emanuel/wp-content/themes/emanuel/single-haus.php on line 105
+[08-Dec-2025 22:29:17 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:29:17 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:29:17 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:29:17 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:29:17 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:29:17 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:29:17 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:29:17 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:29:17 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:29:17 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:29:17 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:29:17 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:29:17 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:29:17 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:29:25 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:29:25 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:29:46 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:29:46 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:29:46 UTC] PHP Warning:  Array to string conversion in /Users/valiabryniuk/projects/emanuel/wp-content/themes/emanuel/single-haus.php on line 106
+[08-Dec-2025 22:29:47 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:29:47 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:29:47 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:29:47 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:29:47 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:29:47 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:29:47 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:29:47 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:29:47 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:29:47 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:29:47 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:29:47 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:29:47 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:29:47 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:29:47 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:29:47 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:30:08 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:30:08 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:30:08 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:30:08 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:30:08 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:30:08 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:30:08 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:30:08 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:30:08 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:30:08 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:30:08 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:30:08 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:30:08 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:30:08 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:30:08 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:30:08 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:30:08 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:30:08 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:30:14 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:30:14 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:15 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:15 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:40 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:40 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:40 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:40 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:40 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:40 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:40 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:40 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:40 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:40 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:40 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:40 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:40 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:40 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:40 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:40 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:52 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:52 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:52 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:52 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:52 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:52 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:55 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:55 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:55 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:55 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:55 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:55 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:55 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:55 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:55 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:55 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:55 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:55 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:55 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:55 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:55 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:55 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:55 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:55 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:55 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:55 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:55 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:55 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:55 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:55 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:55 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:55 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:55 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:55 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:55 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:55 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:55 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:55 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:55 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:55 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:55 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:55 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:55 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:55 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:55 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:55 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:55 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:55 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:56 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:56 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:56 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:56 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:56 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:56 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:56 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:56 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:56 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:56 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:56 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:56 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:56 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:32:56 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:33:05 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:33:05 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:33:05 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:33:05 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:33:05 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:33:05 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:33:08 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:33:08 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:33:08 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:33:08 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:33:08 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:33:08 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:33:08 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:33:08 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:33:08 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:33:08 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:33:08 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:33:08 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:33:08 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:33:08 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:33:08 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:33:08 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:33:50 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:33:50 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:33:51 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:33:51 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:34:51 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
+[08-Dec-2025 22:34:51 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 27
