@@ -18,48 +18,48 @@ if ( ! class_exists( 'Redux_Social_Profiles_Functions' ) ) {
 		/**
 		 * ReduxFramework object pointer.
 		 *
-		 * @var object
+		 * @var ReduxFramework
 		 */
-		public static $parent;
+		public static ReduxFramework $parent;
 
 		/**
 		 * Field ID.
 		 *
-		 * @var string
+		 * @var null|string
 		 */
-		public static $field_id;
+		public static ?string $field_id;
 
 		/**
 		 * Field array.
 		 *
-		 * @var array
+		 * @var array|null
 		 */
-		public static $field;
+		public static ?array $field;
 
 		/**
 		 * WordPress upload directory.
 		 *
 		 * @var string
 		 */
-		public static $upload_dir;
+		public static string $upload_dir;
 
 		/**
 		 * WordPress upload URI.
 		 *
 		 * @var string
 		 */
-		public static $upload_url;
+		public static string $upload_url;
 
 		/**
 		 * Init helper library.
 		 *
-		 * @param object $parent ReduxFramework object.
+		 * @param ReduxFramework $redux ReduxFramework object.
 		 */
-		public static function init( $parent ) {
-			self::$parent = $parent;
+		public static function init( ReduxFramework $redux ) {
+			self::$parent = $redux;
 
 			if ( empty( self::$field_id ) ) {
-				self::$field = self::get_field( $parent );
+				self::$field = self::get_field( $redux );
 
 				if ( ! is_array( self::$field ) ) {
 					return;
@@ -74,7 +74,7 @@ if ( ! class_exists( 'Redux_Social_Profiles_Functions' ) ) {
 			// Make sanitized upload dir URL.
 			self::$upload_url = Redux_Functions_Ex::wp_normalize_path( Redux_Core::$upload_url . 'social-profiles/' );
 
-			Redux_Functions::initWpFilesystem();
+			Redux_Functions::init_wp_filesystem();
 		}
 
 		/**
@@ -88,7 +88,7 @@ if ( ! class_exists( 'Redux_Social_Profiles_Functions' ) ) {
 			if ( file_exists( $file ) ) {
 
 				// Get the contents of the file and stuff it in a variable.
-				$data = self::$parent->filesystem->execute( 'get_contents', $file );
+				$data = Redux_Core::$filesystem->execute( 'get_contents', $file );
 
 				// Error or null, set the result to false.
 				if ( false === $data || null === $data ) {
@@ -126,12 +126,11 @@ if ( ! class_exists( 'Redux_Social_Profiles_Functions' ) ) {
 
 			// Write to its file on the server, return the return value
 			// True on success, false on error.
-			return self::$parent->filesystem->execute( 'put_contents', $file, array( 'content' => $data ) );
-
+			return Redux_Core::$filesystem->execute( 'put_contents', $file, array( 'content' => $data ) );
 		}
 
 		/**
-		 * Get data path.
+		 * Get the data path.
 		 *
 		 * @return mixed|Redux_Functions_Ex|string
 		 */
@@ -142,11 +141,11 @@ if ( ! class_exists( 'Redux_Social_Profiles_Functions' ) ) {
 		/**
 		 * Get field.
 		 *
-		 * @param array|ReduxFramework $parent ReduxFramework object.
+		 * @param array|ReduxFramework $redux ReduxFramework object.
 		 *
 		 * @return mixed
 		 */
-		public static function get_field( $parent = array() ) {
+		public static function get_field( $redux = array() ) {
 			global $pagenow;
 
 			if ( is_admin() && ( 'post-new.php' === $pagenow || 'post.php' === $pagenow ) ) {
@@ -179,8 +178,8 @@ if ( ! class_exists( 'Redux_Social_Profiles_Functions' ) ) {
 					}
 				}
 			} else {
-				if ( ! empty( $parent ) ) {
-					self::$parent = $parent;
+				if ( ! empty( $redux ) ) {
+					self::$parent = $redux;
 				}
 
 				if ( isset( self::$parent->field_sections['social_profiles'] ) ) {
@@ -213,7 +212,7 @@ if ( ! class_exists( 'Redux_Social_Profiles_Functions' ) ) {
 				}
 			}
 
-			return '';
+			return null;
 		}
 
 		/**
@@ -245,8 +244,9 @@ if ( ! class_exists( 'Redux_Social_Profiles_Functions' ) ) {
 
 					if ( ! $skip_add ) {
 						$arr['order']           = $cur_count;
+						$arr['class']           = $arr['class'] ?? 'fa';
 						$defaults[ $cur_count ] = $arr;
-						$cur_count ++;
+						++$cur_count;
 					}
 				}
 			}
@@ -277,7 +277,7 @@ if ( ! class_exists( 'Redux_Social_Profiles_Functions' ) ) {
 						if ( $icon === $arr['id'] ) {
 							$arr['order']    = $idx;
 							$new_arr[ $idx ] = $arr;
-							$idx ++;
+							++$idx;
 							break;
 						}
 					}
@@ -287,7 +287,6 @@ if ( ! class_exists( 'Redux_Social_Profiles_Functions' ) ) {
 			}
 
 			return $new_arr;
-
 		}
 
 		/**
@@ -305,15 +304,16 @@ if ( ! class_exists( 'Redux_Social_Profiles_Functions' ) ) {
 		/**
 		 * Static function to render the social icon.
 		 *
+		 * @param string $icon_class Icon class.
 		 * @param string $icon       Icon css.
 		 * @param string $color      Hex color.
 		 * @param string $background Background color.
 		 * @param string $title      Icon title.
-		 * @param bool   $echo       Print or echo.
+		 * @param bool   $output     Print or echo.
 		 *
 		 * @return string|void
 		 */
-		public static function render_icon( string $icon, string $color, string $background, string $title, bool $echo = true ) {
+		public static function render_icon( string $icon_class, string $icon, string $color, string $background, string $title, bool $output = true ) {
 			if ( $color || $background ) {
 				if ( '' === $color ) {
 					$color = 'transparent';
@@ -328,9 +328,9 @@ if ( ! class_exists( 'Redux_Social_Profiles_Functions' ) ) {
 				$inline = '';
 			}
 
-			$str = '<i class="fa ' . $icon . '" ' . $inline . ' title="' . $title . '"></i>';
+			$str = '<i class="' . $icon_class . ' ' . $icon . '" ' . $inline . ' title="' . $title . '"></i>';
 
-			if ( $echo ) {
+			if ( $output ) {
 				echo $str; // phpcs:ignore WordPress.Security.EscapeOutput
 			} else {
 				return $str;

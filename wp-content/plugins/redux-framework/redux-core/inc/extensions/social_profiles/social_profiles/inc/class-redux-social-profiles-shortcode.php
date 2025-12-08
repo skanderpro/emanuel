@@ -19,25 +19,25 @@ if ( ! class_exists( 'Redux_Social_Profiles_Shortcode' ) ) {
 		/**
 		 * ReduxFramework object pointer.
 		 *
-		 * @var null
+		 * @var ReduxFramework
 		 */
-		private $parent;
+		private ReduxFramework $parent;
 
 		/**
 		 * Field ID.
 		 *
 		 * @var string
 		 */
-		private $field_id;
+		private string $field_id;
 
 		/**
 		 * Redux_Social_Profiles_Shortcode constructor.
 		 *
-		 * @param object $parent   ReduxFramework object.
-		 * @param string $field_id Field ID.
+		 * @param ReduxFramework $redux    ReduxFramework object.
+		 * @param string         $field_id Field ID.
 		 */
-		public function __construct( $parent, string $field_id ) {
-			$this->parent   = $parent;
+		public function __construct( ReduxFramework $redux, string $field_id ) {
+			$this->parent   = $redux;
 			$this->field_id = $field_id;
 
 			add_shortcode( 'social_profiles', array( $this, 'redux_social_profiles' ) );
@@ -46,12 +46,9 @@ if ( ! class_exists( 'Redux_Social_Profiles_Shortcode' ) ) {
 		/**
 		 * Render shortcode.
 		 *
-		 * @param array|string $atts    Shortcode attributes.
-		 * @param null         $content Shortcode content.
-		 *
 		 * @return string
 		 */
-		public function redux_social_profiles( $atts, $content = null ): string {
+		public function redux_social_profiles(): string {
 			$redux_options = get_option( $this->parent->args['opt_name'] );
 			$social_items  = $redux_options[ $this->field_id ];
 
@@ -61,6 +58,7 @@ if ( ! class_exists( 'Redux_Social_Profiles_Shortcode' ) ) {
 				foreach ( $social_items as $social_item ) {
 					if ( $social_item['enabled'] ) {
 						$icon       = $social_item['icon'];
+						$class      = $social_item['class'] ?? 'fa';
 						$color      = $social_item['color'];
 						$background = $social_item['background'];
 						$base_url   = $social_item['url'];
@@ -71,7 +69,7 @@ if ( ! class_exists( 'Redux_Social_Profiles_Shortcode' ) ) {
 
 						$html .= '<li style="list-style: none;">';
 						$html .= "<a href='" . $url . "'>";
-						$html .= Redux_Social_Profiles_Functions::render_icon( $icon, $color, $background, '', false );
+						$html .= Redux_Social_Profiles_Functions::render_icon( $class, $icon, $color, $background, '', false );
 						$html .= '</a>';
 						$html .= '</li>';
 					}

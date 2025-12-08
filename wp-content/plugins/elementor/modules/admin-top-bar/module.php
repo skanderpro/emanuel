@@ -1,6 +1,7 @@
 <?php
 namespace Elementor\Modules\AdminTopBar;
 
+use Elementor\Core\Utils\Promotions\Filtered_Promotions_Manager;
 use Elementor\Plugin;
 use Elementor\Core\Base\App as BaseApp;
 use Elementor\Core\Experiments\Manager;
@@ -39,7 +40,16 @@ class Module extends BaseApp {
 	private function enqueue_scripts() {
 		wp_enqueue_style( 'elementor-admin-top-bar-fonts', 'https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap', [], ELEMENTOR_VERSION );
 
-		wp_enqueue_style( 'elementor-admin-top-bar', $this->get_css_assets_url( 'admin-top-bar', null, 'default', true ), [], ELEMENTOR_VERSION );
+		wp_enqueue_style( 'elementor-admin-top-bar', $this->get_css_assets_url( 'admin-top-bar' ), [], ELEMENTOR_VERSION );
+
+		/**
+		 * Before admin top bar enqueue scripts.
+		 *
+		 * Fires before Elementor admin top bar scripts are enqueued.
+		 *
+		 * @since 3.19.0
+		 */
+		do_action( 'elementor/admin_top_bar/before_enqueue_scripts', $this );
 
 		wp_enqueue_script( 'elementor-admin-top-bar', $this->get_js_assets_url( 'admin-top-bar' ), [
 			'elementor-common',
@@ -47,6 +57,8 @@ class Module extends BaseApp {
 			'react-dom',
 			'tipsy',
 		], ELEMENTOR_VERSION, true );
+
+		wp_set_script_translations( 'elementor-admin-top-bar', 'elementor' );
 
 		$min_suffix = Utils::is_script_debug() ? '' : '.min';
 
@@ -60,6 +72,20 @@ class Module extends BaseApp {
 	private function add_frontend_settings() {
 		$settings = [];
 		$settings['is_administrator'] = current_user_can( 'manage_options' );
+
+		// TODO: Find a better way to add apps page url to the admin top bar.
+		$settings['apps_url'] = admin_url( 'admin.php?page=elementor-apps' );
+		$settings['promotion'] = [
+			'text' => __( 'Upgrade Now', 'elementor' ),
+			'url' => 'https://go.elementor.com/wp-dash-admin-top-bar-upgrade/',
+		];
+
+		$settings['promotion'] = Filtered_Promotions_Manager::get_filtered_promotion_data(
+			$settings['promotion'],
+			'elementor/admin_top_bar/go_pro_promotion',
+			'url'
+		);
+
 		$current_screen = get_current_screen();
 
 		/** @var \Elementor\Core\Common\Modules\Connect\Apps\Library $library */
@@ -82,22 +108,43 @@ class Module extends BaseApp {
 		do_action( 'elementor/admin-top-bar/init', $this );
 	}
 
+	private function is_top_bar_active() {
+		$current_screen = get_current_screen();
+
+		if ( ! $current_screen ) {
+			return false;
+		}
+
+		$is_elementor_page = strpos( $current_screen->id ?? '', 'elementor' ) !== false;
+		$is_elementor_post_type_page = strpos( $current_screen->post_type ?? '', 'elementor' ) !== false;
+
+		return apply_filters(
+			'elementor/admin-top-bar/is-active',
+			$is_elementor_page || $is_elementor_post_type_page,
+			$current_screen
+		);
+	}
+
 	/**
 	 * Module constructor.
 	 */
 	public function __construct() {
 		parent::__construct();
 
-		add_action( 'in_admin_header', function () {
-			$this->render_admin_top_bar();
-		} );
-
-		add_action( 'admin_enqueue_scripts', function () {
-			$this->enqueue_scripts();
-		} );
-
 		add_action( 'current_screen', function () {
+			if ( ! $this->is_top_bar_active() ) {
+				return;
+			}
+
 			$this->add_frontend_settings();
+
+			add_action( 'in_admin_header', function () {
+				$this->render_admin_top_bar();
+			} );
+
+			add_action( 'admin_enqueue_scripts', function () {
+				$this->enqueue_scripts();
+			} );
 		} );
 	}
 }

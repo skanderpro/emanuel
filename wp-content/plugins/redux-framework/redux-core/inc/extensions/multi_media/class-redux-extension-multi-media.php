@@ -33,7 +33,7 @@ if ( ! class_exists( 'Redux_Extension_Multi_Media' ) ) {
 		 *
 		 * @var string
 		 */
-		public $extension_name = 'Multi Media';
+		public string $extension_name = 'Multi Media';
 
 		/**
 		 * Class Constructor. Defines the args for the extensions class
@@ -41,12 +41,12 @@ if ( ! class_exists( 'Redux_Extension_Multi_Media' ) ) {
 		 * @since       1.0.0
 		 * @access      public
 		 *
-		 * @param       ReduxFramework $parent Parent settings.
+		 * @param       ReduxFramework $redux Parent settings.
 		 *
 		 * @return      void
 		 */
-		public function __construct( $parent ) {
-			parent::__construct( $parent, __FILE__ );
+		public function __construct( $redux ) {
+			parent::__construct( $redux, __FILE__ );
 
 			$this->add_field( 'multi_media' );
 		}
@@ -56,11 +56,10 @@ if ( ! class_exists( 'Redux_Extension_Multi_Media' ) ) {
 		 *
 		 * @param int|string $id image ID.
 		 *
-		 * @return array|void
-		 *
+		 * @return array|null
 		 * @depreacted Remove camelCase function name.
 		 */
-		public static function getExtendedData( $id ) {
+		public static function getExtendedData( $id ): ?array {
 			_deprecated_function( 'getExtendedData', '4.3.15', 'Redux_Extension_Multi_Media::get_extended_data( $id )' );
 
 			return self::get_extended_data( $id );
@@ -71,12 +70,14 @@ if ( ! class_exists( 'Redux_Extension_Multi_Media' ) ) {
 		 *
 		 * @param int|string $id image ID.
 		 *
-		 * @return array|void
+		 * @return array|null
 		 */
-		public static function get_extended_data( $id ) {
+		public static function get_extended_data( $id ): ?array {
 			if ( '' !== $id && is_numeric( $id ) ) {
 				return wp_prepare_attachment_for_js( $id );
 			}
+
+			return null;
 		}
 	}
 }

@@ -1,10 +1,13 @@
 <?php
+defined( 'ABSPATH' ) || die;
+
 /**
  * The Google Maps field.
  */
 class RWMB_Map_Field extends RWMB_Field {
 	public static function admin_enqueue_scripts() {
 		wp_enqueue_style( 'rwmb-map', RWMB_CSS_URL . 'map.css', [], RWMB_VER );
+		wp_style_add_data( 'rwmb-map', 'path', RWMB_CSS_DIR . 'map.css' );
 
 		$args            = func_get_args();
 		$field           = $args[0];
@@ -47,10 +50,11 @@ class RWMB_Map_Field extends RWMB_Field {
 		$attributes['value'] = $meta;
 
 		$html .= sprintf(
-			'<div class="rwmb-map-canvas" data-default-loc="%s" data-region="%s"></div>
+			'<div class="rwmb-map-canvas" data-default-loc="%s" data-region="%s"  data-marker_draggable="%s"></div>
 			<input %s>',
 			esc_attr( $field['std'] ),
 			esc_attr( $field['region'] ),
+			esc_attr( $field['marker_draggable'] ? 'true' : 'false' ),
 			self::render_attributes( $attributes )
 		);
 
@@ -69,14 +73,15 @@ class RWMB_Map_Field extends RWMB_Field {
 	public static function normalize( $field ) {
 		$field = parent::normalize( $field );
 		$field = wp_parse_args( $field, [
-			'std'           => '',
-			'address_field' => '',
-			'language'      => '',
-			'region'        => '',
+			'std'              => '',
+			'address_field'    => '',
+			'language'         => '',
+			'region'           => '',
+			'marker_draggable' => true,
 
 			// Default API key, required by Google Maps since June 2016.
 			// Users should overwrite this key with their own key.
-			'api_key'       => 'AIzaSyC1mUh87SGFyf133tpZQJa-s96p0tgnraQ',
+			'api_key'          => 'AIzaSyC1mUh87SGFyf133tpZQJa-s96p0tgnraQ',
 		] );
 
 		return $field;
@@ -94,24 +99,31 @@ class RWMB_Map_Field extends RWMB_Field {
 	 * @return mixed Array(latitude, longitude, zoom)
 	 */
 	public static function get_value( $field, $args = [], $post_id = null ) {
-		$value                               = parent::get_value( $field, $args, $post_id );
+		$value = parent::get_value( $field, $args, $post_id );
+
+		if ( is_array( $value ) ) {
+			$location = [];
+			foreach ( $value as $clone ) {
+				list( $latitude, $longitude, $zoom ) = explode( ',', $clone . ',,' );
+				$location[]                          = compact( 'latitude', 'longitude', 'zoom' );
+			}
+			return $location;
+		}
+
 		list( $latitude, $longitude, $zoom ) = explode( ',', $value . ',,' );
 		return compact( 'latitude', 'longitude', 'zoom' );
 	}
 
 	/**
-	 * Output the field value.
-	 * Display Google maps.
-	 *
-	 * @param  array    $field   Field parameters.
-	 * @param  array    $args    Additional arguments for the map.
-	 * @param  int|null $post_id Post ID. null for current post. Optional.
-	 *
-	 * @return string HTML output of the field
+	 * Format value before render map
+	 * @param array $field    Field settings.
+	 * @param mixed $value    Field value.
+	 * @param mixed $args     Additional arguments.
+	 * @param mixed $post_id  Post ID.
+	 * @return string
 	 */
-	public static function the_value( $field, $args = [], $post_id = null ) {
-		$value = parent::get_value( $field, $args, $post_id );
-		$args  = wp_parse_args( $args, [
+	public static function format_single_value( $field, $value, $args, $post_id ) {
+		$args = wp_parse_args( $args, [
 			'api_key' => $field['api_key'] ?? '',
 		] );
 		return self::render_map( $value, $args );
@@ -126,7 +138,14 @@ class RWMB_Map_Field extends RWMB_Field {
 	 * @return string
 	 */
 	public static function render_map( $location, $args = [] ) {
-		list( $latitude, $longitude, $zoom ) = explode( ',', $location . ',,' );
+		// For compatibility with previous version, or within groups.
+		if ( is_string( $location ) ) {
+			list( $latitude, $longitude, $zoom ) = explode( ',', $location . ',,' );
+		} else {
+			// phpcs:ignore WordPress.PHP.DontExtract.extract_extract
+			extract( $location );
+		}
+
 		if ( ! $latitude || ! $longitude ) {
 			return '';
 		}

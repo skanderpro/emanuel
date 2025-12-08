@@ -1,10 +1,13 @@
 <?php
+defined( 'ABSPATH' ) || die;
+
 /**
  * The key-value field which allows users to add pairs of keys and values.
  */
 class RWMB_Key_Value_Field extends RWMB_Input_Field {
 	public static function admin_enqueue_scripts() {
 		wp_enqueue_style( 'rwmb-key-value', RWMB_CSS_URL . 'key-value.css', [], RWMB_VER );
+		wp_style_add_data( 'rwmb-key-value', 'path', RWMB_CSS_DIR . 'key-value.css' );
 	}
 
 	/**
@@ -31,26 +34,11 @@ class RWMB_Key_Value_Field extends RWMB_Input_Field {
 		return $html;
 	}
 
-	protected static function begin_html( array $field ) : string {
-		$desc = $field['desc'] ? "<p id='{$field['id']}_description' class='description'>{$field['desc']}</p>" : '';
-
-		if ( empty( $field['name'] ) ) {
-			return '<div class="rwmb-input">' . $desc;
-		}
-
-		return sprintf(
-			'<div class="rwmb-label">
-				<label for="%s">%s</label>
-			</div>
-			<div class="rwmb-input">
-			%s',
-			$field['id'],
-			$field['name'],
-			$desc
-		);
+	protected static function begin_html( array $field ): string {
+		return parent::begin_html( $field ) . parent::input_description( $field );
 	}
 
-	protected static function input_description( array $field ) : string {
+	protected static function input_description( array $field ): string {
 		return '';
 	}
 

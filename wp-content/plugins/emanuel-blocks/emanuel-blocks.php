@@ -436,11 +436,13 @@ add_filter( 'rwmb_meta_boxes', function ( $meta_boxes ) {
                 'type' => 'single_image',
                 'name' => esc_html__( 'Address Image', 'online-generator' ),
                 'id'   => $prefix . 'address_image',
+                'js_options' => [],
             ],
             [
                 'type' => 'single_image',
                 'name' => esc_html__( 'Highlight Image', 'online-generator' ),
                 'id'   => $prefix . 'highlight_image',
+                'js_options' => [],
             ],
             [
                 'type' => 'text',

@@ -25,32 +25,32 @@ if ( ! class_exists( 'Redux_Icon_Select' ) ) {
 		 *
 		 * @var array
 		 */
-		private $stylesheet_url = array();
+		private array $stylesheet_url = array();
 
 		/**
 		 * Stylesheet data array.
 		 *
 		 * @var array
 		 */
-		private $stylesheet_data = array();
+		private array $stylesheet_data = array();
 
 		/**
 		 * Error flag to prevent render and enqueue.
 		 *
 		 * @var bool
 		 */
-		private $is_error = false;
+		private bool $is_error = false;
 		/**
 		 * ReduxFramework_Icon_Select constructor.
 		 *
 		 * @param array          $field  Field array.
 		 * @param string         $value  Value.
-		 * @param ReduxFramework $parent ReduxFramework object.
+		 * @param ReduxFramework $redux ReduxFramework object.
 		 *
 		 * @throws ReflectionException Exception.
 		 */
-		public function __construct( $field = array(), $value = '', $parent = object ) {
-			parent::__construct( $field, $value, $parent );
+		public function __construct( $field = array(), $value = '', $redux = object ) {
+			parent::__construct( $field, $value, $redux );
 
 			if ( empty( $field ) ) {
 				return;
@@ -63,6 +63,7 @@ if ( ! class_exists( 'Redux_Icon_Select' ) ) {
 						'class'   => $this->field['prefix'],
 						'title'   => basename( $this->field['stylesheet'] ),
 						'icons'   => $this->field['options'],
+						// phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude -- Not a WPQuery.
 						'exclude' => $this->field['exclude_icons'],
 					);
 
@@ -79,10 +80,11 @@ if ( ! class_exists( 'Redux_Icon_Select' ) ) {
 				}
 
 				foreach ( $arr as $idx => $val ) {
-					$val['url']     = ! empty( $val['url'] ) ? $val['url'] : '';
-					$val['title']   = ! empty( $val['title'] ) ? $val['title'] : basename( $val['url'] );
-					$val['class']   = ! empty( $val['prefix'] ) ? $val['prefix'] : '';
-					$val['icons']   = ! empty( $val['icons'] ) ? $val['icons'] : array();
+					$val['url']   = ! empty( $val['url'] ) ? $val['url'] : '';
+					$val['title'] = ! empty( $val['title'] ) ? $val['title'] : basename( $val['url'] );
+					$val['class'] = ! empty( $val['prefix'] ) ? $val['prefix'] : '';
+					$val['icons'] = ! empty( $val['icons'] ) ? $val['icons'] : array();
+					// phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude -- Not a WPQuery.
 					$val['exclude'] = ! empty( $val['exclude'] ) ? $val['exclude'] : '';
 					$val['regex']   = ! empty( $val['regex'] ) ? $val['regex'] : '';
 
@@ -145,9 +147,12 @@ if ( ! class_exists( 'Redux_Icon_Select' ) ) {
 						$regex_arr = array( '/.([\w-]+):{2}before{content/mi', '/.([\w-]+):{2}before { content/mi', '/.([\w-]+):{1}before{content:/mi', '/.([\w-]+):{1}before { content:/mi' );
 
 						if ( ! is_array( $sub_arr['exclude'] ) ) {
+							// phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude -- Not a WPQuery.
 							if ( empty( $sub_arr['exclude'] ) ) {
+								// phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude -- Not a WPQuery.
 								$sub_arr['exclude'] = array();
 							} else {
+								// phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude -- Not a WPQuery.
 								$sub_arr['exclude'] = array( $sub_arr['exclude'] );
 							}
 						}
@@ -191,7 +196,7 @@ if ( ! class_exists( 'Redux_Icon_Select' ) ) {
 		}
 
 		/**
-		 * Combine array with null check.
+		 * Combine the array with null check.
 		 *
 		 * @param mixed $array1 First array.
 		 * @param mixed $array2 Second array.
@@ -211,14 +216,14 @@ if ( ! class_exists( 'Redux_Icon_Select' ) ) {
 		}
 
 		/**
-		 * Check if array is multidimensional.
+		 * Check if the array is multidimensional.
 		 *
-		 * @param array $array Array to evaluate.
+		 * @param array $my_array Array to evaluate.
 		 *
 		 * @return bool
 		 */
-		private function is_multi_array( array $array ): bool {
-			if ( count( $array ) === count( $array, COUNT_RECURSIVE ) ) {
+		private function is_multi_array( array $my_array ): bool {
+			if ( count( $my_array ) === count( $my_array, COUNT_RECURSIVE ) ) {
 				return false;
 			}
 
@@ -388,21 +393,23 @@ if ( ! class_exists( 'Redux_Icon_Select' ) ) {
 			wp_enqueue_script(
 				'redux-field-icon-select',
 				$this->url . 'redux-icon-select' . $min . '.js',
-				array( 'jquery', 'redux-js' ),
-				Redux_Core::$version,
+				array( 'jquery', 'redux-js', 'wp-util' ),
+				Redux_Extension_Icon_Select::$version,
 				true
 			);
 
-			wp_enqueue_style(
-				'redux-field-icon-select',
-				$this->url . 'redux-icon-select.css',
-				array(),
-				Redux_Core::$version
-			);
+			if ( $this->parent->args['dev_mode'] ) {
+				wp_enqueue_style(
+					'redux-field-icon-select',
+					$this->url . 'redux-icon-select.css',
+					array(),
+					Redux_Extension_Icon_Select::$version
+				);
+			}
 		}
 
 		/**
-		 * Function is unused, by necessary to trigger output.
+		 * This function is unused, but necessary to trigger output.
 		 *
 		 * @param mixed $data CSS data.
 		 *
@@ -445,13 +452,13 @@ if ( ! class_exists( 'Redux_Icon_Select' ) ) {
 		/**
 		 * Remove items from an array.
 		 *
-		 * @param array $array   The array to manage.
+		 * @param array $my_array   The array to manage.
 		 * @param mixed $element An array or a string of the item to remove.
 		 *
 		 * @return array The cleaned array with reset keys.
 		 */
-		private function array_delete( array $array, $element ): array {
-			return ( is_array( $element ) ) ? array_values( array_diff( $array, $element ) ) : array_values( array_diff( $array, array( $element ) ) );
+		private function array_delete( array $my_array, $element ): array {
+			return ( is_array( $element ) ) ? array_values( array_diff( $my_array, $element ) ) : array_values( array_diff( $my_array, array( $element ) ) );
 		}
 	}
 }

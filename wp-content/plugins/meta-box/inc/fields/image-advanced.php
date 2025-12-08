@@ -1,4 +1,6 @@
 <?php
+defined( 'ABSPATH' ) || die;
+
 /**
  * The advanced image upload field which uses WordPress media popup to upload and select images.
  */
@@ -68,13 +70,5 @@ class RWMB_Image_Advanced_Field extends RWMB_Media_Field {
 	 */
 	public static function format_single_value( $field, $value, $args, $post_id ) {
 		return RWMB_Image_Field::format_single_value( $field, $value, $args, $post_id );
-	}
-
-	/**
-	 * Template for media item.
-	 */
-	public static function print_templates() {
-		parent::print_templates();
-		require_once RWMB_INC_DIR . 'templates/image-advanced.php';
 	}
 }

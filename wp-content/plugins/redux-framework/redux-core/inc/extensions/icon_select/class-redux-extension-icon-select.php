@@ -6,6 +6,8 @@
  * @author  Dovy Paukstys <dovy@reduxframework.com> & Kevin Provance <kevin.provance@gmail.com>
  * @class   Redux_Extension_Icon_Select
  * @version 4.4.2
+ *
+ * @noinspection PhpIgnoredClassAliasDeclaration
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -33,15 +35,15 @@ if ( ! class_exists( 'Redux_Extension_Icon_Select' ) ) {
 		 *
 		 * @var string
 		 */
-		public $ext_name = 'Icon Select';
+		public string $extension_name = 'Icon Select';
 
 		/**
 		 * ReduxFramework_Extension_Icon_Select constructor.
 		 *
-		 * @param ReduxFramework $parent ReduxFramework object.
+		 * @param ReduxFramework $redux ReduxFramework object.
 		 */
-		public function __construct( $parent ) {
-			parent::__construct( $parent, __FILE__ );
+		public function __construct( $redux ) {
+			parent::__construct( $redux, __FILE__ );
 
 			$this->add_field( 'icon_select' );
 
@@ -123,6 +125,6 @@ if ( ! class_exists( 'Redux_Extension_Icon_Select' ) ) {
 			wp_send_json_success( array( 'content' => $content ) );
 		}
 	}
-}
 
-class_alias( 'Redux_Extension_Icon_Select', 'ReduxFramework_extension_icon_select' );
+	class_alias( Redux_Extension_Icon_Select::class, 'ReduxFramework_extension_icon_select' );
+}

@@ -256,12 +256,11 @@ if ( ! class_exists( 'Redux_Background', false ) ) {
 						} elseif ( ! empty( $this->field['default']['background-image'] ) ) {
 							$this->value['background-image'] = $this->field['default']['background-image'];
 						}
-					} else {
-						if ( is_numeric( $this->field['default'] ) ) { // Check if it's an attachment ID.
+					} elseif ( is_numeric( $this->field['default'] ) ) {
+						// Check if it's an attachment ID.
 							$this->value['media']['id'] = $this->field['default'];
-						} else { // Must be a URL.
-							$this->value['background-image'] = $this->field['default'];
-						}
+					} else { // Must be a URL.
+						$this->value['background-image'] = $this->field['default'];
 					}
 				}
 
@@ -278,7 +277,7 @@ if ( ! class_exists( 'Redux_Background', false ) ) {
 					$this->field['class'] .= ' noPreview';
 				}
 
-				if ( ( ! empty( $this->field['background-image'] ) && true === $this->field['background-image'] ) || isset( $this->field['preview'] ) && false === $this->field['preview'] ) {
+				if ( ( ! empty( $this->field['background-image'] ) && true === $this->field['background-image'] ) || ( isset( $this->field['preview'] ) && false === $this->field['preview'] ) ) {
 					$hide = '';
 				}
 
@@ -367,10 +366,8 @@ if ( ! class_exists( 'Redux_Background', false ) ) {
 		public function enqueue() {
 			if ( function_exists( 'wp_enqueue_media' ) ) {
 				wp_enqueue_media();
-			} else {
-				if ( ! wp_script_is( 'media-upload' ) ) {
-					wp_enqueue_script( 'media-upload' );
-				}
+			} elseif ( ! wp_script_is( 'media-upload' ) ) {
+				wp_enqueue_script( 'media-upload' );
 			}
 
 			if ( ! wp_style_is( 'select2-css' ) ) {

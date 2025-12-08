@@ -5,6 +5,8 @@
  * @class Redux_Filesystem
  * @version 4.0.0
  * @package Redux Framework/Classes
+ * @noinspection PhpUnused
+ * @noinspection PhpConditionCheckedByNextConditionInspection
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -20,65 +22,79 @@ if ( ! class_exists( 'Redux_Filesystem', false ) ) {
 		 * Instance of this class.
 		 *
 		 * @since    1.0.0
-		 * @var      object
+		 * @var      null|Redux_Filesystem
 		 */
-		protected static $instance = null;
+		protected static ?Redux_Filesystem $instance = null;
 
 		/**
 		 * WP Filesystem object.
 		 *
-		 * @var object
+		 * @var null|WP_Filesystem_Direct
 		 */
-		protected static $direct = null;
+		protected static ?WP_Filesystem_Direct $direct = null;
 
 		/**
 		 * File system credentials.
 		 *
-		 * @var array
+		 * @var array|bool|null
 		 */
-		private $creds = array();
+		private $creds;
 
 		/**
 		 * ReduxFramework object pointer.
 		 *
-		 * @var object
+		 * @var null|ReduxFramework
 		 */
-		public $parent = null;
+		public ?ReduxFramework $parent = null;
 
 		/**
 		 * Instance of WP_Filesystem
 		 *
-		 * @var WP_Filesystem|null
+		 * @var WP_Filesystem_Base|null
 		 */
-		private $wp_filesystem;
+		private ?WP_Filesystem_Base $wp_filesystem = null;
 
 		/**
 		 * If DBI_Filesystem should attempt to use the WP_Filesystem class.
 		 *
 		 * @var bool
 		 */
-		private $use_filesystem = false;
+		private bool $use_filesystem = false;
 
 		/**
 		 * Default chmod octal value for directories.
 		 *
 		 * @var int
 		 */
-		private $chmod_dir;
+		private int $chmod_dir;
 
 		/**
 		 * Default chmod octal value for files.
 		 *
 		 * @var int
 		 */
-		private $chmod_file;
+		private int $chmod_file;
 
 		/**
 		 * Default cache folder.
 		 *
 		 * @var string
 		 */
-		public $cache_folder;
+		public string $cache_folder;
+
+		/**
+		 * Kill switch.
+		 *
+		 * @var bool
+		 */
+		public bool $killswitch = false;
+
+		/**
+		 * FTP Form HTML.
+		 *
+		 * @var string
+		 */
+		public string $ftp_form;
 
 		/**
 		 * Pass `true` when instantiating to skip using WP_Filesystem.
@@ -93,6 +109,19 @@ if ( ! class_exists( 'Redux_Filesystem', false ) ) {
 				require_once ABSPATH . '/wp-admin/includes/template.php';
 				require_once ABSPATH . '/wp-includes/pluggable.php';
 				require_once ABSPATH . '/wp-admin/includes/file.php';
+			}
+
+			// Set default permissions.
+			if ( defined( 'FS_CHMOD_DIR' ) ) {
+				$this->chmod_dir = FS_CHMOD_DIR;
+			} else {
+				$this->chmod_dir = ( fileperms( ABSPATH ) & 0777 | 0755 );
+			}
+
+			if ( defined( 'FS_CHMOD_FILE' ) ) {
+				$this->chmod_file = FS_CHMOD_FILE;
+			} else {
+				$this->chmod_file = ( fileperms( ABSPATH . 'index.php' ) & 0777 | 0644 );
 			}
 
 			if ( ! $force_no_fs && function_exists( 'request_filesystem_credentials' ) ) {
@@ -111,20 +140,20 @@ if ( ! class_exists( 'Redux_Filesystem', false ) ) {
 		/**
 		 * Return an instance of this class.
 		 *
-		 * @param object $parent ReduxFramework pointer.
+		 * @param ReduxFramework|null $me ReduxFramework pointer.
 		 *
-		 * @since     1.0.0
 		 * @return    object    A single instance of this class.
+		 * @since     1.0.0
 		 */
-		public static function get_instance( $parent = null ) {
+		public static function get_instance( ?ReduxFramework $me = null ): ?object {
 
 			// If the single instance hasn't been set, set it now.
 			if ( null === self::$instance ) {
 				self::$instance = new self();
 			}
 
-			if ( null !== $parent ) {
-				self::$instance->parent = $parent;
+			if ( null !== $me ) {
+				self::$instance->parent = $me;
 			}
 
 			return self::$instance;
@@ -134,7 +163,7 @@ if ( ! class_exists( 'Redux_Filesystem', false ) ) {
 		 * Build an FTP form.
 		 */
 		public function ftp_form() {
-			if ( isset( $this->parent->ftp_form ) && ! empty( $this->parent->ftp_form ) ) {
+			if ( isset( $this->ftp_form ) && ! empty( $this->ftp_form ) ) {
 				echo '<div class="wrap">';
 				echo '<div class="error">';
 				echo '<p>';
@@ -158,10 +187,12 @@ if ( ! class_exists( 'Redux_Filesystem', false ) ) {
 			require_once ABSPATH . '/wp-admin/includes/template.php';
 			require_once ABSPATH . '/wp-includes/pluggable.php';
 			require_once ABSPATH . '/wp-admin/includes/file.php';
+
 			ob_start();
 			$credentials = request_filesystem_credentials( '', '', false, false );
 			$ob_contents = ob_get_contents();
 			ob_end_clean();
+
 			if ( @wp_filesystem( $credentials ) ) { // phpcs:ignore WordPress.PHP.NoSilencedErrors
 				global $wp_filesystem;
 				$this->wp_filesystem  = $wp_filesystem;
@@ -176,11 +207,10 @@ if ( ! class_exists( 'Redux_Filesystem', false ) ) {
 		 * @param string $form_url Form URL.
 		 * @param string $method   Connect method.
 		 * @param bool   $context  Context.
-		 * @param null   $fields   Fields.
 		 *
 		 * @return bool
 		 */
-		public function advanced_filesystem_init( string $form_url, string $method = '', bool $context = false, $fields = null ): bool {
+		public function advanced_filesystem_init( string $form_url, string $method = '', bool $context = false ): bool {
 			if ( ! empty( $this->wp_filesystem ) && $this->use_filesystem ) {
 				return true;
 			}
@@ -195,8 +225,8 @@ if ( ! class_exists( 'Redux_Filesystem', false ) ) {
 
 			/* first attempt to get credentials */
 			if ( false === $this->creds ) {
-				$this->creds            = array();
-				$this->parent->ftp_form = ob_get_contents();
+				$this->creds    = array();
+				$this->ftp_form = ob_get_contents();
 				ob_end_clean();
 
 				/**
@@ -212,7 +242,7 @@ if ( ! class_exists( 'Redux_Filesystem', false ) ) {
 				$this->creds = array();
 				/* incorrect connection data - ask for credentials again, now with an error message */
 				request_filesystem_credentials( $form_url, '', true, $context );
-				$this->parent->ftp_form = ob_get_contents();
+				$this->ftp_form = ob_get_contents();
 				ob_end_clean();
 
 				return false;
@@ -279,37 +309,8 @@ if ( ! class_exists( 'Redux_Filesystem', false ) ) {
 		 * @return void
 		 */
 		private function generate_default_files() {
-
-			// Set default permissions.
-			if ( defined( 'FS_CHMOD_DIR' ) ) {
-				$this->chmod_dir = FS_CHMOD_DIR;
-			} else {
-				$this->chmod_dir = ( fileperms( ABSPATH ) & 0777 | 0755 );
-			}
-
-			if ( defined( 'FS_CHMOD_FILE' ) ) {
-				$this->chmod_file = FS_CHMOD_FILE;
-			} else {
-				$this->chmod_file = ( fileperms( ABSPATH . 'index.php' ) & 0777 | 0644 );
-			}
-
 			if ( ! $this->is_dir( Redux_Core::$upload_dir ) ) {
 				$this->mkdir( Redux_Core::$upload_dir );
-			}
-
-			$hash_path = trailingslashit( Redux_Core::$upload_dir ) . 'hash';
-			if ( ! $this->file_exists( $hash_path ) ) {
-				$this->put_contents( $hash_path, Redux_Helpers::get_hash() );
-			}
-
-			$version_path = trailingslashit( Redux_Core::$upload_dir ) . 'version';
-			if ( ! $this->file_exists( $version_path ) ) {
-				$this->put_contents( $version_path, Redux_Core::$version );
-			} else {
-				$version_compare = $this->get_contents( $version_path );
-				if ( (string) Redux_Core::$version !== $version_compare ) {
-					$this->put_contents( $version_path, Redux_Core::$version );
-				}
 			}
 		}
 
@@ -358,9 +359,9 @@ if ( ! class_exists( 'Redux_Filesystem', false ) ) {
 				$res = $this->mkdir( $file, $chmod );
 			} elseif ( 'rmdir' === $action ) {
 				$res = $this->rmdir( $file, $recursive );
-			} elseif ( 'copy' === $action && ! isset( $this->wp_filesystem->killswitch ) ) {
+			} elseif ( 'copy' === $action && false === $this->killswitch ) {
 				$res = $this->copy( $file, $destination, $overwrite, $chmod );
-			} elseif ( 'move' === $action && ! isset( $this->wp_filesystem->killswitch ) ) {
+			} elseif ( 'move' === $action && false === $this->killswitch ) {
 				$res = $this->move( $file, $destination, $overwrite );
 			} elseif ( 'delete' === $action ) {
 				if ( $this->is_dir( $file ) ) {
@@ -368,16 +369,14 @@ if ( ! class_exists( 'Redux_Filesystem', false ) ) {
 				} else {
 					$res = $this->unlink( $file );
 				}
-			} elseif ( 'rmdir' === $action ) {
-				$res = $this->rmdir( $file, $recursive );
 			} elseif ( 'dirlist' === $action ) {
 				if ( ! isset( $include_hidden ) ) {
 					$include_hidden = true;
 				}
 				$res = $this->scandir( $file, $include_hidden, $recursive );
-			} elseif ( 'put_contents' === $action && ! isset( $this->wp_filesystem->killswitch ) ) {
+			} elseif ( 'put_contents' === $action && false === $this->killswitch ) {
 				// Write a string to a file.
-				if ( isset( $this->parent->ftp_form ) && ! empty( $this->parent->ftp_form ) ) {
+				if ( isset( $this->ftp_form ) && ! empty( $this->ftp_form ) ) {
 					self::load_direct();
 					$res = self::$direct->put_contents( $file, $content, $chmod );
 				} else {
@@ -392,14 +391,14 @@ if ( ! class_exists( 'Redux_Filesystem', false ) ) {
 				// Gets the file owner.
 				$res = $this->wp_filesystem->owner( $file );
 			} elseif ( 'chmod' === $action ) {
-				if ( ! isset( $params['chmod'] ) || ( isset( $params['chmod'] ) && empty( $params['chmod'] ) ) ) {
+				if ( ! isset( $params['chmod'] ) || ( empty( $params['chmod'] ) ) ) {
 					$chmod = false;
 				}
 
-				$res = $this->chmod( $file, $chmod, $recursive );
+				$res = $this->chmod( $file, $chmod );
 			} elseif ( 'get_contents' === $action ) {
 				// Reads entire file into a string.
-				if ( isset( $this->parent->ftp_form ) && ! empty( $this->parent->ftp_form ) ) {
+				if ( isset( $this->ftp_form ) && ! empty( $this->ftp_form ) ) {
 					self::load_direct();
 					$res = self::$direct->get_contents( $file );
 				} else {
@@ -453,7 +452,7 @@ if ( ! class_exists( 'Redux_Filesystem', false ) ) {
 		/**
 		 * Getter for the instantiated WP_Filesystem. This should be used carefully since $wp_filesystem won't always have a value.
 		 *
-		 * @return WP_Filesystem|false
+		 * @return WP_Filesystem_Base|false
 		 */
 		public function get_wp_filesystem() {
 			if ( $this->use_filesystem ) {
@@ -505,7 +504,7 @@ if ( ! class_exists( 'Redux_Filesystem', false ) ) {
 				$atime = time();
 			}
 
-			// phpcs:ignore WordPress.PHP.NoSilencedErrors
+			// phpcs:ignore WordPress.PHP.NoSilencedErrors, WordPress.WP
 			$return = @touch( $abs_path, $time, $atime );
 
 			if ( ! $return && $this->use_filesystem ) {
@@ -525,51 +524,32 @@ if ( ! class_exists( 'Redux_Filesystem', false ) ) {
 		 *
 		 * @return bool
 		 */
-		public function put_contents( string $abs_path, string $contents, string $perms = null ): bool {
+		public function put_contents( string $abs_path, string $contents, ?string $perms = null ): bool {
+			$return = false;
 
 			if ( ! $this->is_dir( dirname( $abs_path ) ) ) {
 				$this->mkdir( dirname( $abs_path ) );
 			}
 
-			// phpcs:ignore WordPress.PHP.NoSilencedErrors
-			// @codingStandardsIgnoreStart
-			$return = @file_put_contents( $abs_path, $contents );
-			// @codingStandardsIgnoreEnd
-			$this->chmod( $abs_path );
+			if ( $this->is_writable( dirname( $abs_path ) ) ) {
+				// phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_file_put_contents, WordPress.PHP.NoSilencedErrors.Discouraged
+				$return = @file_put_contents( $abs_path, $contents );
+				$this->chmod( $abs_path );
 
-			if ( null === $perms ) {
-				$perms = $this->chmod_file;
+				if ( null === $perms ) {
+					$perms = $this->chmod_file;
+				}
 			}
 
 			if ( ! $return && $this->use_filesystem ) {
 				$abs_path = $this->get_sanitized_path( $abs_path );
-				$return   = $this->wp_filesystem->put_contents( $abs_path, $contents, $perms );
+				// phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.file_ops_is_writable, WordPress.WP.AlternativeFunctions.file_system_operations_is_writable
+				if ( $this->is_writable( dirname( $abs_path ) ) ) {
+					$return = $this->wp_filesystem->put_contents( $abs_path, $contents, $perms );
+				}
 			}
 
 			return (bool) $return;
-		}
-
-		/**
-		 * Calls file_put_contents with chmod.
-		 *
-		 * @param string $path Get a full cache path.
-		 *
-		 * @return string
-		 */
-		public function get_cache_path( string $path ): string {
-			return $this->folder . $path;
-		}
-
-		/**
-		 * Calls file_put_contents with chmod in cache directory.
-		 *
-		 * @param string $abs_path Absolute path.
-		 * @param string $contents Contents to put in the cache.
-		 *
-		 * @return bool
-		 */
-		public function put_contents_cache( string $abs_path, string $contents ): bool {
-			return $this->put_contents( $this->get_cache_path( $abs_path ), $contents );
 		}
 
 		/**
@@ -586,7 +566,7 @@ if ( ! class_exists( 'Redux_Filesystem', false ) ) {
 				$return   = $this->wp_filesystem->exists( $abs_path );
 			}
 
-			return (bool) $return;
+			return $return;
 		}
 
 		/**
@@ -617,11 +597,17 @@ if ( ! class_exists( 'Redux_Filesystem', false ) ) {
 		public function get_local_file_contents( string $abs_path ): string {
 
 			try {
-				ob_start();
+				$contents = '';
+
 				if ( $this->file_exists( $abs_path ) && is_file( $abs_path ) ) {
-					require_once $abs_path;
+					if ( $this->is_writable( $abs_path ) ) { // phpcs:ignore WordPress.WP.AlternativeFunctions
+						ob_start();
+
+						include_once $abs_path;
+
+						$contents = ob_get_clean();
+					}
 				}
-				$contents = ob_get_clean();
 			} catch ( Exception $e ) {
 				// This means that ob_start has been disabled on the system. Lets fallback to good old file_get_contents.
 				$contents = file_get_contents( $abs_path ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
@@ -658,12 +644,12 @@ if ( ! class_exists( 'Redux_Filesystem', false ) ) {
 		 * @return bool
 		 */
 		public function unlink( string $abs_path ): bool {
-			// phpcs:ignore WordPress.PHP.NoSilencedErrors
+			// phpcs:ignore WordPress.PHP.NoSilencedErrors, WordPress.WP.AlternativeFunctions
 			$return = @unlink( $abs_path );
 
 			if ( ! $return && $this->use_filesystem ) {
 				$abs_path = $this->get_sanitized_path( $abs_path );
-				$return   = $this->wp_filesystem->delete( $abs_path, false, false );
+				$return   = $this->wp_filesystem->delete( $abs_path );
 			}
 
 			return $return;
@@ -677,22 +663,22 @@ if ( ! class_exists( 'Redux_Filesystem', false ) ) {
 		 *
 		 * @return bool
 		 */
-		public function chmod( string $abs_path, int $perms = null ): bool {
+		public function chmod( string $abs_path, ?int $perms = null ): bool {
 			if ( ! $this->file_exists( $abs_path ) ) {
 				return false;
 			}
 			if ( is_null( $perms ) ) {
 				$perms = $this->is_file( $abs_path ) ? $this->chmod_file : $this->chmod_dir;
 			}
-			// phpcs:ignore WordPress.PHP.NoSilencedErrors
+			// phpcs:ignore WordPress.PHP.NoSilencedErrors, WordPress.WP.AlternativeFunctions
 			$return = @chmod( $abs_path, $perms );
 
 			if ( ! $return && $this->use_filesystem ) {
 				$abs_path = $this->get_sanitized_path( $abs_path );
-				$return   = $this->wp_filesystem->chmod( $abs_path, $perms, false );
+				$return   = $this->wp_filesystem->chmod( $abs_path, $perms );
 			}
 
-			return (bool) $return;
+			return $return;
 		}
 
 		/**
@@ -757,7 +743,7 @@ if ( ! class_exists( 'Redux_Filesystem', false ) ) {
 		 * @return bool
 		 */
 		public function is_writable( string $abs_path ): bool {
-			$return = is_writable( $abs_path );
+			$return = is_writable( $abs_path ); // phpcs:ignore WordPress.WP.AlternativeFunctions
 
 			if ( ! $return && $this->use_filesystem ) {
 				$abs_path = $this->get_sanitized_path( $abs_path );
@@ -787,7 +773,7 @@ if ( ! class_exists( 'Redux_Filesystem', false ) ) {
 		 *
 		 * @return bool
 		 */
-		public function mkdir( string $abs_path, int $perms = null ): bool {
+		public function mkdir( string $abs_path, ?int $perms = null ): bool {
 			if ( is_null( $perms ) ) {
 				$perms = $this->chmod_dir;
 			}
@@ -811,8 +797,13 @@ if ( ! class_exists( 'Redux_Filesystem', false ) ) {
 
 				return true;
 			}
-			// phpcs:ignore WordPress.PHP.NoSilencedErrors
-			$return = @mkdir( $abs_path, $perms, true );
+
+			$return = false;
+
+			if ( $this->is_writable( dirname( $abs_path ) ) ) {
+				// phpcs:ignore WordPress.PHP.NoSilencedErrors, WordPress.WP.AlternativeFunctions, WordPressVIPMinimum.Functions.RestrictedFunctions.file_ops_is_writable
+				$return = @mkdir( $abs_path, $perms, true );
+			}
 
 			if ( ! $return && $this->use_filesystem ) {
 				$abs_path = $this->get_sanitized_path( $abs_path );
@@ -835,7 +826,9 @@ if ( ! class_exists( 'Redux_Filesystem', false ) ) {
 
 				foreach ( $dirs as $dir ) {
 					$current_dir .= '/' . $dir;
-					if ( ! $this->is_dir( $current_dir ) ) {
+
+					// phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.file_ops_is_writable, WordPress.WP.AlternativeFunctions.file_system_operations_is_writable
+					if ( ! $this->is_dir( $current_dir ) && $this->is_writable( dirname( $current_dir ) ) ) {
 						$this->wp_filesystem->mkdir( $current_dir, $perms );
 					}
 				}
@@ -861,7 +854,7 @@ if ( ! class_exists( 'Redux_Filesystem', false ) ) {
 
 			// Taken from WP_Filesystem_Direct.
 			if ( ! $recursive ) {
-				// phpcs:ignore WordPress.PHP.NoSilencedErrors
+				// phpcs:ignore WordPress.PHP.NoSilencedErrors, WordPress.WP.AlternativeFunctions
 				$return = @rmdir( $abs_path );
 			} else {
 
@@ -880,7 +873,7 @@ if ( ! class_exists( 'Redux_Filesystem', false ) ) {
 						}
 					}
 				}
-				// phpcs:ignore WordPress.PHP.NoSilencedErrors
+				// phpcs:ignore WordPress.PHP.NoSilencedErrors, WordPress.WP.AlternativeFunctions
 				if ( file_exists( $abs_path ) && ! @rmdir( $abs_path ) ) {
 					$return = false;
 				}
@@ -893,7 +886,6 @@ if ( ! class_exists( 'Redux_Filesystem', false ) ) {
 			}
 
 			return $return;
-
 		}
 
 		/**
@@ -976,7 +968,7 @@ if ( ! class_exists( 'Redux_Filesystem', false ) ) {
 		 *
 		 * @return bool
 		 */
-		public function move_uploaded_file( string $file, string $destination, int $perms = null ): bool {
+		public function move_uploaded_file( string $file, string $destination, ?int $perms = null ): bool {
 			// TODO: look into replicating more functionality from wp_handle_upload().
 			// phpcs:ignore WordPress.PHP.NoSilencedErrors
 			$return = @move_uploaded_file( $file, $destination );
@@ -1052,18 +1044,17 @@ if ( ! class_exists( 'Redux_Filesystem', false ) ) {
 			// Taken in part from WP_Filesystem_Direct.
 			if ( ! $overwrite && $this->file_exists( $destination_abs_path ) ) {
 				return false;
-			} elseif ( @rename( $source_abs_path, $destination_abs_path ) ) { // phpcs:ignore WordPress.PHP.NoSilencedErrors
+			} elseif ( @rename( $source_abs_path, $destination_abs_path ) ) { // phpcs:ignore WordPress.PHP.NoSilencedErrors, WordPress.WP.AlternativeFunctions
 				return true;
-			} else {
-				if ( $this->copy( $source_abs_path, $destination_abs_path, $overwrite ) && $this->file_exists(
-					$destination_abs_path
-				) ) {
+			} elseif ( $this->copy( $source_abs_path, $destination_abs_path, $overwrite ) && $this->file_exists(
+				$destination_abs_path
+			) ) {
+
 					$this->unlink( $source_abs_path );
 
 					return true;
-				} else {
-					$return = false;
-				}
+			} else {
+				$return = false;
 			}
 
 			if ( $this->use_filesystem ) {

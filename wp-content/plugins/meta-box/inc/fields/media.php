@@ -1,4 +1,6 @@
 <?php
+defined( 'ABSPATH' ) || die;
+
 /**
  * Media field class which users WordPress media popup to upload and select files.
  */
@@ -11,6 +13,7 @@ class RWMB_Media_Field extends RWMB_File_Field {
 			wp_register_script( 'media-grid', includes_url( 'js/media-grid.min.js' ), [ 'media-editor' ], '4.9.7', true );
 		}
 		wp_enqueue_style( 'rwmb-media', RWMB_CSS_URL . 'media.css', [], RWMB_VER );
+		wp_style_add_data( 'rwmb-media', 'path', RWMB_CSS_DIR . 'media.css' );
 		wp_enqueue_script( 'rwmb-media', RWMB_JS_URL . 'media.js', [ 'jquery-ui-sortable', 'underscore', 'backbone', 'media-grid' ], RWMB_VER, true );
 
 		RWMB_Helpers_Field::localize_script_once( 'rwmb-media', 'i18nRwmbMedia', [
@@ -27,10 +30,6 @@ class RWMB_Media_Field extends RWMB_File_Field {
 			'or'                 => apply_filters( 'rwmb_media_or_string', _x( 'or', 'media', 'meta-box' ) ),
 			'uploadInstructions' => apply_filters( 'rwmb_media_upload_instructions_string', _x( 'Drop files here to upload', 'media', 'meta-box' ) ),
 		] );
-	}
-
-	public static function add_actions() {
-		add_action( 'print_media_templates', [ get_called_class(), 'print_templates' ] );
 	}
 
 	/**
@@ -136,10 +135,14 @@ class RWMB_Media_Field extends RWMB_File_Field {
 		$attachments                    = array_values( array_filter( array_map( 'wp_prepare_attachment_for_js', $value ) ) );
 		$attributes['data-attachments'] = wp_json_encode( $attachments );
 
+		if ( empty( $attachments ) ) {
+			unset( $attributes['value'] );
+		}
+
 		return $attributes;
 	}
 
-	protected static function get_mime_extensions() : array {
+	protected static function get_mime_extensions(): array {
 		$mime_types = wp_get_mime_types();
 		$extensions = [];
 		foreach ( $mime_types as $ext => $mime ) {
@@ -177,6 +180,7 @@ class RWMB_Media_Field extends RWMB_File_Field {
 		// Attach the uploaded images to the post if needed.
 		global $wpdb;
 		$ids = implode( ',', $new );
+		// phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
 		$wpdb->query( $wpdb->prepare( "UPDATE $wpdb->posts SET post_parent=%d WHERE post_parent=0 AND ID IN ($ids)", $post_id ) );
 
 		return $new;
@@ -197,12 +201,5 @@ class RWMB_Media_Field extends RWMB_File_Field {
 		$storage = $field['storage'];
 		$storage->delete( $post_id, $field['id'] );
 		parent::save( $new, [], $post_id, $field );
-	}
-
-	/**
-	 * Template for media item.
-	 */
-	public static function print_templates() {
-		require_once RWMB_INC_DIR . 'templates/media.php';
 	}
 }

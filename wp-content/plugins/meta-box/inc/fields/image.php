@@ -1,4 +1,6 @@
 <?php
+defined( 'ABSPATH' ) || die;
+
 /**
  * The image field which uploads images via HTML <input type="file">.
  */
@@ -7,6 +9,7 @@ class RWMB_Image_Field extends RWMB_File_Field {
 		parent::admin_enqueue_scripts();
 		wp_enqueue_media();
 		wp_enqueue_style( 'rwmb-image', RWMB_CSS_URL . 'image.css', [], RWMB_VER );
+		wp_style_add_data( 'rwmb-image', 'path', RWMB_CSS_DIR . 'image.css' );
 	}
 
 	/**
@@ -92,6 +95,10 @@ class RWMB_Image_Field extends RWMB_File_Field {
 	 * @return array|bool False if file not found. Array of image info on success.
 	 */
 	public static function file_info( $file, $args = [], $field = [] ) {
+		if ( ! empty( $field['upload_dir'] ) ) {
+			return self::file_info_custom_dir( $file, $field );
+		}
+
 		$path = get_attached_file( $file );
 		if ( ! $path ) {
 			return false;

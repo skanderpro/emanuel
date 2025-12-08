@@ -5,6 +5,8 @@
  * @class Redux_Page_Render
  * @version 3.0.0
  * @package Redux Framework/Classes
+ * @noinspection HtmlUnknownAttribute
+ * @noinspection PhpConditionCheckedByNextConditionInspection
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -35,19 +37,19 @@ if ( ! class_exists( 'Redux_Page_Render', false ) ) {
 		/**
 		 * Redux_Page_Render constructor.
 		 *
-		 * @param object $parent ReduxFramework pointer.
+		 * @param object $redux ReduxFramework pointer.
 		 */
-		public function __construct( $parent ) {
-			parent::__construct( $parent );
+		public function __construct( $redux ) {
+			parent::__construct( $redux );
 
 			// phpcs:ignore Generic.Strings.UnnecessaryStringConcat
-			add_action( 'admin' . '_bar' . '_menu', array( $this, 'add_menu' ), $parent->args['admin_bar_priority'] );
+			add_action( 'admin' . '_bar' . '_menu', array( $this, 'add_menu' ), $redux->args['admin_bar_priority'] );
 
 			// Options page.
 			add_action( 'admin_menu', array( $this, 'options_page' ) );
 
 			// Add a network menu.
-			if ( 'network' === $parent->args['database'] && $parent->args['network_admin'] ) {
+			if ( 'network' === $redux->args['database'] && $redux->args['network_admin'] ) {
 				add_action( 'network_admin_menu', array( $this, 'options_page' ) );
 			}
 		}
@@ -207,12 +209,11 @@ if ( ! class_exists( 'Redux_Page_Render', false ) ) {
 
 				// Specify user's text from arguments.
 				$screen->set_help_sidebar( $core->args['help_sidebar'] );
-			} else {
+			} elseif ( true === $this->show_hints ) {
 				// If a sidebar text is empty and hints are active, display text
 				// about hints.
-				if ( true === $this->show_hints ) {
-					$screen->set_help_sidebar( '<p><strong>Redux Framework</strong><br/><br/>' . esc_html__( 'Hint Tooltip Preferences', 'redux-framework' ) . '</p>' );
-				}
+
+				$screen->set_help_sidebar( '<p><strong>Redux Framework</strong><br/><br/>' . esc_html__( 'Hint Tooltip Preferences', 'redux-framework' ) . '</p>' );
 			}
 
 			/**
@@ -475,21 +476,8 @@ if ( ! class_exists( 'Redux_Page_Render', false ) ) {
 				if ( ! file_exists( $core_path ) ) {
 					$core_path = Redux_Core::$dir . "inc/fields/{$field['type']}/field_{$field['type']}.php";
 				}
-				if ( Redux_Core::$pro_loaded ) {
-					$pro_path = '';
 
-					if ( class_exists( 'Redux_Pro' ) ) {
-						$pro_path = Redux_Pro::$dir . "core/inc/fields/{$field['type']}/class-redux-pro-$field_type.php";
-					}
-
-					if ( file_exists( $pro_path ) ) {
-						$filter_path = $pro_path;
-					} else {
-						$filter_path = $core_path;
-					}
-				} else {
-					$filter_path = $core_path;
-				}
+				$filter_path = $core_path;
 
 				$field_class = '';
 
@@ -514,7 +502,7 @@ if ( ! class_exists( 'Redux_Page_Render', false ) ) {
 							$field_class = Redux_Functions::class_exists_ex( $field_classes );
 						} else {
 							// translators: %1$s is the field ID, %2$s is the field type.
-							echo sprintf( esc_html__( 'Field %1$s could not be displayed. Field type %2$s was not found.', 'redux-framework' ), '<code>' . esc_attr( $field['id'] ) . '</code>', '<code>' . esc_attr( $field['type'] ) . '</code>' );
+							printf( esc_html__( 'Field %1$s could not be displayed. Field type %2$s was not found.', 'redux-framework' ), '<code>' . esc_attr( $field['id'] ) . '</code>', '<code>' . esc_attr( $field['type'] ) . '</code>' );
 						}
 					}
 				}
@@ -562,22 +550,14 @@ if ( ! class_exists( 'Redux_Page_Render', false ) ) {
 						$field['name_suffix'] = '';
 					}
 
-					$data = array(
-						'field' => $field,
-						'value' => $value,
-						'core'  => $core,
-						'mode'  => 'render',
-					);
-
-					$pro_field_loaded = Redux_Functions::load_pro_field( $data );
-
 					$render = new $field_class( $field, $value, $core );
 
 					ob_start();
+
 					try {
 						$render->render();
 					} catch ( Error $e ) {
-						echo 'Field failed to render: ',  esc_html( $e->getMessage() ), "\n";
+						echo 'Field failed to render: ', esc_html( $e->getMessage() ), "\n";
 					}
 
 					/**
@@ -665,12 +645,6 @@ if ( ! class_exists( 'Redux_Page_Render', false ) ) {
 
 					if ( isset( $field['fieldset_class'] ) && ! empty( $field['fieldset_class'] ) ) {
 						$class_string .= ' ' . $field['fieldset_class'];
-					}
-
-					if ( Redux_Core::$pro_loaded ) {
-						if ( $pro_field_loaded ) {
-							$class_string .= ' redux-pro-field-init';
-						}
 					}
 
 					echo '<fieldset id="' . esc_attr( $core->args['opt_name'] . '-' . $field['id'] ) . '" class="' . esc_attr( $hidden . esc_attr( $disabled ) . 'redux-field-container redux-field redux-field-init redux-container-' . $field['type'] . ' ' . $class_string ) . '" data-id="' . esc_attr( $field['id'] ) . '" data-type="' . esc_attr( $field['type'] ) . '">';
@@ -927,6 +901,7 @@ if ( ! class_exists( 'Redux_Page_Render', false ) ) {
 				'info',
 				'section',
 				'repeater',
+				'tabbed',
 				'color_scheme',
 				'social_profiles',
 				'css_layout',
@@ -959,12 +934,10 @@ if ( ! class_exists( 'Redux_Page_Render', false ) ) {
 				if ( ! empty( $field['options'][ $field['default'] ] ) ) {
 					if ( ! empty( $field['options'][ $field['default'] ]['alt'] ) ) {
 						$default_output .= $field['options'][ $field['default'] ]['alt'] . ', ';
-					} else {
-						if ( ! is_array( $field['options'][ $field['default'] ] ) ) {
+					} elseif ( ! is_array( $field['options'][ $field['default'] ] ) ) {
 							$default_output .= $field['options'][ $field['default'] ] . ', ';
-						} else {
-							$default_output .= maybe_serialize( $field['options'][ $field['default'] ] ) . ', ';
-						}
+					} else {
+						$default_output .= maybe_serialize( $field['options'][ $field['default'] ] ) . ', ';
 					}
 				} elseif ( ! empty( $field['options'][ $field['default'] ] ) ) {
 					$default_output .= $field['options'][ $field['default'] ] . ', ';
@@ -977,6 +950,9 @@ if ( ! class_exists( 'Redux_Page_Render', false ) ) {
 				}
 			} else {
 				foreach ( $field['default'] as $defaultk => $defaultv ) {
+					$defaultk = is_numeric( $defaultk ) ? (string) $defaultk : $defaultk;
+					$defaultv = is_numeric( $defaultv ) ? (string) $defaultv : $defaultv;
+
 					if ( ! empty( $field['options'][ $defaultv ]['alt'] ) ) {
 						$default_output .= $field['options'][ $defaultv ]['alt'] . ', ';
 					} elseif ( ! empty( $field['options'][ $defaultv ] ) ) {
@@ -984,6 +960,18 @@ if ( ! class_exists( 'Redux_Page_Render', false ) ) {
 					} elseif ( ! empty( $field['options'][ $defaultk ] ) ) {
 						$default_output .= $field['options'][ $defaultk ] . ', ';
 					} elseif ( ! empty( $defaultv ) ) {
+						if ( is_array( $defaultv ) ) {
+							foreach ( $defaultv as $k => $v ) {
+								if( is_array( $v ) ) {
+									$defaultv = implode( ', ', $v );
+								}
+							}
+
+							if ( is_array( $defaultv ) ) {
+								$defaultv = implode( ', ', $defaultv );
+							}
+						}
+
 						$default_output .= $defaultv . ', ';
 					}
 				}
@@ -1038,6 +1026,7 @@ if ( ! class_exists( 'Redux_Page_Render', false ) ) {
 
 			$string = '';
 			if ( ( ( isset( $core->args['icon_type'] ) && 'image' === $core->args['icon_type'] ) || ( isset( $section['icon_type'] ) && 'image' === $section['icon_type'] ) ) || ( isset( $section['icon'] ) && false !== strpos( $section['icon'], '/' ) ) ) {
+				// phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage -- No image/icon to enqueue.
 				$icon = ( ! isset( $section['icon'] ) ) ? '' : '<img class="image_icon_type" src="' . esc_url( $section['icon'] ) . '" /> ';
 			} else {
 				if ( ! empty( $section['icon_class'] ) ) {
@@ -1067,14 +1056,10 @@ if ( ! class_exists( 'Redux_Page_Render', false ) ) {
 			if ( isset( $section['type'] ) && 'divide' === $section['type'] ) {
 				$string .= '<li class="divide' . esc_attr( $section['class'] ) . '">&nbsp;</li>';
 			} elseif ( ! isset( $section['subsection'] ) || true !== $section['subsection'] ) {
-				if ( ! isset( $core->args['pro']['flyout_submenus'] ) ) {
-					$core->args['pro']['flyout_submenus'] = false;
-				}
-
-				$subsections        = isset( $sections[ ( $k + 1 ) ] ) && isset( $sections[ ( $k + 1 ) ]['subsection'] ) && true === $sections[ ( $k + 1 ) ]['subsection'];
+				$subsections        = isset( $sections[ ( $k + 1 ) ]['subsection'] ) && true === $sections[ ( $k + 1 ) ]['subsection'];
 				$subsections_class  = $subsections ? ' hasSubSections' : '';
 				$subsections_class .= ( empty( $section['fields'] ) ) ? ' empty_section' : '';
-				$rotate             = true === $core->args['pro']['flyout_submenus'] ? ' el-rotate' : '';
+				$rotate             = true === $core->args['flyout_submenus'] ? ' el-rotate' : '';
 				$extra_icon         = $subsections ? '<span class="extraIconSubsections"><i class="el el-chevron-down' . $rotate . '">&nbsp;</i></span>' : '';
 				$string            .= '<li id="' . esc_attr( $k . $suffix ) . '_section_group_li" class="redux-group-tab-link-li' . esc_attr( $hide_section ) . esc_attr( $section['class'] ) . esc_attr( $subsections_class ) . '">';
 				$string            .= '<a href="javascript:void(0);" id="' . esc_attr( $k . $suffix ) . '_section_group_li_a" class="redux-group-tab-link-a" data-key="' . esc_attr( $k ) . '" data-rel="' . esc_attr( $k . $suffix ) . '">' . $extra_icon . $icon . '<span class="group_title">' . wp_kses_post( $section['title'] ) . '</span></a>';
@@ -1088,8 +1073,8 @@ if ( ! class_exists( 'Redux_Page_Render', false ) ) {
 					$do_loop = true;
 
 					while ( $do_loop ) {
-						$next_k ++;
-						$function_count++;
+						++$next_k;
+						++$function_count;
 
 						$display = true;
 
@@ -1112,6 +1097,7 @@ if ( ! class_exists( 'Redux_Page_Render', false ) ) {
 							}
 
 							if ( ( isset( $core->args['icon_type'] ) && 'image' === $core->args['icon_type'] ) || ( isset( $sections[ $next_k ]['icon_type'] ) && 'image' === $sections[ $next_k ]['icon_type'] ) ) {
+								// phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage -- No image/icon to enqueue.
 								$icon = ( ! isset( $sections[ $next_k ]['icon'] ) ) ? '' : '<img class="image_icon_type" src="' . esc_url( $sections[ $next_k ]['icon'] ) . '" /> ';
 							} else {
 								if ( ! empty( $sections[ $next_k ]['icon_class'] ) ) {

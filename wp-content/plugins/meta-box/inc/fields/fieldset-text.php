@@ -1,10 +1,13 @@
 <?php
+defined( 'ABSPATH' ) || die;
+
 /**
  * The text fieldset field, which allows users to enter content for a list of text fields.
  */
 class RWMB_Fieldset_Text_Field extends RWMB_Input_Field {
 	public static function admin_enqueue_scripts() {
 		wp_enqueue_style( 'rwmb-fieldset-text', RWMB_CSS_URL . 'fieldset-text.css', [], RWMB_VER );
+		wp_style_add_data( 'rwmb-fieldset-text', 'path', RWMB_CSS_DIR . 'fieldset-text.css' );
 	}
 
 	/**
@@ -19,8 +22,12 @@ class RWMB_Fieldset_Text_Field extends RWMB_Input_Field {
 		$html = [];
 		$tpl  = '<p><label>%s</label> %s</p>';
 
+		if ( ! is_array( $field['options'] ) ) {
+			return '';
+		}
+
 		foreach ( $field['options'] as $key => $label ) {
-			$value                       = isset( $meta[ $key ] ) ? $meta[ $key ] : '';
+			$value                       = $meta[ $key ] ?? '';
 			$field['attributes']['name'] = $field['field_name'] . "[{$key}]";
 			$html[]                      = sprintf( $tpl, $label, parent::html( $value, $field ) );
 		}
@@ -30,11 +37,7 @@ class RWMB_Fieldset_Text_Field extends RWMB_Input_Field {
 		return $out;
 	}
 
-	protected static function input_description( array $field ) : string {
-		return '';
-	}
-
-	protected static function label_description( array $field ) : string {
+	protected static function input_description( array $field ): string {
 		return '';
 	}
 
@@ -98,5 +101,15 @@ class RWMB_Fieldset_Text_Field extends RWMB_Input_Field {
 		}
 		$output .= '</tr>';
 		return $output;
+	}
+
+	/**
+	 * Since we're using an array of text fields, we need to check if all of them are empty.
+	 * Otherwise, there is no way to know if the field is empty or not.
+	 */
+	public static function value( $new, $old, $post_id, $field ) {
+		$all_empty = empty( array_filter( (array) $new ) );
+
+		return $all_empty ? [] : $new;
 	}
 }

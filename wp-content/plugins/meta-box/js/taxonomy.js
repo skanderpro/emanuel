@@ -5,7 +5,13 @@
         const $this = $( this );
 
         $this.rwmbModal( {
-            removeElement: '.form-wrap > h2',
+            size: 'small',
+            hideElement: '.form-wrap > h2',
+            callback: function ( $modal, $modalContent ) {
+                $modalContent.find( '#col-right' ).css( 'display', 'none' );
+                $modalContent.find( '.search-box' ).css( 'display', 'none' );
+                $modalContent.find( '#wpbody' ).css( 'padding-top', 0 );
+            },
             closeModalCallback: function ( $modal, $input ) {
                 if ( $modal.find( '#the-list tr:first td:eq(0) .row-actions' ).length > 0 ) {
                     this.$objectId = parseInt( $modal.find( '#the-list tr:first' ).attr( 'id' ).split( '-' )[ 1 ] );

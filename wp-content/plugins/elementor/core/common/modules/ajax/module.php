@@ -172,7 +172,8 @@ class Module extends BaseModule {
 			}
 
 			try {
-				$results = call_user_func( $this->ajax_actions[ $action_data['action'] ]['callback'], $action_data['data'], $this );
+				$data = $action_data['data'] ?? [];
+				$results = call_user_func( $this->ajax_actions[ $action_data['action'] ]['callback'], $data, $this );
 
 				if ( false === $results ) {
 					$this->add_response_data( false );
@@ -265,17 +266,8 @@ class Module extends BaseModule {
 			ob_end_clean();
 		}
 
-		if ( function_exists( 'gzencode' ) ) {
-			$response = gzencode( $json );
-
-			header( 'Content-Type: application/json; charset=utf-8' );
-			header( 'Content-Encoding: gzip' );
-			header( 'Content-Length: ' . strlen( $response ) );
-
-			echo $response; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-		} else {
-			echo $json; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-		}
+		header( 'Content-Type: application/json; charset=UTF-8' );
+		echo $json; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 		wp_die( '', '', [ 'response' => null ] );
 	}

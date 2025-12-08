@@ -22,7 +22,7 @@ if ( ! class_exists( 'Redux_Repeater' ) ) {
 		 *
 		 * @var string
 		 */
-		private $repeater_values;
+		private string $repeater_values;
 
 		/**
 		 * Set defaults.
@@ -56,6 +56,8 @@ if ( ! class_exists( 'Redux_Repeater' ) ) {
 		 * @return      void
 		 */
 		public function render() {
+			$unallowed = array( 'tabbed', 'social_profiles', 'color_scheme', 'repeater' );
+
 			if ( isset( $this->field['group_values'] ) && $this->field['group_values'] ) {
 				$this->repeater_values = '[' . $this->field['id'] . ']';
 			}
@@ -117,7 +119,7 @@ if ( ! class_exists( 'Redux_Repeater' ) ) {
 												$field['args'][ $key ] = array();
 											}
 
-											$field['options'][ $key ] = $this->parent->get_wordpress_data( $data, $field['args'][ $key ] );
+											$field['options'][ $key ] = $this->parent->wordpress_data->get( $data, $field['args'][ $key ], $this->parent->args['opt_name'] );
 										}
 									}
 								}
@@ -156,7 +158,7 @@ if ( ! class_exists( 'Redux_Repeater' ) ) {
 							$field['class'] .= ' bind_title';
 						}
 
-						if ( 'repeater' === $field['type'] || 'social_profiles' === $field['type'] || 'color_scheme' === $field['type'] ) {
+						if ( in_array( $field['type'], $unallowed, true ) ) {
 							echo esc_html__( 'The', 'redux-framework' ) . ' <code>' . esc_html( $field['type'] ) . '</code> ' . esc_html__( 'field is not supported within the Repeater field.', 'redux-framework' );
 						} else {
 							$this->output_field( $field, $x );
@@ -172,7 +174,7 @@ if ( ! class_exists( 'Redux_Repeater' ) ) {
 					echo '</table>';
 					echo '</div>';
 
-					$x ++;
+					++$x;
 				}
 			}
 
@@ -224,8 +226,8 @@ if ( ! class_exists( 'Redux_Repeater' ) ) {
 					echo '</table>';
 					echo '</div>';
 
-					$x ++;
-					$loop --;
+					++$x;
+					--$loop;
 				}
 			}
 
@@ -272,7 +274,7 @@ if ( ! class_exists( 'Redux_Repeater' ) ) {
 					// phpcs:ignore WordPress.NamingConventions.ValidHookName
 					$this->url . 'redux-repeater.css',
 					array(),
-					time()
+					Redux_Extension_Repeater::$version
 				);
 			}
 		}
@@ -320,7 +322,7 @@ if ( ! class_exists( 'Redux_Repeater' ) ) {
 						if ( ! isset( $field['args'][ $key ] ) ) {
 							$field['args'][ $key ] = array();
 						}
-						$field['options'][ $key ] = $this->parent->get_wordpress_data( $data, $field['args'][ $key ] );
+						$field['options'][ $key ] = $this->parent->wordpress_data->get( $data, $field['args'][ $key ], $this->parent->args['opt_name'] );
 					}
 				}
 			}

@@ -16,6 +16,30 @@ class Admin {
 
 	public static $url = '';
 
+	private function get_valid_redirect_to_from_request() {
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Only reading a URL parameter.
+		$raw = Utils::get_super_global_value( $_GET, 'redirect_to' );
+
+		if ( ! $raw ) {
+			return '';
+		}
+
+		$raw = esc_url_raw( $raw );
+
+		$validated = wp_validate_redirect( $raw, '' );
+		if ( ! $validated ) {
+			return '';
+		}
+
+		$admin_host = wp_parse_url( admin_url(), PHP_URL_HOST );
+		$dest_host  = wp_parse_url( $validated, PHP_URL_HOST );
+		if ( $dest_host && $admin_host && ! hash_equals( $admin_host, $dest_host ) ) {
+			return '';
+		}
+
+		return $validated;
+	}
+
 	/**
 	 * @since 2.3.0
 	 * @access public
@@ -29,6 +53,18 @@ class Admin {
 	 * @access public
 	 */
 	public function on_load_page() {
+		if ( ! $this->user_has_enough_permissions() ) {
+			wp_die( 'You do not have sufficient permissions to access this page.', 'You do not have sufficient permissions to access this page.', [
+				'back_link' => true,
+			] );
+		}
+
+		// Allow a per-request default landing URL when provided via a safe `redirect_to` parameter.
+		$maybe_redirect_to = $this->get_valid_redirect_to_from_request();
+		if ( $maybe_redirect_to ) {
+			self::$url = $maybe_redirect_to;
+		}
+
 		if ( isset( $_GET['action'], $_GET['app'] ) ) {
 			$manager = Plugin::$instance->common->get_component( 'connect' );
 
@@ -57,6 +93,18 @@ class Admin {
 				call_user_func( [ $app, $method ] );
 			}
 		}
+	}
+
+	private function user_has_enough_permissions() {
+		if ( current_user_can( 'manage_options' ) ) {
+			return true;
+		}
+
+		if ( 'library' === Utils::get_super_global_value( $_GET, 'app' ) ) {
+			return current_user_can( 'edit_posts' );
+		}
+
+		return false;
 	}
 
 	/**
