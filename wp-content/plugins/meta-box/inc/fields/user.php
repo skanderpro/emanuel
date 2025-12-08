@@ -1,4 +1,6 @@
 <?php
+defined( 'ABSPATH' ) || die;
+
 /**
  * The user select field.
  */
@@ -94,23 +96,36 @@ class RWMB_User_Field extends RWMB_Object_Choice_Field {
 
 	public static function query( $meta, array $field ): array {
 		$display_field = $field['display_field'];
-		$args          = wp_parse_args( $field['query_args'], [
+
+		$args = wp_parse_args( $field['query_args'], [
 			'orderby' => $display_field,
 			'order'   => 'asc',
 		] );
+
+		$args['fields'] = [
+			'ID',
+			'user_login',
+			'user_nicename',
+			'user_url',
+			'user_registered',
+			'user_status',
+			'display_name',
+		];
 
 		$meta = wp_parse_id_list( (array) $meta );
 
 		// Query only selected items.
 		if ( ! empty( $field['ajax'] ) && ! empty( $meta ) ) {
 			$args['include'] = $meta;
+			$args['number']  = count( $meta );
 		}
 
 		// Get from cache to prevent same queries.
 		$last_changed = wp_cache_get_last_changed( 'users' );
-		$key          = md5( serialize( $args ) );
-		$cache_key    = "$key:$last_changed";
-		$options      = wp_cache_get( $cache_key, 'meta-box-user-field' );
+		// phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.serialize_serialize
+		$key       = md5( serialize( $args ) );
+		$cache_key = "$key:$last_changed";
+		$options   = wp_cache_get( $cache_key, 'meta-box-user-field' );
 		if ( false !== $options ) {
 			return $options;
 		}
@@ -118,7 +133,7 @@ class RWMB_User_Field extends RWMB_Object_Choice_Field {
 		$users   = get_users( $args );
 		$options = [];
 		foreach ( $users as $user ) {
-			$label = $user->$display_field ? $user->$display_field : __( '(No title)', 'meta-box' );
+			$label = $user->$display_field ?? __( '(No title)', 'meta-box' );
 			$label = self::filter( 'choice_label', $label, $field, $user );
 
 			$options[ $user->ID ] = [

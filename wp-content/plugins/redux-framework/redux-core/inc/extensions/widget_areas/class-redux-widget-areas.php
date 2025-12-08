@@ -2,7 +2,7 @@
 /**
  * Redux Widget Areas Class
  *
- * @package Redux Pro
+ * @package Redux
  * @author  Dovy Paukstys (dovy)
  * @class   Redux_Widget_Areas
  */
@@ -22,15 +22,15 @@ if ( ! class_exists( 'Redux_Widget_Areas' ) ) {
 		/**
 		 * Extension URI.
 		 *
-		 * @var string
+		 * @var null|string
 		 */
-		private $extension_url;
+		private ?string $extension_url;
 
 		/** Extension directory.
 		 *
 		 * @var string
 		 */
-		private $extension_dir;
+		private string $extension_dir;
 
 		/**
 		 * Array of enabled widget_areas
@@ -38,41 +38,43 @@ if ( ! class_exists( 'Redux_Widget_Areas' ) ) {
 		 * @since    1.0.0
 		 * @var      array
 		 */
-		protected $widget_areas = array();
+		protected array $widget_areas = array();
 
 		/**
 		 * Widget array.
 		 *
 		 * @var array
 		 */
-		protected $orig = array();
+		protected array $orig = array();
 
 		/**
 		 * ReduxFramework object.
 		 *
-		 * @var object
+		 * @var ReduxFramework
 		 */
-		private $parent;
+		private ReduxFramework $parent;
 
 		/**
 		 * Redux_Widget_Areas constructor.
 		 *
-		 * @param object $parent ReduxFramework pointer.
+		 * @param ReduxFramework $redux ReduxFramework pointer.
 		 */
-		public function __construct( $parent ) {
+		public function __construct( ReduxFramework $redux ) {
 			global $pagenow;
 
-			$this->parent = $parent;
+			$this->parent = $redux;
 
 			if ( empty( $this->extension_dir ) ) {
-				$this->extension_dir = trailingslashit( str_replace( '\\', '/', dirname( __FILE__ ) ) );
+				$this->extension_dir = trailingslashit( str_replace( '\\', '/', __DIR__ ) );
 				$this->extension_url = site_url( str_replace( trailingslashit( str_replace( '\\', '/', ABSPATH ) ), '', $this->extension_dir ) );
 			}
 
 			add_action( 'init', array( &$this, 'register_custom_widget_areas' ), 1000 );
 
 			if ( 'widgets.php' === $pagenow ) {
-				add_action( 'admin_print_scripts', array( $this, 'add_new_widget_area_box' ) );
+				if ( true === $redux->args['widget_area'] ) {
+					add_action( 'admin_print_scripts', array( $this, 'add_new_widget_area_box' ) );
+				}
 				add_action( 'load-widgets.php', array( $this, 'add_widget_area_area' ), 100 );
 				add_action( 'load-widgets.php', array( $this, 'enqueue' ), 100 );
 			}
@@ -146,7 +148,7 @@ if ( ! class_exists( 'Redux_Widget_Areas' ) ) {
 		 *
 		 * @param    string $name Name of the widget_area to be created.
 		 *
-		 * @return    string|void     $name      Name of the new widget_area just created.
+		 * @return    string|void     $name Name of the new widget_area just created.
 		 * @since     1.0.0
 		 */
 		private function check_widget_area_name( string $name ) {
@@ -215,13 +217,12 @@ if ( ! class_exists( 'Redux_Widget_Areas' ) ) {
 
 			$options = apply_filters( 'redux_custom_widget_args', $options );
 
-			if ( is_array( $this->widget_areas ) ) {
-				foreach ( array_unique( $this->widget_areas ) as $widget_area ) {
-					$options['class'] = 'redux-custom';
-					$options['name']  = $widget_area;
-					$options['id']    = sanitize_key( $widget_area );
-					register_sidebar( $options );
-				}
+			foreach ( array_unique( $this->widget_areas ) as $widget_area ) {
+				$options['class'] = 'redux-custom';
+				$options['name']  = $widget_area;
+				$options['id']    = sanitize_key( $widget_area );
+
+				register_sidebar( $options );
 			}
 		}
 
@@ -286,12 +287,14 @@ if ( ! class_exists( 'Redux_Widget_Areas' ) ) {
 				true
 			);
 
-			wp_enqueue_style(
-				'redux-widget-areas',
-				$this->extension_url . 'redux-extension-widget-areas.css',
-				array(),
-				time()
-			);
+			if ( $this->parent->args['dev_mode'] ) {
+				wp_enqueue_style(
+					'redux-widget-areas',
+					$this->extension_url . 'redux-extension-widget-areas.css',
+					array(),
+					Redux_Extension_Widget_Areas::$version
+				);
+			}
 
 			// Localize script.
 			wp_localize_script(

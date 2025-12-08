@@ -2,6 +2,7 @@
 namespace Elementor\TemplateLibrary;
 
 use Elementor\Api;
+use Elementor\Core\Common\Modules\Connect\Module as ConnectModule;
 use Elementor\Plugin;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -21,16 +22,6 @@ class Source_Remote extends Source_Base {
 	const API_TEMPLATES_URL = 'https://my.elementor.com/api/connect/v1/library/templates';
 
 	const TEMPLATES_DATA_TRANSIENT_KEY_PREFIX = 'elementor_remote_templates_data_';
-
-	public function __construct() {
-		parent::__construct();
-
-		$this->add_actions();
-	}
-
-	public function add_actions() {
-		add_action( 'elementor/experiments/feature-state-change/container', [ $this, 'clear_cache' ], 10, 0 );
-	}
 
 	/**
 	 * Get remote template ID.
@@ -233,23 +224,11 @@ class Source_Remote extends Source_Base {
 	 * @param bool $force_update
 	 * @return array
 	 */
-	private function get_templates_data( bool $force_update ) : array {
-		$templates_data_cache_key = static::TEMPLATES_DATA_TRANSIENT_KEY_PREFIX . ELEMENTOR_VERSION;
-
+	protected function get_templates_data( bool $force_update ): array {
 		$experiments_manager = Plugin::$instance->experiments;
 		$editor_layout_type = $experiments_manager->is_feature_active( 'container' ) ? 'container_flexbox' : '';
 
-		if ( $force_update ) {
-			return $this->get_templates( $editor_layout_type );
-		}
-
-		$templates_data = get_transient( $templates_data_cache_key );
-
-		if ( empty( $templates_data ) ) {
-			return $this->get_templates( $editor_layout_type );
-		}
-
-		return $templates_data;
+		return $this->get_templates( $editor_layout_type );
 	}
 
 	/**
@@ -258,18 +237,10 @@ class Source_Remote extends Source_Base {
 	 * @param string $editor_layout_type
 	 * @return array
 	 */
-	private function get_templates( string $editor_layout_type ): array {
-		$templates_data_cache_key = static::TEMPLATES_DATA_TRANSIENT_KEY_PREFIX . ELEMENTOR_VERSION;
-
+	protected function get_templates( string $editor_layout_type ): array {
 		$templates_data = $this->get_templates_remotely( $editor_layout_type );
 
-		if ( empty( $templates_data ) ) {
-			return [];
-		}
-
-		set_transient( $templates_data_cache_key, $templates_data, 12 * HOUR_IN_SECONDS );
-
-		return $templates_data;
+		return empty( $templates_data ) ? [] : $templates_data;
 	}
 
 	/**
@@ -278,12 +249,9 @@ class Source_Remote extends Source_Base {
 	 * @param string $editor_layout_type
 	 * @return array|false
 	 */
-	private function get_templates_remotely( string $editor_layout_type ) {
+	protected function get_templates_remotely( string $editor_layout_type ) {
 		$response = wp_remote_get( static::API_TEMPLATES_URL, [
-			'body' => [
-				'plugin_version' => ELEMENTOR_VERSION,
-				'editor_layout_type' => $editor_layout_type,
-			],
+			'body' => $this->get_templates_body_args( $editor_layout_type ),
 		] );
 
 		if ( is_wp_error( $response ) || 200 !== (int) wp_remote_retrieve_response_code( $response ) ) {
@@ -300,11 +268,34 @@ class Source_Remote extends Source_Base {
 	}
 
 	/**
+	 * Prepare the body arguments for the remote request.
+	 *
+	 * @param string $editor_layout_type
+	 *
+	 * @return array
+	 */
+	protected function get_templates_body_args( string $editor_layout_type ): array {
+		return [
+			'plugin_version' => ELEMENTOR_VERSION,
+			'editor_layout_type' => $editor_layout_type,
+		];
+	}
+
+	/**
 	 * @since 2.2.0
 	 * @access private
 	 */
-	private function prepare_template( array $template_data ) {
+	protected function prepare_template( array $template_data ) {
 		$favorite_templates = $this->get_user_meta( 'favorites' );
+
+		// BC: Support legacy APIs that don't have access tiers.
+		if ( isset( $template_data['access_tier'] ) ) {
+			$access_tier = $template_data['access_tier'];
+		} else {
+			$access_tier = 0 === $template_data['access_level']
+				? ConnectModule::ACCESS_TIER_FREE
+				: ConnectModule::ACCESS_TIER_ESSENTIAL;
+		}
 
 		return [
 			'template_id' => $template_data['id'],
@@ -318,6 +309,7 @@ class Source_Remote extends Source_Base {
 			'tags' => json_decode( $template_data['tags'] ),
 			'isPro' => ( '1' === $template_data['is_pro'] ),
 			'accessLevel' => $template_data['access_level'],
+			'accessTier' => $access_tier,
 			'popularityIndex' => (int) $template_data['popularity_index'],
 			'trendIndex' => (int) $template_data['trend_index'],
 			'hasPageSettings' => ( '1' === $template_data['has_page_settings'] ),

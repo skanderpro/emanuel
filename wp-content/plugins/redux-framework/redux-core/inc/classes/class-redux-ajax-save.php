@@ -5,6 +5,7 @@
  * @class Redux_Core
  * @version 4.0.0
  * @package Redux Framework/Classes
+ * @noinspection PhpConditionCheckedByNextConditionInspection
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -20,16 +21,18 @@ if ( ! class_exists( 'Redux_AJAX_Save', false ) ) {
 		 * Redux_AJAX_Save constructor.
 		 * array_merge_recursive_distinct
 		 *
-		 * @param object $parent ReduxFramework object.
+		 * @param object $redux ReduxFramework object.
 		 */
-		public function __construct( $parent ) {
-			parent::__construct( $parent );
+		public function __construct( $redux ) {
+			parent::__construct( $redux );
 
 			add_action( 'wp_ajax_' . $this->args['opt_name'] . '_ajax_save', array( $this, 'save' ) );
 		}
 
 		/**
 		 * AJAX callback to save the option panel values.
+		 *
+		 * @throws ReflectionException Exception.
 		 */
 		public function save() {
 			$redux = null;
@@ -69,8 +72,8 @@ if ( ! class_exists( 'Redux_AJAX_Save', false ) ) {
 
 					if ( ! empty( $values ) ) {
 						try {
-							if ( isset( $redux->validation_ran ) ) {
-								unset( $redux->validation_ran );
+							if ( true === Redux_Core::$validation_ran ) {
+								Redux_Core::$validation_ran = false;
 							}
 
 							$redux->options_class->set( $redux->options_class->validate_options( $values ) );
@@ -120,8 +123,8 @@ if ( ! class_exists( 'Redux_AJAX_Save', false ) ) {
 			}
 
 			if ( isset( $core->transients['run_compiler'] ) && $core->transients['run_compiler'] ) {
-				$core->no_output = true;
-				$temp            = $core->args['output_variables_prefix'];
+				Redux_Core::$no_output = true;
+				$temp                  = $core->args['output_variables_prefix'];
 
 				// Allow the override of variable's prefix for use by SCSS or LESS.
 				if ( isset( $core->args['compiler_output_variables_prefix'] ) ) {

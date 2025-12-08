@@ -1,69 +1,60 @@
-=== Plugin Name ===
+
+=== Remove Taxonomy Slug ===
 Contributors: akshayshah5189
 Donate link: https://paypal.me/imobsphere?locale.x=en_GB
 Tags: custom taxonomy, remove taxonomy slug, slug, taxonomy, clean url
 Requires at least: 3.0.1
-Tested up to: 6.2.2
-Stable tag: 1.0.2
+Tested up to: 6.6.2
+Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-This plugin will help you to remove the default custom slug from the url which is common requirement for all the SEO lovers.
-
-With less technical knowledge you can have this feautre into the place.
-
+Remove taxonomy slugs from URLs for cleaner, SEO-friendly permalinks with simple settings and minimal technical setup.
 
 == Description ==
-This plugin will give you the advantage of having the clean seo url. You can remove taxonomy slug and have the seo friend url by click couple of clicks.
+This plugin allows you to create SEO-friendly URLs by removing taxonomy slugs, making URLs cleaner and more attractive to search engines. It’s simple to use, even for those with minimal technical knowledge.
 
-This plugin can remove the custom taxonomy slug as well by going into the plugin settings.
+With this plugin, you can:
+- Remove slugs from custom taxonomies by adjusting plugin settings.
+- Access the settings in your WordPress admin dashboard under **Remove Taxonomy Slug Settings**.
+- Select the taxonomies you wish to modify and save your preferences.
 
-You can do this by doing the admin login and check admin menu > Remove Taxonomy Slug Settings
+### Developer Note
+For advanced customization, a filter is provided:
+```
+add_filter('remove_taxonomy_slug_filter', function($slug_list) {
+    return $slug_list;
+});
+```
+Ensure the slug names are accurate in the array.
 
-Once you click on it you will be able to see all existing the taxonomy slug you just need to selected it and save the settings.
+Compatible functions:
+- `term_link`
+- `get_category_link`
+- `get_term_link`
+- `category_link`
 
-For the developer i have given the filter as well with the use of that filter you can directly add the slug in the array which will remove the slug.
+This plugin also works seamlessly with Custom Post Type UI.
 
-Filter name is remove_taxonmy_slug_filter.
-add_filter( 'remove_taxonmy_slug_filter',function ( $slug_list ){
-	return $slug_list
-} );
+For support, contact me at [akshay.shah5189@gmail.com](mailto:akshay.shah5189@gmail.com).
 
-In the above array you need to make sure that you pass the slug name as it is.
-
-It is working with the below functions you just need to make sure that you have used the one of the below function to have the catgory link.
-
-term_link
-get_category_link
-get_term_link
-category_link
-
-This plugin is compatible with custom post type ui as well.
-
-Apart of this you can create the ticket for your query or reach me out for quick question on akshay.shah5189@gmail.com
-
-
-If you are looking to remmove the post type slug, I am having another plugin that you can find it here : https://wordpress.org/plugins/remove-post-type-slug/
+If you need to remove post type slugs, check out my other plugin: [Remove Post Type Slug](https://wordpress.org/plugins/remove-post-type-slug/)
 
 == Installation ==
 
-This section describes how to install the plugin and get it working.
-
-e.g.
-
-1. Upload `remove-taxonmy-slug.php` to the `/wp-content/plugins/` directory
-2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Goto admin menu and click on the taxonomy slug and select the slug from slug list.
-4. You are done.
-
+1. Upload `remove-taxonomy-slug.php` to the `/wp-content/plugins/` directory.
+2. Activate the plugin through the 'Plugins' menu in WordPress.
+3. Go to the **Remove Taxonomy Slug Settings** menu, select the taxonomy slug, and save the settings.
+4. Done!
 
 == Screenshots ==
 
-1. Admin side setting screenshot.
+1. Admin settings for configuring taxonomy slugs.
 
 == Changelog ==
+
 = 1.1 =
-* Version Update
+* Version update
+
 = 1.0 =
-* A change since the previous version.
-* Another change.
+* Initial release

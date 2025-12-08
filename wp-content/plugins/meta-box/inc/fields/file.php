@@ -1,10 +1,13 @@
 <?php
+defined( 'ABSPATH' ) || die;
+
 /**
  * The file upload file which allows users to upload files via the default HTML <input type="file">.
  */
 class RWMB_File_Field extends RWMB_Field {
 	public static function admin_enqueue_scripts() {
 		wp_enqueue_style( 'rwmb-file', RWMB_CSS_URL . 'file.css', [], RWMB_VER );
+		wp_style_add_data( 'rwmb-file', 'path', RWMB_CSS_DIR . 'file.css' );
 		wp_enqueue_script( 'rwmb-file', RWMB_JS_URL . 'file.js', [ 'jquery-ui-sortable' ], RWMB_VER, true );
 
 		RWMB_Helpers_Field::localize_script_once( 'rwmb-file', 'rwmbFile', [
@@ -49,7 +52,7 @@ class RWMB_File_Field extends RWMB_Field {
 			$result = wp_delete_attachment( $attachment );
 		} else {
 			$path   = str_replace( home_url( '/' ), trailingslashit( ABSPATH ), $attachment );
-			$result = unlink( $path );
+			$result = unlink( $path ); // phpcs:ignore WordPress.WP.AlternativeFunctions.unlink_unlink
 		}
 
 		if ( $result ) {
@@ -61,8 +64,9 @@ class RWMB_File_Field extends RWMB_Field {
 	/**
 	 * Recursively search needle in haystack
 	 */
-	protected static function in_array_r( $needle, $haystack, $strict = false ) : bool {
+	protected static function in_array_r( $needle, $haystack, $strict = false ): bool {
 		foreach ( $haystack as $item ) {
+			// phpcs:ignore Universal.Operators.StrictComparisons.LooseEqual
 			if ( ( $strict ? $item === $needle : $item == $needle ) || ( is_array( $item ) && self::in_array_r( $needle, $item, $strict ) ) ) {
 					return true;
 			}
@@ -210,7 +214,7 @@ class RWMB_File_Field extends RWMB_Field {
 		);
 	}
 
-	protected static function file_info_custom_dir( string $file, array $field ) : array {
+	protected static function file_info_custom_dir( string $file, array $field ): array {
 		$path     = wp_normalize_path( trailingslashit( $field['upload_dir'] ) . basename( $file ) );
 		$ext      = pathinfo( $path, PATHINFO_EXTENSION );
 		$icon_url = wp_mime_type_icon( wp_ext2type( $ext ) );
@@ -246,7 +250,7 @@ class RWMB_File_Field extends RWMB_Field {
 		$new = array_filter( (array) $new );
 
 		$count = self::transform( $input );
-		for ( $i = 0; $i < $count; $i ++ ) {
+		for ( $i = 0; $i < $count; $i++ ) {
 			$attachment = self::handle_upload( "{$input}_{$i}", $post_id, $field );
 			if ( $attachment && ! is_wp_error( $attachment ) ) {
 				$new[] = $attachment;
@@ -307,11 +311,11 @@ class RWMB_File_Field extends RWMB_Field {
 	 *
 	 * @return int The number of uploaded files.
 	 */
-	protected static function transform( $input_name ) {
-		// @codingStandardsIgnoreStart
+	protected static function transform( $input_name ): int {
+		// phpcs:disable
 		foreach ( $_FILES[ $input_name ] as $key => $list ) {
 			foreach ( $list as $index => $value ) {
-				$file_key = "{$input_name}_{$index}";
+				$file_key = sanitize_text_field( "{$input_name}_{$index}" );
 				if ( ! isset( $_FILES[ $file_key ] ) ) {
 					$_FILES[ $file_key ] = [];
 				}
@@ -320,7 +324,7 @@ class RWMB_File_Field extends RWMB_Field {
 		}
 
 		return count( $_FILES[ $input_name ]['name'] );
-		// @codingStandardsIgnoreEnd
+		// phpcs:enable
 	}
 
 	/**
@@ -454,7 +458,7 @@ class RWMB_File_Field extends RWMB_Field {
 		// @codingStandardsIgnoreEnd
 
 		// Use a closure to filter upload directory. Requires PHP >= 5.3.0.
-		$filter_upload_dir = function( $uploads ) use ( $field ) {
+		$filter_upload_dir = function ( $uploads ) use ( $field ) {
 			$uploads['path']    = $field['upload_dir'];
 			$uploads['url']     = self::convert_path_to_url( $field['upload_dir'] );
 			$uploads['subdir']  = '';
@@ -482,7 +486,7 @@ class RWMB_File_Field extends RWMB_Field {
 		return empty( $file_info['url'] ) ? null : $file_info['url'];
 	}
 
-	public static function convert_path_to_url( string $path ) : string {
+	public static function convert_path_to_url( string $path ): string {
 		$path          = wp_normalize_path( untrailingslashit( $path ) );
 		$root          = wp_normalize_path( untrailingslashit( ABSPATH ) );
 		$relative_path = str_replace( $root, '', $path );

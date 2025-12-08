@@ -4,8 +4,8 @@ Donate link: https://www.paypal.me/jakubnovaksl
 Tags: permalink, custom post type, base, slug, remove
 Requires at least: 3.0
 Requires PHP: 5.6
-Tested up to: 6.3
-Stable tag: 6.3
+Tested up to: 6.9
+Stable tag: 6.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,6 +30,22 @@ If you're using Yoast SEO plugin, after you change something in the Remove CPT b
 2. Activate the plugin through the 'Plugins' menu in WordPress
 
 == Changelog ==
+
+= 6.7 =
+* tested on WP 6.9
+
+= 6.6 =
+* tested on WP 6.7
+* fix PHP warning - make sure that post_type was not removed already
+* better HTTPS detection
+* use HTTP_HOST if SERVER_NAME is localhost - fix for kinsta hosting
+* new rcptb_current_url filter that you can use to modify output of the get_current_url function
+
+= 6.5 =
+* tested on WP 6.5
+
+= 6.4 =
+* tested on WP 6.4
 
 = 6.3 =
 * fix deprecated notice for PHP 8.2

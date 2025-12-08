@@ -1,16 +1,16 @@
 /* global redux, wp, redux_custom_fonts_l10, ajaxurl */
 
-(function( $ ) {
+(function ( $ ) {
 	'use strict';
 
-	var l10n;
-	var reduxObject;
-	var ajaxDone = false;
+	let l10n;
+	let reduxObject;
+	let ajaxDone = false;
 
 	redux.field_objects              = redux.field_objects || {};
 	redux.field_objects.custom_fonts = redux.field_objects.custom_fonts || {};
 
-	redux.field_objects.custom_fonts.init = function( selector ) {
+	redux.field_objects.custom_fonts.init = function ( selector ) {
 
 		// If no selector is passed, grab one from the HTML.
 		if ( ! selector ) {
@@ -19,9 +19,9 @@
 
 		// Enum instances of our object.
 		$( selector ).each(
-			function() {
-				var el     = $( this );
-				var parent = el;
+			function () {
+				const el   = $( this );
+				let parent = el;
 
 				if ( ! el.hasClass( 'redux-field-container' ) ) {
 					parent = el.parents( '.redux-field-container:first' );
@@ -43,8 +43,8 @@
 		);
 	};
 
-	redux.field_objects.custom_fonts.modInit = function( el ) {
-		var optName = $( '.redux-ajax-security' ).data( 'opt-name' );
+	redux.field_objects.custom_fonts.modInit = function ( el ) {
+		const optName = $( '.redux-ajax-security' ).data( 'opt-name' );
 
 		l10n = redux_custom_fonts_l10;
 
@@ -56,11 +56,11 @@
 
 		el.find( '.checkbox' ).on(
 			'click',
-			function() {
-				var val = 0;
-				var checkName;
-				var checkVal;
-				var opVal;
+			function () {
+				let val = 0;
+				let checkName;
+				let checkVal;
+				let opVal;
 
 				checkName = $( this ).attr( 'id' );
 
@@ -94,7 +94,7 @@
 		// Remove the image button.
 		el.find( '.remove-font' ).off( 'click' ).on(
 			'click',
-			function() {
+			function () {
 				redux.field_objects.custom_fonts.remove_font( el, $( this ).parents( 'fieldset.redux-field:first' ) );
 			}
 		);
@@ -102,17 +102,17 @@
 		// Upload media button.
 		el.find( '.media_add_font' ).off().on(
 			'click',
-			function( event ) {
+			function ( event ) {
 				redux.field_objects.custom_fonts.add_font( el, event, $( this ).parents( 'fieldset.redux-field:first' ) );
 			}
 		);
 
 		el.find( '.fontDelete' ).on(
 			'click',
-			function( e ) {
-				var data;
+			function ( e ) {
+				let data;
 
-				var parent = $( this ).parents( 'td:first' );
+				const parent = $( this ).parents( 'td:first' );
 
 				e.preventDefault();
 
@@ -125,8 +125,8 @@
 				$.post(
 					ajaxurl,
 					data,
-					function( response ) {
-						var rowCount;
+					function ( response ) {
+						let rowCount;
 
 						response = JSON.parse( response );
 
@@ -151,8 +151,8 @@
 		);
 	};
 
-	redux.field_objects.custom_fonts.startTimer = function( el, status ) {
-		var cur_data;
+	redux.field_objects.custom_fonts.startTimer = function ( el, status ) {
+		let cur_data;
 
 		$.ajax(
 			{
@@ -161,11 +161,11 @@
 				data: {
 					action: 'redux_custom_font_timer'
 				},
-				beforeSend: function() {
+				beforeSend: function () {
 
 				},
-				success: function( data ) {
-					var msg;
+				success: function ( data ) {
+					let msg;
 
 					if ( false === ajaxDone ) {
 						setTimeout( redux.field_objects.custom_fonts.startTimer( el, status ), 500 );
@@ -188,8 +188,8 @@
 		);
 	};
 
-	redux.field_objects.custom_fonts.add_font = function( el, event, selector ) {
-		var frame;
+	redux.field_objects.custom_fonts.add_font = function ( el, event, selector ) {
+		let frame;
 
 		event.preventDefault();
 
@@ -221,15 +221,15 @@
 		// When an image is selected, run a callback.
 		frame.on(
 			'select',
-			function() {
-				var nonce;
-				var data;
-				var status;
-				var conversion;
+			function () {
+				let nonce;
+				let data;
+				let status;
+				let conversion;
 
 				// Grab the selected attachment.
-				var attachment = frame.state().get( 'selection' ).first();
-				var error      = selector.find( '.font-error' );
+				const attachment = frame.state().get( 'selection' ).first();
+				const error      = selector.find( '.font-error' );
 
 				error.slideUp();
 				error.find( 'span' ).text( '' );
@@ -266,7 +266,7 @@
 				$.post(
 					ajaxurl,
 					data,
-					function( response ) {
+					function ( response ) {
 						console.log( 'Redux Custom Fonts API Response (For support purposes)' );
 						console.log( response );
 
@@ -306,19 +306,19 @@
 		frame.open();
 	};
 
-	redux.field_objects.custom_fonts.remove_font = function( el, selector ) {
+	redux.field_objects.custom_fonts.remove_font = function ( el, selector ) {
 		el = null;
 
 		// This shouldn't have been run...
 		if ( ! selector.find( '.remove-image' ).addClass( 'hide' ) ) {
-			return;
+			return null;
 		}
 	};
 
-	redux.field_objects.custom_fonts.sleep = function( milliseconds ) {
-		var start = new Date().getTime();
+	redux.field_objects.custom_fonts.sleep = function ( milliseconds ) {
+		const start = new Date().getTime();
 
-		var i;
+		let i;
 
 		for ( i = 0; i < 1e7; i += 1 ) {
 			if ( ( new Date().getTime() - start ) > milliseconds ) {

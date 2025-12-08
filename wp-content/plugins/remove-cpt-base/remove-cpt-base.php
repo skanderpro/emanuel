@@ -3,7 +3,7 @@
 	Plugin Name:	Remove CPT base
 	Plugin URI:		https://www.paypal.me/jakubnovaksl
 	Description:	Remove custom post type base slug from url
-	Version:		6.3
+	Version:		6.7
 	Author:			KubiQ
 	Author URI:		https://kubiq.sk
 	Text Domain:	remove_cpt_base
@@ -138,8 +138,10 @@ class remove_cpt_base{
 								global $wp_rewrite;
 								// test all selected CPTs
 								foreach( $this->rcptb_selected_keys as $post_type ){
+									$post_type_object = get_post_type_object( $post_type );
+									if( ! $post_type_object ) continue;
 									// get CPT slug and its length
-									$query_var = get_post_type_object( $post_type )->query_var;
+									$query_var = $post_type_object->query_var;
 									// test all rewrite rules
 									foreach( $wp_rewrite->rules as $pattern => $rewrite ){
 										// test only rules for this CPT
@@ -283,10 +285,12 @@ class remove_cpt_base{
 	}
 
 	function get_current_url(){
-		$REQUEST_URI = strtok( $_SERVER['REQUEST_URI'], '?' );
-		$real_url = ( isset( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] == 'on' ) ? 'https://' : 'http://';
-		$real_url .= $_SERVER['SERVER_NAME'] . $REQUEST_URI;
-		return $real_url;
+		$is_https = ( ! empty( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] !== 'off' ) 
+			|| ( isset( $_SERVER['SERVER_PORT'] ) && $_SERVER['SERVER_PORT'] == 443 ) 
+			|| ( ! empty( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https' ) 
+			|| ( isset( $_SERVER['REQUEST_SCHEME'] ) && $_SERVER['REQUEST_SCHEME'] === 'https' );
+		$current_url = ( $is_https ? 'https://' : 'http://' ) . ( $_SERVER['SERVER_NAME'] == 'localhost' && isset( $_SERVER['HTTP_HOST'] ) ? $_SERVER['HTTP_HOST'] : $_SERVER['SERVER_NAME'] ) . strtok( $_SERVER['REQUEST_URI'], '?' );
+		return apply_filters( 'rcptb_current_url', $current_url );
 	}
 }
 

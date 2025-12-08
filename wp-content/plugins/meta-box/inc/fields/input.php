@@ -1,10 +1,13 @@
 <?php
+defined( 'ABSPATH' ) || die;
+
 /**
  * The abstract input field which is used for all <input> fields.
  */
 abstract class RWMB_Input_Field extends RWMB_Field {
 	public static function admin_enqueue_scripts() {
 		wp_enqueue_style( 'rwmb-input', RWMB_CSS_URL . 'input.css', [], RWMB_VER );
+		wp_style_add_data( 'rwmb-input', 'path', RWMB_CSS_DIR . 'input.css' );
 	}
 
 	/**
@@ -93,7 +96,7 @@ abstract class RWMB_Input_Field extends RWMB_Field {
 		return $attributes;
 	}
 
-	protected static function datalist( array $field ) : string {
+	protected static function datalist( array $field ): string {
 		if ( empty( $field['datalist'] ) ) {
 			return '';
 		}

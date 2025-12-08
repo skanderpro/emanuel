@@ -1,4 +1,6 @@
 <?php
+defined( 'ABSPATH' ) || die;
+
 /**
  * The oEmbed field which allows users to enter oEmbed URLs.
  */
@@ -24,7 +26,11 @@ class RWMB_OEmbed_Field extends RWMB_Input_Field {
 
 	public static function admin_enqueue_scripts() {
 		wp_enqueue_style( 'rwmb-oembed', RWMB_CSS_URL . 'oembed.css', [], RWMB_VER );
-		wp_enqueue_script( 'rwmb-oembed', RWMB_JS_URL . 'oembed.js', [ 'jquery', 'underscore' ], RWMB_VER, true );
+		wp_style_add_data( 'rwmb-oembed', 'path', RWMB_CSS_DIR . 'oembed.css' );
+		wp_enqueue_script( 'rwmb-oembed', RWMB_JS_URL . 'oembed.js', [ 'jquery', 'underscore', 'rwmb' ], RWMB_VER, true );
+		wp_localize_script( 'rwmb-oembed', 'rwmbOembed', [
+			'nonce' => wp_create_nonce( 'oembed_get' ),
+		] );
 	}
 
 	public static function add_actions() {
@@ -32,6 +38,8 @@ class RWMB_OEmbed_Field extends RWMB_Input_Field {
 	}
 
 	public static function ajax_get_embed() {
+		check_ajax_referer( 'oembed_get' );
+
 		$request       = rwmb_request();
 		$url           = (string) $request->filter_post( 'url', FILTER_SANITIZE_URL );
 		$not_available = (string) $request->post( 'not_available' );
@@ -47,7 +55,7 @@ class RWMB_OEmbed_Field extends RWMB_Input_Field {
 	 */
 	public static function get_embed( $url, $not_available = '' ) {
 		/**
-		 * Set arguments for getting embeded HTML.
+		 * Set arguments for getting embedded HTML.
 		 * Without arguments, default width will be taken from global $content_width, which can break UI in the admin.
 		 *
 		 * @link https://github.com/rilwis/meta-box/issues/801
@@ -75,7 +83,7 @@ class RWMB_OEmbed_Field extends RWMB_Input_Field {
 		if ( $not_available ) {
 			$not_available = '<div class="rwmb-oembed-not-available">' . wp_kses_post( $not_available ) . '</div>';
 		}
-		$not_available = apply_filters( 'rwmb_oembed_not_available_string', $not_available );
+		$not_available = apply_filters( 'rwmb_oembed_not_available_string', $not_available, $url );
 
 		return $embed ? $embed : $not_available;
 	}

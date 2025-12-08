@@ -1,4 +1,6 @@
 <?php
+defined( 'ABSPATH' ) || die;
+
 /**
  * The checkbox field.
  */
@@ -23,7 +25,7 @@ class RWMB_Checkbox_Field extends RWMB_Input_Field {
 		return $output;
 	}
 
-	protected static function input_description( array $field ) : string {
+	protected static function input_description( array $field ): string {
 		return '';
 	}
 

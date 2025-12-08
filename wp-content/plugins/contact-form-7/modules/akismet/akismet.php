@@ -41,49 +41,47 @@ function wpcf7_akismet( $spam, $submission ) {
 		return false;
 	}
 
-	$c = array();
-
-	$c['comment_author'] = $params['author'];
-	$c['comment_author_email'] = $params['author_email'];
-	$c['comment_author_url'] = $params['author_url'];
-	$c['comment_content'] = $params['content'];
-
-	$c['blog'] = get_option( 'home' );
-	$c['blog_lang'] = get_locale();
-	$c['blog_charset'] = get_option( 'blog_charset' );
-	$c['user_ip'] = $_SERVER['REMOTE_ADDR'];
-	$c['user_agent'] = $_SERVER['HTTP_USER_AGENT'];
-	$c['referrer'] = $_SERVER['HTTP_REFERER'];
-	$c['comment_type'] = 'contact-form';
+	$comment = array(
+		'comment_type' => 'contact-form',
+		'comment_author' => $params['author'],
+		'comment_author_email' => $params['author_email'],
+		'comment_author_url' => $params['author_url'],
+		'comment_content' => $params['content'],
+		'blog' => home_url(),
+		'blog_lang' => get_locale(),
+		'blog_charset' => get_option( 'blog_charset' ),
+		'user_ip' => $submission->get_meta( 'remote_ip' ),
+		'user_agent' => $submission->get_meta( 'user_agent' ),
+		'referrer' => wpcf7_superglobal_server( 'HTTP_REFERER' ),
+	);
 
 	$datetime = date_create_immutable(
 		'@' . $submission->get_meta( 'timestamp' )
 	);
 
 	if ( $datetime ) {
-		$c['comment_date_gmt'] = $datetime->format( DATE_ATOM );
+		$comment['comment_date_gmt'] = $datetime->format( DATE_ATOM );
 	}
 
 	if ( $permalink = get_permalink() ) {
-		$c['permalink'] = $permalink;
+		$comment['permalink'] = $permalink;
 	}
 
-	$ignore = array( 'HTTP_COOKIE', 'HTTP_COOKIE2', 'PHP_AUTH_PW' );
+	$server_vars = array_diff_key(
+		$_SERVER,
+		array_flip( array( 'HTTP_COOKIE', 'HTTP_COOKIE2', 'PHP_AUTH_PW' ) )
+	);
 
-	foreach ( $_SERVER as $key => $value ) {
-		if ( ! in_array( $key, (array) $ignore ) ) {
-			$c["$key"] = $value;
-		}
-	}
+	$comment = array_merge( $comment, $server_vars );
 
-	$c = apply_filters( 'wpcf7_akismet_parameters', $c );
+	$comment = apply_filters( 'wpcf7_akismet_parameters', $comment );
 
-	if ( wpcf7_akismet_comment_check( $c ) ) {
+	if ( wpcf7_akismet_comment_check( $comment ) ) {
 		$spam = true;
 
 		$submission->add_spam_log( array(
 			'agent' => 'akismet',
-			'reason' => __( "Akismet returns a spam response.", 'contact-form-7' ),
+			'reason' => __( 'Akismet returns a spam response.', 'contact-form-7' ),
 		) );
 	} else {
 		$spam = false;
@@ -134,8 +132,7 @@ function wpcf7_akismet_submitted_params() {
 	);
 
 	foreach ( (array) $_POST as $key => $val ) {
-		if ( '_wpcf7' == substr( $key, 0, 6 )
-		or '_wpnonce' == $key ) {
+		if ( str_starts_with( $key, '_wpcf7' ) or '_wpnonce' === $key ) {
 			continue;
 		}
 
@@ -168,14 +165,18 @@ function wpcf7_akismet_submitted_params() {
 				continue;
 			}
 
-			if ( 'author_email' === $akismet_option
-			and '' === $params['author_email'] ) {
+			if (
+				'author_email' === $akismet_option and
+				'' === $params['author_email']
+			) {
 				$params['author_email'] = $vals[0];
 				continue;
 			}
 
-			if ( 'author_url' === $akismet_option
-			and '' === $params['author_url'] ) {
+			if (
+				'author_url' === $akismet_option and
+				'' === $params['author_url']
+			) {
 				$params['author_url'] = $vals[0];
 				continue;
 			}
@@ -183,8 +184,10 @@ function wpcf7_akismet_submitted_params() {
 			$vals = array_filter(
 				$vals,
 				static function ( $val ) use ( $tag ) {
-					if ( wpcf7_form_tag_supports( $tag->type, 'selectable-values' )
-					and in_array( $val, $tag->labels ) ) {
+					if (
+						wpcf7_form_tag_supports( $tag->type, 'selectable-values' ) and
+						in_array( $val, $tag->labels, true )
+					) {
 						return false;
 					} else {
 						return true;
@@ -220,7 +223,7 @@ function wpcf7_akismet_comment_check( $comment ) {
 		return $spam;
 	}
 
-	if ( 'true' == $response[1] ) {
+	if ( 'true' === $response[1] ) {
 		$spam = true;
 	}
 
@@ -296,10 +299,10 @@ function wpcf7_akismet_default_template( $template, $prop ) {
 		);
 
 		$privacy_notice = sprintf( '%s %s',
-			__( "This form uses Akismet to reduce spam.", 'contact-form-7' ),
+			__( 'This form uses Akismet to reduce spam.', 'contact-form-7' ),
 			wpcf7_link(
 				'https://akismet.com/privacy/',
-				__( "Learn how your data is processed.", 'contact-form-7' ),
+				__( 'Learn how your data is processed.', 'contact-form-7' ),
 				array(
 					'target' => '_blank',
 					'rel' => 'nofollow noopener',

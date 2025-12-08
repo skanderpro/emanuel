@@ -1,11 +1,13 @@
 <?php
+defined( 'ABSPATH' ) || die;
+
 /**
  * The image select field which behaves similar to the radio field but uses images as options.
  */
 class RWMB_Image_Select_Field extends RWMB_Field {
 	public static function admin_enqueue_scripts() {
 		wp_enqueue_style( 'rwmb-image-select', RWMB_CSS_URL . 'image-select.css', [], RWMB_VER );
-		wp_enqueue_script( 'rwmb-image-select', RWMB_JS_URL . 'image-select.js', [ 'jquery' ], RWMB_VER, true );
+		wp_style_add_data( 'rwmb-image-select', 'path', RWMB_CSS_DIR . 'image-select.css' );
 	}
 
 	/**
@@ -16,14 +18,15 @@ class RWMB_Image_Select_Field extends RWMB_Field {
 	 * @return string
 	 */
 	public static function html( $meta, $field ) {
-		$html    = [];
-		$meta    = (array) $meta;
+		$html = [];
+		$meta = (array) $meta;
 		foreach ( $field['options'] as $value => $image ) {
 			$attributes = self::get_attributes( $field, $value );
 			$html[]     = sprintf(
 				'<label class="rwmb-image-select"><img src="%s"><input %s%s></label>',
 				$image,
 				self::render_attributes( $attributes ),
+				// phpcs:ignore WordPress.PHP.StrictInArray.MissingTrueStrict
 				checked( in_array( $value, $meta ), true, false )
 			);
 		}

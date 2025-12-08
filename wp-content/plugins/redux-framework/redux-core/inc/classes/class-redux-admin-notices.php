@@ -27,16 +27,16 @@ if ( ! class_exists( 'Redux_Admin_Notices', false ) ) {
 		 * @var array
 		 * @access private
 		 */
-		private static $notices = array();
+		private static array $notices = array();
 
 		/**
 		 * Redux_Admin_Notices constructor.
 		 *
-		 * @param array $parent ReduxFramework object.
+		 * @param array $redux ReduxFramework object.
 		 * @access public
 		 */
-		public function __construct( $parent ) {
-			parent::__construct( $parent );
+		public function __construct( $redux ) {
+			parent::__construct( $redux );
 
 			add_action( 'wp_ajax_redux_hide_admin_notice', array( $this, 'ajax' ) );
 			add_action( 'admin_notices', array( $this, 'notices' ), 99 );
@@ -142,20 +142,24 @@ if ( ! class_exists( 'Redux_Admin_Notices', false ) ) {
 							}
 							?>
 							<script>
-								jQuery( document ).ready( function( $ ) {
-									$( document.body ).on(
-										'click', '.redux-notice.is-dismissible .notice-dismiss', function( e ) {
-											e.preventDefault();
-											var $data = $( this ).parent().find( '.dismiss_data' );
-											$.post(
-												ajaxurl, {
-													action: 'redux_hide_admin_notice',
-													id: $data.attr( 'id' ),
-													nonce: $data.val()
-												}
-											);
-										} );
-								} );
+								document.addEventListener(
+									'DOMContentLoaded',
+									function () {
+										$( document.body ).on(
+											'click', '.redux-notice.is-dismissible .notice-dismiss', function ( e ) {
+												e.preventDefault();
+												let $data = $( this ).parent().find( '.dismiss_data' );
+												$.post(
+													ajaxurl, {
+														action: 'redux_hide_admin_notice',
+														id: $data.attr( 'id' ),
+														nonce: $data.val()
+													}
+												);
+											}
+										);
+									}
+								)
 							</script>
 							<?php
 

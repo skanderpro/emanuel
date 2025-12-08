@@ -1,4 +1,6 @@
 <?php
+defined( 'ABSPATH' ) || die;
+
 use MetaBox\Support\Arr;
 
 /**
@@ -50,14 +52,23 @@ class RWMB_Datetime_Field extends RWMB_Input_Field {
 		// jQueryUI base theme: https://github.com/jquery/jquery-ui/tree/1.13.2/themes/base
 		$url = RWMB_CSS_URL . 'jqueryui';
 		wp_register_style( 'jquery-ui-core', "$url/core.css", [], '1.13.2' );
+		wp_style_add_data( 'jquery-ui-core', 'path', RWMB_CSS_DIR . 'jqueryui/core.css' );
+
 		wp_register_style( 'jquery-ui-theme', "$url/theme.css", [], '1.13.2' );
+		wp_style_add_data( 'jquery-ui-theme', 'path', RWMB_CSS_DIR . 'jqueryui/theme.css' );
+
 		wp_register_style( 'jquery-ui-datepicker', "$url/datepicker.css", [ 'jquery-ui-core', 'jquery-ui-theme' ], '1.13.2' );
+		wp_style_add_data( 'jquery-ui-datepicker', 'path', RWMB_CSS_DIR . 'jqueryui/datepicker.css' );
+
 		wp_register_style( 'jquery-ui-slider', "$url/slider.css", [ 'jquery-ui-core', 'jquery-ui-theme' ], '1.13.2' );
+		wp_style_add_data( 'jquery-ui-slider', 'path', RWMB_CSS_DIR . 'jqueryui/slider.css' );
 
 		// jQueryUI timepicker addon: https://github.com/trentrichardson/jQuery-Timepicker-Addon
 		wp_register_style( 'jquery-ui-timepicker', "$url/jquery-ui-timepicker-addon.min.css", [ 'rwmb-date', 'jquery-ui-slider' ], '1.6.3' );
+		wp_style_add_data( 'jquery-ui-timepicker', 'path', RWMB_CSS_DIR . 'jqueryui/jquery-ui-timepicker-addon.min.css' );
 
 		wp_register_style( 'rwmb-date', RWMB_CSS_URL . 'date.css', [ 'jquery-ui-datepicker' ], RWMB_VER );
+		wp_style_add_data( 'rwmb-date', 'path', RWMB_CSS_DIR . 'date.css' );
 
 		// Scripts.
 		$url = RWMB_JS_URL . 'jqueryui';
@@ -70,7 +81,7 @@ class RWMB_Datetime_Field extends RWMB_Input_Field {
 		wp_register_script( 'rwmb-time', RWMB_JS_URL . 'time.js', [ 'jquery-ui-timepicker-i18n', 'jquery-ui-button', 'jquery-ui-timepicker-slider', 'rwmb' ], RWMB_VER, true );
 
 		$handles      = [ 'datetime', 'time' ];
-		$locale       = str_replace( '_', '-', get_locale() );
+		$locale       = str_replace( '_', '-', get_user_locale() );
 		$locale_short = substr( $locale, 0, 2 );
 		$data         = [
 			'locale'      => $locale,
@@ -145,8 +156,10 @@ class RWMB_Datetime_Field extends RWMB_Input_Field {
 		}
 
 		if ( $field['save_format'] ) {
-			$date = DateTime::createFromFormat( $field['php_format'], $new );
-			$new  = false === $date ? $new : $date->format( $field['save_format'] );
+			// Fix 'c' and 'r' formats not containing WordPress timezone.
+			$timezone = in_array( $field['save_format'], [ 'c', 'r' ], true ) ? wp_timezone() : null;
+			$date     = DateTimeImmutable::createFromFormat( $field['php_format'], $new, $timezone );
+			return $date === false ? $new : $date->format( $field['save_format'] );
 		}
 
 		return $new;
@@ -189,8 +202,18 @@ class RWMB_Datetime_Field extends RWMB_Input_Field {
 	 * Transform meta value from save format to the JS format.
 	 */
 	public static function from_save_format( $meta, array $field ): string {
-		$date = DateTime::createFromFormat( $field['save_format'], $meta );
-		return false === $date ? $meta : $date->format( $field['php_format'] );
+		$formats = array_merge(
+			[
+				$field['save_format'] => $field['save_format'],
+			],
+			[
+				'c' => DateTimeInterface::ATOM,
+				'r' => DateTimeInterface::RFC2822,
+			]
+		);
+		$format  = $formats[ $field['save_format'] ];
+		$date    = DateTimeImmutable::createFromFormat( $format, (string) $meta );
+		return false === $date ? (string) $meta : $date->format( $field['php_format'] );
 	}
 
 	/**
@@ -219,6 +242,7 @@ class RWMB_Datetime_Field extends RWMB_Input_Field {
 			'yearRange'        => '-100:+100',
 			'changeMonth'      => true,
 			'oneLine'          => true,
+			'stepMinute'       => 5,
 			'controlType'      => 'select', // select or slider
 			'addSliderAccess'  => true,
 			'sliderAccessArgs' => [
@@ -231,14 +255,6 @@ class RWMB_Datetime_Field extends RWMB_Input_Field {
 		}
 
 		$field['php_format'] = static::get_php_format( $field['js_options'] );
-
-		// Fix save format: DateTime::createFromFormat() doesn't work with 'c' and 'r' formats, even though they're listed in the php.net/date docs.
-		if ( $field['save_format'] === 'c' ) {
-			$field['save_format'] = DateTimeInterface::ATOM;
-		}
-		if ( $field['save_format'] === 'r' ) {
-			$field['save_format'] = DateTimeInterface::RFC2822;
-		}
 
 		$field = parent::normalize( $field );
 

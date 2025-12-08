@@ -1,28 +1,28 @@
 /* global jQuery, document, redux */
 
-( function( $ ) {
+( function ( $ ) {
 	'use strict';
 
 	redux.field_objects           = redux.field_objects || {};
 	redux.field_objects.accordion = redux.field_objects.accordion || {};
 
-	redux.field_objects.accordion.init = function( selector ) {
+	redux.field_objects.accordion.init = function ( selector ) {
 		if ( ! selector ) {
 			selector = $( document ).find( '.redux-group-tab:visible' ).find( '.redux-container-accordion:visible' );
 		}
 
 		$( selector ).each(
-			function() {
-				var $id;
-				var group;
-				var test;
-				var accordionMarker;
-				var openIcon;
-				var closeIcon;
-				var table;
+			function () {
+				let $id;
+				let group;
+				let test;
+				let accordionMarker;
+				let openIcon;
+				let closeIcon;
+				let table;
 
-				var el     = $( this );
-				var parent = el;
+				const el   = $( this );
+				let parent = el;
 
 				if ( ! el.hasClass( 'redux-field-container' ) ) {
 					parent = el.parents( '.redux-field-container:first' );
@@ -46,7 +46,7 @@
 
 					$.each(
 						test,
-						function( key, value ) {
+						function ( key, value ) {
 							key = null;
 
 							$( value ).css( 'margin-top', '20px' );
@@ -63,9 +63,9 @@
 
 					group.find( '.redux-accordion-field' ).on(
 						'click',
-						function( e ) {
-							var id    = $( this ).attr( 'id' );
-							var table = $( '#accordion-table-' + id );
+						function ( e ) {
+							const id    = $( this ).attr( 'id' );
+							const table = $( '#accordion-table-' + id );
 
 							e.preventDefault();
 
@@ -81,11 +81,11 @@
 					);
 
 					group.find( '.redux-accordion-field' ).each(
-						function() {
-							var id;
-							var state;
-							var table;
-							var position = $( this ).data( 'position' );
+						function () {
+							let id;
+							let state;
+							let table;
+							const position = $( this ).data( 'position' );
 
 							if ( 'start' === position ) {
 								id    = $( this ).attr( 'id' );

@@ -1,4 +1,6 @@
 <?php
+defined( 'ABSPATH' ) || die;
+
 use MetaBox\Support\Arr;
 
 /**
@@ -26,7 +28,7 @@ abstract class RWMB_Object_Choice_Field extends RWMB_Choice_Field {
 		parent::show( $field, $saved, $post_id );
 	}
 
-	abstract public static function query( $meta, array $field ) : array;
+	abstract public static function query( $meta, array $field ): array;
 
 	/**
 	 * Get field HTML.
@@ -140,6 +142,7 @@ abstract class RWMB_Object_Choice_Field extends RWMB_Choice_Field {
 		}
 
 		wp_enqueue_style( 'rwmb-modal', RWMB_CSS_URL . 'modal.css', [], RWMB_VER );
+		wp_style_add_data( 'rwmb-modal', 'path', RWMB_CSS_DIR . 'modal.css' );
 		wp_enqueue_script( 'rwmb-modal', RWMB_JS_URL . 'modal.js', [ 'jquery' ], RWMB_VER, true );
 
 		$type = $field['type'] === 'taxonomy_advanced' ? 'taxonomy' : $field['type'];
@@ -149,7 +152,7 @@ abstract class RWMB_Object_Choice_Field extends RWMB_Choice_Field {
 	/**
 	 * Get correct rendering class for the field.
 	 */
-	protected static function get_type_class( array $field ) : string {
+	protected static function get_type_class( array $field ): string {
 		return RWMB_Helpers_Field::get_class( [ 'type' => $field['field_type'] ] );
 	}
 }

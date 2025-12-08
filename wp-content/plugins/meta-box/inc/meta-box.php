@@ -70,7 +70,7 @@ class RW_Meta_Box {
 		}
 	}
 
-	public function is_shown() : bool {
+	public function is_shown(): bool {
 		$show = apply_filters( 'rwmb_show', true, $this->meta_box );
 		return apply_filters( "rwmb_show_{$this->id}", $show, $this->meta_box );
 	}
@@ -78,6 +78,13 @@ class RW_Meta_Box {
 	protected function global_hooks() {
 		// Enqueue common styles and scripts.
 		add_action( 'admin_enqueue_scripts', [ $this, 'enqueue' ] );
+
+		// Enqueue assets for the block editor only, just for previewing (submission forms, custom blocks).
+		// Don't enqueue on frontend as front-end forms and blocks already call the enqueue() method.
+		// TODO: Uncomment this when we have a way to enqueue assets for the block/site editor.
+		// if ( is_admin() ) {
+		// add_action( 'enqueue_block_assets', [ $this, 'enqueue' ] );
+		// }
 
 		// Add additional actions for fields.
 		foreach ( $this->fields as $field ) {
@@ -110,13 +117,15 @@ class RW_Meta_Box {
 	}
 
 	public function enqueue() {
-		if ( is_admin() && ! $this->is_edit_screen() ) {
+		if ( is_admin() && ! $this->is_edit_screen() && ! $this->is_gutenberg_screen() ) {
 			return;
 		}
 
 		wp_enqueue_style( 'rwmb', RWMB_CSS_URL . 'style.css', [], RWMB_VER );
+		wp_style_add_data( 'rwmb', 'path', RWMB_CSS_DIR . 'style.css' );
 		if ( is_rtl() ) {
 			wp_enqueue_style( 'rwmb-rtl', RWMB_CSS_URL . 'style-rtl.css', [], RWMB_VER );
+			wp_style_add_data( 'rwmb-rtl', 'path', RWMB_CSS_DIR . 'style-rtl.css' );
 		}
 
 		wp_enqueue_script( 'rwmb', RWMB_JS_URL . 'script.js', [ 'jquery' ], RWMB_VER, true );
@@ -147,6 +156,12 @@ class RW_Meta_Box {
 		do_action( 'rwmb_enqueue_scripts', $this );
 	}
 
+	private function is_gutenberg_screen(): bool {
+		$screen = get_current_screen();
+
+		return in_array( $screen->base, [ 'site-editor', 'widgets' ], true );
+	}
+
 	/**
 	 * Add meta box for multiple post types
 	 */
@@ -166,7 +181,7 @@ class RW_Meta_Box {
 		}
 	}
 
-	public function postbox_classes( array $classes ) : array {
+	public function postbox_classes( array $classes ): array {
 		if ( $this->closed ) {
 			$classes[] = 'closed';
 		}
@@ -175,7 +190,7 @@ class RW_Meta_Box {
 		return $classes;
 	}
 
-	public function hide( array $hidden, $screen ) : array {
+	public function hide( array $hidden, $screen ): array {
 		if ( $this->is_edit_screen( $screen ) && $this->default_hidden ) {
 			$hidden[] = $this->id;
 		}
@@ -210,6 +225,7 @@ class RW_Meta_Box {
 			RWMB_Field::call( 'show', $field, $saved, $this->object_id );
 		}
 
+		$this->render_cleanup();
 		// Allow users to add custom code after meta box content.
 		// 1st action applies to all meta boxes.
 		// 2nd action applies to only current meta box.
@@ -218,6 +234,30 @@ class RW_Meta_Box {
 
 		// End container.
 		echo '</div>';
+	}
+
+	protected function get_cleanup_fields( $fields, $prefix = '' ) {
+		$names = [];
+
+		foreach ( $fields as $field ) {
+			$field_id = $prefix . $field['id'];
+			if ( ! empty( $field['fields'] ) ) {
+				$suffix = $field['clone'] ? '.*.' : '.';
+				$names  = array_merge( $names, $this->get_cleanup_fields( $field['fields'], $field_id . $suffix ) );
+			}
+
+			if ( $field['clone'] ) {
+				$names[] = $field_id;
+			}
+		}
+
+		return $names;
+	}
+
+	protected function render_cleanup() {
+		$names = $this->get_cleanup_fields( $this->fields );
+
+		echo '<input type="hidden" name="rwmb_cleanup[]" value="' . esc_attr( wp_json_encode( $names ) ) . '">';
 	}
 
 	/**
@@ -261,7 +301,7 @@ class RW_Meta_Box {
 		RWMB_Field::filter( 'after_save_field', null, $field, $new, $old, $this->object_id );
 	}
 
-	public function validate() : bool {
+	public function validate(): bool {
 		$nonce = rwmb_request()->filter_post( "nonce_{$this->id}" );
 
 		return ! $this->saved
@@ -296,7 +336,7 @@ class RW_Meta_Box {
 		return $meta_box;
 	}
 
-	public static function normalize_fields( array $fields, $storage = null ) : array {
+	public static function normalize_fields( array $fields, $storage = null ): array {
 		foreach ( $fields as $k => $field ) {
 			$field = RWMB_Field::call( 'normalize', $field );
 
@@ -370,7 +410,7 @@ class RW_Meta_Box {
 		$this->object_id = $id;
 	}
 
-	public function get_object_type() : string {
+	public function get_object_type(): string {
 		return $this->object_type;
 	}
 
