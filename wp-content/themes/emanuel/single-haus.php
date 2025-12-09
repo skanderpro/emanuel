@@ -204,7 +204,7 @@ get_header();
                         </select>
                         <select name="status" class="select">
                             <option value>alle</option>
-                            <option value="rented" <?php echo selected($status, 'rented');  ?>>reserviert</option>
+                            <option value="reserved" <?php echo selected($status, 'reserved');  ?>>reserviert</option>
                             <option value="available" <?php echo selected($status, 'available');  ?>>verfügbar</option>
                         </select>
                         <button class="btn btn-ghost" type="submit">Filtern</button>
@@ -227,10 +227,10 @@ get_header();
                                     <?php
                                     if (!empty($haus_status)) {
                                         ?>
-                                        <span class="status status-available">
+                                        <span class="status status-<?php echo $haus_status;?>">
                                         <?php
                                         $trans_map = [
-                                            'rented' => 'reserviert',
+                                            'reserved' => 'reserviert',
                                             'available' => 'verfügbar'
                                         ];
 
