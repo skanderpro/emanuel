@@ -204,7 +204,8 @@ get_header();
                         </select>
                         <select name="status" class="select">
                             <option value>alle</option>
-                            <option value="rented" <?php echo selected($status, 'rented');  ?>>rented</option>
+                            <option value="rented" <?php echo selected($status, 'rented');  ?>>reserviert</option>
+                            <option value="available" <?php echo selected($status, 'available');  ?>>verfügbar</option>
                         </select>
                         <button class="btn btn-ghost" type="submit">Filtern</button>
                     </form>
@@ -218,11 +219,27 @@ get_header();
                             $rooms_count = rwmb_get_value('rooms_count', [], $other_house->ID);
                             $price = rwmb_get_value('price', [], $other_house->ID);
                             $area = rwmb_get_value('area', [], $other_house->ID);
+                            $haus_status = rwmb_get_value('status', [], $other_house->ID);
                             ?>
                             <a href="<?php echo get_the_permalink($other_house->ID) ?>" class="apartment-card card">
                                 <div class="card-media">
                                     <img src="<?php echo get_the_post_thumbnail_url($other_house->ID); ?>" alt="<?php echo $other_house->post_title; ?>" onerror="this.src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';">
-                                    <span class="status status-available">verfügbar</span>
+                                    <?php
+                                    if (!empty($haus_status)) {
+                                        ?>
+                                        <span class="status status-available">
+                                        <?php
+                                        $trans_map = [
+                                            'rented' => 'reserviert',
+                                            'available' => 'verfügbar'
+                                        ];
+
+                                            echo $trans_map[$haus_status] ?? $haus_status;
+                                        ?>
+                                        </span>
+                                        <?php
+                                    }
+                                    ?>
                                 </div>
                                 <div class="card-body">
                                     <h3 class="card-title"><?php echo $other_house->post_title; ?></h3>
