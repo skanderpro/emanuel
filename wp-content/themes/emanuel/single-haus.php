@@ -33,7 +33,51 @@ get_header();
                 $highlight_arr[] = $highlight->name;
             }
 
+            $q = trim(sanitize_text_field($_GET['q']));
+            $min_rooms = trim(sanitize_text_field($_GET['min_rooms']));
+            $max_rooms = trim(sanitize_text_field($_GET['max_rooms']));
+            $status = trim(sanitize_text_field($_GET['status']));
 
+            $params = [];
+            $meta_params = [];
+            if (!empty($q)) {
+                $params['s'] = $q;
+            }
+
+            if (!empty($min_rooms)) {
+                $meta_params[] = [
+                        'key'     => 'rooms_count',
+                        'value'   => $min_rooms,
+                        'type'    => 'NUMERIC',
+                        'compare' => '>=',
+                ];
+            }
+
+            if (!empty($max_rooms)) {
+                $meta_params[] = [
+                        'key'     => 'rooms_count',
+                        'value'   => $max_rooms,
+                        'type'    => 'NUMERIC',
+                        'compare' => '<=',
+                ];
+            }
+            if (!empty($status)) {
+                $meta_params[] = [
+                        'key'     => 'status',
+                        'value'   => $status,
+                        'compare' => '=',
+                ];
+            }
+
+            if (!empty($meta_params)) {
+                $params['meta_query'] = $meta_params;
+            }
+
+            $other_houses = get_posts([
+                    'post_type' => 'haus',
+                    'posts_per_page' => 3,
+                    'post__not_in' => [get_the_ID()],
+            ] + $params);
 
 	?>
             <section class="hero container">
@@ -142,103 +186,84 @@ get_header();
 
                 </div>
             </section>
-            <section class="filters container">
-                <form class="filters-form" action="#" method="get">
-                    <input type="search" name="q" placeholder="z.B. Attika, Balkon..." class="input input-search">
-                    <select name="min_rooms" class="select">
-                        <option>Beliebig</option>
-                        <option>1+</option>
-                        <option>2+</option>
-                    </select>
-                    <select name="max_rent" class="select">
-                        <option>Beliebig</option>
-                    </select>
-                    <select name="status" class="select">
-                        <option>alle</option>
-                    </select>
-                    <button class="btn btn-ghost" type="submit">Filtern</button>
-                </form>
-            </section>
-            <section class="listings container">
-                <h2 class="section-title">Wohnungen</h2>
-                <div class="grid grid-3 listing-cards">
-                    <!-- apartment card 1 -->
-                    <article class="apartment-card card">
-                        <div class="card-media">
-                            <img src="./img/swiper/swiper-img-1.jpg" alt="2.5-Zimmer-Wohnung" onerror="this.src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';">
-                            <span class="status status-available">verfügbar</span>
-                        </div>
-                        <div class="card-body">
-                            <h3 class="card-title">2.5-Zimmer-Wohnung</h3>
-                            <ul class="card-meta">
-                                <li>Zimmer: 2.5</li>
-                                <li>63 m²</li>
-                                <li>2'350 CHF</li>
-                            </ul>
-                        </div>
-                    </article>
+            <?php
+            if (!empty($other_houses)) {
+                ?>
+                <section class="filters container">
+                    <form class="filters-form" action="" method="get">
+                        <input type="search" name="q" placeholder="z.B. Attika, Balkon..." value="<?php echo $q;?>" class="input input-search">
+                        <select name="min_rooms" class="select">
+                            <option value>Beliebig</option>
+                            <option value="1" <?php echo selected($min_rooms, '1');  ?>>1+</option>
+                            <option value="2" <?php echo selected($min_rooms, '2');  ?>>2+</option>
+                        </select>
+                        <select name="max_rooms" class="select">
+                            <option value>Beliebig</option>
+                            <option value="1" <?php echo selected($max_rooms, '1');  ?>>1+</option>
+                            <option value="2" <?php echo selected($max_rooms, '2');  ?>>2+</option>
+                        </select>
+                        <select name="status" class="select">
+                            <option value>alle</option>
+                            <option value="rented" <?php echo selected($status, 'rented');  ?>>rented</option>
+                        </select>
+                        <button class="btn btn-ghost" type="submit">Filtern</button>
+                    </form>
+                </section>
+                <section class="listings container">
+                    <h2 class="section-title">Wohnungen</h2>
+                    <div class="grid grid-3 listing-cards">
+                        <!-- apartment card 1 -->
+                        <?php
+                        foreach ($other_houses as $other_house) {
+                            $rooms_count = rwmb_get_value('rooms_count', [], $other_house->ID);
+                            $price = rwmb_get_value('price', [], $other_house->ID);
+                            $area = rwmb_get_value('area', [], $other_house->ID);
+                            ?>
+                            <a href="<?php echo get_the_permalink($other_house->ID) ?>" class="apartment-card card">
+                                <div class="card-media">
+                                    <img src="<?php echo get_the_post_thumbnail_url($other_house->ID); ?>" alt="<?php echo $other_house->post_title; ?>" onerror="this.src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';">
+                                    <span class="status status-available">verfügbar</span>
+                                </div>
+                                <div class="card-body">
+                                    <h3 class="card-title"><?php echo $other_house->post_title; ?></h3>
+                                    <ul class="card-meta">
+                                        <?php
+                                        if (!empty($rooms_count)) {
+                                            ?>
+                                            <li>Zimmer: <?php echo $rooms_count; ?></li>
+                                            <?php
+                                        }
+                                        if (!empty($area)) {
+                                            ?>
+                                            <li><?php echo $area;?> m²</li>
+                                            <?php
+                                        }
+                                        if (!empty($price)) {
+                                            ?>
+                                            <li><?php echo $price; ?></li>
+                                            <?php
+                                        }
+                                        ?>
+                                    </ul>
+                                </div>
+                            </a>
+                            <?php
+                        }
+                        ?>
 
-                    <!-- apartment card 2 -->
-                    <article class="apartment-card card">
-                        <div class="card-media">
-                            <img src="./img/swiper/swiper-img-2.jpg" alt="3.5-Zimmer-Wohnung" onerror="this.src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';">
-                            <span class="status status-reserved">reserviert</span>
-                        </div>
-                        <div class="card-body">
-                            <h3 class="card-title">3.5-Zimmer-Wohnung</h3>
-                            <ul class="card-meta">
-                                <li>Zimmer: 3.5</li>
-                                <li>86 m²</li>
-                                <li>2'980 CHF</li>
-                            </ul>
-                        </div>
-                    </article>
 
-                    <!-- apartment card 3 -->
-                    <article class="apartment-card card">
-                        <div class="card-media">
-                            <img src="./img/swiper/swiper-img-3.jpg" alt="4.5-Zimmer-Attika" onerror="this.src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';">
-                            <span class="status status-available">verfügbar</span>
-                        </div>
-                        <div class="card-body">
-                            <h3 class="card-title">4.5-Zimmer-Attika</h3>
-                            <ul class="card-meta">
-                                <li>Zimmer: 4.5</li>
-                                <li>121 m²</li>
-                                <li>3'890 CHF</li>
-                            </ul>
-                        </div>
-                    </article>
-                </div>
-            </section>
+                    </div>
+                </section>
+                <?php
+            }
+            ?>
+
 	<?php
 
 		} // end while
 	}
 	?>
 </main>
-<script src="/wp-content/themes/emanuel/assets/dist/files/js/swiper-bundle.min.js"></script>
-<script>
-	const swiper = new Swiper('.rental-detal-swiper', {
-		loop: false,
-		slidesPerView: 1.2,
-		spaceBetween: 32,
-		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
-		},
-		breakpoints: {
-			320: {
-				slidesPerView: 1.2,
-				spaceBetween: 20,
-			},
-			768: {
-				slidesPerView: 2.5,
-				spaceBetween: 40,
 
-			},
-		},
-	})
-</script>
 <?php
 get_footer();
