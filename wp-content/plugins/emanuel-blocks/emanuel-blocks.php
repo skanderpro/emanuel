@@ -450,6 +450,21 @@ add_filter( 'rwmb_meta_boxes', function ( $meta_boxes ) {
                 'id'   => $prefix . 'subtitle',
             ],
             [
+                'type' => 'number',
+                'name' => esc_html__( 'Area', 'online-generator' ),
+                'id'   => $prefix . 'area',
+            ],
+            [
+                'type' => 'number',
+                'name' => esc_html__( 'Rooms Count', 'online-generator' ),
+                'id'   => $prefix . 'rooms_count',
+            ],
+            [
+                'type' => 'text',
+                'name' => esc_html__( 'Price', 'online-generator' ),
+                'id'   => $prefix . 'price',
+            ],
+            [
                 'type' => 'select_advanced',
                 'name' => esc_html__( 'Status', 'online-generator' ),
                 'id'   => $prefix . 'status',
