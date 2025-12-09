@@ -330,3 +330,7 @@ Stack trace:
 [08-Dec-2025 22:53:07 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 29
 [08-Dec-2025 22:53:07 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 29
 [08-Dec-2025 22:53:07 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 29
+[09-Dec-2025 01:17:09 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No such file or directory in /Users/valiabryniuk/projects/emanuel/wp-includes/class-wpdb.php on line 1994
+[09-Dec-2025 06:17:40 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No such file or directory in /Users/valiabryniuk/projects/emanuel/wp-includes/class-wpdb.php on line 1994
+[09-Dec-2025 07:49:54 UTC] Automatic updates starting...
+[09-Dec-2025 07:49:54 UTC] Automatic updates complete.
