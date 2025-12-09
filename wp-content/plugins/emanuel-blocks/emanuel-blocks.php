@@ -470,9 +470,7 @@ add_filter( 'rwmb_meta_boxes', function ( $meta_boxes ) {
                 'id'   => $prefix . 'status',
                 'options' => [
                     'available' => esc_html__( 'Available', 'online-generator' ),
-                    'sold' => esc_html__( 'Sold', 'online-generator' ),
                     'rented' => esc_html__( 'Rented', 'online-generator' ),
-                    'sold_out' => esc_html__( 'Sold out', 'online-generator' ),
                 ],
             ],
         ],
