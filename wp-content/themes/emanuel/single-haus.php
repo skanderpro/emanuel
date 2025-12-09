@@ -102,7 +102,7 @@ get_header();
                             }
                             if (!empty($address_image)) {
                                 ?>
-                                <img class="map-placeholder" src="<?php echo $address_image['url']; ?>" alt="4.5-Zimmer-Attika" onerror="this.src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';">
+                                <img class="map-placeholder" src="<?php echo $address_image['full_url']; ?>" alt="4.5-Zimmer-Attika" onerror="this.src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';">
                                 <?php
                             }
                             ?>
@@ -127,7 +127,7 @@ get_header();
                             }
                             if (!empty($highlight_image)) {
                                 ?>
-                                <img class="map-placeholder" src="<?php echo $highlight_image['url']; ?>" alt="4.5-Zimmer-Attika" onerror="this.src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';">
+                                <img class="map-placeholder" src="<?php echo $highlight_image['full_url']; ?>" alt="4.5-Zimmer-Attika" onerror="this.src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';">
                                 <?php
                             }
                             ?>
