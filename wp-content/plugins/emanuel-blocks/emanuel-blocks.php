@@ -69,9 +69,9 @@ function register_hello_world_widget( $widgets_manager ) {
 
 add_action( 'elementor/widgets/register', 'register_hello_world_widget' );
 
-add_action('init', function () {
-	require_once __DIR__ . '/Metabox/Fields/RWMB_Media_Field.php';
-});
+//add_action('init', function () {
+//	require_once __DIR__ . '/Metabox/Fields/RWMB_Media_Field.php';
+//});
 
 add_action( 'init', function () {
 	$labels = array(
@@ -363,11 +363,18 @@ add_filter( 'rwmb_meta_boxes', function ( $meta_boxes ) {
 				'step' => 1,
 			],
 			[
-				'type'     => 'select_advanced',
+				'type'     => 'image_advanced',
 				'name'     => esc_html__( 'Images', 'online-generator' ),
 				'id'       => $prefix . 'images',
-				'options'  => $imagesOpts,
-				'multiple' => true,
+//				'options'  => $imagesOpts,
+//				'multiple' => true,
+                'image_size'       => 'full',
+//                'js_options' => [
+//                    'multiple' => true,
+//                ],
+//                'force_delete'     => false,
+//                'max_file_uploads' => 10,
+//                'max_status'       => false,
 			],
 			[
 				'type' => 'text',
@@ -375,9 +382,12 @@ add_filter( 'rwmb_meta_boxes', function ( $meta_boxes ) {
 				'id'   => $prefix . 'contact',
 			],
 			[
-				'type' => 'media',
+				'type' => 'image_advanced',
 				'name' => esc_html__( 'Plan', 'online-generator' ),
 				'id'   => $prefix . 'plan',
+                'max_file_uploads' => 1,
+                'force_delete'     => true,
+                'max_status'       => true,
 			],
             [
                 'type' => 'select_advanced',

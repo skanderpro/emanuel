@@ -25,11 +25,13 @@ get_header();
 						<div class="swiper-wrapper">
 							<?php
 							$images = rwmb_get_value('images');
+
+
 							foreach ($images as $image) {
 							?>
 								<div class="swiper-slide">
 									<picture>
-										<img src="<?php echo $image; ?>" alt="" />
+										<img src="<?php echo is_array($image) ? $image['full_url'] : $image; ?>" alt="" />
 									</picture>
 								</div>
 							<?php
