@@ -4,8 +4,12 @@ namespace EB_s;
 
 use GuzzleHttp\Client;
 
+if (!defined('CRM_URL')) {
+    define('CRM_URL', 'https://www.glandon-apartments.com');
+}
+
 class CRMClient {
-	const BASE_URL = 'https://www.glandon-apartments.com';
+	const BASE_URL = CRM_URL;
 
 	protected static $instance;
 	protected $client;
@@ -65,6 +69,24 @@ class CRMClient {
 
 		return is_array($json) ? $json : [];
 	}
+
+    public function houseRequest($title, $desc)
+    {
+        if (!$this->client) {
+            throw new \Exception('Client not configured');
+        }
+
+        $resp = $this->client->request('POST', '/api/tickets.json', [
+            'form_params' => [
+                'title' => $title,
+                'description' => $desc,
+                'category_id' => 44, // Vermietungsmanagement
+            ]
+        ]);
+        $json = json_decode($resp->getBody()->getContents(), true);
+
+        return is_array($json) ? $json : [];
+    }
 
 	public function contactTeam($title, $desc)
 	{

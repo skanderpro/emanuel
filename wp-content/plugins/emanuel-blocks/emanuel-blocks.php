@@ -379,6 +379,15 @@ add_filter( 'rwmb_meta_boxes', function ( $meta_boxes ) {
 				'name' => esc_html__( 'Plan', 'online-generator' ),
 				'id'   => $prefix . 'plan',
 			],
+            [
+                'type' => 'select_advanced',
+                'name' => esc_html__( 'Status', 'online-generator' ),
+                'id'   => $prefix . 'status',
+                'options' => [
+                    'available' => esc_html__( 'Available', 'online-generator' ),
+                    'reserved' => esc_html__( 'Reserved', 'online-generator' ),
+                ],
+            ],
 		],
 	];
 
@@ -471,6 +480,19 @@ add_filter( 'rwmb_meta_boxes', function ( $meta_boxes ) {
                 'options' => [
                     'available' => esc_html__( 'Available', 'online-generator' ),
                     'reserved' => esc_html__( 'Reserved', 'online-generator' ),
+                ],
+            ],
+            [
+                'type' => 'post',
+                'name' => esc_html__( 'Apartments', 'online-generator' ),
+                'id'   => $prefix . 'apartments',
+                'post_type'   => 'apartments',
+                'field_type'  => 'select_advanced',
+                'js_options' => [],
+                'multiple' => true,
+                'query_args'  => [
+                    'post_status'    => 'publish',
+                    'posts_per_page' => - 1,
                 ],
             ],
         ],
@@ -638,4 +660,66 @@ add_action('rest_api_init', function () {
 			exit;
 		},
 	]);
+
+    register_rest_route('emanuel/v1', 'send-haus-request', [
+        'methods' => 'POST',
+        /** @var WP_REST_Request $request */
+        'callback' => function ($request) {
+            $mail = new PHPMailer(true);
+
+            ob_start();
+            $params = $request->get_params();
+            require_once EMANUEL_BLOCKS_PATH . '/templates/email/haus-request.php';
+            $description = ob_get_clean();
+
+            try {
+                global $opt_name;
+
+                $host = Redux::get_option($opt_name, 'email_host');
+                $user = Redux::get_option($opt_name, 'email_user');
+                $pass = Redux::get_option($opt_name, 'email_pass');
+                $port = Redux::get_option($opt_name, 'email_port');
+                $secure = Redux::get_option($opt_name, 'email_secure');
+                $from = Redux::get_option($opt_name, 'email_from');
+                $to = Redux::get_option($opt_name, 'email_to');
+                $subject = Redux::get_option($opt_name, 'email_subject');
+
+
+                //Server settings
+                ob_start();
+                $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+                $mail->isSMTP();                                            //Send using SMTP
+                $mail->Host       = $host;                     //Set the SMTP server to send through
+                $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+                $mail->Username   = $user;                     //SMTP username
+                $mail->Password   = $pass;                               //SMTP password
+                $mail->SMTPSecure = $secure ?? null;            //Enable implicit TLS encryption
+                $mail->Port       = $port;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+                //Recipients
+                $mail->setFrom($from);
+                $mail->addAddress($to);     //Add a recipient
+
+                //Content
+                $mail->isHTML(true);                                  //Set email format to HTML
+                $mail->Subject = "House Request: " . $subject;
+
+                ob_clean();
+                $mail->Body    = $description;
+
+                ob_start();
+                $mail->send();
+            } catch (Exception $e) {
+            } finally {
+                ob_clean();
+            }
+
+            \EB_s\CRMClient::inst()->houseRequest('House request', $description);
+
+            header('Location: ' . $request->get_header('referer'));
+            exit;
+        },
+    ]);
+
+
 });

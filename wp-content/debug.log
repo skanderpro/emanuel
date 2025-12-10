@@ -336,3 +336,159 @@ Stack trace:
 [09-Dec-2025 07:49:54 UTC] Automatic updates complete.
 [09-Dec-2025 20:45:26 UTC] Automatic updates starting...
 [09-Dec-2025 20:45:26 UTC] Automatic updates complete.
+[10-Dec-2025 02:32:21 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No such file or directory in /Users/valiabryniuk/projects/emanuel/wp-includes/class-wpdb.php on line 1994
+[10-Dec-2025 07:50:21 UTC] Automatic updates starting...
+[10-Dec-2025 07:50:21 UTC] Automatic updates complete.
+[10-Dec-2025 11:33:58 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No such file or directory in /Users/valiabryniuk/projects/emanuel/wp-includes/class-wpdb.php on line 1994
+[10-Dec-2025 20:07:15 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No such file or directory in /Users/valiabryniuk/projects/emanuel/wp-includes/class-wpdb.php on line 1994
+[10-Dec-2025 20:21:34 UTC] Automatic updates starting...
+[10-Dec-2025 20:21:35 UTC] Automatic updates complete.
+[10-Dec-2025 21:01:22 UTC] PHP Warning:  Undefined array key "q" in /Users/valiabryniuk/projects/emanuel/wp-content/themes/emanuel/single-haus.php on line 36
+[10-Dec-2025 21:01:22 UTC] PHP Warning:  Undefined array key "min_rooms" in /Users/valiabryniuk/projects/emanuel/wp-content/themes/emanuel/single-haus.php on line 37
+[10-Dec-2025 21:01:22 UTC] PHP Warning:  Undefined array key "max_rooms" in /Users/valiabryniuk/projects/emanuel/wp-content/themes/emanuel/single-haus.php on line 38
+[10-Dec-2025 21:01:22 UTC] PHP Warning:  Undefined array key "status" in /Users/valiabryniuk/projects/emanuel/wp-content/themes/emanuel/single-haus.php on line 39
+[10-Dec-2025 22:02:27 UTC] PHP Parse error:  syntax error, unexpected token ";", expecting ")" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/emanuel-blocks.php on line 701
+[10-Dec-2025 22:02:27 UTC] PHP Parse error:  syntax error, unexpected token ";", expecting ")" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/emanuel-blocks.php on line 701
+[10-Dec-2025 22:03:06 UTC] PHP Warning:  require_once(/Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks//templates/email/haus-request.php): Failed to open stream: No such file or directory in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/emanuel-blocks.php on line 672
+[10-Dec-2025 22:03:06 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks//templates/email/haus-request.php' (include_path='.:/Applications/MAMP/bin/php/php8.1.31/lib/php') in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/emanuel-blocks.php:672
+Stack trace:
+#0 /Users/valiabryniuk/projects/emanuel/wp-includes/rest-api/class-wp-rest-server.php(1292): {closure}(Object(WP_REST_Request))
+#1 /Users/valiabryniuk/projects/emanuel/wp-includes/rest-api/class-wp-rest-server.php(1125): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/emanuel/v1/sen...', Array, NULL)
+#2 /Users/valiabryniuk/projects/emanuel/wp-includes/rest-api/class-wp-rest-server.php(439): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#3 /Users/valiabryniuk/projects/emanuel/wp-includes/rest-api.php(467): WP_REST_Server->serve_request('/emanuel/v1/sen...')
+#4 /Users/valiabryniuk/projects/emanuel/wp-includes/class-wp-hook.php(341): rest_api_loaded(Object(WP))
+#5 /Users/valiabryniuk/projects/emanuel/wp-includes/class-wp-hook.php(365): WP_Hook->apply_filters('', Array)
+#6 /Users/valiabryniuk/projects/emanuel/wp-includes/plugin.php(570): WP_Hook->do_action(Array)
+#7 /Users/valiabryniuk/projects/emanuel/wp-includes/class-wp.php(418): do_action_ref_array('parse_request', Array)
+#8 /Users/valiabryniuk/projects/emanuel/wp-includes/class-wp.php(821): WP->parse_request('')
+#9 /Users/valiabryniuk/projects/emanuel/wp-includes/functions.php(1343): WP->main('')
+#10 /Users/valiabryniuk/projects/emanuel/wp-blog-header.php(16): wp()
+#11 /Users/valiabryniuk/projects/emanuel/index.php(17): require('/Users/valiabry...')
+#12 {main}
+  thrown in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/emanuel-blocks.php on line 672
+[10-Dec-2025 22:05:16 UTC] PHP Fatal error:  Uncaught GuzzleHttp\Exception\ConnectException: cURL error 28: Operation timed out after 2069 milliseconds with 0 bytes received (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://www.glandon-apartments.ch/api/tickets.json in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php:210
+Stack trace:
+#0 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php(158): GuzzleHttp\Handler\CurlFactory::createRejection(Object(GuzzleHttp\Handler\EasyHandle), Array)
+#1 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php(110): GuzzleHttp\Handler\CurlFactory::finishError(Object(GuzzleHttp\Handler\CurlHandler), Object(GuzzleHttp\Handler\EasyHandle), Object(GuzzleHttp\Handler\CurlFactory))
+#2 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/guzzle/src/Handler/CurlHandler.php(47): GuzzleHttp\Handler\CurlFactory::finish(Object(GuzzleHttp\Handler\CurlHandler), Object(GuzzleHttp\Handler\EasyHandle), Object(GuzzleHttp\Handler\CurlFactory))
+#3 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/guzzle/src/Handler/Proxy.php(28): GuzzleHttp\Handler\CurlHandler->__invoke(Object(GuzzleHttp\Psr7\Request), Array)
+#4 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/guzzle/src/Handler/Proxy.php(48): GuzzleHttp\Handler\Proxy::GuzzleHttp\Handler\{closure}(Object(GuzzleHttp\Psr7\Request), Array)
+#5 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/guzzle/src/PrepareBodyMiddleware.php(35): GuzzleHttp\Handler\Proxy::GuzzleHttp\Handler\{closure}(Object(GuzzleHttp\Psr7\Request), Array)
+#6 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/guzzle/src/Middleware.php(31): GuzzleHttp\PrepareBodyMiddleware->__invoke(Object(GuzzleHttp\Psr7\Request), Array)
+#7 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/guzzle/src/RedirectMiddleware.php(71): GuzzleHttp\Middleware::GuzzleHttp\{closure}(Object(GuzzleHttp\Psr7\Request), Array)
+#8 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/guzzle/src/RedirectMiddleware.php(107): GuzzleHttp\RedirectMiddleware->__invoke(Object(GuzzleHttp\Psr7\Request), Array)
+#9 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/guzzle/src/RedirectMiddleware.php(73): GuzzleHttp\RedirectMiddleware->checkRedirect(Object(GuzzleHttp\Psr7\Request), Array, Object(GuzzleHttp\Psr7\Response))
+#10 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/promises/src/FulfilledPromise.php(48): GuzzleHttp\RedirectMiddleware->GuzzleHttp\{closure}(Object(GuzzleHttp\Psr7\Response))
+#11 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/promises/src/TaskQueue.php(52): GuzzleHttp\Promise\FulfilledPromise::GuzzleHttp\Promise\{closure}()
+#12 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/promises/src/Promise.php(251): GuzzleHttp\Promise\TaskQueue->run(true)
+#13 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/promises/src/Promise.php(227): GuzzleHttp\Promise\Promise->invokeWaitFn()
+#14 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/promises/src/Promise.php(272): GuzzleHttp\Promise\Promise->waitIfPending()
+#15 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/promises/src/Promise.php(229): GuzzleHttp\Promise\Promise->invokeWaitList()
+#16 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/promises/src/Promise.php(69): GuzzleHttp\Promise\Promise->waitIfPending()
+#17 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/guzzle/src/Client.php(189): GuzzleHttp\Promise\Promise->wait()
+#18 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/Service/CRMClient.php(79): GuzzleHttp\Client->request('POST', '/api/tickets.js...', Array)
+#19 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/emanuel-blocks.php(717): EB_s\CRMClient->houseRequest('House request', '<p>House reques...')
+#20 /Users/valiabryniuk/projects/emanuel/wp-includes/rest-api/class-wp-rest-server.php(1292): {closure}(Object(WP_REST_Request))
+#21 /Users/valiabryniuk/projects/emanuel/wp-includes/rest-api/class-wp-rest-server.php(1125): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/emanuel/v1/sen...', Array, NULL)
+#22 /Users/valiabryniuk/projects/emanuel/wp-includes/rest-api/class-wp-rest-server.php(439): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#23 /Users/valiabryniuk/projects/emanuel/wp-includes/rest-api.php(467): WP_REST_Server->serve_request('/emanuel/v1/sen...')
+#24 /Users/valiabryniuk/projects/emanuel/wp-includes/class-wp-hook.php(341): rest_api_loaded(Object(WP))
+#25 /Users/valiabryniuk/projects/emanuel/wp-includes/class-wp-hook.php(365): WP_Hook->apply_filters('', Array)
+#26 /Users/valiabryniuk/projects/emanuel/wp-includes/plugin.php(570): WP_Hook->do_action(Array)
+#27 /Users/valiabryniuk/projects/emanuel/wp-includes/class-wp.php(418): do_action_ref_array('parse_request', Array)
+#28 /Users/valiabryniuk/projects/emanuel/wp-includes/class-wp.php(821): WP->parse_request('')
+#29 /Users/valiabryniuk/projects/emanuel/wp-includes/functions.php(1343): WP->main('')
+#30 /Users/valiabryniuk/projects/emanuel/wp-blog-header.php(16): wp()
+#31 /Users/valiabryniuk/projects/emanuel/index.php(17): require('/Users/valiabry...')
+#32 {main}
+  thrown in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php on line 210
+[10-Dec-2025 22:09:53 UTC] PHP Fatal error:  Uncaught GuzzleHttp\Exception\ClientException: Client error: `POST http://our.glandon.com/api/tickets.json` resulted in a `404 Not Found` response:
+{"name":"Not Found","message":"Not Found","url":"\/api\/tickets.json"}
+ in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php:113
+Stack trace:
+#0 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/guzzle/src/Middleware.php(72): GuzzleHttp\Exception\RequestException::create(Object(GuzzleHttp\Psr7\Request), Object(GuzzleHttp\Psr7\Response), NULL, Array, NULL)
+#1 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/promises/src/Promise.php(209): GuzzleHttp\Middleware::GuzzleHttp\{closure}(Object(GuzzleHttp\Psr7\Response))
+#2 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/promises/src/Promise.php(158): GuzzleHttp\Promise\Promise::callHandler(1, Object(GuzzleHttp\Psr7\Response), NULL)
+#3 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/promises/src/TaskQueue.php(52): GuzzleHttp\Promise\Promise::GuzzleHttp\Promise\{closure}()
+#4 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/promises/src/Promise.php(251): GuzzleHttp\Promise\TaskQueue->run(true)
+#5 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/promises/src/Promise.php(227): GuzzleHttp\Promise\Promise->invokeWaitFn()
+#6 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/promises/src/Promise.php(272): GuzzleHttp\Promise\Promise->waitIfPending()
+#7 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/promises/src/Promise.php(229): GuzzleHttp\Promise\Promise->invokeWaitList()
+#8 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/promises/src/Promise.php(69): GuzzleHttp\Promise\Promise->waitIfPending()
+#9 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/guzzle/src/Client.php(189): GuzzleHttp\Promise\Promise->wait()
+#10 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/Service/CRMClient.php(83): GuzzleHttp\Client->request('POST', '/api/tickets.js...', Array)
+#11 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/emanuel-blocks.php(717): EB_s\CRMClient->houseRequest('House request', '<p>House reques...')
+#12 /Users/valiabryniuk/projects/emanuel/wp-includes/rest-api/class-wp-rest-server.php(1292): {closure}(Object(WP_REST_Request))
+#13 /Users/valiabryniuk/projects/emanuel/wp-includes/rest-api/class-wp-rest-server.php(1125): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/emanuel/v1/sen...', Array, NULL)
+#14 /Users/valiabryniuk/projects/emanuel/wp-includes/rest-api/class-wp-rest-server.php(439): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#15 /Users/valiabryniuk/projects/emanuel/wp-includes/rest-api.php(467): WP_REST_Server->serve_request('/emanuel/v1/sen...')
+#16 /Users/valiabryniuk/projects/emanuel/wp-includes/class-wp-hook.php(341): rest_api_loaded(Object(WP))
+#17 /Users/valiabryniuk/projects/emanuel/wp-includes/class-wp-hook.php(365): WP_Hook->apply_filters('', Array)
+#18 /Users/valiabryniuk/projects/emanuel/wp-includes/plugin.php(570): WP_Hook->do_action(Array)
+#19 /Users/valiabryniuk/projects/emanuel/wp-includes/class-wp.php(418): do_action_ref_array('parse_request', Array)
+#20 /Users/valiabryniuk/projects/emanuel/wp-includes/class-wp.php(821): WP->parse_request('')
+#21 /Users/valiabryniuk/projects/emanuel/wp-includes/functions.php(1343): WP->main('')
+#22 /Users/valiabryniuk/projects/emanuel/wp-blog-header.php(16): wp()
+#23 /Users/valiabryniuk/projects/emanuel/index.php(17): require('/Users/valiabry...')
+#24 {main}
+  thrown in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php on line 113
+[10-Dec-2025 22:10:30 UTC] PHP Fatal error:  Uncaught GuzzleHttp\Exception\ClientException: Client error: `POST http://our.glandon.com/api/tickets.json` resulted in a `404 Not Found` response:
+{"name":"Not Found","message":"Not Found","url":"\/api\/tickets.json"}
+ in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php:113
+Stack trace:
+#0 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/guzzle/src/Middleware.php(72): GuzzleHttp\Exception\RequestException::create(Object(GuzzleHttp\Psr7\Request), Object(GuzzleHttp\Psr7\Response), NULL, Array, NULL)
+#1 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/promises/src/Promise.php(209): GuzzleHttp\Middleware::GuzzleHttp\{closure}(Object(GuzzleHttp\Psr7\Response))
+#2 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/promises/src/Promise.php(158): GuzzleHttp\Promise\Promise::callHandler(1, Object(GuzzleHttp\Psr7\Response), NULL)
+#3 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/promises/src/TaskQueue.php(52): GuzzleHttp\Promise\Promise::GuzzleHttp\Promise\{closure}()
+#4 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/promises/src/Promise.php(251): GuzzleHttp\Promise\TaskQueue->run(true)
+#5 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/promises/src/Promise.php(227): GuzzleHttp\Promise\Promise->invokeWaitFn()
+#6 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/promises/src/Promise.php(272): GuzzleHttp\Promise\Promise->waitIfPending()
+#7 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/promises/src/Promise.php(229): GuzzleHttp\Promise\Promise->invokeWaitList()
+#8 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/promises/src/Promise.php(69): GuzzleHttp\Promise\Promise->waitIfPending()
+#9 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/guzzle/src/Client.php(189): GuzzleHttp\Promise\Promise->wait()
+#10 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/Service/CRMClient.php(83): GuzzleHttp\Client->request('POST', '/api/tickets.js...', Array)
+#11 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/emanuel-blocks.php(717): EB_s\CRMClient->houseRequest('House request', '<p>House reques...')
+#12 /Users/valiabryniuk/projects/emanuel/wp-includes/rest-api/class-wp-rest-server.php(1292): {closure}(Object(WP_REST_Request))
+#13 /Users/valiabryniuk/projects/emanuel/wp-includes/rest-api/class-wp-rest-server.php(1125): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/emanuel/v1/sen...', Array, NULL)
+#14 /Users/valiabryniuk/projects/emanuel/wp-includes/rest-api/class-wp-rest-server.php(439): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#15 /Users/valiabryniuk/projects/emanuel/wp-includes/rest-api.php(467): WP_REST_Server->serve_request('/emanuel/v1/sen...')
+#16 /Users/valiabryniuk/projects/emanuel/wp-includes/class-wp-hook.php(341): rest_api_loaded(Object(WP))
+#17 /Users/valiabryniuk/projects/emanuel/wp-includes/class-wp-hook.php(365): WP_Hook->apply_filters('', Array)
+#18 /Users/valiabryniuk/projects/emanuel/wp-includes/plugin.php(570): WP_Hook->do_action(Array)
+#19 /Users/valiabryniuk/projects/emanuel/wp-includes/class-wp.php(418): do_action_ref_array('parse_request', Array)
+#20 /Users/valiabryniuk/projects/emanuel/wp-includes/class-wp.php(821): WP->parse_request('')
+#21 /Users/valiabryniuk/projects/emanuel/wp-includes/functions.php(1343): WP->main('')
+#22 /Users/valiabryniuk/projects/emanuel/wp-blog-header.php(16): wp()
+#23 /Users/valiabryniuk/projects/emanuel/index.php(17): require('/Users/valiabry...')
+#24 {main}
+  thrown in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php on line 113
+[10-Dec-2025 22:12:35 UTC] PHP Fatal error:  Uncaught GuzzleHttp\Exception\ClientException: Client error: `POST http://our.glandon.com/api/tickets.json` resulted in a `404 Not Found` response:
+{"name":"Not Found","message":"Not Found","url":"\/api\/tickets.json"}
+ in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php:113
+Stack trace:
+#0 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/guzzle/src/Middleware.php(72): GuzzleHttp\Exception\RequestException::create(Object(GuzzleHttp\Psr7\Request), Object(GuzzleHttp\Psr7\Response), NULL, Array, NULL)
+#1 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/promises/src/Promise.php(209): GuzzleHttp\Middleware::GuzzleHttp\{closure}(Object(GuzzleHttp\Psr7\Response))
+#2 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/promises/src/Promise.php(158): GuzzleHttp\Promise\Promise::callHandler(1, Object(GuzzleHttp\Psr7\Response), NULL)
+#3 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/promises/src/TaskQueue.php(52): GuzzleHttp\Promise\Promise::GuzzleHttp\Promise\{closure}()
+#4 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/promises/src/Promise.php(251): GuzzleHttp\Promise\TaskQueue->run(true)
+#5 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/promises/src/Promise.php(227): GuzzleHttp\Promise\Promise->invokeWaitFn()
+#6 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/promises/src/Promise.php(272): GuzzleHttp\Promise\Promise->waitIfPending()
+#7 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/promises/src/Promise.php(229): GuzzleHttp\Promise\Promise->invokeWaitList()
+#8 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/promises/src/Promise.php(69): GuzzleHttp\Promise\Promise->waitIfPending()
+#9 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/guzzle/src/Client.php(189): GuzzleHttp\Promise\Promise->wait()
+#10 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/Service/CRMClient.php(85): GuzzleHttp\Client->request('POST', '/api/tickets.js...', Array)
+#11 /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/emanuel-blocks.php(717): EB_s\CRMClient->houseRequest('House request', '<p>House reques...')
+#12 /Users/valiabryniuk/projects/emanuel/wp-includes/rest-api/class-wp-rest-server.php(1292): {closure}(Object(WP_REST_Request))
+#13 /Users/valiabryniuk/projects/emanuel/wp-includes/rest-api/class-wp-rest-server.php(1125): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/emanuel/v1/sen...', Array, NULL)
+#14 /Users/valiabryniuk/projects/emanuel/wp-includes/rest-api/class-wp-rest-server.php(439): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#15 /Users/valiabryniuk/projects/emanuel/wp-includes/rest-api.php(467): WP_REST_Server->serve_request('/emanuel/v1/sen...')
+#16 /Users/valiabryniuk/projects/emanuel/wp-includes/class-wp-hook.php(341): rest_api_loaded(Object(WP))
+#17 /Users/valiabryniuk/projects/emanuel/wp-includes/class-wp-hook.php(365): WP_Hook->apply_filters('', Array)
+#18 /Users/valiabryniuk/projects/emanuel/wp-includes/plugin.php(570): WP_Hook->do_action(Array)
+#19 /Users/valiabryniuk/projects/emanuel/wp-includes/class-wp.php(418): do_action_ref_array('parse_request', Array)
+#20 /Users/valiabryniuk/projects/emanuel/wp-includes/class-wp.php(821): WP->parse_request('')
+#21 /Users/valiabryniuk/projects/emanuel/wp-includes/functions.php(1343): WP->main('')
+#22 /Users/valiabryniuk/projects/emanuel/wp-blog-header.php(16): wp()
+#23 /Users/valiabryniuk/projects/emanuel/index.php(17): require('/Users/valiabry...')
+#24 {main}
+  thrown in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php on line 113
