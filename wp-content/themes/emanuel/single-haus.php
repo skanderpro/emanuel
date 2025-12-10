@@ -22,6 +22,8 @@ get_header();
             $address_description = rwmb_get_value('address_description');
             $address_image = rwmb_get_value('address_image');
             $highlight_image = rwmb_get_value('highlight_image');
+            $apartments = rwmb_get_value('apartments');
+
 
             $features_arr = [];
             foreach ($features as $feature) {
@@ -33,10 +35,10 @@ get_header();
                 $highlight_arr[] = $highlight->name;
             }
 
-            $q = trim(sanitize_text_field($_GET['q']));
-            $min_rooms = trim(sanitize_text_field($_GET['min_rooms']));
-            $max_rooms = trim(sanitize_text_field($_GET['max_rooms']));
-            $status = trim(sanitize_text_field($_GET['status']));
+            $q = trim(sanitize_text_field($_GET['q'] ?? ''));
+            $min_rooms = trim(sanitize_text_field($_GET['min_rooms'] ?? ''));
+            $max_rooms = trim(sanitize_text_field($_GET['max_rooms'] ?? ''));
+            $status = trim(sanitize_text_field($_GET['status'] ?? ''));
 
             $params = [];
             $meta_params = [];
@@ -46,7 +48,7 @@ get_header();
 
             if (!empty($min_rooms)) {
                 $meta_params[] = [
-                        'key'     => 'rooms_count',
+                        'key'     => 'rooms',
                         'value'   => $min_rooms,
                         'type'    => 'NUMERIC',
                         'compare' => '>=',
@@ -55,7 +57,7 @@ get_header();
 
             if (!empty($max_rooms)) {
                 $meta_params[] = [
-                        'key'     => 'rooms_count',
+                        'key'     => 'rooms',
                         'value'   => $max_rooms,
                         'type'    => 'NUMERIC',
                         'compare' => '<=',
@@ -73,11 +75,11 @@ get_header();
                 $params['meta_query'] = $meta_params;
             }
 
-            $other_houses = get_posts([
-                    'post_type' => 'haus',
-                    'posts_per_page' => 3,
-                    'post__not_in' => [get_the_ID()],
-            ] + $params);
+            $other_houses = !empty($apartments) && is_array($apartments) ? get_posts([
+                    'post_type' => 'apartments',
+                    'posts_per_page' => -1,
+                    'post__in' => $apartments,
+            ] + $params) : [];
 
 	?>
             <section class="hero container">
@@ -120,7 +122,7 @@ get_header();
                         </div>
 
                         <div class="hero-actions">
-                            <a class="global-btn" href="#">Exposé anfordern</a>
+                            <a class="global-btn" data-action="open-modal" href="#">Exposé anfordern</a>
                             <a class="global-btn reverse" href="#">Besichtigung vereinbaren</a>
                         </div>
                     </div>
@@ -216,9 +218,9 @@ get_header();
                         <!-- apartment card 1 -->
                         <?php
                         foreach ($other_houses as $other_house) {
-                            $rooms_count = rwmb_get_value('rooms_count', [], $other_house->ID);
+                            $rooms_count = rwmb_get_value('rooms', [], $other_house->ID);
                             $price = rwmb_get_value('price', [], $other_house->ID);
-                            $area = rwmb_get_value('area', [], $other_house->ID);
+                            $area = rwmb_get_value('living_space', [], $other_house->ID);
                             $haus_status = rwmb_get_value('status', [], $other_house->ID);
                             ?>
                             <a href="<?php echo get_the_permalink($other_house->ID) ?>" class="apartment-card card">
@@ -281,6 +283,76 @@ get_header();
 	}
 	?>
 </main>
+
+    <div class="modal-overlay" id="haus-modal" style="display: none;">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2 class="modal-title">Real estate agent</h2>
+                <button class="modal-close" aria-label="Close modal">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-subtitle">Persönliche Angaben</div>
+                <form action="/wp-json/emanuel/v1/send-haus-request" method="post" enctype="multipart/form-data" class="modal-form">
+
+                    <div class="form-inputs">
+                        <div class="form-inputs-col">
+                            <div class="form-inputs-col-item">
+                                <label class="global-label" for="modal-vorname">Vorname</label>
+                                <input class="global-input" name="first_name" type="text" id="modal-vorname" placeholder="Vorname ">
+                            </div>
+
+
+                            <div class="form-inputs-col-item">
+                                <label class="global-label" for="modal-telefon">Telefonnummer</label>
+                                <input class="global-input" name="phone" type="tel" id="modal-telefon" placeholder="Telefonnummer">
+                            </div>
+                        </div>
+                        <div class="form-inputs-col">
+
+
+
+                            <div class="form-inputs-col-item">
+                                <label class="global-label" for="modal-email">E-Mail</label>
+                                <input class="global-input" name="email" type="email" id="modal-email" placeholder="E-Mail">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-textarea">
+                        <label class="global-label" for="modal-mitteilung">Ihre Mitteilung</label>
+                        <textarea class="global-textarea" name="text" id="modal-mitteilung" placeholder="Ihre Mitteilung"></textarea>
+                    </div>
+
+                    <div class="form-send">
+                        <button class="global-btn" type="submit">Senden</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<script>
+    (() => {
+        const modal = document.getElementById('haus-modal');
+        const closeBtn = document.querySelector('.modal-overlay .modal-close');
+        const openBtn = document.querySelector('[data-action="open-modal"]');
+        const form = document.querySelector('.modal-form');
+
+        openBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            modal.style.display = '';
+        });
+
+        closeBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            modal.style.display = 'none';
+        });
+
+    })();
+</script>
 
 <?php
 get_footer();
