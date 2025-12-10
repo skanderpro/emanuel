@@ -113,7 +113,7 @@ add_action( 'init', function () {
 		'has_archive'        => true,
 		'hierarchical'       => true,
 		'menu_position'      => null,
-		'supports'           => array( 'title', 'editor', 'excerpt' ),
+		'supports'           => array( 'title', 'editor', 'excerpt', 'thumbnail', ),
 	);
 
 	register_post_type( 'apartments', $args );
