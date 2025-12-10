@@ -288,6 +288,75 @@
         </section>
       </main>
     </div>
+<!-- Modal Form Component -->
+<div class="modal-overlay" id="formModal">
+  <div class="modal-container">
+    <div class="modal-header">
+      <h2 class="modal-title">Real estate agent</h2>
+      <button class="modal-close" aria-label="Close modal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="form-subtitle">Persönliche Angaben</div>
+      <form action="" class="modal-form">
+     
+        <div class="form-inputs">
+          <div class="form-inputs-col">
+            <div class="form-inputs-col-item">
+              <label class="global-label" for="modal-vorname">Vorname</label>
+              <input
+                class="global-input"
+                type="text"
+                id="modal-vorname"
+                placeholder="Vorname "
+              />
+            </div>
+           
+          
+            <div class="form-inputs-col-item">
+              <label class="global-label" for="modal-telefon">Telefonnummer</label>
+              <input
+                class="global-input"
+                type="tel"
+                id="modal-telefon"
+                placeholder="Telefonnummer"
+              />
+            </div>
+          </div>
+          <div class="form-inputs-col">
+           
+          
+           
+            <div class="form-inputs-col-item">
+              <label class="global-label" for="modal-email">E-Mail</label>
+              <input
+                class="global-input"
+                type="email"
+                id="modal-email"
+                placeholder="E-Mail"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="form-textarea">
+          <label class="global-label" for="modal-mitteilung">Ihre Mitteilung</label>
+          <textarea
+            class="global-textarea"
+            id="modal-mitteilung"
+            placeholder="Ihre Mitteilung"
+          ></textarea>
+        </div>
+
+        <div class="form-send">
+          <button class="global-btn" type="submit">Senden</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 
     <footer class="footer"><div class="footer-wrapper">
   <div class="container">
