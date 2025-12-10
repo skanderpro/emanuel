@@ -492,3 +492,70 @@ Stack trace:
 #23 /Users/valiabryniuk/projects/emanuel/index.php(17): require('/Users/valiabry...')
 #24 {main}
   thrown in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php on line 113
+[10-Dec-2025 23:16:29 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 29
+[10-Dec-2025 23:16:29 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 29
+[10-Dec-2025 23:16:32 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 29
+[10-Dec-2025 23:16:33 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 29
+[10-Dec-2025 23:16:33 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 29
+[10-Dec-2025 23:16:41 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 29
+[10-Dec-2025 23:16:41 UTC] PHP Warning:  Array to string conversion in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/Metabox/Fields/RWMB_Media_Field.php on line 13
+[10-Dec-2025 23:16:57 UTC] PHP Warning:  Array to string conversion in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/Metabox/Fields/RWMB_Media_Field.php on line 13
+[10-Dec-2025 23:18:50 UTC] PHP Warning:  Array to string conversion in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/Metabox/Fields/RWMB_Media_Field.php on line 13
+[10-Dec-2025 23:22:50 UTC] PHP Warning:  Attempt to read property "guid" on null in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/Metabox/Fields/RWMB_Media_Field.php on line 8
+[10-Dec-2025 23:22:50 UTC] PHP Deprecated:  basename(): Passing null to parameter #1 ($path) of type string is deprecated in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/Metabox/Fields/RWMB_Media_Field.php on line 8
+[10-Dec-2025 23:23:29 UTC] PHP Warning:  Attempt to read property "guid" on null in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/Metabox/Fields/RWMB_Media_Field.php on line 8
+[10-Dec-2025 23:23:29 UTC] PHP Deprecated:  basename(): Passing null to parameter #1 ($path) of type string is deprecated in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/Metabox/Fields/RWMB_Media_Field.php on line 8
+[10-Dec-2025 23:23:46 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 29
+[10-Dec-2025 23:23:46 UTC] PHP Warning:  Attempt to read property "guid" on null in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/Metabox/Fields/RWMB_Media_Field.php on line 8
+[10-Dec-2025 23:23:46 UTC] PHP Deprecated:  basename(): Passing null to parameter #1 ($path) of type string is deprecated in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/emanuel-blocks/Metabox/Fields/RWMB_Media_Field.php on line 8
+[10-Dec-2025 23:23:46 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 29
+[10-Dec-2025 23:23:47 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 29
+[10-Dec-2025 23:23:50 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 29
+[10-Dec-2025 23:23:50 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 29
+[10-Dec-2025 23:23:50 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 29
+[10-Dec-2025 23:23:50 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 29
+[10-Dec-2025 23:23:50 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 29
+[10-Dec-2025 23:23:50 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 29
+[10-Dec-2025 23:23:50 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 29
+[10-Dec-2025 23:23:50 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 29
+[10-Dec-2025 23:23:50 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 29
+[10-Dec-2025 23:23:50 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 29
+[10-Dec-2025 23:23:50 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 29
+[10-Dec-2025 23:23:50 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 29
+[10-Dec-2025 23:23:50 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 29
+[10-Dec-2025 23:23:51 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 29
+[10-Dec-2025 23:23:51 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 29
+[10-Dec-2025 23:23:51 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 29
+[10-Dec-2025 23:23:51 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 29
+[10-Dec-2025 23:23:51 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 29
+[10-Dec-2025 23:23:51 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 29
+[10-Dec-2025 23:23:51 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 29
+[10-Dec-2025 23:23:51 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 29
+[10-Dec-2025 23:23:51 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 29
+[10-Dec-2025 23:23:51 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 29
+[10-Dec-2025 23:23:51 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 29
+[10-Dec-2025 23:23:51 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 29
+[10-Dec-2025 23:23:51 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 29
+[10-Dec-2025 23:23:51 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 29
+[10-Dec-2025 23:23:51 UTC] PHP Warning:  Undefined array key "js_options" in /Users/valiabryniuk/projects/emanuel/wp-content/plugins/meta-box/inc/fields/image-advanced.php on line 29
+[10-Dec-2025 23:28:04 UTC] PHP Warning:  Array to string conversion in /Users/valiabryniuk/projects/emanuel/wp-content/themes/emanuel/single-apartments.php on line 32
+[10-Dec-2025 23:28:04 UTC] PHP Warning:  Array to string conversion in /Users/valiabryniuk/projects/emanuel/wp-content/themes/emanuel/single-apartments.php on line 32
+[10-Dec-2025 23:28:04 UTC] PHP Warning:  Array to string conversion in /Users/valiabryniuk/projects/emanuel/wp-content/themes/emanuel/single-apartments.php on line 32
+[10-Dec-2025 23:28:46 UTC] PHP Warning:  Undefined array key "full" in /Users/valiabryniuk/projects/emanuel/wp-content/themes/emanuel/single-apartments.php on line 32
+[10-Dec-2025 23:28:46 UTC] PHP Warning:  Undefined array key "full" in /Users/valiabryniuk/projects/emanuel/wp-content/themes/emanuel/single-apartments.php on line 32
+[10-Dec-2025 23:28:46 UTC] PHP Warning:  Undefined array key "full" in /Users/valiabryniuk/projects/emanuel/wp-content/themes/emanuel/single-apartments.php on line 32
+[10-Dec-2025 23:29:05 UTC] PHP Warning:  Undefined array key "full" in /Users/valiabryniuk/projects/emanuel/wp-content/themes/emanuel/single-apartments.php on line 34
+[10-Dec-2025 23:29:05 UTC] PHP Warning:  Undefined array key "full" in /Users/valiabryniuk/projects/emanuel/wp-content/themes/emanuel/single-apartments.php on line 34
+[10-Dec-2025 23:29:05 UTC] PHP Warning:  Undefined array key "full" in /Users/valiabryniuk/projects/emanuel/wp-content/themes/emanuel/single-apartments.php on line 34
+[10-Dec-2025 23:29:45 UTC] PHP Warning:  Undefined array key "full_url" in /Users/valiabryniuk/projects/emanuel/wp-content/themes/emanuel/single-apartments.php on line 29
+[10-Dec-2025 23:29:45 UTC] PHP Warning:  Undefined array key "full" in /Users/valiabryniuk/projects/emanuel/wp-content/themes/emanuel/single-apartments.php on line 34
+[10-Dec-2025 23:29:45 UTC] PHP Warning:  Undefined array key "full" in /Users/valiabryniuk/projects/emanuel/wp-content/themes/emanuel/single-apartments.php on line 34
+[10-Dec-2025 23:29:45 UTC] PHP Warning:  Undefined array key "full" in /Users/valiabryniuk/projects/emanuel/wp-content/themes/emanuel/single-apartments.php on line 34
+[10-Dec-2025 23:30:10 UTC] PHP Warning:  Undefined array key 0 in /Users/valiabryniuk/projects/emanuel/wp-content/themes/emanuel/single-apartments.php on line 29
+[10-Dec-2025 23:30:10 UTC] PHP Warning:  Trying to access array offset on value of type null in /Users/valiabryniuk/projects/emanuel/wp-content/themes/emanuel/single-apartments.php on line 29
+[10-Dec-2025 23:30:10 UTC] PHP Warning:  Undefined array key "full" in /Users/valiabryniuk/projects/emanuel/wp-content/themes/emanuel/single-apartments.php on line 34
+[10-Dec-2025 23:30:10 UTC] PHP Warning:  Undefined array key "full" in /Users/valiabryniuk/projects/emanuel/wp-content/themes/emanuel/single-apartments.php on line 34
+[10-Dec-2025 23:30:10 UTC] PHP Warning:  Undefined array key "full" in /Users/valiabryniuk/projects/emanuel/wp-content/themes/emanuel/single-apartments.php on line 34
+[10-Dec-2025 23:30:40 UTC] PHP Warning:  Undefined array key "full" in /Users/valiabryniuk/projects/emanuel/wp-content/themes/emanuel/single-apartments.php on line 35
+[10-Dec-2025 23:30:40 UTC] PHP Warning:  Undefined array key "full" in /Users/valiabryniuk/projects/emanuel/wp-content/themes/emanuel/single-apartments.php on line 35
+[10-Dec-2025 23:30:40 UTC] PHP Warning:  Undefined array key "full" in /Users/valiabryniuk/projects/emanuel/wp-content/themes/emanuel/single-apartments.php on line 35
