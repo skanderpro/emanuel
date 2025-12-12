@@ -122,8 +122,7 @@ get_header();
                         </div>
 
                         <div class="hero-actions">
-                            <a class="global-btn" data-action="open-modal" href="#">Exposé anfordern</a>
-                            <a class="global-btn reverse" href="#">Besichtigung vereinbaren</a>
+                            <a class="global-btn" data-action="open-modal" href="#">Besichtigung vereinbaren</a>
                         </div>
                     </div>
                 </div>

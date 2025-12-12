@@ -559,3 +559,8 @@ Stack trace:
 [10-Dec-2025 23:30:40 UTC] PHP Warning:  Undefined array key "full" in /Users/valiabryniuk/projects/emanuel/wp-content/themes/emanuel/single-apartments.php on line 35
 [10-Dec-2025 23:30:40 UTC] PHP Warning:  Undefined array key "full" in /Users/valiabryniuk/projects/emanuel/wp-content/themes/emanuel/single-apartments.php on line 35
 [10-Dec-2025 23:30:40 UTC] PHP Warning:  Undefined array key "full" in /Users/valiabryniuk/projects/emanuel/wp-content/themes/emanuel/single-apartments.php on line 35
+[11-Dec-2025 03:53:31 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No such file or directory in /Users/valiabryniuk/projects/emanuel/wp-includes/class-wpdb.php on line 1994
+[11-Dec-2025 07:50:41 UTC] Automatic updates starting...
+[11-Dec-2025 07:50:41 UTC] Automatic updates complete.
+[12-Dec-2025 22:12:09 UTC] Automatic updates starting...
+[12-Dec-2025 22:12:09 UTC] Automatic updates complete.
